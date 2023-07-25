@@ -63,6 +63,15 @@ examples = [
   }
 ]
 
+# 配置一个格式化程序，将几个镜头示例格式化为字符串
 example_prompt = PromptTemplate(input_variables=["question", "answer"], template="Question: {question}\n{answer}")
-
 print(example_prompt.format(**examples[0]))
+
+# FewShotPromptTemplate对象？
+prompt = FewShotPromptTemplate(
+    examples=examples,
+    example_prompt=example_prompt,
+    suffix="Question: {input}",
+    input_variables=["input"]
+)
+print(prompt.format(input="Who was the father of Mary Ball Washington?"))

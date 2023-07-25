@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aad3d1e3-b581-4529-a993-5d7fc841602f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/LangChain_study/modules/model_io/prompts/prompts_template/few_shot_templates.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/python_study_project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/python_study_project.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LangChain_study/modules/model_io/prompts/prompts_template/few_shot_templates.py" beforeDir="false" afterPath="$PROJECT_DIR$/LangChain_study/modules/model_io/prompts/prompts_template/few_shot_templates.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -188,7 +185,7 @@
       <workItem from="1687328562727" duration="2200000" />
       <workItem from="1687661783106" duration="7282000" />
       <workItem from="1689332682800" duration="5071000" />
-      <workItem from="1690283420459" duration="1566000" />
+      <workItem from="1690283420459" duration="2016000" />
     </task>
     <task id="LOCAL-00001" summary="初始化">
       <created>1687151991623</created>
@@ -204,7 +201,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687161127084</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="4、少样本提示模板：几个带有搜索功能的自应答示例。">
+      <created>1690285738404</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1690285738405</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -222,7 +226,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="初始化" />
-    <option name="LAST_COMMIT_MESSAGE" value="初始化" />
+    <MESSAGE value="4、少样本提示模板：几个带有搜索功能的自应答示例。" />
+    <option name="LAST_COMMIT_MESSAGE" value="4、少样本提示模板：几个带有搜索功能的自应答示例。" />
   </component>
   <component name="WindowStateProjectService">
     <state x="800" y="222" key="#few_shot_templates" timestamp="1690285307171">
@@ -233,31 +238,39 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="656" y="111" key="#txt_template/0.0.1920.1040/-2560.0.2560.1400@0.0.1920.1040" timestamp="1690285321111" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1690285449267">
+    <state x="524" y="86" key="CommitChangelistDialog2" timestamp="1690285734245">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/-2560.0.2560.1400@0.0.1920.1040" timestamp="1690285449267" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1690285449267">
+    <state x="524" y="86" key="CommitChangelistDialog2/0.0.1920.1040/-2560.0.2560.1400@0.0.1920.1040" timestamp="1690285734245" />
+    <state width="938" height="282" key="GridCell.Tab.0.bottom" timestamp="1690286165755">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/-2560.0.2560.1400@0.0.1920.1040" timestamp="1690285449267" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1690285449266">
+    <state width="938" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/-2560.0.2560.1400@0.0.1920.1040" timestamp="1690286165755" />
+    <state width="938" height="282" key="GridCell.Tab.0.center" timestamp="1690286165755">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/-2560.0.2560.1400@0.0.1920.1040" timestamp="1690285449266" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1690285449267">
+    <state width="938" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/-2560.0.2560.1400@0.0.1920.1040" timestamp="1690286165755" />
+    <state width="938" height="282" key="GridCell.Tab.0.left" timestamp="1690286165754">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/-2560.0.2560.1400@0.0.1920.1040" timestamp="1690285449267" />
+    <state width="938" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/-2560.0.2560.1400@0.0.1920.1040" timestamp="1690286165754" />
+    <state width="938" height="282" key="GridCell.Tab.0.right" timestamp="1690286165755">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="938" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/-2560.0.2560.1400@0.0.1920.1040" timestamp="1690286165755" />
     <state x="461" y="164" key="SettingsEditor" timestamp="1690285381060">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040/-2560.0.2560.1400@0.0.1920.1040" timestamp="1690285381060" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1690285742696">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-2560.0.2560.1400@0.0.1920.1040" timestamp="1690285742696" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/python_study_project$chat_template.coverage" NAME="chat_template Coverage Results" MODIFIED="1689338882507" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/LangChain_study/modules/model_io/prompts" />
     <SUITE FILE_PATH="coverage/python_study_project$txt_prompts.coverage" NAME="txt_prompts Coverage Results" MODIFIED="1689337443673" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/LangChain_study/modules/model_io/prompts" />
     <SUITE FILE_PATH="coverage/python_study_project$custom_template.coverage" NAME="custom_template Coverage Results" MODIFIED="1689340226545" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/LangChain_study/modules/model_io/prompts" />
-    <SUITE FILE_PATH="coverage/python_study_project$few_shot_templates.coverage" NAME="few_shot_templates Coverage Results" MODIFIED="1690285449246" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/LangChain_study/modules/model_io/prompts/prompts_template" />
+    <SUITE FILE_PATH="coverage/python_study_project$few_shot_templates.coverage" NAME="few_shot_templates Coverage Results" MODIFIED="1690286165741" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/LangChain_study/modules/model_io/prompts/prompts_template" />
   </component>
 </project>
