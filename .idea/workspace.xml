@@ -1,16 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/module_study/PyQt5/parts/QSliderTest.py" line="25" mnemonic="3" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="aad3d1e3-b581-4529-a993-5d7fc841602f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/LangChain_study/modules/model_io/prompts/prompts_template/few_shot_templates.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/paddleHub_study/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/paddleHub_study/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/python_study_project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/python_study_project.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_study/PyQt5/Layout/QGridLayoutTest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_study/PyQt5/Layout/QHBoxLayout.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_study/PyQt5/Layout/QStackedLayoutTest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_study/PyQt5/Layout/QTabWidgetTest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_study/PyQt5/Layout/QVBoxLayoutTest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_study/PyQt5/Layout/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_study/PyQt5/Layout/app.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_study/PyQt5/Layout/nested.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_study/PyQt5/Layout/布局" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_study/PyQt5/QDialog/QMessageBoxTest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_study/PyQt5/QDialog/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_study/PyQt5/QDialog/qDialogTestOne.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_study/PyQt5/Test/mainWindow.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_study/PyQt5/Test/menuTool.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_study/PyQt5/event/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_study/PyQt5/event/contextMenuEvent.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_study/PyQt5/event/event.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_study/PyQt5/event/mouse.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_study/PyQt5/event/事件处理" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_study/PyQt5/icons/camcorder--pencil.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_study/PyQt5/icons/camcorder--plus.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_study/PyQt5/icons/camera--arrow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_study/PyQt5/icons/camera-black.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_study/PyQt5/icons/camera.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_study/PyQt5/menuBar/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_study/PyQt5/menuBar/menuBarTestOne" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_study/PyQt5/newWindow/KeepWindowTest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_study/PyQt5/newWindow/WindowTest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_study/PyQt5/newWindow/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_study/PyQt5/toolBar/QToolBarTestOne.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_study/PyQt5/toolBar/QToolBarTestThress.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_study/PyQt5/toolBar/QToolBarTestTwo.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_study/PyQt5/toolBar/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/network_assistant/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/module_study/PyQt5/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/network_assistant/test/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/module_study/PyQt5/firstApp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/network_assistant/文档.md" beforeDir="false" afterPath="$PROJECT_DIR$/module_study/network/文档.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module_study/PyQt5/firstApp.py" beforeDir="false" afterPath="$PROJECT_DIR$/module_study/PyQt5/firstApp.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,50 +50,45 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/module_study/network/requests_test.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/module_study/network/文档.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="264">
-                <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/paddleHub_study/test.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/module_study/PyQt5/firstApp.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="429">
-              <caret line="13" selection-start-line="13" selection-end-line="13" />
+            <state relative-caret-position="8">
+              <caret line="2" column="30" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/module_study/PyQt5/menuBar/menuBarTestOne">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="264">
+              <caret line="11" column="23" lean-forward="true" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
               <folding>
-                <element signature="e#0#49#0" expanded="true" />
+                <element signature="e#0#10#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/module_study/network/image.jpeg">
-          <provider selected="true" editor-type-id="images" />
+        <entry file="file://$PROJECT_DIR$/module_study/PyQt5/Test/mainWindow.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="957">
+              <caret line="44" column="8" lean-forward="true" selection-start-line="44" selection-start-column="8" selection-end-line="44" selection-end-column="32" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/module_study/PyQt5/Test/menuTool.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="99">
+              <caret line="3" column="29" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -81,6 +105,20 @@
       <find>gpt-3.5</find>
       <find>PromptTemplate</find>
       <find>requests</find>
+      <find>QtWidget</find>
+      <find>QMainWindow</find>
+      <find>setCentralWidget</find>
+      <find>mousePressEvent</find>
+      <find>contextMenuEvent</find>
+      <find>QWidget</find>
+      <find>widget</find>
+      <find>QFont</find>
+      <find>currentIndexChanged</find>
+      <find>setSingleStep</find>
+      <find>West</find>
+      <find>triggered</find>
+      <find>QDialogButtonBox</find>
+      <find>QSize</find>
     </findStrings>
     <dirStrings>
       <dir>E:\workspace\python\study\python_study_project</dir>
@@ -103,7 +141,38 @@
         <option value="$PROJECT_DIR$/module_study/network/requests_test.py" />
         <option value="$PROJECT_DIR$/network_assistant/文档.md" />
         <option value="$PROJECT_DIR$/paddleHub_study/test.py" />
+        <option value="$PROJECT_DIR$/module_study/PyQt5/smallParts.py" />
         <option value="$PROJECT_DIR$/module_study/PyQt5/firstApp.py" />
+        <option value="$PROJECT_DIR$/module_study/PyQt5/event.py" />
+        <option value="$PROJECT_DIR$/module_study/PyQt5/mouse.py" />
+        <option value="$PROJECT_DIR$/module_study/PyQt5/event/contextMenuEvent.py" />
+        <option value="$PROJECT_DIR$/module_study/PyQt5/parts/QLabelTest.py" />
+        <option value="$PROJECT_DIR$/module_study/PyQt5/parts/QCheckBoxTest.py" />
+        <option value="$PROJECT_DIR$/module_study/PyQt5/parts/QComboBoxTest.py" />
+        <option value="$PROJECT_DIR$/module_study/PyQt5/parts/QLineEditTest.py" />
+        <option value="$PROJECT_DIR$/module_study/PyQt5/parts/QSpinBoxTest.py" />
+        <option value="$PROJECT_DIR$/module_study/PyQt5/parts/小部件" />
+        <option value="$PROJECT_DIR$/module_study/PyQt5/parts/customize/Color.py" />
+        <option value="$PROJECT_DIR$/module_study/PyQt5/Layout/app.py" />
+        <option value="$PROJECT_DIR$/module_study/PyQt5/Layout/QVBoxLayoutTEst.py" />
+        <option value="$PROJECT_DIR$/module_study/PyQt5/Layout/QHBoxLayout.py" />
+        <option value="$PROJECT_DIR$/module_study/PyQt5/Layout/nested.py" />
+        <option value="$PROJECT_DIR$/module_study/PyQt5/parts/QSliderTest.py" />
+        <option value="$PROJECT_DIR$/module_study/PyQt5/Layout/QGridLayoutTest.py" />
+        <option value="$PROJECT_DIR$/module_study/PyQt5/Layout/QVBoxLayoutTest.py" />
+        <option value="$PROJECT_DIR$/module_study/PyQt5/Layout/QStackedLayoutTest.py" />
+        <option value="$PROJECT_DIR$/module_study/PyQt5/Layout/QTabWidgetTest.py" />
+        <option value="$PROJECT_DIR$/module_study/PyQt5/QToolBarTest.py" />
+        <option value="$PROJECT_DIR$/module_study/PyQt5/toolBar/QToolBarTestOne.py" />
+        <option value="$PROJECT_DIR$/module_study/PyQt5/toolBar/QToolBarTestThress.py" />
+        <option value="$PROJECT_DIR$/module_study/PyQt5/toolBar/QToolBarTestTwo.py" />
+        <option value="$PROJECT_DIR$/module_study/PyQt5/menuBar/menuBarTestOne" />
+        <option value="$PROJECT_DIR$/module_study/PyQt5/QDialog/qDialogTestOne.py" />
+        <option value="$PROJECT_DIR$/module_study/PyQt5/QDialog/QMessageBoxTest.py" />
+        <option value="$PROJECT_DIR$/module_study/PyQt5/newWindow/WindowTest.py" />
+        <option value="$PROJECT_DIR$/module_study/PyQt5/newWindow/KeepWindowTest.py" />
+        <option value="$PROJECT_DIR$/module_study/PyQt5/Test/mainWindow.py" />
+        <option value="$PROJECT_DIR$/module_study/PyQt5/Test/menuTool.py" />
       </list>
     </option>
   </component>
@@ -121,6 +190,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -139,29 +209,61 @@
               <item name="module_study" type="462c0819:PsiDirectoryNode" />
               <item name="PyQt5" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="python_study_project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="python_study_project" type="462c0819:PsiDirectoryNode" />
+              <item name="module_study" type="462c0819:PsiDirectoryNode" />
+              <item name="PyQt5" type="462c0819:PsiDirectoryNode" />
+              <item name="Layout" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="python_study_project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="python_study_project" type="462c0819:PsiDirectoryNode" />
+              <item name="module_study" type="462c0819:PsiDirectoryNode" />
+              <item name="PyQt5" type="462c0819:PsiDirectoryNode" />
+              <item name="menuBar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="python_study_project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="python_study_project" type="462c0819:PsiDirectoryNode" />
+              <item name="module_study" type="462c0819:PsiDirectoryNode" />
+              <item name="PyQt5" type="462c0819:PsiDirectoryNode" />
+              <item name="Test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="python_study_project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="python_study_project" type="462c0819:PsiDirectoryNode" />
+              <item name="module_study" type="462c0819:PsiDirectoryNode" />
+              <item name="PyQt5" type="462c0819:PsiDirectoryNode" />
+              <item name="toolBar" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../work/huima_work_python" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/module_study/PyQt5/icons" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\workspace\python\study\python_study_project\LangChain_study\models\llms" />
-      <recent name="E:\workspace\python\study\python_study_project\LangChain_study\common" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\workspace\python\study\python_study_project\module_study\PyQt5\toolBar" />
+      <recent name="E:\workspace\python\study\python_study_project\module_study\PyQt5\parts" />
+      <recent name="E:\workspace\python\study\python_study_project\module_study\PyQt5\event" />
       <recent name="E:\workspace\python\study\python_study_project\module_study\network" />
       <recent name="E:\workspace\python\study\python_study_project\LangChain_study\modules\model_io\prompts\prompts_template" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\workspace\python\study\python_study_project\module_study\PyQt5\icons" />
+      <recent name="E:\workspace\python\study\python_study_project\module_study\PyQt5\toolBar" />
+      <recent name="E:\workspace\python\study\python_study_project\LangChain_study\models\llms" />
+      <recent name="E:\workspace\python\study\python_study_project\LangChain_study\common" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -176,8 +278,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.firstApp">
-    <configuration name="chat_template" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.mainWindow">
+    <configuration name="KeepWindowTest" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="python_study_project" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -185,12 +287,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/LangChain_study/modules/model_io/prompts" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module_study/PyQt5/newWindow" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="E:\workspace\python\study\python_study_project\LangChain_study\modules\model_io\prompts\prompts_template\chat_template.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module_study/PyQt5/newWindow/KeepWindowTest.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -199,7 +301,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="custom_template" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="QMessageBoxTest" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="python_study_project" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -207,12 +309,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/LangChain_study/modules/model_io/prompts" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module_study/PyQt5/QDialog" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="E:\workspace\python\study\python_study_project\LangChain_study\modules\model_io\prompts\prompts_template\custom_template.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module_study/PyQt5/QDialog/QMessageBoxTest.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -221,7 +323,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="firstApp" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="WindowTest" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="python_study_project" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -229,12 +331,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module_study/PyQt5" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module_study/PyQt5/newWindow" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module_study/PyQt5/firstApp.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module_study/PyQt5/newWindow/WindowTest.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -243,7 +345,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="requests_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="mainWindow" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="python_study_project" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -251,12 +353,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module_study/network" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module_study/PyQt5/Test" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module_study/network/requests_test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module_study/PyQt5/Test/mainWindow.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -265,7 +367,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="qDialogTestOne" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="python_study_project" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -273,12 +375,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/paddleHub_study" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module_study/PyQt5/QDialog" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/paddleHub_study/test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module_study/PyQt5/QDialog/qDialogTestOne.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -289,11 +391,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.firstApp" />
-        <item itemvalue="Python.test" />
-        <item itemvalue="Python.requests_test" />
-        <item itemvalue="Python.custom_template" />
-        <item itemvalue="Python.chat_template" />
+        <item itemvalue="Python.mainWindow" />
+        <item itemvalue="Python.KeepWindowTest" />
+        <item itemvalue="Python.WindowTest" />
+        <item itemvalue="Python.qDialogTestOne" />
+        <item itemvalue="Python.QMessageBoxTest" />
       </list>
     </recent_temporary>
   </component>
@@ -322,7 +424,9 @@
       <workItem from="1696852959190" duration="4925000" />
       <workItem from="1698825339476" duration="1627000" />
       <workItem from="1698828590600" duration="9212000" />
-      <workItem from="1699877513155" duration="467000" />
+      <workItem from="1699877513155" duration="5239000" />
+      <workItem from="1700036779430" duration="24094000" />
+      <workItem from="1700462673999" duration="6078000" />
     </task>
     <task id="LOCAL-00001" summary="初始化">
       <created>1687151991623</created>
@@ -352,27 +456,35 @@
       <option name="project" value="LOCAL" />
       <updated>1689340514529</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="--">
+      <created>1699878017371</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1699878017371</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50928000" />
+    <option name="totallyTimeSpent" value="85872000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-12" y="-12" width="3864" height="2114" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.31137088" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.31721574" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.3299532" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3297929" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3297929" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.3299532" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.3297929" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.5629315" />
@@ -401,91 +513,45 @@
     <MESSAGE value="初始化" />
     <MESSAGE value="prompts_template" />
     <MESSAGE value="思维导图地址" />
-    <option name="LAST_COMMIT_MESSAGE" value="思维导图地址" />
+    <MESSAGE value="--" />
+    <option name="LAST_COMMIT_MESSAGE" value="--" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/python_study_project$requests_test.coverage" NAME="requests_test Coverage Results" MODIFIED="1694594969499" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/network" />
-    <SUITE FILE_PATH="coverage/python_study_project$firstApp.coverage" NAME="firstApp Coverage Results" MODIFIED="1699877948644" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5" />
-    <SUITE FILE_PATH="coverage/python_study_project$chat_template.coverage" NAME="chat_template Coverage Results" MODIFIED="1689338882507" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/LangChain_study/modules/model_io/prompts" />
     <SUITE FILE_PATH="coverage/python_study_project$txt_prompts.coverage" NAME="txt_prompts Coverage Results" MODIFIED="1689337443673" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/LangChain_study/modules/model_io/prompts" />
-    <SUITE FILE_PATH="coverage/python_study_project$custom_template.coverage" NAME="custom_template Coverage Results" MODIFIED="1689340226545" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/LangChain_study/modules/model_io/prompts" />
+    <SUITE FILE_PATH="coverage/python_study_project$QComboBoxTest.coverage" NAME="QComboBoxTest Coverage Results" MODIFIED="1700120708554" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/parts" />
+    <SUITE FILE_PATH="coverage/python_study_project$QSpinBoxTest.coverage" NAME="QSpinBoxTest Coverage Results" MODIFIED="1700122758426" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/parts" />
     <SUITE FILE_PATH="coverage/python_study_project$test.coverage" NAME="test Coverage Results" MODIFIED="1699877594183" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/paddleHub_study" />
+    <SUITE FILE_PATH="coverage/python_study_project$app.coverage" NAME="app Coverage Results" MODIFIED="1700125005156" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/Layout" />
+    <SUITE FILE_PATH="coverage/python_study_project$QToolBarTestThress.coverage" NAME="QToolBarTestThress Coverage Results" MODIFIED="1700220463525" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/toolBar" />
+    <SUITE FILE_PATH="coverage/python_study_project$contextMenuEvent.coverage" NAME="contextMenuEvent Coverage Results" MODIFIED="1700118626852" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/event" />
+    <SUITE FILE_PATH="coverage/python_study_project$smallParts.coverage" NAME="smallParts Coverage Results" MODIFIED="1700039141484" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5" />
+    <SUITE FILE_PATH="coverage/python_study_project$QHBoxLayout.coverage" NAME="QHBoxLayout Coverage Results" MODIFIED="1700125496887" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/Layout" />
+    <SUITE FILE_PATH="coverage/python_study_project$chat_template.coverage" NAME="chat_template Coverage Results" MODIFIED="1689338882507" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/LangChain_study/modules/model_io/prompts" />
+    <SUITE FILE_PATH="coverage/python_study_project$menuBarTestOne.coverage" NAME="menuBarTestOne Coverage Results" MODIFIED="1700222366000" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/menuBar" />
+    <SUITE FILE_PATH="coverage/python_study_project$QLineEditTest.coverage" NAME="QLineEditTest Coverage Results" MODIFIED="1700121937300" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/parts" />
+    <SUITE FILE_PATH="coverage/python_study_project$nested.coverage" NAME="nested Coverage Results" MODIFIED="1700125428782" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/Layout" />
+    <SUITE FILE_PATH="coverage/python_study_project$firstApp.coverage" NAME="firstApp Coverage Results" MODIFIED="1699935208995" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5" />
+    <SUITE FILE_PATH="coverage/python_study_project$QLabelTest.coverage" NAME="QLabelTest Coverage Results" MODIFIED="1700119595650" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/parts" />
+    <SUITE FILE_PATH="coverage/python_study_project$mainWindow.coverage" NAME="mainWindow Coverage Results" MODIFIED="1700483601120" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/Test" />
+    <SUITE FILE_PATH="coverage/python_study_project$QMessageBoxTest.coverage" NAME="QMessageBoxTest Coverage Results" MODIFIED="1700466850273" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/QDialog" />
+    <SUITE FILE_PATH="coverage/python_study_project$QToolBarTest.coverage" NAME="QToolBarTest Coverage Results" MODIFIED="1700202105964" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5" />
+    <SUITE FILE_PATH="coverage/python_study_project$qDialogTestOne.coverage" NAME="qDialogTestOne Coverage Results" MODIFIED="1700466887511" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/QDialog" />
+    <SUITE FILE_PATH="coverage/python_study_project$QVBoxLayoutTest.coverage" NAME="QVBoxLayoutTest Coverage Results" MODIFIED="1700125522640" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/Layout" />
+    <SUITE FILE_PATH="coverage/python_study_project$KeepWindowTest.coverage" NAME="KeepWindowTest Coverage Results" MODIFIED="1700469514076" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/newWindow" />
+    <SUITE FILE_PATH="coverage/python_study_project$mouse.coverage" NAME="mouse Coverage Results" MODIFIED="1700116296174" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5" />
+    <SUITE FILE_PATH="coverage/python_study_project$requests_test.coverage" NAME="requests_test Coverage Results" MODIFIED="1694594969499" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/network" />
+    <SUITE FILE_PATH="coverage/python_study_project$QStackedLayoutTest.coverage" NAME="QStackedLayoutTest Coverage Results" MODIFIED="1700127126037" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/Layout" />
+    <SUITE FILE_PATH="coverage/python_study_project$QTabWidgetTest.coverage" NAME="QTabWidgetTest Coverage Results" MODIFIED="1700127579204" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/Layout" />
+    <SUITE FILE_PATH="coverage/python_study_project$WindowTest.coverage" NAME="WindowTest Coverage Results" MODIFIED="1700468464536" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/newWindow" />
+    <SUITE FILE_PATH="coverage/python_study_project$QSliderTest.coverage" NAME="QSliderTest Coverage Results" MODIFIED="1700123101067" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/parts" />
+    <SUITE FILE_PATH="coverage/python_study_project$QToolBarTestTwo.coverage" NAME="QToolBarTestTwo Coverage Results" MODIFIED="1700203182712" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/toolBar" />
+    <SUITE FILE_PATH="coverage/python_study_project$QGridLayoutTest.coverage" NAME="QGridLayoutTest Coverage Results" MODIFIED="1700125746558" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/Layout" />
+    <SUITE FILE_PATH="coverage/python_study_project$QCheckBoxTest.coverage" NAME="QCheckBoxTest Coverage Results" MODIFIED="1700120095146" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/parts" />
+    <SUITE FILE_PATH="coverage/python_study_project$custom_template.coverage" NAME="custom_template Coverage Results" MODIFIED="1689340226545" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/LangChain_study/modules/model_io/prompts" />
+    <SUITE FILE_PATH="coverage/python_study_project$event.coverage" NAME="event Coverage Results" MODIFIED="1699935942332" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5" />
+    <SUITE FILE_PATH="coverage/python_study_project$QToolBarTestOne.coverage" NAME="QToolBarTestOne Coverage Results" MODIFIED="1700203979334" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/toolBar" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/LangChain_study/common/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LangChain_study/get_started/get_started.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="893">
-          <caret line="47" column="45" lean-forward="true" selection-start-line="47" selection-start-column="45" selection-end-line="47" selection-end-column="45" />
-          <folding>
-            <element signature="e#56#65#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LangChain_study/Test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="2" />
-          <folding>
-            <element signature="e#48#57#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LangChain_study/modules/model_io/prompts/prompts_template/txt_template.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="45" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LangChain_study/modules/model_io/prompts/prompts_template/custom_template.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="912">
-          <caret line="48" column="35" selection-start-line="48" selection-start-column="35" selection-end-line="48" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LangChain_study/modules/model_io/prompts/prompts_template/chat_template.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="34" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LangChain_study/modules/model_io/model_io.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="285">
-            <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LangChain_study/modules/model_io/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LangChain_study/说明文档.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="456">
-            <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LangChain_study/common/ChatParam.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" selection-start-line="2" selection-end-line="3" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/module_study/network/image.png" />
     <entry file="file://$PROJECT_DIR$/LangChain_study/models/llms/OpenAiLLm.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -525,9 +591,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/module_study/network/image.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/paddleHub_study/test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
@@ -535,13 +598,340 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2019.1/system/python_stubs/-732917855/PyQt5/QtWidgets/QAbstractButton.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7557">
+          <caret line="234" column="70" selection-start-line="234" selection-start-column="34" selection-end-line="234" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module_study/network/image.jpeg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module_study/PyQt5/event/event.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="11" column="46" lean-forward="true" selection-end-line="42" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module_study/PyQt5/event/mouse.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1287">
+          <caret line="39" column="10" lean-forward="true" selection-end-line="39" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2019.1/system/python_stubs/-732917855/PyQt5/QtWidgets/QMainWindow.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="370">
+          <caret line="54" column="24" selection-start-line="54" selection-start-column="8" selection-end-line="54" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2019.1/system/python_stubs/-732917855/PyQt5/QtWidgets/QMenu.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="53" column="8" selection-start-line="53" selection-start-column="8" selection-end-line="53" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module_study/PyQt5/event/contextMenuEvent.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="17" column="27" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module_study/PyQt5/parts/smallParts.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1211">
+          <caret line="38" column="15" selection-end-line="47" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module_study/PyQt5/parts/QCheckBoxTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="31" column="42" selection-end-line="46" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module_study/PyQt5/parts/QComboBoxTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="337">
+          <caret line="17" selection-start-line="17" selection-end-line="42" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module_study/PyQt5/parts/QLabelTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="7" column="14" selection-end-line="40" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module_study/PyQt5/parts/QLineEditTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="40" column="51" selection-end-line="63" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module_study/PyQt5/parts/QSpinBoxTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="370">
+          <caret line="37" column="28" selection-start-line="37" selection-start-column="15" selection-end-line="37" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module_study/PyQt5/event/事件处理">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module_study/PyQt5/parts/小部件">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="33">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module_study/PyQt5/parts/customize/自定义小部件">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module_study/PyQt5/parts/customize/Color.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="20" column="25" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module_study/PyQt5/Layout/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="16" column="39" lean-forward="true" selection-end-line="27" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module_study/PyQt5/parts/QSliderTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="535">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module_study/PyQt5/Layout/布局">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module_study/PyQt5/Layout/QVBoxLayoutTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="16" column="20" lean-forward="true" selection-end-line="33" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module_study/PyQt5/Layout/nested.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="627">
+          <caret line="28" selection-end-line="44" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module_study/PyQt5/Layout/QHBoxLayout.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="3" column="51" selection-start-line="3" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module_study/PyQt5/Layout/QStackedLayoutTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="726">
+          <caret line="40" column="40" selection-start-line="40" selection-start-column="35" selection-end-line="40" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2019.1/system/python_stubs/-732917855/PyQt5/QtWidgets/QTabWidget.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="683">
+          <caret line="398" column="9" selection-start-line="398" selection-start-column="4" selection-end-line="398" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module_study/PyQt5/Layout/QTabWidgetTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="712">
+          <caret line="28" lean-forward="true" selection-end-line="38" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module_study/PyQt5/icons/camcorder--pencil.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module_study/PyQt5/icons/camcorder--plus.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module_study/PyQt5/icons/camera.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module_study/PyQt5/icons/camera--arrow.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module_study/PyQt5/icons/camera-black.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module_study/PyQt5/toolBar/QToolBarTestTwo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="693">
+          <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module_study/PyQt5/toolBar/QToolBarTestOne.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="693">
+          <caret line="27" column="26" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module_study/PyQt5/QDialog/QMessageBoxTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="29" column="37" lean-forward="true" selection-end-line="39" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module_study/PyQt5/QDialog/qDialogTestOne.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="41" column="37" lean-forward="true" selection-start-line="41" selection-start-column="37" selection-end-line="41" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module_study/PyQt5/newWindow/WindowTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="30" column="17" selection-end-line="51" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#96#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module_study/PyQt5/newWindow/KeepWindowTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="811">
+          <caret line="36" column="18" selection-end-line="43" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#96#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module_study/PyQt5/Layout/QGridLayoutTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="12" column="31" lean-forward="true" selection-end-line="34" selection-end-column="10" />
+          <folding>
+            <element signature="e#1#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module_study/PyQt5/toolBar/QToolBarTestThress.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="693">
+          <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/module_study/PyQt5/firstApp.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        <state relative-caret-position="8">
+          <caret line="2" column="30" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module_study/PyQt5/menuBar/menuBarTestOne">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="11" column="23" lean-forward="true" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
           <folding>
-            <element signature="e#0#49#0" expanded="true" />
+            <element signature="e#0#10#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module_study/PyQt5/Test/mainWindow.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="957">
+          <caret line="44" column="8" lean-forward="true" selection-start-line="44" selection-start-column="8" selection-end-line="44" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module_study/PyQt5/Test/menuTool.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="3" column="29" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
         </state>
       </provider>
     </entry>
