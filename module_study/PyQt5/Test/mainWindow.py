@@ -5,6 +5,7 @@ from PyQt5.QtWidgets import (
 )
 from PyQt5.QtGui import QIcon,QKeySequence
 from PyQt5.QtCore import Qt,QSize
+from module_study.PyQt5.parts.customize.Color import Color
 
 class MainWindow(QMainWindow):
 
@@ -22,31 +23,7 @@ class MainWindow(QMainWindow):
         self.setCentralWidget(label)
 
         # =================== 菜单栏设置 ==========================
-
-        # ---------------------- 初始化菜单栏 -------------------
-        menu = self.menuBar()
-
-        # ---------------------- 通过QAction创建菜单项 --------------------
-        # 创建一个“文件” 菜单项
-        button_action = QAction(QIcon("../icons/camera.png"),"文件", self)
-        button_action.triggered.connect(self.onMyToolBarButtonClick)
-        # -- 添加快捷键
-        button_action.setShortcut(QKeySequence("Ctrl+p"))
-        # 创建一个“保存” 菜单项
-        button_action2 = QAction("保存", self)
-        button_action2.triggered.connect(self.onMyToolBarButtonClick)
-
-        # ---------------------- 初始化菜单项 --------------------
-        # 通过函数addMenu点击一个菜单
-        file_menu = menu.addMenu("&File")
-        # 向菜单中添加 “菜单项”
-        file_menu.addAction(button_action)
-        # -- 分割线
-        file_menu.addSeparator()
-        # 向菜单中添加一个 “子菜单”
-        file_submenu = file_menu.addMenu("Submenu")
-        # 向子菜单中添加 “菜单项”
-        file_submenu.addAction(button_action2)
+        menuTool.menuTool(self)
 
     def onMyToolBarButtonClick(self, s):
         print("click", s)
