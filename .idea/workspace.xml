@@ -4,15 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/module_study/PyQt5/parts/QSliderTest.py" line="25" mnemonic="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aad3d1e3-b581-4529-a993-5d7fc841602f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/module_study/PyQt5/Test/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_study/PyQt5/Test/test/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_study/PyQt5/Test/test/mainWindow.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_study/PyQt5/Test/tree_menu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module_study/PyQt5/Test/mainWindow.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module_study/PyQt5/Test/menuTool.py" beforeDir="false" />
-    </list>
+    <list default="true" id="aad3d1e3-b581-4529-a993-5d7fc841602f" name="Default Changelist" comment="Test" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,12 +16,14 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/module_study/PyQt5/Test/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="681">
-              <caret line="85" column="12" selection-start-line="85" selection-start-column="12" selection-end-line="85" selection-end-column="12" />
+            <state relative-caret-position="294">
+              <caret line="30" selection-start-line="30" selection-end-line="30" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
                 <element signature="e#1237#1912#0" />
                 <element signature="e#2004#2214#0" />
+                <element signature="e#1776#2094#0" />
+                <element signature="e#1420#1588#0" />
               </folding>
             </state>
           </provider>
@@ -215,7 +209,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/module_study/PyQt5/icons" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/module_study/PyQt5/module/leftTreeMenu" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="settings.github" />
@@ -247,7 +241,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python.main (1)">
     <configuration name="KeepWindowTest" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="python_study_project" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -270,7 +264,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="WindowTest" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="python_study_project" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -278,12 +272,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module_study/PyQt5/newWindow" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module_study/PyQt5/module/leftTreeMenu" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module_study/PyQt5/newWindow/WindowTest.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module_study/PyQt5/module/leftTreeMenu/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -363,15 +357,15 @@
       <item itemvalue="Python.main" />
       <item itemvalue="Python.mainWindow" />
       <item itemvalue="Python.mainWindow (1)" />
-      <item itemvalue="Python.WindowTest" />
+      <item itemvalue="Python.main (1)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main (1)" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.mainWindow (1)" />
         <item itemvalue="Python.mainWindow" />
         <item itemvalue="Python.KeepWindowTest" />
-        <item itemvalue="Python.WindowTest" />
       </list>
     </recent_temporary>
   </component>
@@ -402,7 +396,7 @@
       <workItem from="1698828590600" duration="9212000" />
       <workItem from="1699877513155" duration="5239000" />
       <workItem from="1700036779430" duration="24094000" />
-      <workItem from="1700462673999" duration="16759000" />
+      <workItem from="1700462673999" duration="17488000" />
     </task>
     <task id="LOCAL-00001" summary="初始化">
       <created>1687151991623</created>
@@ -453,22 +447,28 @@
       <option name="project" value="LOCAL" />
       <updated>1700484663320</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Test">
+      <created>1700553868495</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1700553868495</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="96553000" />
+    <option name="totallyTimeSpent" value="97282000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-12" y="-12" width="3864" height="2114" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.31721574" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.31721574" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3299532" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3297929" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32819968" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3998938" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -505,7 +505,8 @@
     <MESSAGE value="思维导图地址" />
     <MESSAGE value="--" />
     <MESSAGE value="PyQt5" />
-    <option name="LAST_COMMIT_MESSAGE" value="PyQt5" />
+    <MESSAGE value="Test" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/python_study_project$main.coverage" NAME="main Coverage Results" MODIFIED="1700553820788" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/Test" />
@@ -532,6 +533,7 @@
     <SUITE FILE_PATH="coverage/python_study_project$QVBoxLayoutTest.coverage" NAME="QVBoxLayoutTest Coverage Results" MODIFIED="1700125522640" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/Layout" />
     <SUITE FILE_PATH="coverage/python_study_project$KeepWindowTest.coverage" NAME="KeepWindowTest Coverage Results" MODIFIED="1700469514076" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/newWindow" />
     <SUITE FILE_PATH="coverage/python_study_project$mouse.coverage" NAME="mouse Coverage Results" MODIFIED="1700116296174" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5" />
+    <SUITE FILE_PATH="coverage/python_study_project$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1700554724102" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/module/leftTreeMenu" />
     <SUITE FILE_PATH="coverage/python_study_project$requests_test.coverage" NAME="requests_test Coverage Results" MODIFIED="1694594969499" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/network" />
     <SUITE FILE_PATH="coverage/python_study_project$QStackedLayoutTest.coverage" NAME="QStackedLayoutTest Coverage Results" MODIFIED="1700127126037" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/Layout" />
     <SUITE FILE_PATH="coverage/python_study_project$QTabWidgetTest.coverage" NAME="QTabWidgetTest Coverage Results" MODIFIED="1700127579204" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/Layout" />
@@ -925,12 +927,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/module_study/PyQt5/Test/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="681">
-          <caret line="85" column="12" selection-start-line="85" selection-start-column="12" selection-end-line="85" selection-end-column="12" />
+        <state relative-caret-position="294">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
             <element signature="e#1237#1912#0" />
             <element signature="e#2004#2214#0" />
+            <element signature="e#1776#2094#0" />
+            <element signature="e#1420#1588#0" />
           </folding>
         </state>
       </provider>
