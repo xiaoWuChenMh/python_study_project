@@ -1,7 +1,7 @@
 import sys
 from PyQt5.QtWidgets import (
     QMainWindow, QApplication,
-    QLabel
+    QLabel,QVBoxLayout,QWidget
 )
 from module_study.PyQt5.Test.config.config_item import configItem
 
@@ -23,9 +23,15 @@ class MainWindow(QMainWindow):
 
         # 创建新部件
         my_widget = configItem()
+        layout = QVBoxLayout()
 
+        layout.addWidget(QLabel("我是老不见"))
+        layout.addWidget(my_widget)
+
+        widget = QWidget()
+        widget.setLayout(layout)
         # 将新部件添加到主窗口
-        self.setCentralWidget(my_widget)
+        self.setCentralWidget(widget)
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
