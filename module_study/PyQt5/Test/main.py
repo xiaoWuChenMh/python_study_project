@@ -29,7 +29,6 @@ class MainWindow(QMainWindow):
         # 设置右侧操作栏
         self.initOperatingArea()
 
-
     # 窗口布局
     def windowLayout(self):
         """
