@@ -12,7 +12,7 @@ class MainWindow(QMainWindow):
 
     def initUI(self):
         self.setWindowTitle("带菜单栏的窗口")
-        self.setGeometry(100, 100, 500, 400)
+        self.setGeometry(100, 100, 900, 400)
 
         # 创建菜单栏
         menubar = self.menuBar()
@@ -22,15 +22,17 @@ class MainWindow(QMainWindow):
         fileMenu.addAction("退出")
 
         # 创建新部件
-        my_widget = configItem()
         layout = QVBoxLayout()
+        layout.addWidget(configItem())
+        layout.addWidget(configItem())
+        layout.addWidget(configItem())
+        layout.addWidget(configItem())
+        layout.addWidget(configItem())
 
-        layout.addWidget(QLabel("我是老不见"))
-        layout.addWidget(my_widget)
-
+        # 将新部件添加到主窗口
         widget = QWidget()
         widget.setLayout(layout)
-        # 将新部件添加到主窗口
+
         self.setCentralWidget(widget)
 
 if __name__ == "__main__":

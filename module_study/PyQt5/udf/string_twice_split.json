@@ -1,0 +1,7 @@
+{
+  "function_name":"string_twice_split",
+  "function_type":"udf",
+  "import_path":"from string_twice_split import StringTwiceSplit",
+  "construct_method":"StringTwiceSplit()",
+  "data_types":"string->string"
+}
