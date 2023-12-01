@@ -1,7 +1,0 @@
-{
-  "function_name":"concat_set_split",
-  "function_type":"udf",
-  "import_path":"from concat_set_split import ConcatSetSplit",
-  "construct_method":"ConcatSetSplit()",
-  "data_types":"string->array(string)->string"
-}
