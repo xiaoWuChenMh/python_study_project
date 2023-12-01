@@ -11,11 +11,13 @@ class TreeMenu(QTreeView):
         self.setHeaderHidden(True)
 
         # 添加第一级菜单项
-        overview_item = QStandardItem("总览")
+        devices_item = QStandardItem("设备")
+        run_item = QStandardItem("运行")
         task_item = QStandardItem("任务")
         tool_item = QStandardItem("工具")
         config_item = QStandardItem("配置")
-        self.model.appendRow([overview_item])
+        self.model.appendRow([devices_item])
+        self.model.appendRow([run_item])
         self.model.appendRow([task_item])
         self.model.appendRow([tool_item])
         self.model.appendRow([config_item])
@@ -36,8 +38,9 @@ class TreeMenu(QTreeView):
 
         # 设置菜单项字体大小为20
         font = QFont()
-        font.setPointSize(10)
-        overview_item.setFont(font)
+        font.setPointSize(12)
+        devices_item.setFont(font)
+        run_item.setFont(font)
         task_item.setFont(font)
         tool_item.setFont(font)
         config_item.setFont(font)
