@@ -9,7 +9,7 @@ from PyQt5.QtWidgets import (
     QStackedLayout,
     QDesktopWidget
 )
-from module_study.PyQt5.Test.tree_menu import TreeMenu
+from module_study.PyQt5.module.leftTreeMenu.tree_menu import TreeMenu
 
 # 左侧树形菜单
 class MainWindow(QMainWindow):
@@ -91,6 +91,7 @@ class MainWindow(QMainWindow):
         if item.parent():
             text = item.text()
             stackedIndex = self.menuMapping[text]
+            print("任务名称：%s ; 任务编号：%s" % (text,stackedIndex))
             # 堆叠布局可以快速切换页面
             self.right_layout.setCurrentIndex(stackedIndex)
 
