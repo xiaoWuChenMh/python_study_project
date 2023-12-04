@@ -1,0 +1,47 @@
+{
+  "menu": [
+    {
+      "item_name" : "设备",
+      "index": 0
+    },
+    {
+      "item_name" : "运行",
+      "index": 1
+    },
+    {
+      "item_name" : "常规任务",
+      "two_item": [
+        {
+          "item_name": "一条龙",
+          "index": 2
+        },
+        {
+          "item_name": "师门",
+          "index": 3
+        }
+      ]
+    },
+    {
+      "item_name" : "帮会任务",
+      "two_item": [
+        {
+          "item_name": "战龙",
+          "index": 4
+        },
+        {
+          "item_name": "帮花",
+          "index": 5
+        }
+      ]
+    },
+    {
+      "item_name" : "家园任务",
+      "two_item": [
+        {
+          "item_name": "收菜",
+          "index": 6
+        }
+      ]
+    }
+  ]
+}
