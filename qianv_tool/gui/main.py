@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 import sys
 from PyQt5.QtWidgets import (
     QApplication,
@@ -18,13 +21,12 @@ from qianv_tool.gui.RigthPage.ShouCai import ShouCai
 from qianv_tool.gui.RigthPage.TaskInfo import TaskInfo
 from qianv_tool.gui.RigthPage.ZhanLong import ZhanLong
 
-
 class MainWindow(QMainWindow):
 
     def __init__(self):
         super().__init__()
         self.setWindowTitle("应用程序")
-        self.setGeometry(100, 100, 1200, 700)
+        self.setGeometry(100, 100, 1800, 900)
 
         # 初始化窗口布局
         self.windowLayout()
@@ -84,13 +86,13 @@ class MainWindow(QMainWindow):
 
     # 初始化右侧操作栏
     def initOperatingArea(self):
-        self.right_layout.addWidget(Device().create())   # QLabel("设备"))
-        self.right_layout.addWidget(TaskInfo().create())   # QLabel("任务"))
-        self.right_layout.addWidget(LongTask().create())   # QLabel("一条龙"))
-        self.right_layout.addWidget(ShiMenTask().create()) # QLabel("师门任务"))
-        self.right_layout.addWidget(ZhanLong().create())   # QLabel("战龙"))
-        self.right_layout.addWidget(BangHua().create())    # QLabel("帮花"))
-        self.right_layout.addWidget(ShouCai().create())    # QLabel("收菜"))
+        self.right_layout.addWidget(Device())   # QLabel("设备"))
+        self.right_layout.addWidget(TaskInfo())   # QLabel("任务"))
+        self.right_layout.addWidget(LongTask())   # QLabel("一条龙"))
+        self.right_layout.addWidget(ShiMenTask()) # QLabel("师门任务"))
+        self.right_layout.addWidget(ZhanLong())   # QLabel("战龙"))
+        self.right_layout.addWidget(BangHua())    # QLabel("帮花"))
+        self.right_layout.addWidget(ShouCai())    # QLabel("收菜"))
 
 
         # TODO: 需要将各个页面的内容进行初始化

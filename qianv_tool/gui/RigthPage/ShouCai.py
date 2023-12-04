@@ -5,16 +5,13 @@
 ###########################################################################################################################
 from PyQt5.QtWidgets import QWidget,QLabel,QHBoxLayout,QVBoxLayout
 
-class ShouCai:
+class ShouCai(QWidget):
 
-    def create( self ):
-        # 创建一个容器
-        option2_widget = QWidget()
-        #将布局放入容器中
-        option2_widget.setLayout(self.createLayout())
-        return option2_widget
+    def __init__(self):
+        super().__init__()
+        self.setLayout(self.layoutInit())
 
-    def createLayout( self ):
+    def layoutInit(self):
         # 创建一个布局
         option2_layout = QVBoxLayout()
         option2_label = QLabel("收菜...............t")
