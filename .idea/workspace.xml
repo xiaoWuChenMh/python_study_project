@@ -4,7 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/module_study/PyQt5/parts/QSliderTest.py" line="25" mnemonic="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aad3d1e3-b581-4529-a993-5d7fc841602f" name="Default Changelist" comment="config">
+    <list default="true" id="aad3d1e3-b581-4529-a993-5d7fc841602f" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/module_study/customtkinter/__init__.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module_study/customtkinter/examples/Test.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module_study/customtkinter/examples/__init__.py" afterDir="false" />
@@ -48,45 +48,12 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="525">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/qianv_tool/gui/main.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="3" selection-end-column="10" />
-              <folding>
-                <element signature="e#47#57#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/module_study/customtkinter/examples/scrollable_frame_example.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3894">
-              <caret line="118" column="142" selection-start-line="118" selection-start-column="142" selection-end-line="118" selection-end-column="142" />
-              <folding>
-                <element signature="e#0#20#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/qianv_tool/gui_new/main.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="14" column="32" lean-forward="true" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/module_study/customtkinter/examples/complex_example.py">
+        <entry file="file://$PROJECT_DIR$/qianv_tool/gui_new/load_Image.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="132">
-              <caret line="4" selection-start-line="4" selection-end-line="6" />
+              <caret line="4" column="21" lean-forward="true" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
               <folding>
-                <element signature="e#0#14#0" expanded="true" />
+                <element signature="e#47#56#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -95,8 +62,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/module_study/customtkinter/examples/image_example.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="18" column="49" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="49" />
+            <state relative-caret-position="614">
+              <caret line="88" column="100" lean-forward="true" selection-start-line="88" selection-start-column="35" selection-end-line="88" selection-end-column="100" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
@@ -105,12 +72,42 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/module_study/customtkinter/examples/example_background_image.py">
+        <entry file="file://$PROJECT_DIR$/qianv_tool/gui_new/operate_frame/devices_frame.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="18" column="42" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
+            <state relative-caret-position="396">
+              <caret line="12" column="69" lean-forward="true" selection-start-line="12" selection-start-column="69" selection-end-line="12" selection-end-column="69" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/module_study/customtkinter/examples/scrollable_frame_example.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2594">
+              <caret line="133" column="18" lean-forward="true" selection-start-line="133" selection-start-column="18" selection-end-line="133" selection-end-column="18" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/qianv_tool/gui_new/menu/navigation_frame.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="924">
+              <caret line="28" column="75" selection-start-line="28" selection-start-column="75" selection-end-line="28" selection-end-column="75" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/qianv_tool/gui_new/main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="528">
+              <caret line="16" column="33" lean-forward="true" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+              <folding>
+                <element signature="e#47#74#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -127,20 +124,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>QSize</find>
-      <find>appendRow</find>
-      <find>QTreeView</find>
-      <find>left_layout</find>
-      <find>QStandardItem</find>
-      <find>setHeaderHidden</find>
-      <find>tree_view</find>
-      <find>overview_item</find>
-      <find>right1_layout</find>
-      <find>MainWindow</find>
-      <find>stackedLayout</find>
-      <find>configItem</find>
-      <find>QMainWindow</find>
-      <find>QHBoxLayout</find>
       <find>setCentralWidget</find>
       <find>QVBoxLayout</find>
       <find>QtWidgets</find>
@@ -157,7 +140,25 @@
       <find>scroll_area</find>
       <find>content_layout</find>
       <find>ustomTkinter_logo_single.png</find>
+      <find>tree_menu_data</find>
+      <find>System</find>
+      <find>ttk</find>
+      <find>columnspan</find>
+      <find>sticky</find>
+      <find>logo_image</find>
+      <find>self.large_test_image</find>
+      <find>self.add_user_image</find>
+      <find>corner_radius=</find>
+      <find>frame_3_button_event</find>
+      <find>customtkinter</find>
+      <find>navigation_frame</find>
+      <find>change_appearance_mode_event</find>
+      <find>home_frame</find>
     </findStrings>
+    <replaceStrings>
+      <replace>image.add_user_image</replace>
+      <replace>ctk</replace>
+    </replaceStrings>
     <dirStrings>
       <dir>E:\workspace\python\study\python_study_project</dir>
       <dir>E:\workspace\python\study\python_study_project\module_study\PyQt5</dir>
@@ -170,13 +171,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/module_study/PyQt5/Layout/QTabWidgetTest.py" />
-        <option value="$PROJECT_DIR$/module_study/PyQt5/QToolBarTest.py" />
-        <option value="$PROJECT_DIR$/module_study/PyQt5/toolBar/QToolBarTestOne.py" />
-        <option value="$PROJECT_DIR$/module_study/PyQt5/toolBar/QToolBarTestThress.py" />
-        <option value="$PROJECT_DIR$/module_study/PyQt5/toolBar/QToolBarTestTwo.py" />
-        <option value="$PROJECT_DIR$/module_study/PyQt5/menuBar/menuBarTestOne" />
-        <option value="$PROJECT_DIR$/module_study/PyQt5/QDialog/qDialogTestOne.py" />
         <option value="$PROJECT_DIR$/module_study/PyQt5/QDialog/QMessageBoxTest.py" />
         <option value="$PROJECT_DIR$/module_study/PyQt5/newWindow/WindowTest.py" />
         <option value="$PROJECT_DIR$/module_study/PyQt5/newWindow/KeepWindowTest.py" />
@@ -213,14 +207,21 @@
         <option value="$PROJECT_DIR$/qianv_tool/gui/smallParts/deviceInfo.py" />
         <option value="$PROJECT_DIR$/qianv_tool/gui/smallParts/DeviceInfo.py" />
         <option value="$PROJECT_DIR$/qianv_tool/gui/RigthPage/Device.py" />
-        <option value="$PROJECT_DIR$/qianv_tool/gui/Test.py" />
-        <option value="$PROJECT_DIR$/module_study/customtkinter/examples/complex_example.py" />
-        <option value="$PROJECT_DIR$/module_study/customtkinter/examples/Test.py" />
         <option value="$PROJECT_DIR$/module_study/customtkinter/examples/example_background_image.py" />
-        <option value="$PROJECT_DIR$/module_study/customtkinter/examples/image_example.py" />
         <option value="$PROJECT_DIR$/module_study/customtkinter/examples/scrollable_frame_example.py" />
         <option value="$PROJECT_DIR$/module_study/customtkinter/examples/simple_example.py" />
+        <option value="$PROJECT_DIR$/module_study/customtkinter/examples/tree_menu.py" />
+        <option value="$PROJECT_DIR$/module_study/customtkinter/examples/complex_example.py" />
+        <option value="$PROJECT_DIR$/qianv_tool/gui_new/loadImage.py" />
+        <option value="$PROJECT_DIR$/qianv_tool/gui_new/load_Image.py" />
+        <option value="$PROJECT_DIR$/qianv_tool/gui/Test.py" />
+        <option value="$PROJECT_DIR$/module_study/customtkinter/examples/image_example.py" />
+        <option value="$PROJECT_DIR$/module_study/customtkinter/examples/Test.py" />
+        <option value="$PROJECT_DIR$/qianv_tool/gui_new/navigation.py" />
+        <option value="$PROJECT_DIR$/qianv_tool/gui_new/navigation_frame.py" />
+        <option value="$PROJECT_DIR$/qianv_tool/gui_new/operate_frame/devices_frame.py" />
         <option value="$PROJECT_DIR$/qianv_tool/gui_new/main.py" />
+        <option value="$PROJECT_DIR$/qianv_tool/gui_new/menu/navigation_frame.py" />
       </list>
     </option>
   </component>
@@ -277,6 +278,12 @@
               <item name="python_study_project" type="b2602c69:ProjectViewProjectNode" />
               <item name="python_study_project" type="462c0819:PsiDirectoryNode" />
               <item name="qianv_tool" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="python_study_project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="python_study_project" type="462c0819:PsiDirectoryNode" />
+              <item name="qianv_tool" type="462c0819:PsiDirectoryNode" />
               <item name="gui" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -284,6 +291,26 @@
               <item name="python_study_project" type="462c0819:PsiDirectoryNode" />
               <item name="qianv_tool" type="462c0819:PsiDirectoryNode" />
               <item name="gui_new" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="python_study_project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="python_study_project" type="462c0819:PsiDirectoryNode" />
+              <item name="qianv_tool" type="462c0819:PsiDirectoryNode" />
+              <item name="gui_new" type="462c0819:PsiDirectoryNode" />
+              <item name="menu" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="python_study_project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="python_study_project" type="462c0819:PsiDirectoryNode" />
+              <item name="qianv_tool" type="462c0819:PsiDirectoryNode" />
+              <item name="gui_new" type="462c0819:PsiDirectoryNode" />
+              <item name="operate_frame" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="python_study_project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="python_study_project" type="462c0819:PsiDirectoryNode" />
+              <item name="qianv_tool" type="462c0819:PsiDirectoryNode" />
+              <item name="image" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -298,23 +325,23 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/module_study/customtkinter/test_images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/qianv_tool/image" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\workspace\python\study\python_study_project\qianv_tool\gui_new\menu" />
       <recent name="F:\code\workpace\study\pyCharm\python_study_project\qianv_tool\gui\RigthPage" />
       <recent name="F:\code\workpace\study\pyCharm\python_study_project\qianv_tool\gui" />
       <recent name="F:\code\workpace\study\pyCharm\python_study_project\qianv_tool\image" />
       <recent name="F:\code\workpace\study\pyCharm\python_study_project\qianv_tool\config" />
-      <recent name="F:\code\workpace\study\pyCharm\python_study_project\qianv_tool" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\workspace\python\study\python_study_project\qianv_tool\image" />
+      <recent name="E:\workspace\python\study\python_study_project\qianv_tool\gui_new" />
       <recent name="E:\workspace\python\study\python_study_project\module_study\customtkinter\test_images" />
       <recent name="E:\workspace\python\study\python_study_project\module_study\customtkinter\examples" />
       <recent name="F:\code\workpace\study\pyCharm\python_study_project\qianv_tool" />
-      <recent name="E:\workspace\python\study\python_study_project\module_study\PyQt5\udf" />
-      <recent name="E:\workspace\python\study\python_study_project\module_study\PyQt5\module\leftTreeMenu" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -344,6 +371,50 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module_study/customtkinter/examples/Test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="python_study_project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/qianv_tool/gui" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/qianv_tool/gui/Test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="example_background_image" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="python_study_project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module_study/customtkinter/examples" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module_study/customtkinter/examples/example_background_image.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -396,64 +467,20 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="scrollable_frame_example" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="python_study_project" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module_study/customtkinter/examples" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module_study/customtkinter/examples/scrollable_frame_example.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="simple_example" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="python_study_project" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module_study/customtkinter/examples" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module_study/customtkinter/examples/simple_example.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <list>
-      <item itemvalue="Python.image_example" />
       <item itemvalue="Python.Test (1)" />
-      <item itemvalue="Python.scrollable_frame_example" />
-      <item itemvalue="Python.simple_example" />
+      <item itemvalue="Python.example_background_image" />
+      <item itemvalue="Python.image_example" />
       <item itemvalue="Python.main" />
+      <item itemvalue="Python.Test" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.simple_example" />
-        <item itemvalue="Python.scrollable_frame_example" />
+        <item itemvalue="Python.Test" />
         <item itemvalue="Python.image_example" />
         <item itemvalue="Python.Test (1)" />
+        <item itemvalue="Python.example_background_image" />
       </list>
     </recent_temporary>
   </component>
@@ -491,7 +518,7 @@
       <workItem from="1701055764622" duration="2145000" />
       <workItem from="1701410735639" duration="2818000" />
       <workItem from="1701656592192" duration="4896000" />
-      <workItem from="1701671453521" duration="10308000" />
+      <workItem from="1701671453521" duration="29788000" />
     </task>
     <task id="LOCAL-00001" summary="初始化">
       <created>1687151991623</created>
@@ -577,21 +604,29 @@
       <option name="project" value="LOCAL" />
       <updated>1701143806370</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="11">
+      <created>1701691551317</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1701691551317</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="137104000" />
+    <option name="totallyTimeSpent" value="156584000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-12" y="-12" width="3864" height="2114" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24521786" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3299532" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32819968" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.20446096" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3998938" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -663,7 +698,8 @@
     <MESSAGE value="Test" />
     <MESSAGE value="leftTreeMenu" />
     <MESSAGE value="config" />
-    <option name="LAST_COMMIT_MESSAGE" value="config" />
+    <MESSAGE value="11" />
+    <option name="LAST_COMMIT_MESSAGE" value="11" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -684,88 +720,19 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/python_study_project$image_example.coverage" NAME="image_example Coverage Results" MODIFIED="1701683185015" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/customtkinter/examples" />
-    <SUITE FILE_PATH="coverage/python_study_project$main.coverage" NAME="main Coverage Results" MODIFIED="1701691221098" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/qianv_tool/gui_new" />
+    <SUITE FILE_PATH="coverage/python_study_project$image_example.coverage" NAME="image_example Coverage Results" MODIFIED="1701772020352" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/customtkinter/examples" />
+    <SUITE FILE_PATH="coverage/python_study_project$main.coverage" NAME="main Coverage Results" MODIFIED="1701781306608" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/qianv_tool/gui_new" />
+    <SUITE FILE_PATH="coverage/python_study_project$tree_menu.coverage" NAME="tree_menu Coverage Results" MODIFIED="1701748247943" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/customtkinter/examples" />
     <SUITE FILE_PATH="coverage/python_study_project$Device.coverage" NAME="Device Coverage Results" MODIFIED="1701674450222" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/qianv_tool/gui/RigthPage" />
-    <SUITE FILE_PATH="coverage/python_study_project$Test__1_.coverage" NAME="Test (1) Coverage Results" MODIFIED="1701683104101" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/customtkinter/examples" />
+    <SUITE FILE_PATH="coverage/python_study_project$Test__1_.coverage" NAME="Test (1) Coverage Results" MODIFIED="1701770907256" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/customtkinter/examples" />
     <SUITE FILE_PATH="coverage/python_study_project$simple_example.coverage" NAME="simple_example Coverage Results" MODIFIED="1701683295933" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/customtkinter/examples" />
-    <SUITE FILE_PATH="coverage/python_study_project$complex_example.coverage" NAME="complex_example Coverage Results" MODIFIED="1701677344731" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/customtkinter/examples" />
-    <SUITE FILE_PATH="coverage/python_study_project$Test.coverage" NAME="Test Coverage Results" MODIFIED="1701675404478" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/qianv_tool/gui" />
-    <SUITE FILE_PATH="coverage/python_study_project$example_background_image.coverage" NAME="example_background_image Coverage Results" MODIFIED="1701680747283" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/customtkinter/examples" />
-    <SUITE FILE_PATH="coverage/python_study_project$scrollable_frame_example.coverage" NAME="scrollable_frame_example Coverage Results" MODIFIED="1701683268087" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/customtkinter/examples" />
+    <SUITE FILE_PATH="coverage/python_study_project$complex_example.coverage" NAME="complex_example Coverage Results" MODIFIED="1701764203565" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/customtkinter/examples" />
+    <SUITE FILE_PATH="coverage/python_study_project$Test.coverage" NAME="Test Coverage Results" MODIFIED="1701772151109" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/qianv_tool/gui" />
+    <SUITE FILE_PATH="coverage/python_study_project$scrollable_frame_example.coverage" NAME="scrollable_frame_example Coverage Results" MODIFIED="1701766963753" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/customtkinter/examples" />
+    <SUITE FILE_PATH="coverage/python_study_project$example_background_image.coverage" NAME="example_background_image Coverage Results" MODIFIED="1701767082004" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/customtkinter/examples" />
     <SUITE FILE_PATH="coverage/python_study_project$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1701674455303" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/qianv_tool/gui" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/module_study/PyQt5/event/event.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="10" column="26" lean-forward="true" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module_study/PyQt5/parts/QCheckBoxTest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="792">
-          <caret line="24" column="23" lean-forward="true" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module_study/PyQt5/Layout/QTabWidgetTest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="12" selection-start-line="12" selection-end-line="12" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2019.1/system/python_stubs/-732917855/PyQt5/QtGui/QStandardItemModel.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6499">
-          <caret line="334" column="8" selection-start-line="334" selection-start-column="8" selection-end-line="334" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module_study/PyQt5/Test/menuTool.py" />
-    <entry file="file://$PROJECT_DIR$/module_study/PyQt5/module/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="11" lean-forward="true" selection-start-column="11" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module_study/PyQt5/module/leftTreeMenu/tree_menu.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module_study/PyQt5/module/leftTreeMenu/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="9" column="18" lean-forward="true" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module_study/PyQt5/Test/test/mainWindow.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="13" column="22" lean-forward="true" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module_study/PyQt5/menuBar/menuBarTestOne">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="768">
-          <caret line="31" column="18" lean-forward="true" selection-end-line="56" selection-end-column="10" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module_study/PyQt5/Test/main.py" />
     <entry file="file://$PROJECT_DIR$/module_study/PyQt5/Test/config/config_item.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
@@ -884,9 +851,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/qianv_tool/image/dec/devices.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/qianv_tool/gui/RigthPage/Device.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -901,28 +865,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/qianv_tool/gui/Test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="521">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
-          <folding>
-            <element signature="e#0#135#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/qianv_tool/image/dec/longTask.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/module_study/customtkinter/test_images/bg_gradient.jpg">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module_study/customtkinter/examples/Test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="2" selection-start-line="2" selection-end-line="3" selection-end-column="41" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://C:/Program Files/Python39/Lib/site-packages/PIL/Image.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -931,40 +878,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/module_study/customtkinter/examples/image_example.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="18" column="49" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="49" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module_study/customtkinter/examples/example_background_image.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="18" column="42" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/module_study/customtkinter/examples/simple_example.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="66">
           <caret line="2" column="17" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module_study/customtkinter/examples/scrollable_frame_example.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3894">
-          <caret line="118" column="142" selection-start-line="118" selection-start-column="142" selection-end-line="118" selection-end-column="142" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -978,20 +895,151 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/qianv_tool/config/menu.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="975">
+          <caret line="46" column="1" lean-forward="true" selection-end-line="46" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module_study/customtkinter/examples/tree_menu.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="43" column="15" selection-start-line="43" selection-start-column="12" selection-end-line="43" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Roaming/Python/Python39/site-packages/customtkinter/windows/widgets/ctk_frame.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="627">
+          <caret line="24" column="25" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/module_study/customtkinter/examples/complex_example.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="4" selection-start-line="4" selection-end-line="6" />
+        <state relative-caret-position="965">
+          <caret line="48" column="51" selection-start-line="48" selection-start-column="41" selection-end-line="48" selection-end-column="51" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/AppData/Roaming/Python/Python39/site-packages/customtkinter/windows/widgets/image/ctk_image.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="404">
+          <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qianv_tool/image/ri.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qianv_tool/image/l1.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qianv_tool/image/dec/devices.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://C:/Program Files/Python39/Lib/tkinter/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="482">
+          <caret line="1891" selection-start-line="1891" selection-end-line="1891" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Roaming/Python/Python39/site-packages/customtkinter/windows/widgets/ctk_button.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="482">
+          <caret line="553" selection-start-line="553" selection-end-line="553" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qianv_tool/gui/Test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="15" column="43" lean-forward="true" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="85" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module_study/customtkinter/examples/Test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="15" column="42" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module_study/customtkinter/examples/example_background_image.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="719">
+          <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="59" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module_study/customtkinter/examples/scrollable_frame_example.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2594">
+          <caret line="133" column="18" lean-forward="true" selection-start-line="133" selection-start-column="18" selection-end-line="133" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module_study/customtkinter/examples/image_example.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="614">
+          <caret line="88" column="100" lean-forward="true" selection-start-line="88" selection-start-column="35" selection-end-line="88" selection-end-column="100" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qianv_tool/gui_new/load_Image.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="4" column="21" lean-forward="true" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+          <folding>
+            <element signature="e#47#56#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qianv_tool/gui_new/operate_frame/devices_frame.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="12" column="69" lean-forward="true" selection-start-line="12" selection-start-column="69" selection-end-line="12" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qianv_tool/gui_new/menu/navigation_frame.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="924">
+          <caret line="28" column="75" selection-start-line="28" selection-start-column="75" selection-end-line="28" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/qianv_tool/gui_new/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="14" column="32" lean-forward="true" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
+        <state relative-caret-position="528">
+          <caret line="16" column="33" lean-forward="true" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+          <folding>
+            <element signature="e#47#74#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

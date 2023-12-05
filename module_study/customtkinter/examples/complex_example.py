@@ -3,7 +3,7 @@ import tkinter.messagebox
 import customtkinter
 
 customtkinter.set_appearance_mode("System")  # Modes: "System" (standard), "Dark", "Light"
-customtkinter.set_default_color_theme("blue")  # Themes: "blue" (standard), "green", "dark-blue"
+customtkinter.set_default_color_theme("dark-blue")  # Themes: "blue" (standard), "green", "dark-blue"
 
 
 class App(customtkinter.CTk):
@@ -14,12 +14,14 @@ class App(customtkinter.CTk):
         self.title("CustomTkinter complex_example.py")
         self.geometry(f"{1100}x{580}")
 
-        # configure grid layout (4x4)
+        # configure grid layout (4x4)：
+        # 列：0,2，3不居中不自适应，1列居中+自适应
+        # 行：0,1,2 居中+自适应
         self.grid_columnconfigure(1, weight=1)
         self.grid_columnconfigure((2, 3), weight=0)
         self.grid_rowconfigure((0, 1, 2), weight=1)
 
-        # create sidebar frame with widgets
+        # create sidebar frame with widgets 使用小部件创建侧边栏框架
         self.sidebar_frame = customtkinter.CTkFrame(self, width=140, corner_radius=0)
         self.sidebar_frame.grid(row=0, column=0, rowspan=4, sticky="nsew")
         self.sidebar_frame.grid_rowconfigure(4, weight=1)
@@ -42,7 +44,7 @@ class App(customtkinter.CTk):
                                                                command=self.change_scaling_event)
         self.scaling_optionemenu.grid(row=8, column=0, padx=20, pady=(10, 20))
 
-        # create main entry and button
+        # create main entry and button 创建主条目和按钮
         self.entry = customtkinter.CTkEntry(self, placeholder_text="CTkEntry")
         self.entry.grid(row=3, column=1, columnspan=2, padx=(20, 0), pady=(20, 20), sticky="nsew")
 

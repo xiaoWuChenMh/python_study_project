@@ -10,11 +10,11 @@ class App(customtkinter.CTk):
         self.title("image_example.py")
         self.geometry("700x450")
 
-        # set grid layout 1x2
+        # set grid layout 1x2 网格是1*2
         self.grid_rowconfigure(0, weight=1)
         self.grid_columnconfigure(1, weight=1)
 
-        # load images with light and dark mode image
+        # 加载具有浅色和深色模式图像的图像
         current_dir = os.path.dirname(os.path.realpath(__file__))
         parent_dir = os.path.dirname(current_dir)
 
@@ -29,7 +29,7 @@ class App(customtkinter.CTk):
         self.add_user_image = customtkinter.CTkImage(light_image=Image.open(os.path.join(image_path, "add_user_dark.png")),
                                                      dark_image=Image.open(os.path.join(image_path, "add_user_light.png")), size=(20, 20))
 
-        # create navigation frame
+        # create navigation frame 创建导航框架
         self.navigation_frame = customtkinter.CTkFrame(self, corner_radius=0)
         self.navigation_frame.grid(row=0, column=0, sticky="nsew")
         self.navigation_frame.grid_rowconfigure(4, weight=1)
@@ -57,7 +57,9 @@ class App(customtkinter.CTk):
                                                                 command=self.change_appearance_mode_event)
         self.appearance_mode_menu.grid(row=6, column=0, padx=20, pady=20, sticky="s")
 
-        # create home frame
+
+
+        # create home frame 创建home框架
         self.home_frame = customtkinter.CTkFrame(self, corner_radius=0, fg_color="transparent")
         self.home_frame.grid_columnconfigure(0, weight=1)
 
@@ -73,17 +75,17 @@ class App(customtkinter.CTk):
         self.home_frame_button_4 = customtkinter.CTkButton(self.home_frame, text="CTkButton", image=self.image_icon_image, compound="bottom", anchor="w")
         self.home_frame_button_4.grid(row=4, column=0, padx=20, pady=10)
 
-        # create second frame
+        # create second frame 创建第二个框架
         self.second_frame = customtkinter.CTkFrame(self, corner_radius=0, fg_color="transparent")
 
-        # create third frame
+        # create third frame 创建第三个框架
         self.third_frame = customtkinter.CTkFrame(self, corner_radius=0, fg_color="transparent")
 
-        # select default frame
+        # select default frame 选择默认框架
         self.select_frame_by_name("home")
 
     def select_frame_by_name(self, name):
-        # set button color for selected button
+        # set button color for selected button 设置所选按钮的按钮颜色
         self.home_button.configure(fg_color=("gray75", "gray25") if name == "home" else "transparent")
         self.frame_2_button.configure(fg_color=("gray75", "gray25") if name == "frame_2" else "transparent")
         self.frame_3_button.configure(fg_color=("gray75", "gray25") if name == "frame_3" else "transparent")
