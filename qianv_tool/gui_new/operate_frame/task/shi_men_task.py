@@ -49,30 +49,21 @@ class ShiMenTask(ctk.CTkScrollableFrame):
                               )
         switch.grid(row=0, column=1, padx=20, pady=(20,0), sticky="nsew")
 
-        # 执行次数:
-        execute_num_value = ctk.StringVar(value="40")
-        execute_num_title = ctk.CTkLabel(submitFrom, text='执行次数')
-        execute_num_title.grid(row=1, column=0, padx=10, pady=(5,0), sticky="nsew")
+        # 提交装备颜色
+        equip_color_title = ctk.CTkLabel(submitFrom, text='提交装备颜色')
+        equip_color_title.grid(row=1, column=0, padx=10, pady=(5,0), sticky="nsew")
 
-        execute_num = ctk.CTkEntry(submitFrom,textvariable=execute_num_value)
-        execute_num.grid(row=1, column=1, padx=20, pady=(5, 0), sticky="nsew")
-        device['execute_num'] = execute_num
-        execute_num_value.trace_add("write", lambda *args: self.execute_num_callback(device) )
-        # 他人申请队长
-        apply_leader_title = ctk.CTkLabel(submitFrom, text='他人申请队长')
-        apply_leader_title.grid(row=2, column=0, padx=10, pady=(5,0), sticky="nsew")
+        equip_color = ctk.CTkComboBox(submitFrom, values=["蓝色及以下","不限制"],command=self.equip_color_callback)
+        equip_color.grid(row=1, column=1, padx=20, pady=(5, 0), sticky="nsew")
+        device['equip_color'] = equip_color
 
-        apply_leader = ctk.CTkComboBox(submitFrom, values=["不允许", "允许"],command=self.tow_operate_combobox)
-        apply_leader.grid(row=2, column=1, padx=20, pady=(5, 0), sticky="nsew")
-        device['apply_leader'] = apply_leader
+        # 提交装备孔数
+        equip_hole_title = ctk.CTkLabel(submitFrom, text='提交装备孔数')
+        equip_hole_title.grid(row=2, column=0, padx=10, pady=(5,0), sticky="nsew")
 
-        # 当前不是队长
-        is_leader_title = ctk.CTkLabel(submitFrom, text='当前不是队长')
-        is_leader_title.grid(row=3, column=0, padx=10, pady=(5,0), sticky="nsew")
-
-        is_leader = ctk.CTkComboBox(submitFrom, values=["跳过任务", "申请队长"],command=self.threes_operate_combobox)
-        is_leader.grid(row=3, column=1, padx=20, pady=(5, 10), sticky="nsew")
-        device['is_leader'] = is_leader
+        equip_hole = ctk.CTkComboBox(submitFrom, values=["2孔及以下", "3孔及以下"],command=self.equip_hole_callback)
+        equip_hole.grid(row=2, column=1, padx=20, pady=(5, 10), sticky="nsew")
+        device['equip_hole'] = equip_hole
         return submitFrom
 
 
@@ -83,21 +74,14 @@ class ShiMenTask(ctk.CTkScrollableFrame):
         :return:
         """
         print("switch toggled, current value:", switch_var.get())
-        device['execute_num'].configure(textvariable="20")
         if switch_var.get() == "on":
             print("设备名称:", device['name'])
-            # 不能大于40，大于40就修正为40，修改值： execute_num.configure(textvariable=ctk.StringVar(value="22"))
-            print("执行次数:", device['execute_num'].get())
-            print("他人申请队长:", device['apply_leader'].get())
-            print("当前不是队长:", device['is_leader'].get())
-            print(DevidesInfo().get_info())
+            print("提交装备颜色:", device['equip_color'].get())
+            print("提交装备孔数:", device['equip_hole'].get())
 
 
-    def tow_operate_combobox(self,choice):
-        print("他人申请队长:", choice)
+    def equip_color_callback(self,choice):
+        print("提交装备颜色:", choice)
 
-    def threes_operate_combobox(self, choice):
-        print("当前不是队长:", choice)
-
-    def execute_num_callback(self,device):
-        print("执行次数:", device['execute_num'].get())
+    def equip_hole_callback(self, choice):
+        print("提交装备孔数:", choice)

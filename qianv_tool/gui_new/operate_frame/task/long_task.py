@@ -62,7 +62,7 @@ class LongTaskFrame(ctk.CTkScrollableFrame):
         apply_leader_title = ctk.CTkLabel(submitFrom, text='他人申请队长')
         apply_leader_title.grid(row=2, column=0, padx=10, pady=(5,0), sticky="nsew")
 
-        apply_leader = ctk.CTkComboBox(submitFrom, values=["不允许", "允许"],command=self.tow_operate_combobox)
+        apply_leader = ctk.CTkComboBox(submitFrom, values=["不允许", "允许"],command=self.apply_leader_callback)
         apply_leader.grid(row=2, column=1, padx=20, pady=(5, 0), sticky="nsew")
         device['apply_leader'] = apply_leader
 
@@ -70,7 +70,7 @@ class LongTaskFrame(ctk.CTkScrollableFrame):
         is_leader_title = ctk.CTkLabel(submitFrom, text='当前不是队长')
         is_leader_title.grid(row=3, column=0, padx=10, pady=(5,0), sticky="nsew")
 
-        is_leader = ctk.CTkComboBox(submitFrom, values=["跳过任务", "申请队长"],command=self.threes_operate_combobox)
+        is_leader = ctk.CTkComboBox(submitFrom, values=["跳过任务", "申请队长"],command=self.is_leader_callback)
         is_leader.grid(row=3, column=1, padx=20, pady=(5, 10), sticky="nsew")
         device['is_leader'] = is_leader
         return submitFrom
@@ -83,20 +83,18 @@ class LongTaskFrame(ctk.CTkScrollableFrame):
         :return:
         """
         print("switch toggled, current value:", switch_var.get())
-        device['execute_num'].configure(textvariable="20")
         if switch_var.get() == "on":
             print("设备名称:", device['name'])
             # 不能大于40，大于40就修正为40，修改值： execute_num.configure(textvariable=ctk.StringVar(value="22"))
             print("执行次数:", device['execute_num'].get())
             print("他人申请队长:", device['apply_leader'].get())
             print("当前不是队长:", device['is_leader'].get())
-            print(DevidesInfo().get_info())
 
 
-    def tow_operate_combobox(self,choice):
+    def apply_leader_callback(self,choice):
         print("他人申请队长:", choice)
 
-    def threes_operate_combobox(self, choice):
+    def is_leader_callback(self, choice):
         print("当前不是队长:", choice)
 
     def execute_num_callback(self,device):
