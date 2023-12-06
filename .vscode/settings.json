@@ -1,0 +1,9 @@
+{
+    "code-runner.fileDirectoryAsCwd": true,
+    "code-runner.executorMap": {
+        "javascript": "node",
+      "python": "set PYTHONIOENCODING=utf-8 && set PYTHONPATH=. && python -u",
+      "go": "go run",
+    },
+    "code-runner.runInTerminal": true
+}
