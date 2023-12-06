@@ -1,43 +1,54 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+########################################################################################################################
+#             一级导航菜单
+# 使用直接创建一个新对象，参入如下参数即可：
+#     master ：父容器
+#     frames_menu_mapping ：菜单和frame的对应关系
+#          [{"name":"菜单项显示的名称","frame": frame对象,"button_image":图标-tk.CTkImage对象[可选],"button":菜单按钮对象}]
+#     navigation_title : 导航标题[可选]
+#          {"text":"导航标题","image":图标-tk.CTkImage对象[可选]}
+########################################################################################################################
 
 import customtkinter as ctk
 
 class NavigationFrame(ctk.CTkFrame):
-    def __init__(self, master,frames_menu_mapping,navigation_title=None):
-        super().__init__(master)
+    def __init__(self, master,frames_menu_mapping,navigation_title=None,level=1):
+        super().__init__(master,corner_radius=0)
         # 初始化参数
         self.mappings = frames_menu_mapping
         title = navigation_title
         self.row_num = -1
 
         # 居中设置
-        self.grid_rowconfigure(5, weight=1)
+        self.grid_rowconfigure(len(self.mappings)+1, weight=1)
 
         #导航标题
         if not title ==None:
-            navigation_frame_label = ctk.CTkLabel(self, text=title['text'], image=title['image'],
-                                                        compound="left", font=ctk.CTkFont(size=15, weight="bold"))
-            navigation_frame_label.grid(row=self.get_index(), column=0, padx=20, pady=20)
+            title_font_size = 15 if level==1 else 13
+            navigation_frame_label = ctk.CTkLabel(self, text=title['text'],
+                                                        image=title['image'] if "image" in title else None,
+                                                        compound="left",
+                                                        font=ctk.CTkFont(size=title_font_size, weight="bold")
+                                                  )
+            navigation_frame_label.grid(row=self.get_index(), column=0, padx=10, pady=20)
 
         # 导航菜单
         for i, value in enumerate(self.mappings):
-            if "name" in value:
-                print("key1存在于字典中")
-            else:
-                print("key1不存在于字典中")
             button = ctk.CTkButton(self, corner_radius=0, height=40, border_spacing=10, text=value['name'],
                                    fg_color="transparent",
                                    text_color=("gray10", "gray90"),
                                    hover_color=("gray70", "gray30"),
-                                   image= "" if "name" in value else "",
-                                   anchor="w", command=lambda t=value['name']: self.select_frame(t)
+                                   image= value['button_image'] if "button_image" in value else None,
+                                   anchor="w",
+                                   command=lambda t=value['name']: self.select_frame(t)
                                    )
             button.grid(row=self.get_index(), column=0, sticky="ew")
             value['button'] = button
 
         # 显示外观
-        self.create_exterior_selecor()
+        if level==1 :
+            self.create_exterior_selecor()
 
         # 选中默认的frame
         self.select_frame(self.mappings[0]['name'])
@@ -52,7 +63,7 @@ class NavigationFrame(ctk.CTkFrame):
             if mapping['name']==name:
                 mapping['button'].configure(fg_color=("gray75", "gray25"))
                 mapping['frame'].grid(row=0, column=1, sticky="nsew")
-                print("当前选中的对象：%s" % (name))
+                # print("当前选中的对象：%s" % (name))
             else:
                 mapping['button'].configure(fg_color="transparent")
                 mapping['frame'].grid_forget()
@@ -62,7 +73,7 @@ class NavigationFrame(ctk.CTkFrame):
         创建外观选择器
         """
         appearance_mode_menu = ctk.CTkOptionMenu(self, values=["Light", "Dark", "System"],command=self.change_appearance_mode_event)
-        appearance_mode_menu.grid(row=self.get_index(), column=0, padx=20, pady=20, sticky="s")
+        appearance_mode_menu.grid(row=self.get_index(), column=0, padx=10, pady=20, sticky="s")
 
 
     def change_appearance_mode_event(self, new_appearance_mode):

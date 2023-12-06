@@ -7,6 +7,10 @@ import tkinter as tk
 from qianv_tool.gui_new.load_Image import LoadImage
 from qianv_tool.gui_new.menu.navigation_frame import NavigationFrame
 from qianv_tool.gui_new.operate_frame.devices_frame import DevicesFrame
+from qianv_tool.gui_new.operate_frame.run_frame import RunFrame
+from qianv_tool.gui_new.operate_frame.routine_frame import RoutineFrame
+from qianv_tool.gui_new.operate_frame.bang_hui_frame import BangHuiFrame
+from qianv_tool.gui_new.operate_frame.jia_yuan_frame import JiaYunFrame
 
 
 class App(ctk.CTk):
@@ -14,7 +18,7 @@ class App(ctk.CTk):
         super().__init__()
 
         self.title("测试程序")
-        self.geometry("1200x450")
+        self.geometry("900x600+900+600")
 
         # set grid layout 1x2 网格是1*2
         self.grid_rowconfigure(0, weight=1)
@@ -25,22 +29,24 @@ class App(ctk.CTk):
 
         # 2、create home frame 创建home框架
         self.devices_frame =DevicesFrame(self,image)
-        self.second_frame = ctk.CTkFrame(self, corner_radius=0, fg_color="transparent")
-        self.third_frame = ctk.CTkFrame(self, corner_radius=0, fg_color="transparent")
-        self.for_frame = ctk.CTkFrame(self, corner_radius=0, fg_color="transparent")
+        self.run_frame =RunFrame(self,image)
+        self.routine_frame = RoutineFrame(self,image)
+        self.bang_hui_frame = BangHuiFrame(self,image)
+        self.jia_yun_frame = JiaYunFrame(self,image)
+
 
 
         # 3、初始化导航条
-        self.frames_menu_mapping =[
+        self.frames_menu_mapping = [
             {"name":"设备","frame": self.devices_frame,"button_image":image.home_image,"button":""},
-            {"name":"运行","frame": self.second_frame,"button_image":image.chat_image,"button":""},
-            {"name":"常规任务","frame": self.third_frame,"button_image":image.add_user_image,"button":""},
-            {"name":"bannghui任务","frame": self.for_frame,"button":""}
+            {"name":"运行","frame": self.run_frame,"button_image":image.chat_image,"button":""},
+            {"name":"常规任务","frame": self.routine_frame,"button_image":image.add_user_image,"button":""},
+            {"name":"帮会任务","frame": self.bang_hui_frame,"button_image":image.add_user_image,"button":""},
+            {"name":"家园任务","frame": self.jia_yun_frame,"button_image":image.add_user_image,"button":""}
         ]
-        self.navigation_title = {"text":"  Image Example","image":image.logo_image}
+        self.navigation_title = {"text":"  导航菜单","image":image.logo_image}
         self.navigation = NavigationFrame(self,self.frames_menu_mapping,self.navigation_title)
         self.navigation.grid(row=0, column=0, sticky="nsew")
-
 
 
 
