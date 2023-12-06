@@ -7,6 +7,7 @@
 
 import customtkinter as ctk
 from qianv_tool.gui_new.menu.navigation_frame import NavigationFrame
+from qianv_tool.gui_new.operate_frame.tool.run_monitor import RunMonitorFrame
 
 
 class RunFrame(ctk.CTkFrame):
@@ -15,14 +16,14 @@ class RunFrame(ctk.CTkFrame):
 
         # 1*2
         self.grid_rowconfigure(0, weight=1)
-        self.grid_columnconfigure(0, weight=1)
+        self.grid_columnconfigure((0,1,2), weight=1)
 
         # 布局row=0,column=0 操作空（CTkScrollableFrame）
-        self.second_frame = ctk.CTkScrollableFrame(self, corner_radius=0, fg_color="transparent")
-        self.second_frame.grid(row=0, column=0, sticky="nsew")
+        self.run_monitor_frame = RunMonitorFrame(self, image)
+        self.run_monitor_frame.grid(row=0, column=0, sticky="nsew", columnspan=2)
 
 
         # 布局row=0,column=2 日志（CTkScrollableFrame）
         self.log_frame = ctk.CTkScrollableFrame(self, corner_radius=0, fg_color="transparent")
-        self.log_frame.grid(row=0, column=1, sticky="nsew")
+        self.log_frame.grid(row=0, column=2, sticky="nsew")
 
