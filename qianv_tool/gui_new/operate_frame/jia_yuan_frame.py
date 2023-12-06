@@ -6,25 +6,25 @@
 #################################################################
 
 import customtkinter as ctk
-from qianv_tool.gui_new.menu.navigation_frame import NavigationFrame
-
+from qianv_tool.gui_new.menu.tab_view import TabView
+from qianv_tool.gui_new.operate_frame.task.shou_cai_task import ShouCaiTask
 
 class JiaYunFrame(ctk.CTkFrame):
     def __init__(self, master,image):
         super().__init__(master,corner_radius=0, fg_color="transparent")
-
-        # 1*3
+        # 居中配置
+        self.grid_columnconfigure(0, weight=1)
         self.grid_rowconfigure(0, weight=1)
-        self.grid_columnconfigure(1, weight=1)
 
-        # 布局row=0,column=1 操作空（CTkScrollableFrame）
-        self.second_frame = ctk.CTkScrollableFrame(self, corner_radius=0, fg_color="transparent")
-        self.third_frame = ctk.CTkScrollableFrame(self, corner_radius=0, fg_color="transparent")
-
-        # 布局row=0,column=0 是二级菜单（CTkFrame）
-        self.frames_menu_mapping =[
-            {"name":"收菜","frame": self.second_frame,"button":""}
+        # tab配置
+        self.tabConfig =[
+            {"name":" 收菜 ","tab": None},
         ]
-        self.navigation_title = {"text":"家园任务"}
-        self.navigation = NavigationFrame(self,self.frames_menu_mapping,self.navigation_title,2)
-        self.navigation.grid(row=0, column=0, sticky="nsew")
+
+        tabVidew = TabView(self,self.tabConfig)
+        tabVidew.grid(row=0, column=0, padx=10, pady=(0, 10), sticky="nsew")
+        a = tabVidew.getTab(0)
+
+        # 初始化各个tab页的内容
+        self.shou_cai_task_frame = ShouCaiTask(tabVidew.getTab(0),image)
+        self.shou_cai_task_frame.grid(row=0, column=0,sticky="nsew")

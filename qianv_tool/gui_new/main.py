@@ -9,7 +9,7 @@ from qianv_tool.gui_new.menu.navigation_frame import NavigationFrame
 from qianv_tool.gui_new.operate_frame.devices_frame import DevicesFrame
 from qianv_tool.gui_new.operate_frame.run_frame import RunFrame
 from qianv_tool.gui_new.operate_frame.routine_frame import RoutineFrame
-from qianv_tool.gui_new.operate_frame.bang_hui_frame import BangHuiFrame
+from qianv_tool.gui_new.operate_frame.bang_hua_frame import BangHuaFrame
 from qianv_tool.gui_new.operate_frame.jia_yuan_frame import JiaYunFrame
 
 
@@ -31,7 +31,7 @@ class App(ctk.CTk):
         self.devices_frame =DevicesFrame(self,image)
         self.run_frame =RunFrame(self,image)
         self.routine_frame = RoutineFrame(self,image)
-        self.bang_hui_frame = BangHuiFrame(self,image)
+        self.bang_hui_frame = BangHuaFrame(self,image)
         self.jia_yun_frame = JiaYunFrame(self,image)
 
 

@@ -10,7 +10,7 @@ from qianv_tool.gui_new.devices.devices_info import DevidesInfo
 from qianv_tool.gui_new.devices.task_queue import TaskQueue
 
 
-class LongTaskFrame(ctk.CTkScrollableFrame):
+class LongTask(ctk.CTkScrollableFrame):
 
     def __init__(self, master,image):
         super().__init__(master,corner_radius=0)
