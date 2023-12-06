@@ -13,6 +13,8 @@ class DevidesInfo:
             {"name": "Devices00AL1"},
             {"name": "Devices00AL2"},
             {"name": "Devices00AL3"},
+            {"name": "Devices00AL6"},
+            {"name": "Devices00AL7"},
             {"name": "Devices00AL4"}
         ]
         return copy.deepcopy(devices)
