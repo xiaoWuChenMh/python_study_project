@@ -2,16 +2,151 @@
 <project version="4">
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/module_study/PyQt5/parts/QSliderTest.py" line="25" mnemonic="3" />
+    <bookmark url="file://$PROJECT_DIR$/qianv_tool/task/task_queue.py" line="55" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aad3d1e3-b581-4529-a993-5d7fc841602f" name="Default Changelist" comment="devices_info.py run_monitor.py">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="aad3d1e3-b581-4529-a993-5d7fc841602f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/qianv_tool/task/task_info.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qianv_tool/task/task_queue.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/python_study_project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/python_study_project.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qianv_tool/gui/RigthPage/BangHua.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qianv_tool/gui/RigthPage/Device.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qianv_tool/gui/RigthPage/LongTask.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qianv_tool/gui/RigthPage/ShiMenTask.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qianv_tool/gui/RigthPage/ShouCai.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qianv_tool/gui/RigthPage/TaskInfo.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qianv_tool/gui/RigthPage/ZhanLong.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qianv_tool/gui/RigthPage/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/qianv_tool/gui/menu/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qianv_tool/gui/Test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qianv_tool/gui/TreeMenu.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qianv_tool/gui/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/qianv_tool/gui/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qianv_tool/gui/smallParts/DeviceInfo.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qianv_tool/gui/smallParts/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/qianv_tool/gui/operate_frame/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qianv_tool/gui_new/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/qianv_tool/gui/operate_frame/task/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qianv_tool/gui_new/devices/devices_info.py" beforeDir="false" afterPath="$PROJECT_DIR$/qianv_tool/devices/devices_info.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qianv_tool/gui_new/devices/task_queue.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qianv_tool/gui_new/load_Image.py" beforeDir="false" afterPath="$PROJECT_DIR$/qianv_tool/gui/load_Image.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qianv_tool/gui_new/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qianv_tool/gui_new/menu/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/qianv_tool/gui/operate_frame/tool/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qianv_tool/gui_new/menu/navigation_frame.py" beforeDir="false" afterPath="$PROJECT_DIR$/qianv_tool/gui/menu/navigation_frame.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qianv_tool/gui_new/menu/tab_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/qianv_tool/gui/menu/tab_view.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qianv_tool/gui_new/operate_frame/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/qianv_tool/task/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qianv_tool/gui_new/operate_frame/bang_hua_frame.py" beforeDir="false" afterPath="$PROJECT_DIR$/qianv_tool/gui/operate_frame/bang_hua_frame.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qianv_tool/gui_new/operate_frame/devices_frame.py" beforeDir="false" afterPath="$PROJECT_DIR$/qianv_tool/gui/operate_frame/devices_frame.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qianv_tool/gui_new/operate_frame/jia_yuan_frame.py" beforeDir="false" afterPath="$PROJECT_DIR$/qianv_tool/gui/operate_frame/jia_yuan_frame.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qianv_tool/gui_new/operate_frame/routine_frame.py" beforeDir="false" afterPath="$PROJECT_DIR$/qianv_tool/gui/operate_frame/routine_frame.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qianv_tool/gui_new/operate_frame/run_frame.py" beforeDir="false" afterPath="$PROJECT_DIR$/qianv_tool/gui/operate_frame/run_frame.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qianv_tool/gui_new/operate_frame/task/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qianv_tool/gui_new/operate_frame/task/bang_hua_task.py" beforeDir="false" afterPath="$PROJECT_DIR$/qianv_tool/gui/operate_frame/task/bang_hua_task.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qianv_tool/gui_new/operate_frame/task/long_task.py" beforeDir="false" afterPath="$PROJECT_DIR$/qianv_tool/gui/operate_frame/task/long_task.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qianv_tool/gui_new/operate_frame/task/shi_men_task.py" beforeDir="false" afterPath="$PROJECT_DIR$/qianv_tool/gui/operate_frame/task/shi_men_task.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qianv_tool/gui_new/operate_frame/task/shou_cai_task.py" beforeDir="false" afterPath="$PROJECT_DIR$/qianv_tool/gui/operate_frame/task/shou_cai_task.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qianv_tool/gui_new/operate_frame/task/zhan_long_task.py" beforeDir="false" afterPath="$PROJECT_DIR$/qianv_tool/gui/operate_frame/task/zhan_long_task.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qianv_tool/gui_new/operate_frame/tool/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qianv_tool/gui_new/operate_frame/tool/run_monitor.py" beforeDir="false" afterPath="$PROJECT_DIR$/qianv_tool/gui/operate_frame/tool/run_monitor.py" afterDir="false" />
     </list>
+    <ignored path="$PROJECT_DIR$/venv/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/qianv_tool/gui/operate_frame/tool/run_monitor.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="231">
+              <caret line="7" selection-start-line="7" selection-end-line="7" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/qianv_tool/task/task_queue.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="10" column="15" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
+              <folding>
+                <element signature="e#47#70#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/qianv_tool/gui/operate_frame/task/bang_hua_task.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="561">
+              <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
+              <folding>
+                <element signature="e#187#214#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/qianv_tool/gui/operate_frame/task/long_task.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="297">
+              <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/qianv_tool/gui/operate_frame/task/shi_men_task.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="297">
+              <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/qianv_tool/gui/operate_frame/task/shou_cai_task.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="264">
+              <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/qianv_tool/gui/operate_frame/task/zhan_long_task.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="264">
+              <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/qianv_tool/task/task_info.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="231">
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/qianv_tool/gui/main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="594">
+              <caret line="27" column="8" lean-forward="true" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
+              <folding>
+                <element signature="e#47#74#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -22,8 +157,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>scroll_area</find>
-      <find>content_layout</find>
       <find>ustomTkinter_logo_single.png</find>
       <find>tree_menu_data</find>
       <find>System</find>
@@ -52,16 +185,21 @@
       <find>CTkSlider</find>
       <find>threes_operate_combobox</find>
       <find>BangHuiFrame</find>
+      <find>TaskQueue</find>
+      <find>from qianv_tool.gui_new.devices.devices_info</find>
     </findStrings>
     <replaceStrings>
       <replace>image.add_user_image</replace>
       <replace>ctk</replace>
+      <replace>from qianv_tool.devices.devices_info</replace>
     </replaceStrings>
     <dirStrings>
-      <dir>E:\workspace\python\study\python_study_project</dir>
       <dir>E:\workspace\python\study\python_study_project\module_study\PyQt5</dir>
       <dir>E:\workspace\python\study\python_study_project\module_study</dir>
       <dir>E:\workspace\python\study\python_study_project\module_study\customtkinter\examples</dir>
+      <dir>E:\workspace\python\study\python_study_project\qianv_tool\gui_new</dir>
+      <dir>E:\workspace\python\study\python_study_project</dir>
+      <dir>E:\workspace\python\study\python_study_project\qianv_tool</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -70,8 +208,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/module_study/PyQt5/udf/concat_set_split.py" />
-        <option value="$PROJECT_DIR$/module_study/PyQt5/udf/string_twice_split.json" />
         <option value="$PROJECT_DIR$/module_study/PyQt5/udf/string_distinct.py" />
         <option value="$PROJECT_DIR$/module_study/PyQt5/udf/test.py" />
         <option value="$PROJECT_DIR$/module_study/PyQt5/udf/string_distinct.json" />
@@ -107,20 +243,22 @@
         <option value="$PROJECT_DIR$/qianv_tool/gui_new/menu/tab_view.py" />
         <option value="$PROJECT_DIR$/qianv_tool/gui_new/devices/param_collector.py" />
         <option value="$PROJECT_DIR$/qianv_tool/gui_new/devices/devices_info.py" />
-        <option value="$PROJECT_DIR$/qianv_tool/gui_new/devices/task_queue.py" />
-        <option value="$PROJECT_DIR$/qianv_tool/gui_new/operate_frame/task/shi_men_task.py" />
         <option value="$PROJECT_DIR$/qianv_tool/gui_new/operate_frame/run_frame.py" />
-        <option value="$PROJECT_DIR$/qianv_tool/gui_new/operate_frame/tool/run_monitor.py" />
         <option value="$PROJECT_DIR$/qianv_tool/gui_new/operate_frame/bang_hui_frame.py" />
-        <option value="$PROJECT_DIR$/qianv_tool/gui_new/operate_frame/task/zhan_long_task.py" />
         <option value="$PROJECT_DIR$/qianv_tool/gui_new/operate_frame/task/bang_hua.py" />
-        <option value="$PROJECT_DIR$/qianv_tool/gui_new/operate_frame/task/long_task.py" />
         <option value="$PROJECT_DIR$/qianv_tool/gui_new/operate_frame/routine_frame.py" />
         <option value="$PROJECT_DIR$/qianv_tool/gui_new/operate_frame/bang_hua_frame.py" />
         <option value="$PROJECT_DIR$/qianv_tool/gui_new/main.py" />
         <option value="$PROJECT_DIR$/qianv_tool/gui_new/operate_frame/jia_yuan_frame.py" />
+        <option value="$PROJECT_DIR$/qianv_tool/gui_new/devices/task_queue.py" />
+        <option value="$PROJECT_DIR$/qianv_tool/gui_new/task/task_info.py" />
+        <option value="$PROJECT_DIR$/qianv_tool/gui_new/operate_frame/task/long_task.py" />
+        <option value="$PROJECT_DIR$/qianv_tool/gui_new/operate_frame/task/shi_men_task.py" />
         <option value="$PROJECT_DIR$/qianv_tool/gui_new/operate_frame/task/shou_cai_task.py" />
+        <option value="$PROJECT_DIR$/qianv_tool/gui_new/operate_frame/task/zhan_long_task.py" />
+        <option value="$PROJECT_DIR$/qianv_tool/gui_new/operate_frame/tool/run_monitor.py" />
         <option value="$PROJECT_DIR$/qianv_tool/gui_new/operate_frame/task/bang_hua_task.py" />
+        <option value="$PROJECT_DIR$/qianv_tool/gui/operate_frame/task/bang_hua_task.py" />
       </list>
     </option>
   </component>
@@ -159,57 +297,7 @@
               <item name="python_study_project" type="b2602c69:ProjectViewProjectNode" />
               <item name="python_study_project" type="462c0819:PsiDirectoryNode" />
               <item name="qianv_tool" type="462c0819:PsiDirectoryNode" />
-              <item name="gui_new" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="python_study_project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="python_study_project" type="462c0819:PsiDirectoryNode" />
-              <item name="qianv_tool" type="462c0819:PsiDirectoryNode" />
-              <item name="gui_new" type="462c0819:PsiDirectoryNode" />
-              <item name="devices" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="python_study_project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="python_study_project" type="462c0819:PsiDirectoryNode" />
-              <item name="qianv_tool" type="462c0819:PsiDirectoryNode" />
-              <item name="gui_new" type="462c0819:PsiDirectoryNode" />
-              <item name="menu" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="python_study_project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="python_study_project" type="462c0819:PsiDirectoryNode" />
-              <item name="qianv_tool" type="462c0819:PsiDirectoryNode" />
-              <item name="gui_new" type="462c0819:PsiDirectoryNode" />
-              <item name="operate_frame" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="python_study_project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="python_study_project" type="462c0819:PsiDirectoryNode" />
-              <item name="qianv_tool" type="462c0819:PsiDirectoryNode" />
-              <item name="gui_new" type="462c0819:PsiDirectoryNode" />
-              <item name="operate_frame" type="462c0819:PsiDirectoryNode" />
-              <item name="task" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="python_study_project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="python_study_project" type="462c0819:PsiDirectoryNode" />
-              <item name="qianv_tool" type="462c0819:PsiDirectoryNode" />
-              <item name="gui_new" type="462c0819:PsiDirectoryNode" />
-              <item name="operate_frame" type="462c0819:PsiDirectoryNode" />
-              <item name="tool" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="python_study_project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="python_study_project" type="462c0819:PsiDirectoryNode" />
-              <item name="qianv_tool" type="462c0819:PsiDirectoryNode" />
-              <item name="image" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="python_study_project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="python_study_project" type="462c0819:PsiDirectoryNode" />
-              <item name="qianv_tool" type="462c0819:PsiDirectoryNode" />
-              <item name="image" type="462c0819:PsiDirectoryNode" />
-              <item name="dec" type="462c0819:PsiDirectoryNode" />
+              <item name="gui" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -228,6 +316,13 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\workspace\python\study\python_study_project\qianv_tool" />
+      <recent name="E:\workspace\python\study\python_study_project\qianv_tool\gui_new\task" />
+      <recent name="E:\workspace\python\study\python_study_project\qianv_tool\gui_new\operate_frame" />
+      <recent name="E:\workspace\python\study\python_study_project\qianv_tool\gui_new\menu" />
+      <recent name="F:\code\workpace\study\pyCharm\python_study_project\qianv_tool\gui\RigthPage" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\workspace\python\study\python_study_project\qianv_tool\gui_new\operate_frame" />
       <recent name="E:\workspace\python\study\python_study_project\qianv_tool\image" />
@@ -235,15 +330,20 @@
       <recent name="E:\workspace\python\study\python_study_project\module_study\customtkinter\test_images" />
       <recent name="E:\workspace\python\study\python_study_project\module_study\customtkinter\examples" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\workspace\python\study\python_study_project\qianv_tool\gui_new\operate_frame" />
-      <recent name="E:\workspace\python\study\python_study_project\qianv_tool\gui_new\menu" />
-      <recent name="F:\code\workpace\study\pyCharm\python_study_project\qianv_tool\gui\RigthPage" />
-      <recent name="F:\code\workpace\study\pyCharm\python_study_project\qianv_tool\gui" />
-      <recent name="F:\code\workpace\study\pyCharm\python_study_project\qianv_tool\image" />
-    </key>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.main (1)">
     <configuration name="Test (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="python_study_project" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -258,28 +358,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module_study/customtkinter/examples/Test.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Test" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="python_study_project" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/qianv_tool/gui" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/qianv_tool/gui/Test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -332,6 +410,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="python_study_project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/qianv_tool/gui" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/qianv_tool/gui/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="python_study_project" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -357,21 +457,21 @@
     <list>
       <item itemvalue="Python.example_background_image" />
       <item itemvalue="Python.main" />
-      <item itemvalue="Python.Test" />
       <item itemvalue="Python.complex_example" />
       <item itemvalue="Python.Test (1)" />
+      <item itemvalue="Python.main (1)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main (1)" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.complex_example" />
         <item itemvalue="Python.Test (1)" />
         <item itemvalue="Python.example_background_image" />
-        <item itemvalue="Python.Test" />
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -408,6 +508,7 @@
       <workItem from="1701671453521" duration="30049000" />
       <workItem from="1701829034915" duration="23948000" />
       <workItem from="1701866300677" duration="2730000" />
+      <workItem from="1701917570304" duration="6211000" />
     </task>
     <task id="LOCAL-00001" summary="初始化">
       <created>1687151991623</created>
@@ -535,37 +636,30 @@
       <option name="project" value="LOCAL" />
       <updated>1701868125304</updated>
     </task>
-    <task id="LOCAL-00019" summary="devices_info.py run_monitor.py">
-      <created>1701882917200</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1701882917200</updated>
-    </task>
-    <option name="localTasksCounter" value="20" />
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="183523000" />
+    <option name="totallyTimeSpent" value="189734000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-12" y="-12" width="3864" height="2114" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25239107" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4997343" weight="0.3297929" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4997343" visible="true" weight="0.2628784" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4989373" weight="0.3297929" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49920297" visible="true" weight="0.2628784" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4997343" weight="0.43228891" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.3297929" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4997343" weight="0.3297929" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50026566" side_tool="true" visible="true" weight="0.2628784" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50079703" side_tool="true" visible="true" weight="0.2628784" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.42166755" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.3299532" />
       <window_info anchor="bottom" id="Messages" order="13" sideWeight="0.4997343" visible="true" weight="0.20339884" />
@@ -594,7 +688,14 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -631,8 +732,7 @@
     <MESSAGE value="2" />
     <MESSAGE value="12" />
     <MESSAGE value="121" />
-    <MESSAGE value="devices_info.py run_monitor.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="devices_info.py run_monitor.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="121" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -643,12 +743,12 @@
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/qianv_tool/gui_new/operate_frame/run_frame.py</url>
+          <url>file://$PROJECT_DIR$/qianv_tool/gui/operate_frame/run_frame.py</url>
           <line>7</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/qianv_tool/gui_new/operate_frame/jia_yuan_frame.py</url>
+          <url>file://$PROJECT_DIR$/qianv_tool/gui/operate_frame/jia_yuan_frame.py</url>
           <line>7</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
@@ -662,14 +762,11 @@
       </default-breakpoints>
     </breakpoint-manager>
   </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/python_study_project$main.coverage" NAME="main Coverage Results" MODIFIED="1701918314490" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/qianv_tool/gui_new" />
+    <SUITE FILE_PATH="coverage/python_study_project$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1701950365584" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/qianv_tool/gui" />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/qianv_tool/gui/smallParts/DeviceInfo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="693">
-          <caret line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/module_study/customtkinter/test_images/bg_gradient.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -791,7 +888,7 @@
     <entry file="file://$PROJECT_DIR$/qianv_tool/image/bg_gradient.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/qianv_tool/gui_new/load_Image.py">
+    <entry file="file://$PROJECT_DIR$/qianv_tool/gui/load_Image.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1056">
           <caret line="32" selection-start-line="32" selection-end-line="32" />
@@ -821,7 +918,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/qianv_tool/gui_new/menu/tab_view.py">
+    <entry file="file://$PROJECT_DIR$/qianv_tool/gui/menu/tab_view.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="462">
           <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
@@ -858,48 +955,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/qianv_tool/gui_new/devices/task_queue.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="858">
-          <caret line="26" column="12" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/qianv_tool/gui_new/operate_frame/devices_frame.py">
+    <entry file="file://$PROJECT_DIR$/qianv_tool/gui/operate_frame/devices_frame.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
           <caret line="12" column="100" selection-start-line="12" selection-start-column="84" selection-end-line="12" selection-end-column="100" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/qianv_tool/gui_new/devices/devices_info.py">
+    <entry file="file://$PROJECT_DIR$/qianv_tool/devices/devices_info.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/qianv_tool/gui_new/menu/navigation_frame.py">
+    <entry file="file://$PROJECT_DIR$/qianv_tool/gui/menu/navigation_frame.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1023">
           <caret line="31" column="108" lean-forward="true" selection-start-line="31" selection-start-column="56" selection-end-line="31" selection-end-column="108" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/qianv_tool/gui_new/operate_frame/run_frame.py">
+    <entry file="file://$PROJECT_DIR$/qianv_tool/gui/operate_frame/run_frame.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
           <caret line="17" selection-start-line="17" selection-end-line="18" selection-end-column="52" />
           <folding>
             <element signature="e#203#230#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/qianv_tool/gui_new/operate_frame/tool/run_monitor.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="792">
-          <caret line="26" column="12" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -913,24 +996,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/qianv_tool/gui_new/operate_frame/task/long_task.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
-          <folding>
-            <element signature="e#229#256#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/qianv_tool/gui_new/operate_frame/task/shi_men_task.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="7" column="27" lean-forward="true" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/qianv_tool/gui_new/operate_frame/bang_hua_frame.py">
+    <entry file="file://$PROJECT_DIR$/qianv_tool/gui/operate_frame/bang_hua_frame.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="693">
           <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
@@ -940,27 +1006,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/qianv_tool/gui_new/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="804">
-          <caret line="26" column="28" lean-forward="true" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
-          <folding>
-            <element signature="e#47#74#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/qianv_tool/gui_new/operate_frame/task/zhan_long_task.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="20" column="14" lean-forward="true" selection-end-line="86" />
-          <folding>
-            <element signature="e#228#255#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/qianv_tool/gui_new/operate_frame/routine_frame.py">
+    <entry file="file://$PROJECT_DIR$/qianv_tool/gui/operate_frame/routine_frame.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
           <caret line="13" selection-start-line="13" selection-end-line="33" selection-end-column="67" />
@@ -970,7 +1016,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/qianv_tool/gui_new/operate_frame/jia_yuan_frame.py">
+    <entry file="file://$PROJECT_DIR$/qianv_tool/gui/operate_frame/jia_yuan_frame.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="957">
           <caret line="29" column="32" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
@@ -980,22 +1026,74 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/qianv_tool/gui_new/operate_frame/task/shou_cai_task.py">
+    <entry file="file://$PROJECT_DIR$/qianv_tool/task/task_info.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qianv_tool/task/task_queue.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="10" column="15" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
+          <folding>
+            <element signature="e#47#70#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qianv_tool/gui/operate_frame/task/long_task.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qianv_tool/gui/operate_frame/task/shi_men_task.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qianv_tool/gui/operate_frame/task/shou_cai_task.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qianv_tool/gui/operate_frame/task/zhan_long_task.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qianv_tool/gui/operate_frame/tool/run_monitor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="7" selection-start-line="7" selection-end-line="7" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qianv_tool/gui/operate_frame/task/bang_hua_task.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
-          <caret line="17" selection-start-line="17" selection-end-line="19" />
+          <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
           <folding>
             <element signature="e#187#214#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/qianv_tool/gui_new/operate_frame/task/bang_hua_task.py">
+    <entry file="file://$PROJECT_DIR$/qianv_tool/gui/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="627">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        <state relative-caret-position="594">
+          <caret line="27" column="8" lean-forward="true" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
           <folding>
-            <element signature="e#187#214#0" expanded="true" />
+            <element signature="e#47#74#0" expanded="true" />
           </folding>
         </state>
       </provider>

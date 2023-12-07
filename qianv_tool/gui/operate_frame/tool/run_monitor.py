@@ -5,17 +5,19 @@
 #################################################################
 
 import customtkinter as ctk
-from qianv_tool.gui_new.devices.devices_info import DevidesInfo
-from qianv_tool.gui_new.devices.task_queue import TaskQueue
+from qianv_tool.devices.devices_info import DevidesInfo
+from qianv_tool.task.task_queue import TaskQueue
 
 
 class RunMonitorFrame(ctk.CTkScrollableFrame):
+
     def __init__(self, master, image):
         super().__init__(master, corner_radius=0,fg_color="transparent")
         self.grid_rowconfigure((0,1,2,3,4,5), weight=1)
         self.grid_columnconfigure(0, weight=1)
         # 获取设备信息
         self.devices = DevidesInfo().get_info()
+        # 还需要一个执行和停止按钮
 
         execute_title = ctk.CTkLabel(self, text="执行中的任务",compound="left",font=ctk.CTkFont(size=13, weight="bold"))
         execute_title.grid(row=0, column=0, padx=10, pady=(10,0), sticky="nsew")
@@ -33,6 +35,11 @@ class RunMonitorFrame(ctk.CTkScrollableFrame):
         complete_task.grid(row=5, column=0, padx=10, pady=(0,20), sticky="nsew")
 
     def task_queue(self,task_info):
+        """
+        任务队列
+        :param task_info:
+        :return:
+        """
         submitFrom = ctk.CTkFrame(self, corner_radius=0)
         submitFrom.grid_columnconfigure(0, weight=1)
         for i, device in enumerate(self.devices):
