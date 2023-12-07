@@ -4,10 +4,9 @@
     <bookmark url="file://$PROJECT_DIR$/module_study/PyQt5/parts/QSliderTest.py" line="25" mnemonic="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aad3d1e3-b581-4529-a993-5d7fc841602f" name="Default Changelist" comment="">
+    <list default="true" id="aad3d1e3-b581-4529-a993-5d7fc841602f" name="Default Changelist" comment="devices_info.py run_monitor.py">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qianv_tool/gui_new/devices/devices_info.py" beforeDir="false" afterPath="$PROJECT_DIR$/qianv_tool/gui_new/devices/devices_info.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qianv_tool/gui_new/operate_frame/tool/run_monitor.py" beforeDir="false" afterPath="$PROJECT_DIR$/qianv_tool/gui_new/operate_frame/tool/run_monitor.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -372,7 +371,7 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="false" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -536,7 +535,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701868125304</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="devices_info.py run_monitor.py">
+      <created>1701882917200</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1701882917200</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -625,7 +631,8 @@
     <MESSAGE value="2" />
     <MESSAGE value="12" />
     <MESSAGE value="121" />
-    <option name="LAST_COMMIT_MESSAGE" value="121" />
+    <MESSAGE value="devices_info.py run_monitor.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="devices_info.py run_monitor.py" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
