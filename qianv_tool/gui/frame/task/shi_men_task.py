@@ -6,8 +6,8 @@
 #################################################################
 
 import customtkinter as ctk
-from qianv_tool.devices.devices_info import DevidesInfo
-from qianv_tool.task.task_queue import TaskQueue
+from qianv_tool.module.devices.devices_info import DevidesInfo
+import qianv_tool.config.ui_option_conf as OPTION
 
 
 class ShiMenTask(ctk.CTkScrollableFrame):
@@ -53,7 +53,7 @@ class ShiMenTask(ctk.CTkScrollableFrame):
         equip_color_title = ctk.CTkLabel(submitFrom, text='提交装备颜色')
         equip_color_title.grid(row=1, column=0, padx=10, pady=(5,0), sticky="nsew")
 
-        equip_color = ctk.CTkComboBox(submitFrom, values=["蓝色及以下","不限制"],command=self.equip_color_callback)
+        equip_color = ctk.CTkComboBox(submitFrom, values=OPTION.EQUIP_COLOR,command=self.equip_color_callback)
         equip_color.grid(row=1, column=1, padx=20, pady=(5, 0), sticky="nsew")
         device['equip_color'] = equip_color
 
@@ -61,7 +61,7 @@ class ShiMenTask(ctk.CTkScrollableFrame):
         equip_hole_title = ctk.CTkLabel(submitFrom, text='提交装备孔数')
         equip_hole_title.grid(row=2, column=0, padx=10, pady=(5,0), sticky="nsew")
 
-        equip_hole = ctk.CTkComboBox(submitFrom, values=["2孔及以下", "3孔及以下"],command=self.equip_hole_callback)
+        equip_hole = ctk.CTkComboBox(submitFrom, values=OPTION.EQUIP_HOLE,command=self.equip_hole_callback)
         equip_hole.grid(row=2, column=1, padx=20, pady=(5, 10), sticky="nsew")
         device['equip_hole'] = equip_hole
         return submitFrom

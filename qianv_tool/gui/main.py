@@ -6,11 +6,11 @@ import os
 import tkinter as tk
 from qianv_tool.gui.load_Image import LoadImage
 from qianv_tool.gui.menu.navigation_frame import NavigationFrame
-from qianv_tool.gui.operate_frame.devices_frame import DevicesFrame
-from qianv_tool.gui.operate_frame.run_frame import RunFrame
-from qianv_tool.gui.operate_frame.routine_frame import RoutineFrame
-from qianv_tool.gui.operate_frame.bang_hua_frame import BangHuaFrame
-from qianv_tool.gui.operate_frame.jia_yuan_frame import JiaYunFrame
+from qianv_tool.gui.frame.devices_frame import DevicesFrame
+from qianv_tool.gui.frame.run_frame import RunFrame
+from qianv_tool.gui.frame.routine_frame import RoutineFrame
+from qianv_tool.gui.frame.bang_hua_frame import BangHuaFrame
+from qianv_tool.gui.frame.jia_yuan_frame import JiaYunFrame
 
 
 class App(ctk.CTk):

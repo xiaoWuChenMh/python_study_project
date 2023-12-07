@@ -1,15 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #################################################################
-#  家园-收菜-任务
+#  战龙任务
 #################################################################
 
 import customtkinter as ctk
-from qianv_tool.devices.devices_info import DevidesInfo
-from qianv_tool.task.task_queue import TaskQueue
 
 
-class ShouCaiTask(ctk.CTkScrollableFrame):
+class BangHuaTask(ctk.CTkScrollableFrame):
 
     def __init__(self, master,image):
         super().__init__(master,corner_radius=0)
@@ -17,4 +15,3 @@ class ShouCaiTask(ctk.CTkScrollableFrame):
 
         task_title = ctk.CTkLabel(self, text="待完成")
         task_title.grid(row=0, column=0, padx=10, pady=(20, 0), sticky="nsew")
-

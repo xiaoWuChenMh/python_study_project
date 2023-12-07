@@ -6,8 +6,8 @@
 #################################################################
 
 import customtkinter as ctk
-from qianv_tool.devices.devices_info import DevidesInfo
-from qianv_tool.task.task_queue import TaskQueue
+from qianv_tool.module.devices.devices_info import DevidesInfo
+import qianv_tool.config.ui_option_conf as OPTION
 
 
 class LongTask(ctk.CTkScrollableFrame):
@@ -62,7 +62,7 @@ class LongTask(ctk.CTkScrollableFrame):
         apply_leader_title = ctk.CTkLabel(submitFrom, text='他人申请队长')
         apply_leader_title.grid(row=2, column=0, padx=10, pady=(5,0), sticky="nsew")
 
-        apply_leader = ctk.CTkComboBox(submitFrom, values=["不允许", "允许"],command=self.apply_leader_callback)
+        apply_leader = ctk.CTkComboBox(submitFrom, values=OPTION.APPLY_LEADER_OPTION,command=self.apply_leader_callback)
         apply_leader.grid(row=2, column=1, padx=20, pady=(5, 0), sticky="nsew")
         device['apply_leader'] = apply_leader
 
@@ -70,7 +70,7 @@ class LongTask(ctk.CTkScrollableFrame):
         is_leader_title = ctk.CTkLabel(submitFrom, text='当前不是队长')
         is_leader_title.grid(row=3, column=0, padx=10, pady=(5,0), sticky="nsew")
 
-        is_leader = ctk.CTkComboBox(submitFrom, values=["跳过任务", "申请队长"],command=self.is_leader_callback)
+        is_leader = ctk.CTkComboBox(submitFrom, values=OPTION.IS_LEADER_TITLE_OPTION,command=self.is_leader_callback)
         is_leader.grid(row=3, column=1, padx=20, pady=(5, 10), sticky="nsew")
         device['is_leader'] = is_leader
         return submitFrom

@@ -1,16 +1,15 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #################################################################
-#  帮会任务
+#  家园任务
 #    布局：1  2  3
 #################################################################
 
 import customtkinter as ctk
 from qianv_tool.gui.menu.tab_view import TabView
-from qianv_tool.gui.operate_frame.task.zhan_long_task import ZhanLongTask
-from qianv_tool.gui.operate_frame.task.bang_hua_task import BangHuaTask
+from qianv_tool.gui.frame.task.shou_cai_task import ShouCaiTask
 
-class BangHuaFrame(ctk.CTkFrame):
+class JiaYunFrame(ctk.CTkFrame):
     def __init__(self, master,image):
         super().__init__(master,corner_radius=0, fg_color="transparent")
         # 居中配置
@@ -19,8 +18,7 @@ class BangHuaFrame(ctk.CTkFrame):
 
         # tab配置
         self.tabConfig =[
-            {"name":" 战龙 ","tab": None},
-            {"name":" 帮花 ","tab": None}
+            {"name":" 收菜 ","tab": None},
         ]
 
         tabVidew = TabView(self,self.tabConfig)
@@ -28,9 +26,5 @@ class BangHuaFrame(ctk.CTkFrame):
         a = tabVidew.getTab(0)
 
         # 初始化各个tab页的内容
-        self.zhan_long_task_frame = ZhanLongTask(tabVidew.getTab(0),image)
-        self.zhan_long_task_frame.grid(row=0, column=0,sticky="nsew")
-        self.bang_hua_task_frame = BangHuaTask(tabVidew.getTab(1),image)
-        self.bang_hua_task_frame.grid(row=0, column=0,sticky="nsew")
-
-
+        self.shou_cai_task_frame = ShouCaiTask(tabVidew.getTab(0),image)
+        self.shou_cai_task_frame.grid(row=0, column=0,sticky="nsew")

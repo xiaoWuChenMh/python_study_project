@@ -5,8 +5,7 @@
 #################################################################
 
 import customtkinter as ctk
-from qianv_tool.devices.devices_info import DevidesInfo
-from qianv_tool.task.task_queue import TaskQueue
+from qianv_tool.module.devices.devices_info import DevidesInfo
 
 
 class ZhanLongTask(ctk.CTkScrollableFrame):
