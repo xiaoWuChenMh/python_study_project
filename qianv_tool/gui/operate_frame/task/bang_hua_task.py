@@ -5,8 +5,8 @@
 #################################################################
 
 import customtkinter as ctk
-from qianv_tool.gui_new.devices.devices_info import DevidesInfo
-from qianv_tool.gui_new.devices.task_queue import TaskQueue
+from qianv_tool.devices.devices_info import DevidesInfo
+from qianv_tool.task.task_queue import TaskQueue
 
 
 class BangHuaTask(ctk.CTkScrollableFrame):

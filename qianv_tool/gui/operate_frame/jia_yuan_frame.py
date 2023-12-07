@@ -6,8 +6,8 @@
 #################################################################
 
 import customtkinter as ctk
-from qianv_tool.gui_new.menu.tab_view import TabView
-from qianv_tool.gui_new.operate_frame.task.shou_cai_task import ShouCaiTask
+from qianv_tool.gui.menu.tab_view import TabView
+from qianv_tool.gui.operate_frame.task.shou_cai_task import ShouCaiTask
 
 class JiaYunFrame(ctk.CTkFrame):
     def __init__(self, master,image):

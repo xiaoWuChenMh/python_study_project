@@ -6,8 +6,8 @@
 #################################################################
 
 import customtkinter as ctk
-from qianv_tool.gui_new.menu.navigation_frame import NavigationFrame
-from qianv_tool.gui_new.operate_frame.tool.run_monitor import RunMonitorFrame
+from qianv_tool.gui.menu.navigation_frame import NavigationFrame
+from qianv_tool.gui.operate_frame.tool.run_monitor import RunMonitorFrame
 
 
 class RunFrame(ctk.CTkFrame):

@@ -1,16 +1,15 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #################################################################
-#  师门任务
-#    布局： 第一层[列：1；行：2]，第二层(0,1)[列：1；行：动态]
+#  战龙任务
 #################################################################
 
 import customtkinter as ctk
-from qianv_tool.gui_new.devices.devices_info import DevidesInfo
-from qianv_tool.gui_new.devices.task_queue import TaskQueue
+from qianv_tool.devices.devices_info import DevidesInfo
+from qianv_tool.task.task_queue import TaskQueue
 
 
-class ShiMenTask(ctk.CTkScrollableFrame):
+class ZhanLongTask(ctk.CTkScrollableFrame):
 
     def __init__(self, master,image):
         super().__init__(master,corner_radius=0)
