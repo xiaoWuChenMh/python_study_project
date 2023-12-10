@@ -18,6 +18,10 @@ adb_command = 'adb devices -l'
 # 设备安装 atx-agent
 init_uiautomator_command = 'python -m uiautomator2 init'
 
-print(cmdExe(adb_command))
+# 检查硬件信息
+check_pc_info = 'python -c "import platform;print(platform.architecture()[0]);print(platform.machine())"'
+
+# print(cmdExe(adb_command))
 # print(cmdExe(init_uiautomator_command))
+print(cmdExe(check_pc_info))
 

@@ -18,3 +18,4 @@ class DevidesInfo:
             {"name": "Devices00AL4"}
         ]
         return copy.deepcopy(devices)
+

@@ -5,58 +5,47 @@
     <bookmark url="file://$PROJECT_DIR$/qianv_tool/task/task_queue.py" line="55" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aad3d1e3-b581-4529-a993-5d7fc841602f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/qianv_tool/doc/Develop.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qianv_tool/doc/拆解文档/战龙任务拆解文档.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qianv_tool/doc/拆解文档/英雄剧情拆解文档.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qianv_tool/gui/frame/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qianv_tool/gui/frame/task/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qianv_tool/gui/frame/tool/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qianv_tool/module/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qianv_tool/module/devices/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qianv_tool/module/task/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qianv_tool/module/task/task_Info/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qianv_tool/module/task/task_Info/long_task_info.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qianv_tool/module/task/task_Info/shi_men_task_info.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qianv_tool/module/task/task_Info/task_info_abstract.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="aad3d1e3-b581-4529-a993-5d7fc841602f" name="Default Changelist" comment="调整目录+增加config参数和task_info代码的完善">
+      <change afterPath="$PROJECT_DIR$/module_study/uiautomator2/image/init_atx.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/paddleHub_study/image/game/121.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/paddleHub_study/image/game/home1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qianv_tool/assets/game_source/3紫色就缺一.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qianv_tool/assets/game_source/主页面5级.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qianv_tool/assets/game_source/登录页面.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qianv_tool/config/exe_config.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qianv_tool/config/ui_config.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qianv_tool/dev_tools/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qianv_tool/dev_tools/button_extract.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qianv_tool/doc/功能架构.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qianv_tool/doc/拆解文档/登录.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qianv_tool/module/base/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qianv_tool/module/base/button.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qianv_tool/module/base/decorator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qianv_tool/module/base/devices.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qianv_tool/module/base/points_utils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qianv_tool/module/base/resource.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qianv_tool/module/base/template.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qianv_tool/module/base/utils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qianv_tool/module/base/说明.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qianv_tool/module/config/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qianv_tool/module/config/config_manual.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qianv_tool/module/config/server.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qianv_tool/module/config/说明.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qianv_tool/module/game_action/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qianv_tool/module/game_action/mian_window/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qianv_tool/module/logger.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/python_study_project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/python_study_project.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qianv_tool/devices/devices_info.py" beforeDir="false" afterPath="$PROJECT_DIR$/qianv_tool/module/devices/devices_info.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qianv_tool/gui/load_Image.py" beforeDir="false" afterPath="$PROJECT_DIR$/qianv_tool/gui/load_Image.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qianv_tool/gui/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/qianv_tool/gui/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qianv_tool/gui/operate_frame/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/qianv_tool/assets/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qianv_tool/gui/operate_frame/bang_hua_frame.py" beforeDir="false" afterPath="$PROJECT_DIR$/qianv_tool/gui/frame/bang_hua_frame.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qianv_tool/gui/operate_frame/devices_frame.py" beforeDir="false" afterPath="$PROJECT_DIR$/qianv_tool/gui/frame/devices_frame.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qianv_tool/gui/operate_frame/jia_yuan_frame.py" beforeDir="false" afterPath="$PROJECT_DIR$/qianv_tool/gui/frame/jia_yuan_frame.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qianv_tool/gui/operate_frame/routine_frame.py" beforeDir="false" afterPath="$PROJECT_DIR$/qianv_tool/gui/frame/routine_frame.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qianv_tool/gui/operate_frame/run_frame.py" beforeDir="false" afterPath="$PROJECT_DIR$/qianv_tool/gui/frame/run_frame.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qianv_tool/gui/operate_frame/task/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/qianv_tool/assets/image/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qianv_tool/gui/operate_frame/task/bang_hua_task.py" beforeDir="false" afterPath="$PROJECT_DIR$/qianv_tool/gui/frame/task/bang_hua_task.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qianv_tool/gui/operate_frame/task/long_task.py" beforeDir="false" afterPath="$PROJECT_DIR$/qianv_tool/gui/frame/task/long_task.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qianv_tool/gui/operate_frame/task/shi_men_task.py" beforeDir="false" afterPath="$PROJECT_DIR$/qianv_tool/gui/frame/task/shi_men_task.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qianv_tool/gui/operate_frame/task/shou_cai_task.py" beforeDir="false" afterPath="$PROJECT_DIR$/qianv_tool/gui/frame/task/shou_cai_task.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qianv_tool/gui/operate_frame/task/zhan_long_task.py" beforeDir="false" afterPath="$PROJECT_DIR$/qianv_tool/gui/frame/task/zhan_long_task.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qianv_tool/gui/operate_frame/tool/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/qianv_tool/config/ui_option_conf.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qianv_tool/gui/operate_frame/tool/run_monitor.py" beforeDir="false" afterPath="$PROJECT_DIR$/qianv_tool/gui/frame/tool/run_monitor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qianv_tool/image/CustomTkinter_logo_single.png" beforeDir="false" afterPath="$PROJECT_DIR$/qianv_tool/assets/image/CustomTkinter_logo_single.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qianv_tool/image/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/qianv_tool/doc/拆解文档/一条龙任务拆解文档.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qianv_tool/image/add_user_dark.png" beforeDir="false" afterPath="$PROJECT_DIR$/qianv_tool/assets/image/add_user_dark.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qianv_tool/image/add_user_light.png" beforeDir="false" afterPath="$PROJECT_DIR$/qianv_tool/assets/image/add_user_light.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qianv_tool/image/bg_gradient.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/qianv_tool/assets/image/bg_gradient.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qianv_tool/image/chat_dark.png" beforeDir="false" afterPath="$PROJECT_DIR$/qianv_tool/assets/image/chat_dark.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qianv_tool/image/chat_light.png" beforeDir="false" afterPath="$PROJECT_DIR$/qianv_tool/assets/image/chat_light.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qianv_tool/image/dec/devices.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qianv_tool/image/dec/longTask.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qianv_tool/image/dec/shiMenTask.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qianv_tool/image/dec/taskRun.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qianv_tool/image/home_dark.png" beforeDir="false" afterPath="$PROJECT_DIR$/qianv_tool/assets/image/home_dark.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qianv_tool/image/home_light.png" beforeDir="false" afterPath="$PROJECT_DIR$/qianv_tool/assets/image/home_light.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qianv_tool/image/image_icon_light.png" beforeDir="false" afterPath="$PROJECT_DIR$/qianv_tool/assets/image/image_icon_light.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qianv_tool/image/large_test_image.png" beforeDir="false" afterPath="$PROJECT_DIR$/qianv_tool/assets/image/large_test_image.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qianv_tool/task/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/qianv_tool/doc/拆解文档/师门任务拆解文档.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qianv_tool/task/task_info.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qianv_tool/task/task_queue.py" beforeDir="false" afterPath="$PROJECT_DIR$/qianv_tool/module/task/task_queue.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module_study/uiautomator2/Test.py" beforeDir="false" afterPath="$PROJECT_DIR$/module_study/uiautomator2/Test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module_study/uiautomator2/env_init.py" beforeDir="false" afterPath="$PROJECT_DIR$/module_study/uiautomator2/env_init.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module_study/uiautomator2/image/home.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/paddleHub_study/test/ocr_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/paddleHub_study/test/ocr_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paddleHub_study/test/result.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qianv_tool/config/constant.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qianv_tool/doc/拆解文档/一条龙任务拆解文档.md" beforeDir="false" afterPath="$PROJECT_DIR$/qianv_tool/doc/拆解文档/一条龙任务拆解文档.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qianv_tool/module/devices/devices_info.py" beforeDir="false" afterPath="$PROJECT_DIR$/qianv_tool/module/devices/devices_info.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qianv_tool/module/task/task_Info/long_task_info.py" beforeDir="false" afterPath="$PROJECT_DIR$/qianv_tool/module/task/task_Info/long_task_info.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qianv_tool/module/task/task_Info/shi_men_task_info.py" beforeDir="false" afterPath="$PROJECT_DIR$/qianv_tool/module/task/task_Info/shi_men_task_info.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -224,29 +213,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "last_opened_file_path": "F:/code/workpace/study/pyCharm/python_study_project/qianv_tool/doc/拆解文档"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;last_opened_file_path&quot;: &quot;F:/code/workpace/study/pyCharm/python_study_project/qianv_tool/assets/game/source&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\code\workpace\study\pyCharm\python_study_project\qianv_tool\doc\拆解文档" />
-      <recent name="F:\code\workpace\study\pyCharm\python_study_project\qianv_tool\doc" />
-      <recent name="E:\workspace\python\study\python_study_project\qianv_tool\gui_new\operate_frame" />
-      <recent name="E:\workspace\python\study\python_study_project\qianv_tool\image" />
-      <recent name="E:\workspace\python\study\python_study_project\qianv_tool\gui_new" />
+      <recent name="F:\code\workpace\study\pyCharm\python_study_project\qianv_tool\assets\game\source" />
+      <recent name="F:\code\workpace\study\pyCharm\python_study_project\qianv_tool\module\config" />
+      <recent name="F:\code\workpace\study\pyCharm\python_study_project\qianv_tool\module\base" />
+      <recent name="F:\code\workpace\study\pyCharm\python_study_project\qianv_tool\module\game_action\mian_window" />
+      <recent name="F:\code\workpace\study\pyCharm\python_study_project\qianv_tool\assets\game\mian_window" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\code\workpace\study\pyCharm\python_study_project\qianv_tool\module\task\task_Info" />
-      <recent name="F:\code\workpace\study\pyCharm\python_study_project\qianv_tool\doc\拆解文档" />
-      <recent name="F:\code\workpace\study\pyCharm\python_study_project\qianv_tool\module" />
       <recent name="F:\code\workpace\study\pyCharm\python_study_project\qianv_tool\assets" />
-      <recent name="E:\workspace\python\study\python_study_project\qianv_tool" />
+      <recent name="F:\code\workpace\study\pyCharm\python_study_project\qianv_tool\assets\game\source" />
+      <recent name="F:\code\workpace\study\pyCharm\python_study_project\qianv_tool\module\config" />
+      <recent name="F:\code\workpace\study\pyCharm\python_study_project\paddleHub_study\image\game" />
+      <recent name="F:\code\workpace\study\pyCharm\python_study_project\qianv_tool\module\task\task_Info" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main (1)">
-    <configuration name="Test (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.devices">
+    <configuration name="Test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="python_study_project" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -254,12 +244,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module_study/customtkinter/examples" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module_study/uiautomator2" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module_study/customtkinter/examples/Test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module_study/uiautomator2/Test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -268,7 +257,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="complex_example" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="button_extract" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="python_study_project" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -276,12 +265,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module_study/customtkinter/examples" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/qianv_tool/dev_tools" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module_study/customtkinter/examples/complex_example.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/qianv_tool/dev_tools/button_extract.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -290,7 +278,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="devices" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="python_study_project" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -298,12 +286,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/qianv_tool/gui" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/qianv_tool/module/base" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/qianv_tool/gui/main.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/qianv_tool/module/base/devices.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -312,7 +299,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="env_init" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="python_study_project" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -320,12 +307,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/qianv_tool/gui_new" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module_study/uiautomator2" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/qianv_tool/gui_new/main.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module_study/uiautomator2/env_init.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -334,7 +320,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="ui_option_conf" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="init_atx" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="python_study_project" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -342,11 +328,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/qianv_tool/config" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module_study/uiautomator2/image" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/qianv_tool/config/ui_option_conf.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module_study/uiautomator2/image/init_atx.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -356,23 +342,23 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.ui_option_conf" />
-      <item itemvalue="Python.main" />
-      <item itemvalue="Python.complex_example" />
-      <item itemvalue="Python.Test (1)" />
-      <item itemvalue="Python.main (1)" />
+      <item itemvalue="Python.init_atx" />
+      <item itemvalue="Python.button_extract" />
+      <item itemvalue="Python.devices" />
+      <item itemvalue="Python.Test" />
+      <item itemvalue="Python.env_init" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.main (1)" />
-        <item itemvalue="Python.ui_option_conf" />
-        <item itemvalue="Python.main" />
-        <item itemvalue="Python.complex_example" />
-        <item itemvalue="Python.Test (1)" />
+        <item itemvalue="Python.devices" />
+        <item itemvalue="Python.Test" />
+        <item itemvalue="Python.button_extract" />
+        <item itemvalue="Python.init_atx" />
+        <item itemvalue="Python.env_init" />
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="false" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -537,7 +523,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701868125304</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="调整目录+增加config参数和task_info代码的完善">
+      <created>1701968603052</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1701968603052</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -626,7 +619,8 @@
     <MESSAGE value="2" />
     <MESSAGE value="12" />
     <MESSAGE value="121" />
-    <option name="LAST_COMMIT_MESSAGE" value="121" />
+    <MESSAGE value="调整目录+增加config参数和task_info代码的完善" />
+    <option name="LAST_COMMIT_MESSAGE" value="调整目录+增加config参数和task_info代码的完善" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -646,6 +640,31 @@
           <line>7</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/qianv_tool/module/config/config_manual.py</url>
+          <line>5</line>
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/qianv_tool/dev_tools/button_extract.py</url>
+          <line>200</line>
+          <option name="timeStamp" value="52" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/module_study/uiautomator2/env_init.py</url>
+          <line>10</line>
+          <option name="timeStamp" value="58" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/module_study/uiautomator2/Test.py</url>
+          <line>4</line>
+          <option name="timeStamp" value="64" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/qianv_tool/module/base/devices.py</url>
+          <line>165</line>
+          <option name="timeStamp" value="66" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -655,6 +674,11 @@
         </breakpoint>
       </default-breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="image" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/module_study/customtkinter/test_images/bg_gradient.jpg">

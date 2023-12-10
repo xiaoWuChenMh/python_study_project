@@ -4,7 +4,8 @@ import os
 # 待预测图片
 current_dir = os.path.dirname(os.path.realpath(__file__))
 parent_dir = os.path.dirname(current_dir)
-img_path = os.path.join(parent_dir, "image","imgs","00111002.jpg")
+# img_path = os.path.join(parent_dir, "image","imgs","00111002.jpg")
+img_path = os.path.join(parent_dir, "image","game","home1.jpg")
 
 
 # Paddleocr目前支持的多语言语种可以通过修改lang参数进行切换

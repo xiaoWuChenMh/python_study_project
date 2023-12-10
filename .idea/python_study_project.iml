@@ -11,6 +11,7 @@
     <option name="namespacePackageFolders">
       <list>
         <option value="$MODULE_DIR$/qianv_tool/module/devices" />
+        <option value="$MODULE_DIR$/qianv_tool/module/game_action/mian_window" />
       </list>
     </option>
   </component>

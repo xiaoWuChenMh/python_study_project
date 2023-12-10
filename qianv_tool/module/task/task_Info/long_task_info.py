@@ -3,7 +3,7 @@
 
 from qianv_tool.module.task.task_Info.task_info_abstract import TaskInfo
 import qianv_tool.config.ui_option_conf as OPTION
-import qianv_tool.config.constant as CONSTANT
+from qianv_tool.config.exe_config  import ExecuteConfig as TaskTagConfig
 
 class LongTaskInfo(TaskInfo):
 
@@ -17,7 +17,7 @@ class LongTaskInfo(TaskInfo):
     __is_leader = 0
 
     def __init__(self):
-        super().__init__(CONSTANT.LONG_TASK_NAME)
+        super().__init__(TaskTagConfig.TASK_TAG__LONG)
 
     def set_execute_num( self, execute_num ):
         """
