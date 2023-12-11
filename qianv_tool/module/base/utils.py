@@ -6,11 +6,13 @@ from PIL import Image
 
 REGEX_NODE = re.compile(r'(-?[A-Za-z]+)(-?\d+)')
 
+# 获取要点击的坐标点： random_rectangle_point，然后通过ensure_int(x, y)转为数值
 
+#
 def random_normal_distribution_int(a, b, n=3):
     """Generate a normal distribution int within the interval. Use the average value of several random numbers to
     simulate normal distribution.
-
+    在区间 [a, b) 内产生符合正态分布的随机数，原理是取多个随机数的平均值来模拟正态分布，n 值是随机数的数量，值越大分布越集中
     Args:
         a (int): The minimum of the interval.
         b (int): The maximum of the interval.
@@ -28,7 +30,8 @@ def random_normal_distribution_int(a, b, n=3):
 
 def random_rectangle_point(area, n=3):
     """Choose a random point in an area.
-
+    在区域内产生符合二维正态分布的随机点，通常在点击操作中使用
+    ps:重点（产生可用于点击的坐标）
     Args:
         area: (upper_left_x, upper_left_y, bottom_right_x, bottom_right_y).
         n (int): The amount of numbers in simulation. Default to 3.
@@ -43,7 +46,7 @@ def random_rectangle_point(area, n=3):
 
 def random_rectangle_vector(vector, box, random_range=(0, 0, 0, 0), padding=15):
     """Place a vector in a box randomly.
-
+     在区域按二维正态分布放置一个向量，通常在滑动操作中使用。 box 是放置向量的区域， random_range 是给滑动向量加的随机值，padding 是到边缘的最小距离。
     Args:
         vector: (x, y)
         box: (upper_left_x, upper_left_y, bottom_right_x, bottom_right_y).
@@ -124,7 +127,7 @@ def random_rectangle_vector_opted(
 
 def random_line_segments(p1, p2, n, random_range=(0, 0, 0, 0)):
     """Cut a line into multiple segments.
-
+       在两点之间插入中间值，通常在滑动操作中使用。
     Args:
         p1: (x, y).
         p2: (x, y).
@@ -195,6 +198,7 @@ def ensure_int(*args):
 def area_offset(area, offset):
     """
     Move an area.
+    区域操作：移动一个区域，offset是移动的坐标，正数（x向右移动，y竖直向下移动），负数（x向左移动，y竖直向上移动）
 
     Args:
         area: (upper_left_x, upper_left_y, bottom_right_x, bottom_right_y).
@@ -211,7 +215,7 @@ def area_offset(area, offset):
 def area_pad(area, pad=10):
     """
     Inner offset an area.
-
+    区域操作：等比例扩大或缩小区域，pad是扩大的像素
     Args:
         area: (upper_left_x, upper_left_y, bottom_right_x, bottom_right_y).
         pad (int):
@@ -293,7 +297,7 @@ def point_limit(point, area):
 
 def point_in_area(point, area, threshold=5):
     """
-
+    区域操作：检查一个点是否在给定的矩形区域内？
     Args:
         point: (x, y).
         area: (upper_left_x, upper_left_y, bottom_right_x, bottom_right_y).
@@ -307,7 +311,7 @@ def point_in_area(point, area, threshold=5):
 
 def area_in_area(area1, area2, threshold=5):
     """
-
+    区域操作：检查第一个区域是否在第二个区域内，接受两个区域坐标和一个阈值作为输入。
     Args:
         area1: (upper_left_x, upper_left_y, bottom_right_x, bottom_right_y).
         area2: (upper_left_x, upper_left_y, bottom_right_x, bottom_right_y).
@@ -324,7 +328,7 @@ def area_in_area(area1, area2, threshold=5):
 
 def area_cross_area(area1, area2, threshold=5):
     """
-
+    区域操作：这个函数用于判断两个矩形区域是否相交，函数中使用了给定的 threshold（默认为5）作为容差值。
     Args:
         area1: (upper_left_x, upper_left_y, bottom_right_x, bottom_right_y).
         area2: (upper_left_x, upper_left_y, bottom_right_x, bottom_right_y).
@@ -535,7 +539,9 @@ def crop(image, area, copy=True):
     """
     Crop image like pillow, when using opencv / numpy.
     Provides a black background if cropping outside of image.
-
+    裁切图片，image 需要是 numpy 数组，相当于 pillow 库中的 crop。当裁切区域超出图片大小时，显示为黑色，这点与 pillow 一致。以下两种裁切方式效果相同。裁切大量图片时，操作 numpy 数组会比较快。
+      image = self.device.image.crop(area)
+      image = crop(np.array(self.device.image), area)
     Args:
         image (np.ndarray):
         area:
@@ -671,7 +677,7 @@ def rgb2luma(image):
 # 获取图片资源中的颜色
 def get_color(image, area):
     """Calculate the average color of a particular area of the image.
-
+    计算区域的平均颜色
     Args:
         image (np.ndarray): Screenshot.
         area (tuple): (upper_left_x, upper_left_y, bottom_right_x, bottom_right_y)
@@ -730,7 +736,7 @@ def color_similarity(color1, color2):
     Args:
         color1 (tuple): (r, g, b)
         color2 (tuple): (r, g, b)
-
+    计算两个颜色之间的差值。这里使用了 PhotoShop 中魔棒的容差的算法。先计算 RGB 的差值，容差等于最大正差值减最小负差值。使用容差而非 RGB 的简单相减，是为了方便在 PS 中查看图片颜色，同时也更符合人眼对颜色的感知。
     Returns:
         int:
     """
@@ -743,7 +749,7 @@ def color_similar(color1, color2, threshold=10):
     """Consider two colors are similar, if tolerance lesser or equal threshold.
     Tolerance = Max(Positive(difference_rgb)) + Max(- Negative(difference_rgb))
     The same as the tolerance in Photoshop.
-
+   判断颜色是否相似，判断容差是否小于阈值。
     Args:
         color1 (tuple): (r, g, b)
         color2 (tuple): (r, g, b)
@@ -764,7 +770,7 @@ def color_similar_1d(image, color, threshold=10):
         image (np.ndarray): 1D array.
         color: (r, g, b)
         threshold(int): Default to 10.
-
+    在一维数组上判断颜色是否相似。
     Returns:
         np.ndarray: bool
     """
@@ -778,7 +784,8 @@ def color_similarity_2d(image, color):
     Args:
         image: 2D array.
         color: (r, g, b)
-
+    计算二维数组上的颜色差值。注意，返回的 numpy 数组中，255 代表完全相等，数值越小颜色相差越大。在计算二维图片的颜色差值时，
+    使用了 opencv 计算，速度是使用 numpy 的 3 倍以上。这个函数也是一个常用函数，一般用来进行简单的颜色计数。
     Returns:
         np.ndarray: uint8
     """
@@ -791,7 +798,8 @@ def color_similarity_2d(image, color):
 
 def extract_letters(image, letter=(255, 255, 255), threshold=128):
     """Set letter color to black, set background color to white.
-
+   将含文字的图片转换为白底黑字的图片，threshold 越小，背景越白，文字识别前处理。
+   例子： Image.fromarray(extract_letters(image, letter=(173, 247, 74), threshold=128))
     Args:
         image: Shape (height, width, channel)
         letter (tuple): Letter RGB.
@@ -810,7 +818,7 @@ def extract_letters(image, letter=(255, 255, 255), threshold=128):
 def extract_white_letters(image, threshold=128):
     """Set letter color to black, set background color to white.
     This function will discourage color pixels (Non-gray pixels)
-
+    与 extract_letters 基本相同，但针对白色字体，若颜色不是黑白灰，输出的颜色会更浅。
     Args:
         image: Shape (height, width, channel)
         threshold (int):
@@ -875,7 +883,8 @@ def image_left_strip(image, threshold, length):
 
 def red_overlay_transparency(color1, color2, red=247):
     """Calculate the transparency of red overlay.
-
+    假设 color_2 是由 color_1 叠加一个半透明的红色色块得到的，即 color_2 = color_1 *  (1 - alpha) + (red, 0, 0) * alpha，然后计算红色色块的不透明度
+    倩女中应该是用不到该功能，说明文档：https://github.com/LmeSzinc/AzurLaneAutoScript/wiki/3.1.-Utils#cropimage-area
     Args:
         color1: origin color.
         color2: changed color.
@@ -896,7 +905,8 @@ def color_bar_percentage(image, area, prev_color, reverse=False, starter=0, thre
         reverse: True if bar goes from right to left.
         starter:
         threshold:
-
+    计算进度条的百分比，可以计算纯色的、渐变色的、甚至是不连续的有遮挡的进度条
+    倩女中应该是用不到，说明文档：https://github.com/LmeSzinc/AzurLaneAutoScript/wiki/3.1.-Utils#cropimage-area
     Returns:
         float: 0 to 1.
     """

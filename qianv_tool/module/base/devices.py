@@ -98,6 +98,7 @@ class Devices:
         return self
 
     # 设置设备标识 emulator-5554 、emulator-5556、 emulator-5558 、emulator-5560
+    # 不一定管用
     def init_atx(self,device_id):
         # 执行 adb shell 命令
         logger.info('Exe adb shell (%s):  ---------------- start ---------------------' % (device_id))
@@ -132,11 +133,12 @@ class Devices:
                 device_info = self.devices_info[device_id]['connect_statu'] = '0'
                 # 输出命令返回错误信息(正常执行后，error也有信息输出，所以输出前还需要检查是否成功连接，失败后再输出)
                 logger.info('connect device Error Output (%s) : %s' % (device_id, error.decode('utf-8')) )
+            logger.info('connect device Error Output (%s) : %s' % (device_id, error.decode('utf-8')))
             # 输出命令返回内容
             if len(output)>3 :
                 logger.info('Command Output (%s): %s' % (device_id,output.decode('utf-8')))
-        except KeyError:
-            print("r")
+        except Exception as e:
+            print(e)
             logger.info('Exe adb shell (%s), init axt error!!!' % (device_id))
             device_info = self.devices_info[device_id]['connect_statu'] = '0'
         finally:
@@ -151,7 +153,20 @@ class Devices:
         return self
 
 
+    def screenshot( self ):
+        """
+        截图
+        :return:
+        """
+        pass
 
+    def click( self ,button):
+        """
+        点击指定按钮
+        :param button:
+        :return:
+        """
+        pass
 
 if __name__ == "__main__":
     __devices = Devices()

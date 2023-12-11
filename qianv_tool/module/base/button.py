@@ -10,7 +10,8 @@ from qianv_tool.module.base.decorator import cached_property
 from qianv_tool.module.base.resource import Resource
 
 
-
+# 图片匹配：match ，对目标图片进行剪裁，然后和button对象进行对比,前提是需要先调用ensure_template（）
+# 图片中的颜色匹配：appear_on
 
 class Button(Resource):
     def __init__(self, area, color, button, file=None, name=None):
@@ -109,7 +110,7 @@ class Button(Resource):
 
     def appear_on(self, image, threshold=10):
         """Check if the button appears on the image.
-
+          检查按钮是否出现在图像上，通过颜色检查
         Args:
             image (np.ndarray): Screenshot.
             threshold (int): Default to 10.
@@ -155,6 +156,7 @@ class Button(Resource):
         """
         Load asset image.
         If needs to call self.match, call this first.
+        加载资源图像,如果需要调用self.match，请先调用它。
         """
         if not self._match_init:
             if self.is_gif:
@@ -224,6 +226,7 @@ class Button(Resource):
                 offset = np.array(offset)
         else:
             offset = np.array((-3, -offset, 3, offset))
+        # 对图片进行剪切
         image = crop(image, offset + self.area, copy=False)
 
         if self.is_gif:
@@ -235,7 +238,14 @@ class Button(Resource):
                     return True
             return False
         else:
+            # ---------- 找到self.image中与image最相似的位置，并返回相似度以及位置信息------------
+            # - 使用了TM_CCOEFF_NORMED算法 对两个图片进行匹配，结果存储到res
             res = cv2.matchTemplate(self.image, image, cv2.TM_CCOEFF_NORMED)
+            # 找到了res中的最大值和最小值，并返回它们的位置（point），以及最大值（similarity）。其中similarity的值范围在-1到1之间，代表的含义如下：
+                # 如果相似度为1，表示找到了一个完全匹配的区域。
+                # 相似度接近1表示找到了一个非常相似的区域。
+                # 相似度为0表示模板与图像的匹配程度较低。
+                # 负值表示模板的匹配程度比较差。
             _, similarity, _, point = cv2.minMaxLoc(res)
             self._button_offset = area_offset(self._button, offset[:2] + np.array(point))
             return similarity > threshold
