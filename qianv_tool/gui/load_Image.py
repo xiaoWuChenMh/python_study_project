@@ -18,7 +18,7 @@ class LoadImage:
         # 图像地址
         current_dir = os.path.dirname(os.path.realpath(__file__))
         parent_dir = os.path.dirname(current_dir)
-        image_path = os.path.join(parent_dir, "image")
+        image_path = os.path.join(parent_dir, "assets/image")
 
         # 创建Image对象
         self.logo_image = tk.CTkImage(Image.open(os.path.join(image_path, "CustomTkinter_logo_single.png")), size=(26, 26))
