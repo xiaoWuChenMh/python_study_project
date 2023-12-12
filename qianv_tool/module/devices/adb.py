@@ -159,7 +159,13 @@ class Adb:
             # -d 是以后台方式运行
             # --nouia: 告诉 ATX 代理不需要与用户界面进行交互，因此它不会启动用户界面相关的服务，测试发现使用它后，u2就无法启动了
         # self.adb_shell([atx_agent_path, 'server', '--nouia', '-d', '--addr', '127.0.0.1:7912'],serial)
+        # 有时还是会出现错误：无法提供服务非 am instrument启动
         self.adb_shell([atx_agent_path, 'server', '-d'],serial)
+    def stop_uiautomator( self,serial ):
+        package_name = 'com.github.uiautomator'
+        package_name_test = 'com.github.uiautomator.test'
+        self.adb_shell(['am', 'force-stop', package_name],serial)
+        self.adb_shell(['am', 'force-stop', package_name_test],serial)
 
 if __name__ == "__main__":
     adb = Adb()
@@ -167,8 +173,15 @@ if __name__ == "__main__":
 
     # 获取全部devices: connection.py --> adb_connect.list_device ,通过参考：adb_reconnect
     print(adb.adb_command(['devices','-l']))
-    # print(adb.restart_atx('emulator-5554'))
-    print(adb.restart_atx('emulator-5556'))
+
+    # 先停止uiautomator,然后启动atx会将atx和uiautomator都启动起来
+    print(adb.stop_uiautomator('emulator-5554'))
+    print(adb.restart_atx('emulator-5554'))
+
+    # 初始化uiautomator2 ？
+    # init = u2.init.Initer(adb.adb('emulator-5554'))
+    # init.install()
+    # print( init.abi)
 
     # u2.init.Initer(adb.adb('emulator-5554'))
 

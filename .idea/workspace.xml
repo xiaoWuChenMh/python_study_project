@@ -5,17 +5,9 @@
     <bookmark url="file://$PROJECT_DIR$/qianv_tool/task/task_queue.py" line="55" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aad3d1e3-b581-4529-a993-5d7fc841602f" name="Default Changelist" comment="移植按钮模块对象生成代码+devices连接初始化操作">
-      <change afterPath="$PROJECT_DIR$/qianv_tool/module/devices/Test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qianv_tool/module/devices/adb.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qianv_tool/module/devices/connection.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qianv_tool/module/devices/utils.py" afterDir="false" />
+    <list default="true" id="aad3d1e3-b581-4529-a993-5d7fc841602f" name="Default Changelist" comment="adb连接">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module_study/uiautomator2/Test.py" beforeDir="false" afterPath="$PROJECT_DIR$/module_study/uiautomator2/Test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module_study/uiautomator2/image/init_atx.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qianv_tool/module/base/button.py" beforeDir="false" afterPath="$PROJECT_DIR$/qianv_tool/module/base/button.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qianv_tool/module/base/devices.py" beforeDir="false" afterPath="$PROJECT_DIR$/qianv_tool/module/base/devices.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qianv_tool/module/base/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/qianv_tool/module/base/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qianv_tool/module/devices/adb.py" beforeDir="false" afterPath="$PROJECT_DIR$/qianv_tool/module/devices/adb.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,12 +175,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "last_opened_file_path": "F:/code/workpace/study/pyCharm/python_study_project/qianv_tool/module/devices",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;last_opened_file_path&quot;: &quot;F:/code/workpace/study/pyCharm/python_study_project/qianv_tool/module/devices&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\code\workpace\study\pyCharm\python_study_project\qianv_tool\module\devices" />
@@ -205,7 +197,7 @@
       <recent name="F:\code\workpace\study\pyCharm\python_study_project\paddleHub_study\image\game" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.adb">
+  <component name="RunManager" selected="Python.Test">
     <configuration name="Test (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="python_study_project" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -320,8 +312,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.adb" />
         <item itemvalue="Python.Test" />
+        <item itemvalue="Python.adb" />
         <item itemvalue="Python.Test (1)" />
         <item itemvalue="Python.connection (1)" />
         <item itemvalue="Python.devices" />
@@ -507,7 +499,14 @@
       <option name="project" value="LOCAL" />
       <updated>1702219921650</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="adb连接">
+      <created>1702321839042</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1702321839042</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -598,7 +597,8 @@
     <MESSAGE value="121" />
     <MESSAGE value="调整目录+增加config参数和task_info代码的完善" />
     <MESSAGE value="移植按钮模块对象生成代码+devices连接初始化操作" />
-    <option name="LAST_COMMIT_MESSAGE" value="移植按钮模块对象生成代码+devices连接初始化操作" />
+    <MESSAGE value="adb连接" />
+    <option name="LAST_COMMIT_MESSAGE" value="adb连接" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -642,11 +642,6 @@
           <url>file://$PROJECT_DIR$/qianv_tool/module/devices/Test.py</url>
           <line>4</line>
           <option name="timeStamp" value="69" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/qianv_tool/module/devices/adb.py</url>
-          <line>66</line>
-          <option name="timeStamp" value="90" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>

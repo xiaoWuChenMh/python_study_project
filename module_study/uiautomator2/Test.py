@@ -2,10 +2,10 @@ import uiautomator2 as u2
 import numpy as np
 import cv2
 # 链接设备
-# a = u2.connect('emulator-5554')
-# print(a.info)
-d = u2.connect('emulator-5556')
-print(d.info)
+a = u2.connect('emulator-5554')
+print(a.info)
+# d = u2.connect('emulator-5556')
+# print(d.info)
 # c = u2.connect('emulator-5558')
 # print(c.info)
 # d = u2.connect('emulator-5560')
