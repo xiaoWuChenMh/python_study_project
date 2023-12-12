@@ -1,9 +1,17 @@
 
+##################################################################################
+# sys_command ： 执行系统命令，如要执行cmd命令需将shell设置为Ture
+# recv_all：将stream信息转为bytes
+# remove_shell_warning: 从shell命令中移除 warnings 信息
+#
+#
+##################################################################################
 import re
 import time
 import socket
 import random
 from adbutils import AdbTimeout
+from qianv_tool.module.logger import logger
 
 try:
     # adbutils 0.x
@@ -15,6 +23,31 @@ except ImportError:
     # We expect `screencap | nc 192.168.0.1 20298` instead of `screencap '|' nc 192.168.80.1 20298`
     import adbutils
     import subprocess
+
+
+
+def sys_command(cmd, timeout=10,shell=False):
+    """
+    执行cmd命令
+    Args:
+        cmd (list): 要执行的命令，可以是一个字符串或一个包含命令及其参数的列表。
+        timeout (int):超时时间
+        shell:默认为False，不通过shell；如果想要执行cmd命令需要将其设置为True
+
+    Returns:
+        str:
+    """
+    process = subprocess.Popen(cmd, stdout=subprocess.PIPE, shell=shell,text=True)
+    try:
+        stdout, stderr = process.communicate(timeout=timeout)
+    except subprocess.TimeoutExpired:
+        process.terminate() #结束进程
+        stdout, stderr = process.communicate()
+        logger.warning(f'TimeoutExpired when calling {cmd}, stdout={stdout}, stderr={stderr}')
+    finally:
+        if process:
+            process.terminate()
+    return stdout
 
 
 def recv_all(stream, chunk_size=4096, recv_interval=0.000) -> bytes:
@@ -63,6 +96,7 @@ def remove_shell_warning(s):
     """
     # WARNING: linker: [vdso]: unused DT entry: type 0x70000001 arg 0x0\n\x89PNG\r\n\x1a\n\x00\x00\x00\rIH
     if isinstance(s, bytes):
+        # b''b代表是一个以字节的形式存在的字符串
         if s.startswith(b'WARNING'):
             try:
                 s = s.split(b'\n', maxsplit=1)[1]
@@ -77,3 +111,6 @@ def remove_shell_warning(s):
             except IndexError:
                 pass
     return s
+
+
+print(command('dir'))

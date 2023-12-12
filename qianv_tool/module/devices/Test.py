@@ -1,6 +1,18 @@
-cmd = [333333,'aaaaaa']
-# 检查是否为字符串，如果不是执行期内逻辑
-if not isinstance(cmd, str):
-    # 使用map函数将cmd列表中的元素转换为字符串，并将结果转换为列表
-    cmd = list(map(str, cmd))
-print(cmd)
+import subprocess
+
+# 使用capture_output=True执行命令
+process_capture = subprocess.Popen('echo Hello, World!', shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+output_capture, error_capture = process_capture.communicate()
+print(output_capture)  # 输出：Hello, World!
+print(error_capture)  # 输出：空字符串
+
+# 使用capture_output=False执行命令
+process_no_capture = subprocess.Popen('echo Hello, World!', shell=True, text=True)
+output_capture1, error_capture1 = process_no_capture.communicate()  # 不捕获输出
+
+print(output_capture1)  # 输出：None
+print(error_capture1)  # 输出：None
+
+# 获取子进程的输出
+output_no_capture = process_no_capture.stdout.read().decode()
+print(output_no_capture)  # 输出：Hello, World!

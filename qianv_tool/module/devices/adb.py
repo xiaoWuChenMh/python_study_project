@@ -1,15 +1,22 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
 ########################################################################################################################
 #                                      自定义的adb连接管理器
-#
+# adb_binary ：获取adb二进制可执行文件地址
+# adb_client: 获取adb的客户端
+# adb_device ： 与某个设备建立连接后的AdbDevice
+# adb_shell : 执行给定的adb shell 命令，想要输入adb shell命令 需要先通过“adb -s serial shell“ [serial：设备id比如emulator-5554]。
+# adb_command ：执行ADB命令
+# stop_uiautomator : 停止uiautomater
+# restart_atx ； 重新启动atx
+# check_serial: 用于检测当前可用的serial
 ########################################################################################################################
+
 import os
 import adbutils
 import subprocess
 import uiautomator2 as u2
+from qianv_tool.module.logger import logger
 from adbutils import AdbClient, AdbDevice
-from qianv_tool.module.devices.utils import (recv_all,remove_shell_warning)
+from qianv_tool.module.devices.utils import (sys_command,recv_all,remove_shell_warning)
 
 class Adb:
     # adb的二进制执行文件的地址（toolkit下是项目内安装的，那如何安装呢？
@@ -49,11 +56,12 @@ class Adb:
     def adb_client(self) -> AdbClient:
         """
         获取AdbClient连接：它用于建立与本地计算机或远程计算机上运行的ADB服务器的连接。它提供了与连接的Android设备交互、发送ADB命令、安装和卸载应用程序以及管理设备的功能。
-          (有什么用，这个host和端口是否能连接模拟器，如果是多个模拟器呢）
         :return:
         """
-        host = '127.0.0.1' # IP地址 127.0.0.1 代表本地主机
-        port = 5037 # 所有 adb 客户端均使用端口 5037 与 adb 服务器通信。发出命令时，通过携带设备id，来分辨是发给哪一个设备的
+        # IP地址 127.0.0.1 代表本地主机
+        host = '127.0.0.1'
+        # adb 客户端均使用端口 5037 与 adb 服务器通信。发出命令时，通过携带设备id，来分辨是发给哪一个设备的
+        port = 5037
 
         # 尝试从环境变量中获取 adb的端口号
         env = os.environ.get('ANDROID_ADB_SERVER_PORT', None)
@@ -66,23 +74,22 @@ class Adb:
         print('logger.attrAdbClient', f'AdbClient({host}, {port})')
         return AdbClient(host, port)
 
-
-    def adb(self,serial) -> AdbDevice:
+    def adb_device(self,serial) -> AdbDevice:
         """
         获取AdbDevice服务，通过AdbClient建立连接后的单个Android设备。它允许您直接在设备上执行各种ADB命令，如拉/推送文件、安装/卸载应用程序、运行shell命令等。
         :return:
         """
         return AdbDevice(self.adb_client(),serial)
 
-   # 来源：connection.py =》Connection(ConnectionAttr)
+
     def adb_shell(self, cmd, serial,stream=False, recvall=True, timeout=10, rstrip=True):
         """
         Equivalent to `adb -s <serial> shell <*cmd>`
-
+        # 代码来自：connection.py =》Connection(ConnectionAttr)
         Args:
             cmd (list, str):
             stream (bool): 返回流而不是字符串输出（默认值：False）
-            recvall (bool): 当流=True时接收所有数据（默认值：True）
+            recvall (bool): 是否按字节形式返回（默认值：True）
             timeout (int): 超时时间(默认值：10)
             rstrip (bool): 是否去掉最后一行的空格 (默认值: True)
 
@@ -91,13 +98,12 @@ class Adb:
             bytes if stream=True and recvall=True
             socket if stream=True and recvall=False
         """
-        # 检查是否为字符串，如果不是执行期内逻辑
+        # 检查是否为字符串，如果不是，使用map函数将cmd列表中的元素转换为字符串，并将结果转换为列表
         if not isinstance(cmd, str):
-            # 使用map函数将cmd列表中的元素转换为字符串，并将结果转换为列表
             cmd = list(map(str, cmd))
 
         if stream:
-            result = self.adb(serial).shell(cmd, stream=stream, timeout=timeout, rstrip=rstrip)
+            result = self.adb_device(serial).shell(cmd, stream=stream, timeout=timeout, rstrip=rstrip)
             if recvall:
                 # bytes
                 return recv_all(result)
@@ -105,45 +111,31 @@ class Adb:
                 # socket
                 return result
         else:
-            result = self.adb(serial).shell(cmd, stream=stream, timeout=timeout, rstrip=rstrip)
+            result = self.adb_device(serial).shell(cmd, stream=stream, timeout=timeout, rstrip=rstrip)
             result = remove_shell_warning(result)
             # str
             return result
 
-    # 来源：connection.py =》Connection(ConnectionAttr)
+
     def adb_command(self, cmd, timeout=10,serial=None):
         """
-        在子流程中执行ADB命令，
-        通常在拉或推大文件时使用。
+        在子流程中执行ADB命令， 通常在拉或推大文件时使用。
+        # 代码：connection.py =》Connection(ConnectionAttr)
 
         Args:
             cmd (list): 命令列表
             timeout (int):超时时间
-
+            serial :设备id，默认为None时，会在所有设备上执行指定命令
         Returns:
-            str:
+            str: 文本型的命令标准输出
         """
         cmd = list(map(str, cmd))
         if serial != None:
             cmd = [self.adb_path, '-s', serial] + cmd
         else:
             cmd = [self.adb_path] + cmd
-
-        print(f'info: Execute: {cmd}')
-
-        # Use shell=True to disable console window when using GUI.
-        # Although, there's still a window when you stop running in GUI, which cause by gooey.
-        # To disable it, edit gooey/gui/util/taskkill.py
-
-        # No gooey anymore, just shell=False
-        process = subprocess.Popen(cmd, stdout=subprocess.PIPE, shell=False)
-        try:
-            stdout, stderr = process.communicate(timeout=timeout)
-        except subprocess.TimeoutExpired:
-            process.kill()
-            stdout, stderr = process.communicate()
-            print(f'warning: TimeoutExpired when calling {cmd}, stdout={stdout}, stderr={stderr}')
-        return stdout
+        logger.info(f'Execute: {cmd}')
+        return sys_command(cmd)
 
     # ---------------------------------------------------- command 常用命令 -----------------------------------
 
@@ -161,11 +153,8 @@ class Adb:
         # self.adb_shell([atx_agent_path, 'server', '--nouia', '-d', '--addr', '127.0.0.1:7912'],serial)
         # 有时还是会出现错误：无法提供服务非 am instrument启动
         self.adb_shell([atx_agent_path, 'server', '-d'],serial)
-    def stop_uiautomator( self,serial ):
-        package_name = 'com.github.uiautomator'
-        package_name_test = 'com.github.uiautomator.test'
-        self.adb_shell(['am', 'force-stop', package_name],serial)
-        self.adb_shell(['am', 'force-stop', package_name_test],serial)
+
+
 
 if __name__ == "__main__":
     adb = Adb()

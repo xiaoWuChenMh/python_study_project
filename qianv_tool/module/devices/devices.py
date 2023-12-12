@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
 ################################################################################################################
 #                        设备操作
 #  设备信息说明：
@@ -11,7 +9,9 @@ import uiautomator2 as u2
 import subprocess
 from qianv_tool.module.logger import logger
 
-class Devices:
+from qianv_tool.module.devices.connection import Connection
+
+class Devices(Connection):
 
     devices_info = {}
 
