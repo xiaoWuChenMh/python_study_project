@@ -1,7 +1,0 @@
-{
-  "function_name":"string_distinct",
-  "function_type":"udf",
-  "import_path":"from string_distinct import StringDistinct",
-  "construct_method":"StringDistinct()",
-  "data_types":"string->string"
-}
