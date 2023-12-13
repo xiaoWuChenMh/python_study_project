@@ -1,0 +1,266 @@
+########################################################################################################################
+#                                    自定义的Uiautomator连接管理器（基于uiautomator2）
+#
+# u2_device： 通过uiautomator建立和设备的连接（u2.connect(设备ID)）。
+# install_uiautomator2 ：将守护程序（u2、atx等）安装到设备，等同于‘python -m uiautomator2 init’
+# u2_adb_shell : u2下执行 adb shell 命令
+# screenshot： 截图，并做一些前置操作（颜色、去噪）
+#
+########################################################################################################################
+
+
+import re
+import cv2
+import time
+import numpy as np
+import logging
+import uiautomator2 as u2
+from functools import wraps
+from json.decoder import JSONDecodeError
+from adbutils.errors import AdbError
+from qianv_tool.module.logger import logger
+from qianv_tool.module.devices.connection.adb import Adb
+from qianv_tool.module.devices.exception import RequestHumanTakeover
+from qianv_tool.module.devices.utils import (remove_shell_warning,image_show,possible_reasons,handle_adb_error)
+from qianv_tool.module.devices.exception import ImageTruncated,PackageNotInstalled
+
+# 默认和设备连接失败重试次数
+RETRY_TRIES = 5
+
+
+# 重试时的睡眠时间
+def retry_sleep(self, trial):
+    if trial == 0:
+        pass
+    elif trial == 1:
+        pass
+    # Failed twice
+    elif trial == 2:
+        time.sleep(1)
+    # Failed more
+    else:
+        time.sleep(3)
+
+def retry(func):
+
+    @wraps(func)
+    def retry_wrapper(self, *args, **kwargs):
+        """
+        Args:
+            self (Uiautomator2):
+        """
+        init = None
+        for _ in range(RETRY_TRIES):
+            try:
+                if callable(init):
+                    retry_sleep(_)
+                    init()
+                return func(self, *args, **kwargs)
+            # Can't handle
+            except RequestHumanTakeover:
+                break
+            # When adb server was killed
+            except ConnectionResetError as e:
+                logger.error(e)
+
+                def init():
+                    self.adb_reconnect()
+            # In `device.set_new_command_timeout(604800)`
+            # json.decoder.JSONDecodeError: Expecting value: line 1 column 2 (char 1)
+            except JSONDecodeError as e:
+                logger.error(e)
+
+                def init():
+                    # 需要获取所有设备ID
+                    self.install_uiautomator2()
+            # AdbError
+            except AdbError as e:
+                if handle_adb_error(e):
+                    def init():
+                        self.adb_reconnect()
+                else:
+                    break
+            # RuntimeError: USB device 127.0.0.1:5555 is offline
+            except RuntimeError as e:
+                if handle_adb_error(e):
+                    def init():
+                        self.adb_reconnect()
+                else:
+                    break
+            # In `assert c.read string(4) == _OKAY`
+            # ADB on emulator not enabled
+            except AssertionError as e:
+                logger.exception(e)
+                possible_reasons(
+                    'If you are using BlueStacks or LD player or WSA, '
+                    'please enable ADB in the settings of your emulator'
+                )
+                break
+            # Package not installed
+            except PackageNotInstalled as e:
+                logger.error(e)
+
+                def init():
+                    self.detect_package()
+            # ImageTruncated
+            except ImageTruncated as e:
+                logger.error(e)
+
+                def init():
+                    pass
+            # Unknown
+            except Exception as e:
+                logger.exception(e)
+
+                def init():
+                    pass
+
+        logger.critical(f'Retry {func.__name__}() failed')
+        raise 8
+
+    return retry_wrapper
+
+class Uiautomator(Adb):
+
+    image_test = False
+
+    def __init__(self):
+        super().__init__()
+
+    def u2_device(self,serial) -> u2.Device:
+        """
+         通过uiautomator建立和设备的连接
+        :param serial:
+        :return:
+        """
+        if self.is_over_http:
+            # Using uiautomator2_http
+            device = u2.connect(self.serial)
+        else:
+            # Normal uiautomator2
+            if self.serial.startswith('emulator-') or self.serial.startswith('127.0.0.1:'):
+                device = u2.connect_usb(self.serial)
+            else:
+                device = u2.connect(self.serial)
+
+        # Stay alive
+        device.set_new_command_timeout(604800)
+
+        logger.attr('u2.Device', f'Device(atx_agent_url={device._get_atx_agent_url()})')
+        return device
+
+
+    def is_over_http(self,serial):
+        """
+          验证 设备ID是否是一个http地址
+        :param serial:
+        :return:
+        """
+        return bool(re.match(r"^https?://",serial))
+
+    def install_uiautomator2(self,serial):
+        """
+        安装 uiautomator2、atx 并移除 minicap,同在对每个设备执行  'python -m uiautomator2 init' 命令
+        """
+        logger.info('Install uiautomator2')
+        init = u2.init.Initer(self.adb_device(serial), loglevel=logging.DEBUG)
+        # MuMu X has no ro.product.cpu.abi, pick abi from ro.product.cpu.abilist 【init.abi：设备的 CPU 架构】
+        if init.abi not in ['x86_64', 'x86', 'arm64-v8a', 'armeabi-v7a', 'armeabi']:
+            init.abi = init.abis[0]
+        # uiautomator默认监控的就是7912，这是显示的在声明下
+        init.set_atx_agent_addr('127.0.0.1:7912')
+        try:
+            init.install()
+        except ConnectionError:
+            u2.init.GITHUB_BASEURL = 'http://tool.appetizer.io/openatx'
+            init.install()
+        """卸载minicap：它在某些模拟器上无法工作或会发送压缩图像。 """
+        logger.info('Removing minicap')
+        self.adb_shell(["rm", "/data/local/tmp/minicap"],serial)
+        self.adb_shell(["rm", "/data/local/tmp/minicap.so"],serial)
+
+
+
+    def u2_adb_shell(self, cmd, serial, stream=False, recvall=True, timeout=10, rstrip=True):
+        """
+        Equivalent to http://127.0.0.1:7912/shell?command={command}
+        u2下执行 adb shell 命令
+
+        Args:
+            cmd (list, str):
+            stream (bool): Return stream instead of string output (Default: False)
+            recvall (bool): Receive all data when stream=True (Default: True)
+            timeout (int): (Default: 10)
+            rstrip (bool): Strip the last empty line (Default: True)
+
+        Returns:
+            str if stream=False
+            bytes if stream=True
+        """
+        if not isinstance(cmd, str):
+            cmd = list(map(str, cmd))
+
+        if stream:
+            result = self.u2_device(serial).shell(cmd, stream=stream, timeout=timeout)
+            # Already received all, so `recvall` is ignored
+            result = remove_shell_warning(result.content)
+            # bytes
+            return result
+        else:
+            result = self.u2_device(serial).shell(cmd, stream=stream, timeout=timeout).output
+            if rstrip:
+                result = result.rstrip()
+            result = remove_shell_warning(result)
+            # str
+            return result
+
+    def uiautomator_stop( self,serial ):
+        """
+        通过adb shell 停止设备上的uiautomator和uiautomatorTest服务
+        :param serial:
+        :return:
+        """
+        package_name = 'com.github.uiautomator'
+        package_name_test = 'com.github.uiautomator.test'
+        self.adb_shell(['am', 'force-stop', package_name],serial)
+        self.adb_shell(['am', 'force-stop', package_name_test],serial)
+
+    def screenshot(self,serial):
+        """
+         截图，并做一些前置操作（颜色、去噪）
+        :param serial: 设备ID
+        :return: 处理后的截图
+        """
+
+        device = self.u2_device(serial)
+
+        # 调用设备的截图功能截图，并发送到当前赋值给image变量
+        image = device.screenshot(format='raw')
+
+        # 这行代码将输入的"image"数据读入一个类型为np.uint8的NumPy数组中。
+        image = np.frombuffer(image, np.uint8)
+        self.__image_check(image,'Empty image after reading from buffer')
+
+        # 这里使用了OpenCV的imdecode函数来对图像数据进行解码(转换为图像格式)。标志cv2.IMREAD_COLOR表示应该以彩色方式加载图像
+        image = cv2.imdecode(image, cv2.IMREAD_COLOR)
+        self.__image_check(image, 'Empty image after cv2.imdecode')
+
+        # 这行代码使用OpenCV的cvtColor函数将图像的颜色空间从BGR转换为RGB。
+        image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+        self.__image_check(image, 'Empty image after cv2.cvtColor')
+
+        # 可选：对图片去噪
+        cv2.fastNlMeansDenoising(image, image, h=17, templateWindowSize=1, searchWindowSize=2)
+        self.__image_check(image, 'Empty image after cv2.fastNlMeansDenoising')
+
+        return image
+
+    def __image_check(self,image,error_message):
+        if image is None:
+            raise ImageTruncated(error_message)
+        else:
+            image_show(image,self.image_test)
+
+if __name__ == "__main__":
+    connection = Uiautomator()
+    connection.install_uiautomator2('emulator-5554')

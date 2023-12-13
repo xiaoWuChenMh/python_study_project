@@ -1,100 +1,92 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
 ################################################################################################################
 #                        设备操作
-#  设备信息说明：
-#      devices_info = {'设备ID': {'statu': '状态：0-异常；1-正常', 'product': '命令返回信息', 'model': '命令返回信息', 'device': '命令返回信息', 'transport_id': '命令返回信息'},'设备ID':....}
-#      system_info =  {'system': '64bit', 'cpu': 'AMD64'}
+#
+# find_emulator_devices：发现当前pc上的所有模拟器设备
+# init_devices：初始化所有设备，即安装需要的应用
+# pc_system_info：pc的系统信息
+#
+# 初始化过程： find_devices Then init_devices  then 是否能正确连接 （否：关闭u2服务 then 重启atx服务） then 再次测试 then 重试3次不行报错
 ################################################################################################################
 
 import uiautomator2 as u2
 import subprocess
+
+
 from qianv_tool.module.logger import logger
+from qianv_tool.module.devices.connection.connection import Connection
+from qianv_tool.module.devices.utils import (sys_command)
 
-class Devices:
+class Devices(Connection):
 
+    # 设备信息：{'设备ID': {'serial': '设备ID','state': '状态：offline-离线；device-在线'},'设备ID':....}
     devices_info = {}
 
+    # 系统信息 {'system': '64bit', 'cpu': 'AMD64'}
     system_info = {}
 
+
     def __init__( self ):
-        pass
+        super().__init__()
+        self.pc_system_info()
+        self.find_emulator_devices()
+        self.init_devices()
 
-    def cmdExe( self, command ):
+    def is_emulator(self,serial):
+        return serial.startswith('emulator-') or serial.startswith('127.0.0.1:')
+
+    def find_emulator_devices( self ):
         """
-         执行cmd命令
-        :param command: 待执行的命令
+         发现模拟器设备
         :return:
         """
-        # 执行命令
-        result = subprocess.run(command, capture_output=True, text=True, shell=True)
-        # 获取输出结果
-        output = result.stdout.strip()
-        # 返回输出结果
-        return output
-
-    def find_devices( self ):
-        """
-         发现设备
-        :return:
-        """
-        adb_command = 'adb devices -l'
-        cmd_result =  self.cmdExe(adb_command).split('\n')
-        for dv in cmd_result[1:] :
-            device_info = {}
-            try:
-                if 'offline ' in dv:
-                    results = dv.split(' offline ')
-                    device_id = results[0].strip()
-                    logger.info('find device error: %s' % (device_id))
-                    device_info['statu'] = '0'
-                    self.devices_info[device_id] = {}
-                else:
-                    results = dv.split(' device ')
-                    device_id = results[0].strip()
-                    logger.info('find device success: %s' % (device_id) )
-                    device_info['statu'] = '1'
-                    others_info = results[1].strip().split(' ')
-                    for info in others_info:
-                        key = info.split(':')[0].strip()
-                        value = info.split(':')[1].strip()
-                        device_info[key] = value
-                    self.devices_info[device_id] = device_info
-            except Exception:
-                pass
+        for info in self.adb_client.list():
+            serial = info.serial
+            if self.is_emulator(serial):
+                state = info.state
+                self.devices_info[serial] = {'serial':serial,'state':state}
         return self
 
 
-    def install_atx(self):
+    def init_devices(self):
         """
-         在设备中安装atx等app
-         命令返回值 # 'Successfully init AdbDevice(serial=emulator-5554) \nSuccessfully init AdbDevice(serial=emulator-5556) \n\x1b[0m'
+        初始化设备，等同于执行 'python -m uiautomator2 init' 命令
         :return:
         """
-        try:
-            adb_command = 'python -m uiautomator2 init'
-            cmd_result = self.cmdExe(adb_command).split('\n')
-            for dv in cmd_result:
-                if 'Successfully' in dv:
-                    device_id = dv.split('serial=')[1][0:-1]
-                    device_info = self.devices_info[device_id]
-                    device_info['install_tag'] = '1'
-        except Exception:
-            pass
+        if len(self.devices_info) == 0:
+            logger.warning('init device error: no valid device')
+            return self
+        for device in self.devices_info:
+            serial = device['serial']
+            try:
+                if device['state'] != 'device':
+                    self.install_uiautomator2(serial)
+                    device['install_tag'] = '1'
+                else:
+                    device['install_tag'] = '0'
+            except Exception as e:
+                device['install_tag'] = '0'
+                logger.warning('init device error, serial(%s) : %s' % (serial,e))
+        return self
 
-    def check_processor(self):
+
+
+    def pc_system_info(self):
         """
-        检查处理器架构：系统架构(system) 和 cpu类型（cpu）
+        pc的系统系统：系统架构(system) 和 cpu类型（cpu）
         :return:
         """
         try:
             adb_command = 'python -c "import platform;print(platform.architecture()[0]);print(platform.machine())"'
-            cmd_result = self.cmdExe(adb_command).split('\n')
-            self.system_info['system'] = cmd_result[0].strip()
-            self.system_info['cpu'] = cmd_result[1].strip()
-        except Exception:
+            cmd_result = sys_command(adb_command,shell=True).split('\n')
+            system = cmd_result[0].strip()
+            cpu = cmd_result[1].strip()
+            self.system_info['system'] = system
+            self.system_info['cpu'] = cpu
+            logger.info('cp system info: system(%s) cpu(%s)' % (system, cpu))
+        except Exception as e:
             self.system_info['system'] = 'null'
             self.system_info['cpu'] = 'null'
+            logger.info('Get cp system info Error: %s' % (e))
         return self
 
     # 设置设备标识 emulator-5554 、emulator-5556、 emulator-5558 、emulator-5560
@@ -170,13 +162,10 @@ class Devices:
 
 if __name__ == "__main__":
     __devices = Devices()
-    __devices.find_devices()
-    # __devices.install_atx()
-    __devices.check_processor()
-    for key, value in __devices.devices_info.items():
-        if value['statu'] == '1' :
-            # 如何判断atx是否正常呢，调用u2.connect('emulator-5554')查看是否报错？
-            __devices.init_atx(key)
+    # for key, value in __devices.devices_info.items():
+    #     if value['statu'] == '1' :
+    #         # 如何判断atx是否正常呢，调用u2.connect('emulator-5554')查看是否报错？
+    #         __devices.init_atx(key)
     print(__devices.devices_info)
     print(__devices.system_info)
 
