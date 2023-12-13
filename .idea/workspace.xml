@@ -1,41 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/module_study/PyQt5/parts/QSliderTest.py" line="25" mnemonic="3" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aad3d1e3-b581-4529-a993-5d7fc841602f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/module_study/PyQt5/udf/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_study/PyQt5/udf/concat_set_split.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_study/PyQt5/udf/concat_set_split.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_study/PyQt5/udf/demo_udf.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_study/PyQt5/udf/string_distinct.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_study/PyQt5/udf/string_distinct.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_study/PyQt5/udf/string_twice_split.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_study/PyQt5/udf/string_twice_split.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_study/PyQt5/udf/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module_study/PyQt5/Test/config/config_file.py" beforeDir="false" afterPath="$PROJECT_DIR$/module_study/PyQt5/Test/config/config_file.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module_study/PyQt5/Test/config/config_item.py" beforeDir="false" afterPath="$PROJECT_DIR$/module_study/PyQt5/Test/config/config_item.py" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/module_study/PyQt5/udf/string_distinct.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -143,12 +121,16 @@
       </list>
     </option>
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="181" />
     <option name="y" value="173" />
     <option name="width" value="1940" />
     <option name="height" value="1050" />
   </component>
+  <component name="ProjectId" id="2ZFZ25eUNhS8O9mAimR8WRmECN7" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -176,14 +158,20 @@
       </pane>
     </panes>
   </component>
-  <component name="PropertiesComponent">
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/module_study/PyQt5/udf" />
-    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="settings.github" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\workspace\python\study\python_study_project\module_study\PyQt5\udf" />
@@ -199,18 +187,6 @@
       <recent name="E:\workspace\python\study\python_study_project\module_study\PyQt5\toolBar" />
       <recent name="E:\workspace\python\study\python_study_project\module_study\PyQt5\parts" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager" selected="Python.test (1)">
     <configuration name="config_file" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -340,6 +316,7 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -371,6 +348,8 @@
       <workItem from="1700808031006" duration="4212000" />
       <workItem from="1700832427574" duration="4010000" />
       <workItem from="1701055764622" duration="689000" />
+      <workItem from="1702019579161" duration="684000" />
+      <workItem from="1702437115461" duration="333000" />
     </task>
     <task id="LOCAL-00001" summary="初始化">
       <created>1687151991623</created>
@@ -482,7 +461,7 @@
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.History.Properties">
     <option name="COLUMN_ORDER">
@@ -524,45 +503,45 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/python_study_project$config_item.coverage" NAME="config_item Coverage Results" MODIFIED="1700635392306" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/Test/config" />
-    <SUITE FILE_PATH="coverage/python_study_project$main.coverage" NAME="main Coverage Results" MODIFIED="1700568835430" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/Test" />
-    <SUITE FILE_PATH="coverage/python_study_project$txt_prompts.coverage" NAME="txt_prompts Coverage Results" MODIFIED="1689337443673" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/LangChain_study/modules/model_io/prompts" />
-    <SUITE FILE_PATH="coverage/python_study_project$QComboBoxTest.coverage" NAME="QComboBoxTest Coverage Results" MODIFIED="1700120708554" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/parts" />
-    <SUITE FILE_PATH="coverage/python_study_project$QSpinBoxTest.coverage" NAME="QSpinBoxTest Coverage Results" MODIFIED="1700122758426" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/parts" />
-    <SUITE FILE_PATH="coverage/python_study_project$app.coverage" NAME="app Coverage Results" MODIFIED="1700125005156" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/Layout" />
-    <SUITE FILE_PATH="coverage/python_study_project$QToolBarTestThress.coverage" NAME="QToolBarTestThress Coverage Results" MODIFIED="1700220463525" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/toolBar" />
-    <SUITE FILE_PATH="coverage/python_study_project$test.coverage" NAME="test Coverage Results" MODIFIED="1700810419800" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5" />
-    <SUITE FILE_PATH="coverage/python_study_project$contextMenuEvent.coverage" NAME="contextMenuEvent Coverage Results" MODIFIED="1700118626852" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/event" />
-    <SUITE FILE_PATH="coverage/python_study_project$smallParts.coverage" NAME="smallParts Coverage Results" MODIFIED="1700039141484" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5" />
-    <SUITE FILE_PATH="coverage/python_study_project$QHBoxLayout.coverage" NAME="QHBoxLayout Coverage Results" MODIFIED="1700125496887" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/Layout" />
-    <SUITE FILE_PATH="coverage/python_study_project$chat_template.coverage" NAME="chat_template Coverage Results" MODIFIED="1689338882507" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/LangChain_study/modules/model_io/prompts" />
-    <SUITE FILE_PATH="coverage/python_study_project$menuBarTestOne.coverage" NAME="menuBarTestOne Coverage Results" MODIFIED="1700222366000" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/menuBar" />
-    <SUITE FILE_PATH="coverage/python_study_project$mainWindow__1_.coverage" NAME="mainWindow (1) Coverage Results" MODIFIED="1700569370700" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/Test/test" />
-    <SUITE FILE_PATH="coverage/python_study_project$QLineEditTest.coverage" NAME="QLineEditTest Coverage Results" MODIFIED="1700121937300" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/parts" />
-    <SUITE FILE_PATH="coverage/python_study_project$nested.coverage" NAME="nested Coverage Results" MODIFIED="1700125428782" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/Layout" />
-    <SUITE FILE_PATH="coverage/python_study_project$firstApp.coverage" NAME="firstApp Coverage Results" MODIFIED="1699935208995" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5" />
-    <SUITE FILE_PATH="coverage/python_study_project$QLabelTest.coverage" NAME="QLabelTest Coverage Results" MODIFIED="1700119595650" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/parts" />
-    <SUITE FILE_PATH="coverage/python_study_project$mainWindow.coverage" NAME="mainWindow Coverage Results" MODIFIED="1700540606726" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/Test" />
-    <SUITE FILE_PATH="coverage/python_study_project$QMessageBoxTest.coverage" NAME="QMessageBoxTest Coverage Results" MODIFIED="1700466850273" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/QDialog" />
     <SUITE FILE_PATH="coverage/python_study_project$QToolBarTest.coverage" NAME="QToolBarTest Coverage Results" MODIFIED="1700202105964" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5" />
+    <SUITE FILE_PATH="coverage/python_study_project$config_item.coverage" NAME="config_item Coverage Results" MODIFIED="1700635392306" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/Test/config" />
     <SUITE FILE_PATH="coverage/python_study_project$qDialogTestOne.coverage" NAME="qDialogTestOne Coverage Results" MODIFIED="1700466887511" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/QDialog" />
-    <SUITE FILE_PATH="coverage/python_study_project$QVBoxLayoutTest.coverage" NAME="QVBoxLayoutTest Coverage Results" MODIFIED="1700125522640" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/Layout" />
-    <SUITE FILE_PATH="coverage/python_study_project$KeepWindowTest.coverage" NAME="KeepWindowTest Coverage Results" MODIFIED="1700469514076" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/newWindow" />
-    <SUITE FILE_PATH="coverage/python_study_project$mouse.coverage" NAME="mouse Coverage Results" MODIFIED="1700116296174" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5" />
-    <SUITE FILE_PATH="coverage/python_study_project$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1700554724102" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/module/leftTreeMenu" />
-    <SUITE FILE_PATH="coverage/python_study_project$requests_test.coverage" NAME="requests_test Coverage Results" MODIFIED="1694594969499" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/network" />
-    <SUITE FILE_PATH="coverage/python_study_project$QStackedLayoutTest.coverage" NAME="QStackedLayoutTest Coverage Results" MODIFIED="1700127126037" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/Layout" />
-    <SUITE FILE_PATH="coverage/python_study_project$QTabWidgetTest.coverage" NAME="QTabWidgetTest Coverage Results" MODIFIED="1700127579204" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/Layout" />
+    <SUITE FILE_PATH="coverage/python_study_project$txt_prompts.coverage" NAME="txt_prompts Coverage Results" MODIFIED="1689337443673" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/LangChain_study/modules/model_io/prompts" />
     <SUITE FILE_PATH="coverage/python_study_project$WindowTest.coverage" NAME="WindowTest Coverage Results" MODIFIED="1700468464536" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/newWindow" />
-    <SUITE FILE_PATH="coverage/python_study_project$QSliderTest.coverage" NAME="QSliderTest Coverage Results" MODIFIED="1700123101067" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/parts" />
     <SUITE FILE_PATH="coverage/python_study_project$QToolBarTestTwo.coverage" NAME="QToolBarTestTwo Coverage Results" MODIFIED="1700203182712" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/toolBar" />
-    <SUITE FILE_PATH="coverage/python_study_project$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1700836667868" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/udf" />
-    <SUITE FILE_PATH="coverage/python_study_project$config_file.coverage" NAME="config_file Coverage Results" MODIFIED="1700636628806" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/Test/config" />
-    <SUITE FILE_PATH="coverage/python_study_project$QGridLayoutTest.coverage" NAME="QGridLayoutTest Coverage Results" MODIFIED="1700125746558" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/Layout" />
     <SUITE FILE_PATH="coverage/python_study_project$QCheckBoxTest.coverage" NAME="QCheckBoxTest Coverage Results" MODIFIED="1700120095146" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/parts" />
-    <SUITE FILE_PATH="coverage/python_study_project$custom_template.coverage" NAME="custom_template Coverage Results" MODIFIED="1689340226545" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/LangChain_study/modules/model_io/prompts" />
+    <SUITE FILE_PATH="coverage/python_study_project$mainWindow__1_.coverage" NAME="mainWindow (1) Coverage Results" MODIFIED="1700569370700" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/Test/test" />
+    <SUITE FILE_PATH="coverage/python_study_project$contextMenuEvent.coverage" NAME="contextMenuEvent Coverage Results" MODIFIED="1700118626852" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/event" />
+    <SUITE FILE_PATH="coverage/python_study_project$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1700836667868" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/udf" />
+    <SUITE FILE_PATH="coverage/python_study_project$QLineEditTest.coverage" NAME="QLineEditTest Coverage Results" MODIFIED="1700121937300" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/parts" />
+    <SUITE FILE_PATH="coverage/python_study_project$QStackedLayoutTest.coverage" NAME="QStackedLayoutTest Coverage Results" MODIFIED="1700127126037" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/Layout" />
+    <SUITE FILE_PATH="coverage/python_study_project$app.coverage" NAME="app Coverage Results" MODIFIED="1700125005156" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/Layout" />
+    <SUITE FILE_PATH="coverage/python_study_project$menuBarTestOne.coverage" NAME="menuBarTestOne Coverage Results" MODIFIED="1700222366000" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/menuBar" />
+    <SUITE FILE_PATH="coverage/python_study_project$QLabelTest.coverage" NAME="QLabelTest Coverage Results" MODIFIED="1700119595650" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/parts" />
+    <SUITE FILE_PATH="coverage/python_study_project$QHBoxLayout.coverage" NAME="QHBoxLayout Coverage Results" MODIFIED="1700125496887" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/Layout" />
+    <SUITE FILE_PATH="coverage/python_study_project$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1700554724102" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/module/leftTreeMenu" />
+    <SUITE FILE_PATH="coverage/python_study_project$chat_template.coverage" NAME="chat_template Coverage Results" MODIFIED="1689338882507" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/LangChain_study/modules/model_io/prompts" />
+    <SUITE FILE_PATH="coverage/python_study_project$QTabWidgetTest.coverage" NAME="QTabWidgetTest Coverage Results" MODIFIED="1700127579204" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/Layout" />
+    <SUITE FILE_PATH="coverage/python_study_project$QSpinBoxTest.coverage" NAME="QSpinBoxTest Coverage Results" MODIFIED="1700122758426" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/parts" />
+    <SUITE FILE_PATH="coverage/python_study_project$nested.coverage" NAME="nested Coverage Results" MODIFIED="1700125428782" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/Layout" />
+    <SUITE FILE_PATH="coverage/python_study_project$QToolBarTestThress.coverage" NAME="QToolBarTestThress Coverage Results" MODIFIED="1700220463525" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/toolBar" />
     <SUITE FILE_PATH="coverage/python_study_project$event.coverage" NAME="event Coverage Results" MODIFIED="1699935942332" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5" />
+    <SUITE FILE_PATH="coverage/python_study_project$test.coverage" NAME="test Coverage Results" MODIFIED="1700810419800" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5" />
+    <SUITE FILE_PATH="coverage/python_study_project$main.coverage" NAME="main Coverage Results" MODIFIED="1700568835430" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/Test" />
+    <SUITE FILE_PATH="coverage/python_study_project$QMessageBoxTest.coverage" NAME="QMessageBoxTest Coverage Results" MODIFIED="1700466850273" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/QDialog" />
+    <SUITE FILE_PATH="coverage/python_study_project$custom_template.coverage" NAME="custom_template Coverage Results" MODIFIED="1689340226545" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/LangChain_study/modules/model_io/prompts" />
+    <SUITE FILE_PATH="coverage/python_study_project$QComboBoxTest.coverage" NAME="QComboBoxTest Coverage Results" MODIFIED="1700120708554" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/parts" />
+    <SUITE FILE_PATH="coverage/python_study_project$mouse.coverage" NAME="mouse Coverage Results" MODIFIED="1700116296174" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5" />
+    <SUITE FILE_PATH="coverage/python_study_project$QSliderTest.coverage" NAME="QSliderTest Coverage Results" MODIFIED="1700123101067" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/parts" />
+    <SUITE FILE_PATH="coverage/python_study_project$KeepWindowTest.coverage" NAME="KeepWindowTest Coverage Results" MODIFIED="1700469514076" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/newWindow" />
     <SUITE FILE_PATH="coverage/python_study_project$QToolBarTestOne.coverage" NAME="QToolBarTestOne Coverage Results" MODIFIED="1700203979334" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/toolBar" />
+    <SUITE FILE_PATH="coverage/python_study_project$smallParts.coverage" NAME="smallParts Coverage Results" MODIFIED="1700039141484" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5" />
+    <SUITE FILE_PATH="coverage/python_study_project$requests_test.coverage" NAME="requests_test Coverage Results" MODIFIED="1694594969499" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/network" />
+    <SUITE FILE_PATH="coverage/python_study_project$mainWindow.coverage" NAME="mainWindow Coverage Results" MODIFIED="1700540606726" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/Test" />
+    <SUITE FILE_PATH="coverage/python_study_project$config_file.coverage" NAME="config_file Coverage Results" MODIFIED="1700636628806" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/Test/config" />
+    <SUITE FILE_PATH="coverage/python_study_project$firstApp.coverage" NAME="firstApp Coverage Results" MODIFIED="1699935208995" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5" />
+    <SUITE FILE_PATH="coverage/python_study_project$QGridLayoutTest.coverage" NAME="QGridLayoutTest Coverage Results" MODIFIED="1700125746558" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/Layout" />
+    <SUITE FILE_PATH="coverage/python_study_project$QVBoxLayoutTest.coverage" NAME="QVBoxLayoutTest Coverage Results" MODIFIED="1700125522640" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/module_study/PyQt5/Layout" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/module_study/PyQt5/parts/QLineEditTest.py">
