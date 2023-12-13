@@ -1,38 +1,51 @@
 ########################################################################################################################
-#                                      自定义的adb连接管理器
-# adb_binary ：获取adb二进制可执行文件地址
-# adb_client: 获取adb的客户端
-# adb_device ： 与某个设备建立连接后的AdbDevice
-# adb_shell : 执行给定的adb shell 命令，想要输入adb shell命令 需要先通过“adb -s serial shell“ [serial：设备id比如emulator-5554]。
-# adb_command ：执行ADB命令
-# stop_uiautomator : 停止uiautomater
-# restart_atx ； 重新启动atx
-# check_serial: 用于检测当前可用的serial
+#                                      自定义的adb连接管理器(基于adbutils)
+#
+# adbutils：https://github.com/openatx/adbutils
+# __adb_binary ： 获取adb二进制可执行文件地址
+# __adb_client:   获取adb的客户端
+# adb_disconnect: 断开客户端与指定的设备的连接
+# adb_connect:    建立客户端与指定的设备的连接
+# adb_device ：   与某个设备建立连接后的AdbDevice
+# adb_restart ：  重启adb服务
+# adb_shell :     执行给定的adb shell 命令，想要输入adb shell命令 需要先通过“adb -s serial shell“ [serial：设备id比如emulator-5554]。
+# adb_command ：   执行ADB命令
 ########################################################################################################################
 
 import os
 import adbutils
-import subprocess
-import uiautomator2 as u2
 from qianv_tool.module.logger import logger
 from adbutils import AdbClient, AdbDevice
 from qianv_tool.module.devices.utils import (sys_command,recv_all,remove_shell_warning)
 
 class Adb:
+
+    # adb的安装地址
+    adb_path: str
+
+    # serial列表
+    serial = {}
+
+    # adb客户端
+    adb_client: AdbClient
+
     # adb的二进制执行文件的地址（toolkit下是项目内安装的，那如何安装呢？
     adb_binary_list = [
         './bin/adb/adb.exe',
         './toolkit/Lib/site-packages/adbutils/binaries/adb.exe',
         '/usr/bin/adb'
     ]
-    adb_path = ""
+
 
     def __init__(self):
         # 修改adb的路径
-        adbutils.adb_path = lambda: self.adb_binary
-        self.adb_path = self.adb_binary()
+        adbutils.adb_path = lambda: self.__adb_binary
+        self.adb_path = self.__adb_binary()
+        # 获取adb客户端
+        self.adb_client = self.__adb_client()
 
-    def adb_binary(self):
+
+    def __adb_binary(self):
         """
         获取adb二进制可执行文件地址
         :return:
@@ -53,7 +66,7 @@ class Adb:
         file = 'adb'
         return file
 
-    def adb_client(self) -> AdbClient:
+    def __adb_client(self) -> AdbClient:
         """
         获取AdbClient连接：它用于建立与本地计算机或远程计算机上运行的ADB服务器的连接。它提供了与连接的Android设备交互、发送ADB命令、安装和卸载应用程序以及管理设备的功能。
         :return:
@@ -74,13 +87,40 @@ class Adb:
         print('logger.attrAdbClient', f'AdbClient({host}, {port})')
         return AdbClient(host, port)
 
+    def adb_disconnect(self, serial):
+        """
+        断开客户端与某个设备的连接
+        :param serial:
+        :return:
+        """
+        msg = self.adb_client.disconnect(serial)
+        if msg:
+            logger.info(msg)
+
+    def adb_connect(self,serial):
+        """
+         客户端和某个设备建立连接（emulator-xxx会导致所有的模拟器都重新再连一遍）
+        :param serial:
+        :return:
+        """
+        self.adb_client.connect(serial)
+
     def adb_device(self,serial) -> AdbDevice:
         """
         获取AdbDevice服务，通过AdbClient建立连接后的单个Android设备。它允许您直接在设备上执行各种ADB命令，如拉/推送文件、安装/卸载应用程序、运行shell命令等。
         :return:
         """
-        return AdbDevice(self.adb_client(),serial)
+        return AdbDevice(self.adb_client,serial)
 
+    def adb_restart(self):
+        """
+            Reboot adb client
+        """
+        logger.info('Restart adb')
+        # Kill current client
+        self.adb_client.server_kill()
+        # Init adb client
+        self.adb_client = self.__adb_client()
 
     def adb_shell(self, cmd, serial,stream=False, recvall=True, timeout=10, rstrip=True):
         """
@@ -116,7 +156,6 @@ class Adb:
             # str
             return result
 
-
     def adb_command(self, cmd, timeout=10,serial=None):
         """
         在子流程中执行ADB命令， 通常在拉或推大文件时使用。
@@ -136,23 +175,6 @@ class Adb:
             cmd = [self.adb_path] + cmd
         logger.info(f'Execute: {cmd}')
         return sys_command(cmd)
-
-    # ---------------------------------------------------- command 常用命令 -----------------------------------
-
-    def restart_atx(self,serial):
-        """
-         重新启动指定设备下的 atxAgent 服务，首先关闭，然后启动
-        """
-        print('info:Restart ATX')
-        atx_agent_path = '/data/local/tmp/atx-agent'
-        self.adb_shell(['chmod','775',atx_agent_path],serial)
-        self.adb_shell([atx_agent_path, 'server', '--stop'],serial)
-        # 以非UI自动化模式下启动 atx-agent 服务器，并且指定服务器监听的地址为 127.0.0.1，端口号为 7912 ，
-            # -d 是以后台方式运行
-            # --nouia: 告诉 ATX 代理不需要与用户界面进行交互，因此它不会启动用户界面相关的服务，测试发现使用它后，u2就无法启动了
-        # self.adb_shell([atx_agent_path, 'server', '--nouia', '-d', '--addr', '127.0.0.1:7912'],serial)
-        # 有时还是会出现错误：无法提供服务非 am instrument启动
-        self.adb_shell([atx_agent_path, 'server', '-d'],serial)
 
 
 

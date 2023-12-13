@@ -7,9 +7,11 @@
 #
 ##################################################################################
 import re
+import cv2
 import time
 import socket
 import random
+import numpy as np
 from adbutils import AdbTimeout
 from qianv_tool.module.logger import logger
 
@@ -113,4 +115,92 @@ def remove_shell_warning(s):
     return s
 
 
-print(command('dir'))
+def handle_adb_error(e):
+    """
+    Args:
+        e (Exception):
+
+    Returns:
+        bool: If should retry
+    """
+    text = str(e)
+    if 'not found' in text:
+        # When you call `adb disconnect <serial>`
+        # Or when adb server was killed (low possibility)
+        # AdbError(device '127.0.0.1:59865' not found)
+        logger.error(e)
+        return True
+    elif 'timeout' in text:
+        # AdbTimeout(adb read timeout)
+        logger.error(e)
+        return True
+    elif 'closed' in text:
+        # AdbError(closed)
+        # Usually after AdbTimeout(adb read timeout)
+        # Disconnect and re-connect should fix this.
+        logger.error(e)
+        return True
+    elif 'device offline' in text:
+        # AdbError(device offline)
+        # When a device that has been connected wirelessly is disconnected passively,
+        # it does not disappear from the adb device list,
+        # but will be displayed as offline.
+        # In many cases, such as disconnection and recovery caused by network fluctuations,
+        # or after VMOS reboot when running Alas on a phone,
+        # the device is still available, but it needs to be disconnected and re-connected.
+        logger.error(e)
+        return True
+    elif 'is offline' in text:
+        # RuntimeError: USB device 127.0.0.1:7555 is offline
+        # Raised by uiautomator2 when current adb service is killed by another version of adb service.
+        logger.error(e)
+        return True
+    elif 'unknown host service' in text:
+        # AdbError(unknown host service)
+        # Another version of ADB service started, current ADB service has been killed.
+        # Usually because user opened a Chinese emulator, which uses ADB from the Stone Age.
+        logger.error(e)
+        return True
+    else:
+        # AdbError()
+        logger.exception(e)
+        possible_reasons(
+            'If you are using BlueStacks or LD player or WSA, please enable ADB in the settings of your emulator',
+            'Emulator died, please restart emulator',
+            'Serial incorrect, no such device exists or emulator is not running'
+        )
+        return False
+
+def possible_reasons(*args):
+    """
+    Show possible reasons
+
+        Possible reason #1: <reason_1>
+        Possible reason #2: <reason_2>
+    """
+    for index, reason in enumerate(args):
+        index += 1
+        logger.critical(f'Possible reason #{index}: {reason}')
+
+
+## -------------------------------- 图像相关 -------------------------------
+
+# 显示图像
+def image_show(image,test=False):
+    if(test):
+        cv2.imshow('Image', image)
+        cv2.waitKey(0)
+        cv2.destroyAllWindows()
+
+
+# 获取图像大小：用于检查屏幕（图像）的大小，其尺寸必须为1280x720。
+def image_size(image):
+    """
+    Args:
+        image (np.ndarray):
+
+    Returns:
+        int, int: width, height
+    """
+    shape = image.shape
+    return shape[1], shape[0]

@@ -83,8 +83,7 @@ def image_show(image):
 
 
 
-class ImageTruncated(Exception):
-    pass
+
 
 # 获取图像大小：用于检查屏幕（图像）的大小，其尺寸必须为1280x720。
 def image_size(image):
