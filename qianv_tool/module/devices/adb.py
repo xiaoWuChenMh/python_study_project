@@ -7,7 +7,6 @@
 import os
 import adbutils
 import subprocess
-import uiautomator2 as u2
 from adbutils import AdbClient, AdbDevice
 from qianv_tool.module.devices.utils import (recv_all,remove_shell_warning)
 
