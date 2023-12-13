@@ -13,6 +13,7 @@
 ########################################################################################################################
 
 import os
+import re
 import adbutils
 from qianv_tool.module.logger import logger
 from adbutils import AdbClient, AdbDevice
@@ -22,9 +23,6 @@ class Adb:
 
     # adb的安装地址
     adb_path: str
-
-    # serial列表
-    serial = {}
 
     # adb客户端
     adb_client: AdbClient
@@ -87,6 +85,13 @@ class Adb:
         print('logger.attrAdbClient', f'AdbClient({host}, {port})')
         return AdbClient(host, port)
 
+    def adb_device(self,serial) -> AdbDevice:
+        """
+        获取AdbDevice服务，通过AdbClient建立连接后的单个Android设备。它允许您直接在设备上执行各种ADB命令，如拉/推送文件、安装/卸载应用程序、运行shell命令等。
+        :return:
+        """
+        return AdbDevice(self.adb_client,serial)
+
     def adb_disconnect(self, serial):
         """
         断开客户端与某个设备的连接
@@ -97,26 +102,12 @@ class Adb:
         if msg:
             logger.info(msg)
 
-    def adb_connect(self,serial):
-        """
-         客户端和某个设备建立连接（emulator-xxx会导致所有的模拟器都重新再连一遍）
-        :param serial:
-        :return:
-        """
-        self.adb_client.connect(serial)
-
-    def adb_device(self,serial) -> AdbDevice:
-        """
-        获取AdbDevice服务，通过AdbClient建立连接后的单个Android设备。它允许您直接在设备上执行各种ADB命令，如拉/推送文件、安装/卸载应用程序、运行shell命令等。
-        :return:
-        """
-        return AdbDevice(self.adb_client,serial)
 
     def adb_restart(self):
         """
             Reboot adb client
         """
-        logger.info('Restart adb')
+        logger.info('Restart adb for all device')
         # Kill current client
         self.adb_client.server_kill()
         # Init adb client
@@ -175,7 +166,6 @@ class Adb:
             cmd = [self.adb_path] + cmd
         logger.info(f'Execute: {cmd}')
         return sys_command(cmd)
-
 
 
 if __name__ == "__main__":

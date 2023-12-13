@@ -1,0 +1,315 @@
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-14 00:07:27.432 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2023-12-14 00:07:31.640 | WARNING | Device emulator-5554 is offline, disconnect it before connecting                   
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-14 00:08:19.610 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-14 00:09:14.328 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-14 00:09:18.208 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-14 00:09:34.837 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-14 00:10:16.332 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-14 00:10:22.129 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-14 00:10:28.810 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-14 00:10:55.655 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-14 00:17:25.315 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2023-12-14 00:17:25.317 | INFO | Install uiautomator2                                                                  
+2023-12-14 00:17:26.936 | INFO | Removing minicap                                                                      
+2023-12-14 00:17:26.937 | WARNING | init device error, serial(emulator-5554) : adb_shell() missing 1 required          
+positional argument: 'serial'                                                                                          
+2023-12-14 00:17:26.939 | INFO | Install uiautomator2                                                                  
+2023-12-14 00:17:29.411 | INFO | Removing minicap                                                                      
+2023-12-14 00:17:29.412 | WARNING | init device error, serial(emulator-5560) : adb_shell() missing 1 required          
+positional argument: 'serial'                                                                                          
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-14 00:18:46.779 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-14 00:19:54.475 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2023-12-14 00:20:11.662 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:4293)                               
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-14 00:22:09.657 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2023-12-14 00:22:09.666 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:4293)                               
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-14 00:26:08.842 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2023-12-14 00:26:08.854 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:4293)                               
+2023-12-14 00:26:09.009 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:4315)                               
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-14 00:28:05.055 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2023-12-14 00:28:05.063 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:4293)                               
+2023-12-14 00:28:05.210 | INFO | Restart ATX                                                                           
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-14 00:29:17.621 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2023-12-14 00:29:17.629 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:4293)                               
+2023-12-14 00:29:17.755 | INFO | Restart ATX                                                                           
+2023-12-14 00:29:18.348 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:4315)                               
+2023-12-14 00:29:18.503 | INFO | Restart ATX                                                                           
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-14 00:29:34.402 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2023-12-14 00:29:34.410 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:4293)                               
+2023-12-14 00:29:34.473 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:4315)                               
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-14 00:33:33.808 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-14 00:34:33.003 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-14 00:34:51.764 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-14 00:37:30.652 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-14 00:38:00.198 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2023-12-14 00:38:16.065 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:4293)                               
+2023-12-14 00:38:18.246 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:4315)                               
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-14 00:38:40.724 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2023-12-14 00:38:40.729 | INFO | Install uiautomator2                                                                  
+2023-12-14 00:38:42.675 | INFO | Removing minicap                                                                      
+2023-12-14 00:38:42.679 | WARNING | init device error, serial(emulator-5554) : adb_shell() missing 1 required          
+positional argument: 'serial'                                                                                          
+2023-12-14 00:38:42.685 | INFO | Install uiautomator2                                                                  
+2023-12-14 00:38:43.894 | INFO | Removing minicap                                                                      
+2023-12-14 00:38:43.898 | WARNING | init device error, serial(emulator-5560) : adb_shell() missing 1 required          
+positional argument: 'serial'                                                                                          
+2023-12-14 00:38:46.317 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:4293)                               
+2023-12-14 00:38:51.506 | ERROR | InvalidVersion: Invalid version: ''                                                  
+2023-12-14 00:38:51.511 | ERROR | TypeError: retry_sleep() missing 1 required positional argument: 'trial'             
+┌───────────────────────────────────────── Traceback (most recent call last) ─────────────────────────────────────────┐
+│ F:/code/workpace/study/pyCharm/python_study_project/qianv_tool/module/devices/devices.py:65 in retry_wrapper        │
+│                                                                                                                     │
+│    62 │   │   for _ in range(RETRY_TRIES):                                                                          │
+│    63 │   │   │   try:                                                                                              │
+│    64 │   │   │   │   if callable(init):                                                                            │
+│ >  65 │   │   │   │   │   retry_sleep(_)                                                                            │
+│    66 │   │   │   │   │   init()                                                                                    │
+│    67 │   │   │   │   return func(self, *args, **kwargs)                                                            │
+│    68 │   │   │   # Can't handle                                                                                    │
+│                                                                                                                     │
+│ ┌───────────────────────────────────────── locals ──────────────────────────────────────────┐                       │
+│ │           _ = 1                                                                           │                       │
+│ │        args = ('emulator-5554',)                                                          │                       │
+│ │           e = TypeError("retry_sleep() missing 1 required positional argument: 'trial'")  │                       │
+│ │        func = <function Devices.device_info_print at 0x000002049053CDC0>                  │                       │
+│ │  get_serial = <function retry.<locals>.get_serial at 0x000002049053CEE0>                  │                       │
+│ │        init = <function retry.<locals>.retry_wrapper.<locals>.init at 0x000002049065E4C0> │                       │
+│ │      kwargs = {}                                                                          │                       │
+│ │ retry_sleep = <function retry.<locals>.retry_sleep at 0x000002049053CE50>                 │                       │
+│ │        self = <__main__.Devices object at 0x000002048E465100>                             │                       │
+│ │      serial = 'emulator-5554'                                                             │                       │
+│ └───────────────────────────────────────────────────────────────────────────────────────────┘                       │
+└─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+TypeError: retry_sleep() missing 1 required positional argument: 'trial'                                               
+2023-12-14 00:38:51.850 | ERROR | TypeError: retry_sleep() missing 1 required positional argument: 'trial'             
+┌───────────────────────────────────────── Traceback (most recent call last) ─────────────────────────────────────────┐
+│ F:/code/workpace/study/pyCharm/python_study_project/qianv_tool/module/devices/devices.py:65 in retry_wrapper        │
+│                                                                                                                     │
+│    62 │   │   for _ in range(RETRY_TRIES):                                                                          │
+│    63 │   │   │   try:                                                                                              │
+│    64 │   │   │   │   if callable(init):                                                                            │
+│ >  65 │   │   │   │   │   retry_sleep(_)                                                                            │
+│    66 │   │   │   │   │   init()                                                                                    │
+│    67 │   │   │   │   return func(self, *args, **kwargs)                                                            │
+│    68 │   │   │   # Can't handle                                                                                    │
+│                                                                                                                     │
+│ ┌───────────────────────────────────────── locals ──────────────────────────────────────────┐                       │
+│ │           _ = 2                                                                           │                       │
+│ │        args = ('emulator-5554',)                                                          │                       │
+│ │           e = TypeError("retry_sleep() missing 1 required positional argument: 'trial'")  │                       │
+│ │        func = <function Devices.device_info_print at 0x000002049053CDC0>                  │                       │
+│ │  get_serial = <function retry.<locals>.get_serial at 0x000002049053CEE0>                  │                       │
+│ │        init = <function retry.<locals>.retry_wrapper.<locals>.init at 0x000002048E6CA940> │                       │
+│ │      kwargs = {}                                                                          │                       │
+│ │ retry_sleep = <function retry.<locals>.retry_sleep at 0x000002049053CE50>                 │                       │
+│ │        self = <__main__.Devices object at 0x000002048E465100>                             │                       │
+│ │      serial = 'emulator-5554'                                                             │                       │
+│ └───────────────────────────────────────────────────────────────────────────────────────────┘                       │
+└─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+TypeError: retry_sleep() missing 1 required positional argument: 'trial'                                               
+2023-12-14 00:38:51.997 | ERROR | TypeError: retry_sleep() missing 1 required positional argument: 'trial'             
+┌───────────────────────────────────────── Traceback (most recent call last) ─────────────────────────────────────────┐
+│ F:/code/workpace/study/pyCharm/python_study_project/qianv_tool/module/devices/devices.py:65 in retry_wrapper        │
+│                                                                                                                     │
+│    62 │   │   for _ in range(RETRY_TRIES):                                                                          │
+│    63 │   │   │   try:                                                                                              │
+│    64 │   │   │   │   if callable(init):                                                                            │
+│ >  65 │   │   │   │   │   retry_sleep(_)                                                                            │
+│    66 │   │   │   │   │   init()                                                                                    │
+│    67 │   │   │   │   return func(self, *args, **kwargs)                                                            │
+│    68 │   │   │   # Can't handle                                                                                    │
+│                                                                                                                     │
+│ ┌───────────────────────────────────────── locals ──────────────────────────────────────────┐                       │
+│ │           _ = 3                                                                           │                       │
+│ │        args = ('emulator-5554',)                                                          │                       │
+│ │           e = TypeError("retry_sleep() missing 1 required positional argument: 'trial'")  │                       │
+│ │        func = <function Devices.device_info_print at 0x000002049053CDC0>                  │                       │
+│ │  get_serial = <function retry.<locals>.get_serial at 0x000002049053CEE0>                  │                       │
+│ │        init = <function retry.<locals>.retry_wrapper.<locals>.init at 0x000002049065EB80> │                       │
+│ │      kwargs = {}                                                                          │                       │
+│ │ retry_sleep = <function retry.<locals>.retry_sleep at 0x000002049053CE50>                 │                       │
+│ │        self = <__main__.Devices object at 0x000002048E465100>                             │                       │
+│ │      serial = 'emulator-5554'                                                             │                       │
+│ └───────────────────────────────────────────────────────────────────────────────────────────┘                       │
+└─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+TypeError: retry_sleep() missing 1 required positional argument: 'trial'                                               
+2023-12-14 00:38:52.144 | ERROR | TypeError: retry_sleep() missing 1 required positional argument: 'trial'             
+┌───────────────────────────────────────── Traceback (most recent call last) ─────────────────────────────────────────┐
+│ F:/code/workpace/study/pyCharm/python_study_project/qianv_tool/module/devices/devices.py:65 in retry_wrapper        │
+│                                                                                                                     │
+│    62 │   │   for _ in range(RETRY_TRIES):                                                                          │
+│    63 │   │   │   try:                                                                                              │
+│    64 │   │   │   │   if callable(init):                                                                            │
+│ >  65 │   │   │   │   │   retry_sleep(_)                                                                            │
+│    66 │   │   │   │   │   init()                                                                                    │
+│    67 │   │   │   │   return func(self, *args, **kwargs)                                                            │
+│    68 │   │   │   # Can't handle                                                                                    │
+│                                                                                                                     │
+│ ┌───────────────────────────────────────── locals ──────────────────────────────────────────┐                       │
+│ │           _ = 4                                                                           │                       │
+│ │        args = ('emulator-5554',)                                                          │                       │
+│ │           e = TypeError("retry_sleep() missing 1 required positional argument: 'trial'")  │                       │
+│ │        func = <function Devices.device_info_print at 0x000002049053CDC0>                  │                       │
+│ │  get_serial = <function retry.<locals>.get_serial at 0x000002049053CEE0>                  │                       │
+│ │        init = <function retry.<locals>.retry_wrapper.<locals>.init at 0x000002048E6CA940> │                       │
+│ │      kwargs = {}                                                                          │                       │
+│ │ retry_sleep = <function retry.<locals>.retry_sleep at 0x000002049053CE50>                 │                       │
+│ │        self = <__main__.Devices object at 0x000002048E465100>                             │                       │
+│ │      serial = 'emulator-5554'                                                             │                       │
+│ └───────────────────────────────────────────────────────────────────────────────────────────┘                       │
+└─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+TypeError: retry_sleep() missing 1 required positional argument: 'trial'                                               
+2023-12-14 00:38:52.288 | CRITICAL | Retry device_info_print() failed                                                  
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-14 00:40:33.222 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2023-12-14 00:40:55.600 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:4293)                               
+2023-12-14 00:41:00.420 | ERROR | InvalidVersion: Invalid version: ''                                                  
+2023-12-14 00:41:20.282 | ERROR | TypeError: retry_sleep() missing 1 required positional argument: 'trial'             
+┌───────────────────────────────────────── Traceback (most recent call last) ─────────────────────────────────────────┐
+│ F:/code/workpace/study/pyCharm/python_study_project/qianv_tool/module/devices/devices.py:65 in retry_wrapper        │
+│                                                                                                                     │
+│    62 │   │   for _ in range(RETRY_TRIES):                                                                          │
+│    63 │   │   │   try:                                                                                              │
+│    64 │   │   │   │   if callable(init):                                                                            │
+│ >  65 │   │   │   │   │   retry_sleep(_)                                                                            │
+│    66 │   │   │   │   │   init()                                                                                    │
+│    67 │   │   │   │   return func(self, *args, **kwargs)                                                            │
+│    68 │   │   │   # Can't handle                                                                                    │
+│                                                                                                                     │
+│ ┌───────────────────────────────────────── locals ──────────────────────────────────────────┐                       │
+│ │           _ = 1                                                                           │                       │
+│ │        args = ('emulator-5554',)                                                          │                       │
+│ │           e = TypeError("retry_sleep() missing 1 required positional argument: 'trial'")  │                       │
+│ │        func = <function Devices.device_info_print at 0x000001B68C4CBDC0>                  │                       │
+│ │  get_serial = <function retry.<locals>.get_serial at 0x000001B68C4CBEE0>                  │                       │
+│ │        init = <function retry.<locals>.retry_wrapper.<locals>.init at 0x000001B68C519F70> │                       │
+│ │      kwargs = {}                                                                          │                       │
+│ │ retry_sleep = <function retry.<locals>.retry_sleep at 0x000001B68C4CBE50>                 │                       │
+│ │        self = <__main__.Devices object at 0x000001B68A4060D0>                             │                       │
+│ │      serial = 'emulator-5554'                                                             │                       │
+│ └───────────────────────────────────────────────────────────────────────────────────────────┘                       │
+└─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+TypeError: retry_sleep() missing 1 required positional argument: 'trial'                                               
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-14 00:42:12.354 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2023-12-14 00:42:15.579 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:4293)                               
+2023-12-14 00:42:18.091 | ERROR | InvalidVersion: Invalid version: ''                                                  
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-14 00:44:18.303 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2023-12-14 00:44:31.233 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:4293)                               
+2023-12-14 00:44:52.968 | ERROR | InvalidVersion: Invalid version: ''                                                  
+2023-12-14 00:45:20.628 | ERROR | TypeError: retry_sleep() missing 1 required positional argument: 'trial'             
+┌───────────────────────────────────────── Traceback (most recent call last) ─────────────────────────────────────────┐
+│ F:/code/workpace/study/pyCharm/python_study_project/qianv_tool/module/devices/devices.py:65 in retry_wrapper        │
+│                                                                                                                     │
+│    62 │   │   for _ in range(RETRY_TRIES):                                                                          │
+│    63 │   │   │   try:                                                                                              │
+│    64 │   │   │   │   if callable(init):                                                                            │
+│ >  65 │   │   │   │   │   retry_sleep(_)                                                                            │
+│    66 │   │   │   │   │   init()                                                                                    │
+│    67 │   │   │   │   return func(self, *args, **kwargs)                                                            │
+│    68 │   │   │   # Can't handle                                                                                    │
+│                                                                                                                     │
+│ ┌───────────────────────────────────────── locals ──────────────────────────────────────────┐                       │
+│ │           _ = 1                                                                           │                       │
+│ │        args = ('emulator-5554',)                                                          │                       │
+│ │           e = TypeError("retry_sleep() missing 1 required positional argument: 'trial'")  │                       │
+│ │        func = <function Devices.device_info_print at 0x000002A65CADEDC0>                  │                       │
+│ │  get_serial = <function retry.<locals>.get_serial at 0x000002A65CADEEE0>                  │                       │
+│ │        init = <function retry.<locals>.retry_wrapper.<locals>.init at 0x000002A65CBD48B0> │                       │
+│ │      kwargs = {}                                                                          │                       │
+│ │ retry_sleep = <function retry.<locals>.retry_sleep at 0x000002A65CADEE50>                 │                       │
+│ │        self = <__main__.Devices object at 0x000002A65AA01AF0>                             │                       │
+│ │      serial = 'emulator-5554'                                                             │                       │
+│ └───────────────────────────────────────────────────────────────────────────────────────────┘                       │
+└─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+TypeError: retry_sleep() missing 1 required positional argument: 'trial'                                               
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-14 00:46:03.529 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2023-12-14 00:46:05.744 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:4293)                               
+2023-12-14 00:46:06.133 | ERROR | InvalidVersion: Invalid version: ''                                                  
+2023-12-14 00:46:20.987 | INFO | Restart ATX                                                                           
+2023-12-14 00:46:25.477 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:4293)                               
+2023-12-14 00:46:37.893 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:4315)                               
+2023-12-14 00:46:48.236 | ERROR | InvalidVersion: Invalid version: ''                                                  
+2023-12-14 00:47:14.532 | INFO | Restart ATX                                                                           
+2023-12-14 00:47:20.104 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:4315)                               

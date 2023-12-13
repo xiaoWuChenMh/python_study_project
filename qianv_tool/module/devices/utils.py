@@ -183,6 +183,10 @@ def possible_reasons(*args):
         logger.critical(f'Possible reason #{index}: {reason}')
 
 
+# 判断是否为emulator
+def is_emulator(serial):
+     return serial.startswith('emulator-') or serial.startswith('127.0.0.1:')
+
 ## -------------------------------- 图像相关 -------------------------------
 
 # 显示图像

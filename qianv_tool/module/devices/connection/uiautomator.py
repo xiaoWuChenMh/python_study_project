@@ -11,121 +11,22 @@
 
 import re
 import cv2
-import time
+
 import numpy as np
 import logging
 import uiautomator2 as u2
-from functools import wraps
-from json.decoder import JSONDecodeError
-from adbutils.errors import AdbError
 from qianv_tool.module.logger import logger
 from qianv_tool.module.devices.connection.adb import Adb
-from qianv_tool.module.devices.exception import RequestHumanTakeover
-from qianv_tool.module.devices.utils import (remove_shell_warning,image_show,possible_reasons,handle_adb_error)
-from qianv_tool.module.devices.exception import ImageTruncated,PackageNotInstalled
+from qianv_tool.module.devices.utils import (remove_shell_warning,image_show)
 
-# 默认和设备连接失败重试次数
-RETRY_TRIES = 5
-
-
-# 重试时的睡眠时间
-def retry_sleep(self, trial):
-    if trial == 0:
-        pass
-    elif trial == 1:
-        pass
-    # Failed twice
-    elif trial == 2:
-        time.sleep(1)
-    # Failed more
-    else:
-        time.sleep(3)
-
-def retry(func):
-
-    @wraps(func)
-    def retry_wrapper(self, *args, **kwargs):
-        """
-        Args:
-            self (Uiautomator2):
-        """
-        init = None
-        for _ in range(RETRY_TRIES):
-            try:
-                if callable(init):
-                    retry_sleep(_)
-                    init()
-                return func(self, *args, **kwargs)
-            # Can't handle
-            except RequestHumanTakeover:
-                break
-            # When adb server was killed
-            except ConnectionResetError as e:
-                logger.error(e)
-
-                def init():
-                    self.adb_reconnect()
-            # In `device.set_new_command_timeout(604800)`
-            # json.decoder.JSONDecodeError: Expecting value: line 1 column 2 (char 1)
-            except JSONDecodeError as e:
-                logger.error(e)
-
-                def init():
-                    # 需要获取所有设备ID
-                    self.install_uiautomator2()
-            # AdbError
-            except AdbError as e:
-                if handle_adb_error(e):
-                    def init():
-                        self.adb_reconnect()
-                else:
-                    break
-            # RuntimeError: USB device 127.0.0.1:5555 is offline
-            except RuntimeError as e:
-                if handle_adb_error(e):
-                    def init():
-                        self.adb_reconnect()
-                else:
-                    break
-            # In `assert c.read string(4) == _OKAY`
-            # ADB on emulator not enabled
-            except AssertionError as e:
-                logger.exception(e)
-                possible_reasons(
-                    'If you are using BlueStacks or LD player or WSA, '
-                    'please enable ADB in the settings of your emulator'
-                )
-                break
-            # Package not installed
-            except PackageNotInstalled as e:
-                logger.error(e)
-
-                def init():
-                    self.detect_package()
-            # ImageTruncated
-            except ImageTruncated as e:
-                logger.error(e)
-
-                def init():
-                    pass
-            # Unknown
-            except Exception as e:
-                logger.exception(e)
-
-                def init():
-                    pass
-
-        logger.critical(f'Retry {func.__name__}() failed')
-        raise 8
-
-    return retry_wrapper
 
 class Uiautomator(Adb):
 
     image_test = False
 
-    def __init__(self):
+    def __init__(self, image_test = False):
         super().__init__()
+        self.image_test = image_test
 
     def u2_device(self,serial) -> u2.Device:
         """
@@ -133,15 +34,15 @@ class Uiautomator(Adb):
         :param serial:
         :return:
         """
-        if self.is_over_http:
+        if self.is_over_http(serial):
             # Using uiautomator2_http
-            device = u2.connect(self.serial)
+            device = u2.connect(serial)
         else:
             # Normal uiautomator2
-            if self.serial.startswith('emulator-') or self.serial.startswith('127.0.0.1:'):
-                device = u2.connect_usb(self.serial)
+            if serial.startswith('emulator-') or serial.startswith('127.0.0.1:'):
+                device = u2.connect_usb(serial)
             else:
-                device = u2.connect(self.serial)
+                device = u2.connect(serial)
 
         # Stay alive
         device.set_new_command_timeout(604800)
@@ -174,12 +75,13 @@ class Uiautomator(Adb):
         except ConnectionError:
             u2.init.GITHUB_BASEURL = 'http://tool.appetizer.io/openatx'
             init.install()
+        self.uninstall_minicap()
+
+    def uninstall_minicap(self):
         """卸载minicap：它在某些模拟器上无法工作或会发送压缩图像。 """
         logger.info('Removing minicap')
-        self.adb_shell(["rm", "/data/local/tmp/minicap"],serial)
-        self.adb_shell(["rm", "/data/local/tmp/minicap.so"],serial)
-
-
+        self.adb_shell(["rm", "/data/local/tmp/minicap"])
+        self.adb_shell(["rm", "/data/local/tmp/minicap.so"])
 
     def u2_adb_shell(self, cmd, serial, stream=False, recvall=True, timeout=10, rstrip=True):
         """
