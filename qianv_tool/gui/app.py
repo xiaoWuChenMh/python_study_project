@@ -14,9 +14,11 @@ from qianv_tool.gui.frame.jia_yuan_frame import JiaYunFrame
 
 
 class App(ctk.CTk):
-    def __init__(self):
+
+    def __init__(self,devices):
         super().__init__()
 
+        self.devices = devices
         self.title("测试程序")
         self.geometry("900x600+900+600")
 

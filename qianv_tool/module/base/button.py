@@ -3,6 +3,7 @@ import traceback
 
 import imageio
 from PIL import ImageDraw
+from paddleocr import PaddleOCR
 from qianv_tool.module.base.utils import *
 from qianv_tool.config.exe_config  import ExecuteConfig as ButtonExt
 
@@ -13,8 +14,12 @@ from qianv_tool.module.base.resource import Resource
 # 图片匹配：match ，对目标图片进行剪裁，然后和button对象进行对比,前提是需要先调用ensure_template（）
 # 图片中的颜色匹配：appear_on
 
+
+# 定义为全局变量，只需要下载一次
+word_ocr = PaddleOCR(use_angle_cls=True, lang="ch")
+
 class Button(Resource):
-    def __init__(self, area, color, button, file=None, name=None):
+    def __init__(self, area, text, color, button, file=None, name=None):
         """Initialize a Button instance.
 
         Args:
@@ -37,6 +42,7 @@ class Button(Resource):
         self.raw_button = button
         self.raw_file = file
         self.raw_name = name
+        self.raw_text = text
 
         self._button_offset = None
         self._match_init = False
@@ -45,6 +51,9 @@ class Button(Resource):
         self.image = None
         self.image_binary = None
         self.image_luma = None
+
+        # 图像测试开关
+        self.image_test = False
 
         if self.file:
             self.resource_add(key=self.file)
@@ -55,6 +64,10 @@ class Button(Resource):
     @cached_property
     def area(self):
         return self.parse_property(self.raw_area)
+
+    @cached_property
+    def text(self):
+        return self.parse_property(self.raw_text)
 
     @cached_property
     def color(self):
@@ -99,6 +112,13 @@ class Button(Resource):
 
     def __bool__(self):
         return True
+
+    def area_size(self):
+        x1, y1, x2, y2 = map(int, map(round, self.area))
+        length = x2-x1
+        width = y2-y1
+        return length,width
+
     ## ---------------------- 【认证】 一些通用方法 end --------------------------
 
     @property
@@ -206,9 +226,33 @@ class Button(Resource):
         self._match_binary_init = False
         self._match_luma_init = False
 
+
+    def word(self, image, offset=30):
+        if isinstance(offset, tuple):
+            if len(offset) == 2:
+                offset = np.array((-offset[0], -offset[1], offset[0], offset[1]))
+            else:
+                offset = np.array(offset)
+        else:
+            offset = np.array((-3, -offset, 3, offset))
+        # 对图片进行剪切
+        image = crop(image, offset + self.area, copy=False)
+        # 文字识别源图
+        orc_reuslt = word_ocr.ocr(image, cls=True)
+        for idx in range(len(orc_reuslt)):
+            res = orc_reuslt[idx]
+            for line in res:
+                image_word = image_word + line[1][0]
+        # 进行匹配
+        if self.text in image_word:
+            return True
+        else:
+            return False
+
+
     def match(self, image, offset=30, threshold=0.85):
         """Detects button by template matching. To Some button, its location may not be static.
-
+           通过模板匹配检测按钮。 对于某些按钮，其位置可能不是静态的。
         Args:
             image: Screenshot.
             offset (int, tuple): Detection area offset.
@@ -253,6 +297,7 @@ class Button(Resource):
     def match_binary(self, image, offset=30, threshold=0.85):
         """Detects button by template matching. To Some button, its location may not be static.
            This method will apply template matching under binarization.
+           通过模板匹配检测按钮。 对于某些按钮，其位置可能不是静态的。 该方法将在二值化下应用模板匹配
 
         Args:
             image: Screenshot.
@@ -301,6 +346,7 @@ class Button(Resource):
     def match_luma(self, image, offset=30, threshold=0.85):
         """
         Detects button by template matching under Y channel (Luminance)
+        通过Y通道（亮度）下的模板匹配来检测按钮
 
         Args:
             image: Screenshot.
@@ -321,6 +367,7 @@ class Button(Resource):
         else:
             offset = np.array((-3, -offset, 3, offset))
         image = crop(image, offset + self.area, copy=False)
+        image_show(image,image_test)
 
         if self.is_gif:
             image_luma = rgb2luma(image)

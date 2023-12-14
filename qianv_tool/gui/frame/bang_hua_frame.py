@@ -28,9 +28,9 @@ class BangHuaFrame(ctk.CTkFrame):
         a = tabVidew.getTab(0)
 
         # 初始化各个tab页的内容
-        self.zhan_long_task_frame = ZhanLongTask(tabVidew.getTab(0),image)
+        self.zhan_long_task_frame = ZhanLongTask(tabVidew.getTab(0),image, self.devices)
         self.zhan_long_task_frame.grid(row=0, column=0,sticky="nsew")
-        self.bang_hua_task_frame = BangHuaTask(tabVidew.getTab(1),image)
+        self.bang_hua_task_frame = BangHuaTask(tabVidew.getTab(1),image, self.devices)
         self.bang_hua_task_frame.grid(row=0, column=0,sticky="nsew")
 
 

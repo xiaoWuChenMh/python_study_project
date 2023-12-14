@@ -28,8 +28,8 @@ class RoutineFrame(ctk.CTkFrame):
         a = tabVidew.getTab(0)
 
         # 初始化各个tab页的内容
-        self.long_task_frame = LongTask(tabVidew.getTab(0),image)
+        self.long_task_frame = LongTask(tabVidew.getTab(0),image,self.devices)
         self.long_task_frame.grid(row=0, column=0,sticky="nsew")
-        self.shi_men_task_frame = ShiMenTask(tabVidew.getTab(1),image)
+        self.shi_men_task_frame = ShiMenTask(tabVidew.getTab(1),image,self.devices)
         self.shi_men_task_frame.grid(row=0, column=0,sticky="nsew")
 

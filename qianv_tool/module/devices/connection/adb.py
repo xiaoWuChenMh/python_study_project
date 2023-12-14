@@ -113,6 +113,7 @@ class Adb:
         # Init adb client
         self.adb_client = self.__adb_client()
 
+
     def adb_shell(self, cmd, serial,stream=False, recvall=True, timeout=10, rstrip=True):
         """
         Equivalent to `adb -s <serial> shell <*cmd>`

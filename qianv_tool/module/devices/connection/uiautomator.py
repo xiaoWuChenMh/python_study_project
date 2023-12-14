@@ -2,9 +2,11 @@
 #                                    自定义的Uiautomator连接管理器（基于uiautomator2）
 #
 # u2_device： 通过uiautomator建立和设备的连接（u2.connect(设备ID)）。
+# get_u2： 安全的获取uiautomator连接，即连接可复用
 # install_uiautomator2 ：将守护程序（u2、atx等）安装到设备，等同于‘python -m uiautomator2 init’
 # u2_adb_shell : u2下执行 adb shell 命令
 # screenshot： 截图，并做一些前置操作（颜色、去噪）
+# click_uiautomator2 ：根据给定的坐标执行点击行为
 #
 ########################################################################################################################
 
@@ -14,15 +16,24 @@ import cv2
 
 import numpy as np
 import logging
+import threading
+from typing import Dict
 import uiautomator2 as u2
 from qianv_tool.module.logger import logger
 from qianv_tool.module.devices.connection.adb import Adb
-from qianv_tool.module.devices.utils import (remove_shell_warning,image_show)
+from qianv_tool.module.devices.exception import ImageTruncated
+from qianv_tool.module.devices.utils import (remove_shell_warning,image_size,image_show)
 
 
 class Uiautomator(Adb):
 
     image_test = False
+
+    # 创建一个锁对象
+    lock = threading.Lock()
+
+    # 缓存u2连接
+    u2_devices : Dict[str, u2.Device]
 
     def __init__(self, image_test = False):
         super().__init__()
@@ -48,7 +59,25 @@ class Uiautomator(Adb):
         device.set_new_command_timeout(604800)
 
         logger.attr('u2.Device', f'Device(atx_agent_url={device._get_atx_agent_url()})')
+        self.u2_devices[serial] = device
         return device
+
+    def get_u2(self,serial) ->u2.Device:
+        """
+         安全的获取uiautomator连接
+        :param serial:
+        :return:
+        """
+        for _ in range(3):
+            try:
+                # 验证连接是否可用
+                self.u2_devices[serial].info
+                break
+            except Exception:
+                self.lock.acquire()
+                self.u2_device(serial)
+                self.lock.release()
+        return self.u2_devices[serial]
 
 
     def is_over_http(self,serial):
@@ -103,13 +132,13 @@ class Uiautomator(Adb):
             cmd = list(map(str, cmd))
 
         if stream:
-            result = self.u2_device(serial).shell(cmd, stream=stream, timeout=timeout)
+            result = self.get_u2(serial).shell(cmd, stream=stream, timeout=timeout)
             # Already received all, so `recvall` is ignored
             result = remove_shell_warning(result.content)
             # bytes
             return result
         else:
-            result = self.u2_device(serial).shell(cmd, stream=stream, timeout=timeout).output
+            result = self.get_u2(serial).shell(cmd, stream=stream, timeout=timeout).output
             if rstrip:
                 result = result.rstrip()
             result = remove_shell_warning(result)
@@ -127,6 +156,24 @@ class Uiautomator(Adb):
         self.adb_shell(['am', 'force-stop', package_name],serial)
         self.adb_shell(['am', 'force-stop', package_name_test],serial)
 
+    def atx_restart(self, serial):
+        """
+        重新启动指定设备下的 atxAgent 服务,也会启动uiautomator服务，但首先需要先关闭uiautomator服务。
+        :param serial: 设备ID
+        """
+        logger.info('Restart ATX')
+        atx_agent_path = '/data/local/tmp/atx-agent'
+        self.adb_shell(['chmod', '775', atx_agent_path], serial)
+        self.adb_shell([atx_agent_path, 'server', '--stop'], serial)
+        # '--nouia'
+        self.adb_shell([atx_agent_path, 'server', '-d', '--addr', '127.0.0.1:7912'], serial)
+
+    def click_uiautomator2(self,serial, x, y):
+        """
+        点击功能
+        """
+        self.get_u2(serial).click(x, y)
+
     def screenshot(self,serial):
         """
          截图，并做一些前置操作（颜色、去噪）
@@ -134,7 +181,7 @@ class Uiautomator(Adb):
         :return: 处理后的截图
         """
 
-        device = self.u2_device(serial)
+        device = self.get_u2(serial)
 
         # 调用设备的截图功能截图，并发送到当前赋值给image变量
         image = device.screenshot(format='raw')
@@ -154,6 +201,11 @@ class Uiautomator(Adb):
         # 可选：对图片去噪
         cv2.fastNlMeansDenoising(image, image, h=17, templateWindowSize=1, searchWindowSize=2)
         self.__image_check(image, 'Empty image after cv2.fastNlMeansDenoising')
+
+        # 图片校验，非1280*720的会给出错误信息
+        width, height = image_size(image)
+        if width != 1280 or height != 720:
+            logger.warning(f'screenshot image size: {width},{height}')
 
         return image
 
