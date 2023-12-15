@@ -1,6 +1,4 @@
 import os
-import traceback
-
 import imageio
 from PIL import ImageDraw
 from paddleocr import PaddleOCR
@@ -114,10 +112,20 @@ class Button(Resource):
         return True
 
     def area_size(self):
-        x1, y1, x2, y2 = map(int, map(round, self.area))
-        length = x2-x1
-        width = y2-y1
-        return length,width
+        x1, y1, x2, y2 = map(int, map(round,self.area))
+        shape_x = x2-x1
+        shape_y = y2-y1
+        return shape_x,shape_y
+
+    def button_size(self):
+        x1, y1, x2, y2 = map(int, map(round,self.button))
+        shape_x = x2-x1
+        shape_y = y2-y1
+        return shape_x,shape_y
+
+    def area_origin(self):
+        x1, y1, x2, y2 = map(int, map(round,self.area))
+        return x1,y1
 
     ## ---------------------- 【认证】 一些通用方法 end --------------------------
 
@@ -227,7 +235,14 @@ class Button(Resource):
         self._match_luma_init = False
 
 
-    def word(self, image, offset=30):
+    def word(self, image, offset=30, model=1):
+        """
+
+        :param image: 源图
+        :param offset(int, tuple): Detection area offset.
+        :param model(int): 匹配模式 1-模糊；2-严格
+        :return:
+        """
         if isinstance(offset, tuple):
             if len(offset) == 2:
                 offset = np.array((-offset[0], -offset[1], offset[0], offset[1]))
@@ -244,7 +259,9 @@ class Button(Resource):
             for line in res:
                 image_word = image_word + line[1][0]
         # 进行匹配
-        if self.text in image_word:
+        if model==1 and self.text in image_word:
+            return True
+        elif model==1 and self.text == image_word:
             return True
         else:
             return False
@@ -459,61 +476,42 @@ class Button(Resource):
 
 
 class ButtonGrid:
-    def __init__(self, origin, delta, button_shape, grid_shape, name=None):
-        self.origin = np.array(origin)
+    def __init__(self, origin_button, delta, grid_shape, text=None):
+        """
+
+        :param origin_button: 起点按钮
+        :param delta: 按钮移动距离(x,y);x=origin_button左上角x- 下一个目标左上角x;y=origin_button左上角y - 下一个目标左上角y
+        :param grid_shape: 网格大小（列，行）
+        :param text: 按钮的文本内容
+        """
+        # 起点按钮的坐上角坐标
+        self.origin = np.array(origin_button.area_origin())
         self.delta = np.array(delta)
-        self.button_shape = np.array(button_shape)
         self.grid_shape = np.array(grid_shape)
-        if name:
-            self._name = name
-        else:
-            (filename, line_number, function_name, text) = traceback.extract_stack()[-2]
-            self._name = text[:text.find('=')].strip()
+
+        # 起点按钮的基础数据
+        self._text = "" if text==None else text
+        self._name = origin_button.name
+        self._color = origin_button.color
+        self.area_shape = origin_button.area_size()
+        self.button_shape = origin_button.button_size()
 
     def __getitem__(self, item):
+        # item ：网格位置
         base = np.round(np.array(item) * self.delta + self.origin).astype(int)
-        area = tuple(np.append(base, base + self.button_shape))
-        return Button(area=area, color=(), button=area, name='%s_%s_%s' % (self._name, item[0], item[1]))
+        area = tuple(np.append(base, base + self.area_shape))
+        button = tuple(np.append(base, base + self.button_shape))
+        return Button(area=area, text=self._text, color=self._color, button=button, name='%s_%s_%s' % (self._name, item[0], item[1]))
 
     def generate(self):
         for y in range(self.grid_shape[1]):
             for x in range(self.grid_shape[0]):
                 yield x, y, self[x, y]
 
-    @cached_property
+    # 将网格展平为 list
     def buttons(self):
         return list([button for _, _, button in self.generate()])
 
-    def crop(self, area, name=None):
-        """
-        Args:
-            area (tuple): Area related to self.origin
-            name (str): Name of the new ButtonGrid instance.
-
-        Returns:
-            ButtonGrid:
-        """
-        if name is None:
-            name = self._name
-        origin = self.origin + area[:2]
-        button_shape = np.subtract(area[2:], area[:2])
-        return ButtonGrid(
-            origin=origin, delta=self.delta, button_shape=button_shape, grid_shape=self.grid_shape, name=name)
-
-    def move(self, vector, name=None):
-        """
-        Args:
-            vector (tuple): Move vector.
-            name (str): Name of the new ButtonGrid instance.
-
-        Returns:
-            ButtonGrid:
-        """
-        if name is None:
-            name = self._name
-        origin = self.origin + vector
-        return ButtonGrid(
-            origin=origin, delta=self.delta, button_shape=self.button_shape, grid_shape=self.grid_shape, name=name)
 
     def gen_mask(self):
         """
@@ -536,3 +534,4 @@ class ButtonGrid:
         Save mask to {name}.png
         """
         self.gen_mask().save(f'{self._name}.png')
+

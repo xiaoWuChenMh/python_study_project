@@ -13,8 +13,6 @@ import copy
 from functools import wraps
 from json.decoder import JSONDecodeError
 from adbutils.errors import AdbError
-from qianv_tool.module.logger import logger
-from qianv_tool.module.base.button import Button
 from qianv_tool.module.devices.connection.connection import Connection
 from qianv_tool.module.devices.utils import *
 from qianv_tool.module.devices.exception import RequestHumanTakeover
@@ -193,7 +191,7 @@ class Devices(Connection):
         return self.screenshot(serial)
 
     @retry
-    def click( self ,serial,button):
+    def click( self,serial,button):
         """
         点击指定按钮
         :param serial:

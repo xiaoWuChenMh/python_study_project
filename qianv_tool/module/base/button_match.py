@@ -5,6 +5,7 @@
 
 
 from qianv_tool.module.base.timer import Timer
+from qianv_tool.module.base.button import ButtonGrid
 
 
 class ButtonMatch:
@@ -71,42 +72,62 @@ class ButtonMatch:
         return appear
 
 
-
-    def dialog_top_button(self, image, below_button, step, interval=0, threshold=None):
+    def word_match(self, image, button, offset=0, interval=0, model=1):
         """
-        上移动查找对话框的顶部按钮
-        :param image: 截图
-        :param below_button: 底部按钮
-        :param step: 移动的步长 （below_button.area_size()[1]+frame_button.area_size()[1]）
-        :param interval: 两个活动事件之间的间隔。
-        :param threshold:
+        文字匹配（模糊匹配
+        :param image: 源图
+        :param button: 匹配的按钮对象
+        :param offset(int, tuple): Detection area offset
+        :param interval (int, float): 两个活动事件之间的间隔。
+        :param model(int): 匹配模式 1-模糊；2-严格
         :return:
         """
-        threshold = self.config.COLOR_SIMILAR_THRESHOLD if threshold is None else threshold
-        if self.__interval(below_button,interval):
-            return False
-        appear = below_button.match(image,offset=0, threshold=threshold)
-        top_appear = appear
-        with appear:
-            top_appear = appear
-            appear = below_button.match(image,offset=(0,step), threshold=threshold)
-        if top_appear and interval:
-            self.interval_timer[below_button.name].reset()
-        return top_appear
-
-
-    ## 左和下移动区域
-
-    def word_match(self,image,left_top_button, step=(0,0), offset=0):
-        """
-        文字匹配
-        """
-        image_word = ''
         if self.__interval(button,interval):
             return False
         if isinstance(offset, bool):
             offset = self.config.BUTTON_OFFSET
-        appear = button.word(image,offset)
+        appear = button.word(image,offset,model)
         if appear and interval:
             self.interval_timer[button.name].reset()
         return appear
+
+    def grid_button_word_match(self, image, origin_button, site_button, grid_shape, text):
+        """
+         网格按钮中的文字匹配
+        :param image: 源图
+        :param origin_button: 起点按钮
+        :param site_button: 点位按钮，起点按钮在点位按钮的左上角，通过该图计算delta
+        :param delta: 移动的距离（x,y）
+        :param grid_shape: 网格大小(行，列)
+        :param text: 待匹配的文本
+        :return: 匹配到返回button,否则 None
+        """
+        delta = site_button.area_size()
+        button_grip = ButtonGrid(origin_button=origin_button, delta=delta, grid_shape=grid_shape, text=text)
+        for button in button_grip:
+            if self.word_match(image,button):
+                return button
+        return None
+
+    def grid_button_color_match(self, image, origin_button, site_button, grid_shape):
+        """
+         网格按钮中的颜色匹配
+        :param image: 源图
+        :param origin_button: 起点按钮
+        :param site_button: 点位按钮，起点按钮在点位按钮的左上角，通过该图计算delta
+        :param delta: 移动的距离（x,y）
+        :param grid_shape: 网格大小(行，列)
+        :return: 匹配到返回button,否则 None
+        """
+        result_button = None
+        delta = site_button.area_size()
+        button_grip = ButtonGrid(origin_button=origin_button, delta=delta, grid_shape=grid_shape)
+        for button in button_grip:
+            if not self.color_match(image,button):
+                break
+            else:
+                result_button = button
+        return result_button
+
+
+
