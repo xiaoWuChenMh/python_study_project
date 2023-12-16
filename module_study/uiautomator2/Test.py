@@ -15,7 +15,7 @@ print(a.info)
 
 
 # 截图
-# a.screenshot('image/他人申请队长.png')
+a.screenshot('image/帮会_地图1.png')
 # d.screenshot('image/home2.png')
 # c.screenshot('image/home3.png')
 # d.screenshot('image/继续登录.png')
