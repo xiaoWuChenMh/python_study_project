@@ -1,8 +1,7 @@
 import os
-import traceback
-
 import imageio
 from PIL import ImageDraw
+from paddleocr import PaddleOCR
 from qianv_tool.module.base.utils import *
 from qianv_tool.config.exe_config  import ExecuteConfig as ButtonExt
 
@@ -13,8 +12,12 @@ from qianv_tool.module.base.resource import Resource
 # 图片匹配：match ，对目标图片进行剪裁，然后和button对象进行对比,前提是需要先调用ensure_template（）
 # 图片中的颜色匹配：appear_on
 
+
+# 定义为全局变量，只需要下载一次
+word_ocr = PaddleOCR(use_angle_cls=True, lang="ch")
+
 class Button(Resource):
-    def __init__(self, area, color, button, file=None, name=None):
+    def __init__(self, area, text, color, button, file=None, name=None):
         """Initialize a Button instance.
 
         Args:
@@ -37,6 +40,7 @@ class Button(Resource):
         self.raw_button = button
         self.raw_file = file
         self.raw_name = name
+        self.raw_text = text
 
         self._button_offset = None
         self._match_init = False
@@ -45,6 +49,9 @@ class Button(Resource):
         self.image = None
         self.image_binary = None
         self.image_luma = None
+
+        # 图像测试开关
+        self.image_test = False
 
         if self.file:
             self.resource_add(key=self.file)
@@ -55,6 +62,10 @@ class Button(Resource):
     @cached_property
     def area(self):
         return self.parse_property(self.raw_area)
+
+    @cached_property
+    def text(self):
+        return self.parse_property(self.raw_text)
 
     @cached_property
     def color(self):
@@ -99,6 +110,23 @@ class Button(Resource):
 
     def __bool__(self):
         return True
+
+    def area_size(self):
+        x1, y1, x2, y2 = map(int, map(round,self.area))
+        shape_x = x2-x1
+        shape_y = y2-y1
+        return shape_x,shape_y
+
+    def button_size(self):
+        x1, y1, x2, y2 = map(int, map(round,self.button))
+        shape_x = x2-x1
+        shape_y = y2-y1
+        return shape_x,shape_y
+
+    def area_origin(self):
+        x1, y1, x2, y2 = map(int, map(round,self.area))
+        return x1,y1
+
     ## ---------------------- 【认证】 一些通用方法 end --------------------------
 
     @property
@@ -206,9 +234,42 @@ class Button(Resource):
         self._match_binary_init = False
         self._match_luma_init = False
 
+
+    def word(self, image, offset=30, model=1):
+        """
+
+        :param image: 源图
+        :param offset(int, tuple): Detection area offset.
+        :param model(int): 匹配模式 1-模糊；2-严格
+        :return:
+        """
+        if isinstance(offset, tuple):
+            if len(offset) == 2:
+                offset = np.array((-offset[0], -offset[1], offset[0], offset[1]))
+            else:
+                offset = np.array(offset)
+        else:
+            offset = np.array((-3, -offset, 3, offset))
+        # 对图片进行剪切
+        image = crop(image, offset + self.area, copy=False)
+        # 文字识别源图
+        orc_reuslt = word_ocr.ocr(image, cls=True)
+        for idx in range(len(orc_reuslt)):
+            res = orc_reuslt[idx]
+            for line in res:
+                image_word = image_word + line[1][0]
+        # 进行匹配
+        if model==1 and self.text in image_word:
+            return True
+        elif model==1 and self.text == image_word:
+            return True
+        else:
+            return False
+
+
     def match(self, image, offset=30, threshold=0.85):
         """Detects button by template matching. To Some button, its location may not be static.
-
+           通过模板匹配检测按钮。 对于某些按钮，其位置可能不是静态的。
         Args:
             image: Screenshot.
             offset (int, tuple): Detection area offset.
@@ -253,6 +314,7 @@ class Button(Resource):
     def match_binary(self, image, offset=30, threshold=0.85):
         """Detects button by template matching. To Some button, its location may not be static.
            This method will apply template matching under binarization.
+           通过模板匹配检测按钮。 对于某些按钮，其位置可能不是静态的。 该方法将在二值化下应用模板匹配
 
         Args:
             image: Screenshot.
@@ -301,6 +363,7 @@ class Button(Resource):
     def match_luma(self, image, offset=30, threshold=0.85):
         """
         Detects button by template matching under Y channel (Luminance)
+        通过Y通道（亮度）下的模板匹配来检测按钮
 
         Args:
             image: Screenshot.
@@ -321,6 +384,7 @@ class Button(Resource):
         else:
             offset = np.array((-3, -offset, 3, offset))
         image = crop(image, offset + self.area, copy=False)
+        image_show(image,image_test)
 
         if self.is_gif:
             image_luma = rgb2luma(image)
@@ -412,61 +476,42 @@ class Button(Resource):
 
 
 class ButtonGrid:
-    def __init__(self, origin, delta, button_shape, grid_shape, name=None):
-        self.origin = np.array(origin)
+    def __init__(self, origin_button, delta, grid_shape, text=None):
+        """
+
+        :param origin_button: 起点按钮
+        :param delta: 按钮移动距离(x,y);x=origin_button左上角x- 下一个目标左上角x;y=origin_button左上角y - 下一个目标左上角y
+        :param grid_shape: 网格大小（列，行）
+        :param text: 按钮的文本内容
+        """
+        # 起点按钮的坐上角坐标
+        self.origin = np.array(origin_button.area_origin())
         self.delta = np.array(delta)
-        self.button_shape = np.array(button_shape)
         self.grid_shape = np.array(grid_shape)
-        if name:
-            self._name = name
-        else:
-            (filename, line_number, function_name, text) = traceback.extract_stack()[-2]
-            self._name = text[:text.find('=')].strip()
+
+        # 起点按钮的基础数据
+        self._text = "" if text==None else text
+        self._name = origin_button.name
+        self._color = origin_button.color
+        self.area_shape = origin_button.area_size()
+        self.button_shape = origin_button.button_size()
 
     def __getitem__(self, item):
+        # item ：网格位置
         base = np.round(np.array(item) * self.delta + self.origin).astype(int)
-        area = tuple(np.append(base, base + self.button_shape))
-        return Button(area=area, color=(), button=area, name='%s_%s_%s' % (self._name, item[0], item[1]))
+        area = tuple(np.append(base, base + self.area_shape))
+        button = tuple(np.append(base, base + self.button_shape))
+        return Button(area=area, text=self._text, color=self._color, button=button, name='%s_%s_%s' % (self._name, item[0], item[1]))
 
     def generate(self):
         for y in range(self.grid_shape[1]):
             for x in range(self.grid_shape[0]):
                 yield x, y, self[x, y]
 
-    @cached_property
+    # 将网格展平为 list
     def buttons(self):
         return list([button for _, _, button in self.generate()])
 
-    def crop(self, area, name=None):
-        """
-        Args:
-            area (tuple): Area related to self.origin
-            name (str): Name of the new ButtonGrid instance.
-
-        Returns:
-            ButtonGrid:
-        """
-        if name is None:
-            name = self._name
-        origin = self.origin + area[:2]
-        button_shape = np.subtract(area[2:], area[:2])
-        return ButtonGrid(
-            origin=origin, delta=self.delta, button_shape=button_shape, grid_shape=self.grid_shape, name=name)
-
-    def move(self, vector, name=None):
-        """
-        Args:
-            vector (tuple): Move vector.
-            name (str): Name of the new ButtonGrid instance.
-
-        Returns:
-            ButtonGrid:
-        """
-        if name is None:
-            name = self._name
-        origin = self.origin + vector
-        return ButtonGrid(
-            origin=origin, delta=self.delta, button_shape=self.button_shape, grid_shape=self.grid_shape, name=name)
 
     def gen_mask(self):
         """
@@ -489,3 +534,4 @@ class ButtonGrid:
         Save mask to {name}.png
         """
         self.gen_mask().save(f'{self._name}.png')
+

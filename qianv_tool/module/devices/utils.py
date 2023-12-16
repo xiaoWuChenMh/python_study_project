@@ -28,6 +28,33 @@ except ImportError:
 
 
 
+def is_emulator(serial):
+    """
+    # 判断是否为emulator
+    :param serial:
+    :return:
+    """
+    return serial.startswith('emulator-') or serial.startswith('127.0.0.1:')
+
+def retry_sleep(trial=None):
+    """
+     重试时，系统睡眠时间
+    :param trial:
+    :return:
+    """
+    if trial == 0:
+        pass
+    elif trial == 1:
+        pass
+    # Failed twice
+    elif trial == 2:
+        time.sleep(1)
+    # Failed more
+    else:
+        time.sleep(3)
+
+
+
 def sys_command(cmd, timeout=10,shell=False):
     """
     执行cmd命令
@@ -52,68 +79,7 @@ def sys_command(cmd, timeout=10,shell=False):
     return stdout
 
 
-def recv_all(stream, chunk_size=4096, recv_interval=0.000) -> bytes:
-    """
-    将流信息转为Bytes
-    Args:
-        stream:
-        chunk_size:
-        recv_interval (float): Default to 0.000, use 0.001 if receiving as server
-
-    Returns:
-        bytes:
-
-    Raises:
-        AdbTimeout
-    """
-    if isinstance(stream, AdbConnection):
-        stream = stream.conn
-        stream.settimeout(10)
-    else:
-        stream.settimeout(10)
-
-    try:
-        fragments = []
-        while 1:
-            chunk = stream.recv(chunk_size)
-            if chunk:
-                fragments.append(chunk)
-                # See https://stackoverflow.com/questions/23837827/python-server-program-has-high-cpu-usage/41749820#41749820
-                time.sleep(recv_interval)
-            else:
-                break
-        return remove_shell_warning(b''.join(fragments))
-    except socket.timeout:
-        raise AdbTimeout('adb read timeout')
-
-def remove_shell_warning(s):
-    """
-     从shell命令中移除 warnings 信息
-
-    Args:
-        s (str, bytes):
-
-    Returns:
-        str, bytes:
-    """
-    # WARNING: linker: [vdso]: unused DT entry: type 0x70000001 arg 0x0\n\x89PNG\r\n\x1a\n\x00\x00\x00\rIH
-    if isinstance(s, bytes):
-        # b''b代表是一个以字节的形式存在的字符串
-        if s.startswith(b'WARNING'):
-            try:
-                s = s.split(b'\n', maxsplit=1)[1]
-            except IndexError:
-                pass
-        return s
-        # return re.sub(b'^WARNING.+\n', b'', s)
-    elif isinstance(s, str):
-        if s.startswith('WARNING'):
-            try:
-                s = s.split('\n', maxsplit=1)[1]
-            except IndexError:
-                pass
-    return s
-
+# ------------------------------- 错误处理 --------------------------------------------------------
 
 def handle_adb_error(e):
     """
@@ -183,9 +149,70 @@ def possible_reasons(*args):
         logger.critical(f'Possible reason #{index}: {reason}')
 
 
-# 判断是否为emulator
-def is_emulator(serial):
-     return serial.startswith('emulator-') or serial.startswith('127.0.0.1:')
+## -------------------------------- adb shell输出处理 -------------------------------
+
+def recv_all(stream, chunk_size=4096, recv_interval=0.000) -> bytes:
+    """
+    将流信息转为Bytes
+    Args:
+        stream:
+        chunk_size:
+        recv_interval (float): Default to 0.000, use 0.001 if receiving as server
+
+    Returns:
+        bytes:
+
+    Raises:
+        AdbTimeout
+    """
+    if isinstance(stream, AdbConnection):
+        stream = stream.conn
+        stream.settimeout(10)
+    else:
+        stream.settimeout(10)
+
+    try:
+        fragments = []
+        while 1:
+            chunk = stream.recv(chunk_size)
+            if chunk:
+                fragments.append(chunk)
+                # See https://stackoverflow.com/questions/23837827/python-server-program-has-high-cpu-usage/41749820#41749820
+                time.sleep(recv_interval)
+            else:
+                break
+        return remove_shell_warning(b''.join(fragments))
+    except socket.timeout:
+        raise AdbTimeout('adb read timeout')
+
+def remove_shell_warning(s):
+    """
+     从shell命令中移除 warnings 信息
+
+    Args:
+        s (str, bytes):
+
+    Returns:
+        str, bytes:
+    """
+    # WARNING: linker: [vdso]: unused DT entry: type 0x70000001 arg 0x0\n\x89PNG\r\n\x1a\n\x00\x00\x00\rIH
+    if isinstance(s, bytes):
+        # b''b代表是一个以字节的形式存在的字符串
+        if s.startswith(b'WARNING'):
+            try:
+                s = s.split(b'\n', maxsplit=1)[1]
+            except IndexError:
+                pass
+        return s
+        # return re.sub(b'^WARNING.+\n', b'', s)
+    elif isinstance(s, str):
+        if s.startswith('WARNING'):
+            try:
+                s = s.split('\n', maxsplit=1)[1]
+            except IndexError:
+                pass
+    return s
+
 
 ## -------------------------------- 图像相关 -------------------------------
 
@@ -208,3 +235,73 @@ def image_size(image):
     """
     shape = image.shape
     return shape[1], shape[0]
+
+## ------------------------------------ 坐标处理 -----------------------------
+
+def random_normal_distribution_int(a, b, n=3):
+    """Generate a normal distribution int within the interval. Use the average value of several random numbers to
+    simulate normal distribution.
+
+    Args:
+        a (int): The minimum of the interval.
+        b (int): The maximum of the interval.
+        n (int): The amount of numbers in simulation. Default to 3.
+
+    Returns:
+        int
+    """
+    if a < b:
+        output = np.mean(np.random.randint(a, b, size=n))
+        return int(output.round())
+    else:
+        return b
+
+def random_rectangle_point(area, n=3):
+    """Choose a random point in an area.
+
+    Args:
+        area: (upper_left_x, upper_left_y, bottom_right_x, bottom_right_y).
+        n (int): The amount of numbers in simulation. Default to 3.
+
+    Returns:
+        tuple(int): (x, y)
+    """
+    x = random_normal_distribution_int(area[0], area[2], n=n)
+    y = random_normal_distribution_int(area[1], area[3], n=n)
+    return x, y
+
+
+def ensure_int(*args):
+    """
+    Convert all elements to int.
+    Return the same structure as nested objects.
+
+    Args:
+        *args:
+
+    Returns:
+        list:
+    """
+
+    def to_int(item):
+        try:
+            return int(item)
+        except TypeError:
+            result = [to_int(i) for i in item]
+            if len(result) == 1:
+                result = result[0]
+            return result
+
+    return to_int(args)
+
+def point2str(x, y, length=4):
+    """
+    Args:
+        x (int, float):
+        y (int, float):
+        length (int): Align length.
+
+    Returns:
+        str: String with numbers right aligned, such as '( 100,  80)'.
+    """
+    return '(%s, %s)' % (str(int(x)).rjust(length), str(int(y)).rjust(length))

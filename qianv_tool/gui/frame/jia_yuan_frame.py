@@ -26,5 +26,5 @@ class JiaYunFrame(ctk.CTkFrame):
         a = tabVidew.getTab(0)
 
         # 初始化各个tab页的内容
-        self.shou_cai_task_frame = ShouCaiTask(tabVidew.getTab(0),image)
+        self.shou_cai_task_frame = ShouCaiTask(tabVidew.getTab(0),image,self.devices)
         self.shou_cai_task_frame.grid(row=0, column=0,sticky="nsew")
