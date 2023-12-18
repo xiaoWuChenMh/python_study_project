@@ -15,7 +15,7 @@ print(a.info)
 
 
 # 截图
-a.screenshot('image/帮会_地图1.png')
+a.screenshot('image/地图_自动进入分线1.jpg')
 # d.screenshot('image/home2.png')
 # c.screenshot('image/home3.png')
 # d.screenshot('image/继续登录.png')

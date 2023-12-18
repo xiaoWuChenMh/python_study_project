@@ -33,7 +33,7 @@ class Uiautomator(Adb):
     lock = threading.Lock()
 
     # 缓存u2连接
-    u2_devices : Dict[str, u2.Device]
+    u2_devices : Dict[str, u2.Device] = {}
 
     def __init__(self, image_test = False):
         super().__init__()
@@ -73,7 +73,8 @@ class Uiautomator(Adb):
                 # 验证连接是否可用
                 self.u2_devices[serial].info
                 break
-            except Exception:
+            except Exception as e:
+                print(e)
                 self.lock.acquire()
                 self.u2_device(serial)
                 self.lock.release()

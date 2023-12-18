@@ -26,6 +26,7 @@ class ImageTool:
         """
         current_dir = os.path.dirname(os.path.realpath(__file__))
         parent_dir = os.path.dirname(current_dir)
+        return parent_dir
 
     def change_game_source( self ):
         """
@@ -35,7 +36,17 @@ class ImageTool:
         image_path = os.path.join(parent_dir, "assets/game_source")
         self.change_image_extension(image_path, 'png', 'jpg')
 
+    def change_game( self,dir_name ):
+        """
+        修改assets/game_source文件下图片的后缀名
+        """
+        parent_dir = self.parent_directory()
+        image_path = os.path.join(parent_dir, f"assets/game/",dir_name)
+        self.change_image_extension(image_path, 'jpg', 'png')
+
+
 if __name__ == "__main__":
     app = ImageTool()
-    app.change_game_source()
+    # app.change_game_source()
+    app.change_game('action_window')
 

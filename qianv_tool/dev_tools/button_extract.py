@@ -91,8 +91,11 @@ class ImageExtractor:
         result = ocr.ocr(image, cls=True)
         for idx in range(len(result)):
             res = result[idx]
-            for line in res:
-                text = text+line[1][0]
+            try:
+                for line in res:
+                    text = text + line[1][0]
+            except Exception:
+                pass
         return text
 
     @staticmethod
@@ -125,6 +128,10 @@ class ImageExtractor:
             override = self.get_file('BUTTON', server=server)
             if os.path.exists(override):
                 button, _, _ = self.extract(override)
+            # 判断是否需要修正文本
+            override = self.get_file('TEXT', server=server)
+            if os.path.exists(override):
+                _, _, text = self.extract(override)
             # ----------- 获取:最终的坐标和颜色值 -----------------
             # 按钮识别的区域
             self.area[server] = area

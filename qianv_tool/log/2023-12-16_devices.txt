@@ -1,0 +1,633 @@
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-16 16:24:11.826 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-16 16:24:42.588 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2023-12-16 16:24:44.025 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:5096)                               
+2023-12-16 16:24:44.027 | ERROR | AttributeError: 'Devices' object has no attribute 'u2_devices'                       
+┌───────────────────────────────────────── Traceback (most recent call last) ─────────────────────────────────────────┐
+│ F:\code\workpace\study\pyCharm\python_study_project\qianv_tool\module\devices\devices.py:50 in retry_wrapper        │
+│                                                                                                                     │
+│    47 │   │   │   │   if callable(init):                                                                            │
+│    48 │   │   │   │   │   retry_sleep(_)                                                                            │
+│    49 │   │   │   │   │   init()                                                                                    │
+│ >  50 │   │   │   │   return func(self, *args, **kwargs)                                                            │
+│    51 │   │   │   # Can't handle                                                                                    │
+│    52 │   │   │   except RequestHumanTakeover:                                                                      │
+│    53 │   │   │   │   break                                                                                         │
+│                                                                                                                     │
+│ ┌──────────────────────────────────── locals ────────────────────────────────────┐                                  │
+│ │           _ = 0                                                                │                                  │
+│ │        args = ('emulator-5554',)                                               │                                  │
+│ │           e = AttributeError("'Devices' object has no attribute 'u2_devices'") │                                  │
+│ │        func = <function Devices.device_info_print at 0x0000024F201BB550>       │                                  │
+│ │  get_serial = <function retry.<locals>.get_serial at 0x0000024F201BB5E0>       │                                  │
+│ │        init = None                                                             │                                  │
+│ │      kwargs = {}                                                               │                                  │
+│ │ RETRY_TRIES = 5                                                                │                                  │
+│ │        self = <__main__.Devices object at 0x0000024F1EB93EE0>                  │                                  │
+│ │      serial = 'emulator-5554'                                                  │                                  │
+│ └────────────────────────────────────────────────────────────────────────────────┘                                  │
+│                                                                                                                     │
+│ F:\code\workpace\study\pyCharm\python_study_project\qianv_tool\module\devices\devices.py:181 in device_info_print   │
+│                                                                                                                     │
+│   178 │   │   :return:                                                                                              │
+│   179 │   │   """                                                                                                   │
+│   180 │   │                                                                                                         │
+│ > 181 │   │   a = self.u2_device(serial)                                                                            │
+│   182 │   │   print(a.info)                                                                                         │
+│   183 │                                                                                                             │
+│   184 │   @retry                                                                                                    │
+│                                                                                                                     │
+│ ┌───────────────────────── locals ─────────────────────────┐                                                        │
+│ │   self = <__main__.Devices object at 0x0000024F1EB93EE0> │                                                        │
+│ │ serial = 'emulator-5554'                                 │                                                        │
+│ └──────────────────────────────────────────────────────────┘                                                        │
+│                                                                                                                     │
+│ F:\code\workpace\study\pyCharm\python_study_project\qianv_tool\module\devices\connection\uiautomator.py:62 in       │
+│ u2_device                                                                                                           │
+│                                                                                                                     │
+│    59 │   │   device.set_new_command_timeout(604800)                                                                │
+│    60 │   │                                                                                                         │
+│    61 │   │   logger.attr('u2.Device', f'Device(atx_agent_url={device._get_atx_agent_url()})')                      │
+│ >  62 │   │   self.u2_devices[serial] = device                                                                      │
+│    63 │   │   return device                                                                                         │
+│    64 │                                                                                                             │
+│    65 │   def get_u2(self,serial) ->u2.Device:                                                                      │
+│                                                                                                                     │
+│ ┌────────────────────────── locals ───────────────────────────┐                                                     │
+│ │ device = <uiautomator2.Device object at 0x0000024F201B2B20> │                                                     │
+│ │   self = <__main__.Devices object at 0x0000024F1EB93EE0>    │                                                     │
+│ │ serial = 'emulator-5554'                                    │                                                     │
+│ └─────────────────────────────────────────────────────────────┘                                                     │
+└─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+AttributeError: 'Devices' object has no attribute 'u2_devices'                                                         
+2023-12-16 16:24:44.259 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:5096)                               
+2023-12-16 16:24:44.261 | ERROR | AttributeError: 'Devices' object has no attribute 'u2_devices'                       
+┌───────────────────────────────────────── Traceback (most recent call last) ─────────────────────────────────────────┐
+│ F:\code\workpace\study\pyCharm\python_study_project\qianv_tool\module\devices\devices.py:50 in retry_wrapper        │
+│                                                                                                                     │
+│    47 │   │   │   │   if callable(init):                                                                            │
+│    48 │   │   │   │   │   retry_sleep(_)                                                                            │
+│    49 │   │   │   │   │   init()                                                                                    │
+│ >  50 │   │   │   │   return func(self, *args, **kwargs)                                                            │
+│    51 │   │   │   # Can't handle                                                                                    │
+│    52 │   │   │   except RequestHumanTakeover:                                                                      │
+│    53 │   │   │   │   break                                                                                         │
+│                                                                                                                     │
+│ ┌───────────────────────────────────────── locals ──────────────────────────────────────────┐                       │
+│ │           _ = 1                                                                           │                       │
+│ │        args = ('emulator-5554',)                                                          │                       │
+│ │           e = AttributeError("'Devices' object has no attribute 'u2_devices'")            │                       │
+│ │        func = <function Devices.device_info_print at 0x0000024F201BB550>                  │                       │
+│ │  get_serial = <function retry.<locals>.get_serial at 0x0000024F201BB5E0>                  │                       │
+│ │        init = <function retry.<locals>.retry_wrapper.<locals>.init at 0x0000024F2024FEE0> │                       │
+│ │      kwargs = {}                                                                          │                       │
+│ │ RETRY_TRIES = 5                                                                           │                       │
+│ │        self = <__main__.Devices object at 0x0000024F1EB93EE0>                             │                       │
+│ │      serial = 'emulator-5554'                                                             │                       │
+│ └───────────────────────────────────────────────────────────────────────────────────────────┘                       │
+│                                                                                                                     │
+│ F:\code\workpace\study\pyCharm\python_study_project\qianv_tool\module\devices\devices.py:181 in device_info_print   │
+│                                                                                                                     │
+│   178 │   │   :return:                                                                                              │
+│   179 │   │   """                                                                                                   │
+│   180 │   │                                                                                                         │
+│ > 181 │   │   a = self.u2_device(serial)                                                                            │
+│   182 │   │   print(a.info)                                                                                         │
+│   183 │                                                                                                             │
+│   184 │   @retry                                                                                                    │
+│                                                                                                                     │
+│ ┌───────────────────────── locals ─────────────────────────┐                                                        │
+│ │   self = <__main__.Devices object at 0x0000024F1EB93EE0> │                                                        │
+│ │ serial = 'emulator-5554'                                 │                                                        │
+│ └──────────────────────────────────────────────────────────┘                                                        │
+│                                                                                                                     │
+│ F:\code\workpace\study\pyCharm\python_study_project\qianv_tool\module\devices\connection\uiautomator.py:62 in       │
+│ u2_device                                                                                                           │
+│                                                                                                                     │
+│    59 │   │   device.set_new_command_timeout(604800)                                                                │
+│    60 │   │                                                                                                         │
+│    61 │   │   logger.attr('u2.Device', f'Device(atx_agent_url={device._get_atx_agent_url()})')                      │
+│ >  62 │   │   self.u2_devices[serial] = device                                                                      │
+│    63 │   │   return device                                                                                         │
+│    64 │                                                                                                             │
+│    65 │   def get_u2(self,serial) ->u2.Device:                                                                      │
+│                                                                                                                     │
+│ ┌────────────────────────── locals ───────────────────────────┐                                                     │
+│ │ device = <uiautomator2.Device object at 0x0000024F201B2B50> │                                                     │
+│ │   self = <__main__.Devices object at 0x0000024F1EB93EE0>    │                                                     │
+│ │ serial = 'emulator-5554'                                    │                                                     │
+│ └─────────────────────────────────────────────────────────────┘                                                     │
+└─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+AttributeError: 'Devices' object has no attribute 'u2_devices'                                                         
+2023-12-16 16:24:45.355 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:5096)                               
+2023-12-16 16:24:45.357 | ERROR | AttributeError: 'Devices' object has no attribute 'u2_devices'                       
+┌───────────────────────────────────────── Traceback (most recent call last) ─────────────────────────────────────────┐
+│ F:\code\workpace\study\pyCharm\python_study_project\qianv_tool\module\devices\devices.py:50 in retry_wrapper        │
+│                                                                                                                     │
+│    47 │   │   │   │   if callable(init):                                                                            │
+│    48 │   │   │   │   │   retry_sleep(_)                                                                            │
+│    49 │   │   │   │   │   init()                                                                                    │
+│ >  50 │   │   │   │   return func(self, *args, **kwargs)                                                            │
+│    51 │   │   │   # Can't handle                                                                                    │
+│    52 │   │   │   except RequestHumanTakeover:                                                                      │
+│    53 │   │   │   │   break                                                                                         │
+│                                                                                                                     │
+│ ┌───────────────────────────────────────── locals ──────────────────────────────────────────┐                       │
+│ │           _ = 2                                                                           │                       │
+│ │        args = ('emulator-5554',)                                                          │                       │
+│ │           e = AttributeError("'Devices' object has no attribute 'u2_devices'")            │                       │
+│ │        func = <function Devices.device_info_print at 0x0000024F201BB550>                  │                       │
+│ │  get_serial = <function retry.<locals>.get_serial at 0x0000024F201BB5E0>                  │                       │
+│ │        init = <function retry.<locals>.retry_wrapper.<locals>.init at 0x0000024F2024FC10> │                       │
+│ │      kwargs = {}                                                                          │                       │
+│ │ RETRY_TRIES = 5                                                                           │                       │
+│ │        self = <__main__.Devices object at 0x0000024F1EB93EE0>                             │                       │
+│ │      serial = 'emulator-5554'                                                             │                       │
+│ └───────────────────────────────────────────────────────────────────────────────────────────┘                       │
+│                                                                                                                     │
+│ F:\code\workpace\study\pyCharm\python_study_project\qianv_tool\module\devices\devices.py:181 in device_info_print   │
+│                                                                                                                     │
+│   178 │   │   :return:                                                                                              │
+│   179 │   │   """                                                                                                   │
+│   180 │   │                                                                                                         │
+│ > 181 │   │   a = self.u2_device(serial)                                                                            │
+│   182 │   │   print(a.info)                                                                                         │
+│   183 │                                                                                                             │
+│   184 │   @retry                                                                                                    │
+│                                                                                                                     │
+│ ┌───────────────────────── locals ─────────────────────────┐                                                        │
+│ │   self = <__main__.Devices object at 0x0000024F1EB93EE0> │                                                        │
+│ │ serial = 'emulator-5554'                                 │                                                        │
+│ └──────────────────────────────────────────────────────────┘                                                        │
+│                                                                                                                     │
+│ F:\code\workpace\study\pyCharm\python_study_project\qianv_tool\module\devices\connection\uiautomator.py:62 in       │
+│ u2_device                                                                                                           │
+│                                                                                                                     │
+│    59 │   │   device.set_new_command_timeout(604800)                                                                │
+│    60 │   │                                                                                                         │
+│    61 │   │   logger.attr('u2.Device', f'Device(atx_agent_url={device._get_atx_agent_url()})')                      │
+│ >  62 │   │   self.u2_devices[serial] = device                                                                      │
+│    63 │   │   return device                                                                                         │
+│    64 │                                                                                                             │
+│    65 │   def get_u2(self,serial) ->u2.Device:                                                                      │
+│                                                                                                                     │
+│ ┌────────────────────────── locals ───────────────────────────┐                                                     │
+│ │ device = <uiautomator2.Device object at 0x0000024F201B2E50> │                                                     │
+│ │   self = <__main__.Devices object at 0x0000024F1EB93EE0>    │                                                     │
+│ │ serial = 'emulator-5554'                                    │                                                     │
+│ └─────────────────────────────────────────────────────────────┘                                                     │
+└─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+AttributeError: 'Devices' object has no attribute 'u2_devices'                                                         
+2023-12-16 16:24:48.439 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:5096)                               
+2023-12-16 16:24:48.440 | ERROR | AttributeError: 'Devices' object has no attribute 'u2_devices'                       
+┌───────────────────────────────────────── Traceback (most recent call last) ─────────────────────────────────────────┐
+│ F:\code\workpace\study\pyCharm\python_study_project\qianv_tool\module\devices\devices.py:50 in retry_wrapper        │
+│                                                                                                                     │
+│    47 │   │   │   │   if callable(init):                                                                            │
+│    48 │   │   │   │   │   retry_sleep(_)                                                                            │
+│    49 │   │   │   │   │   init()                                                                                    │
+│ >  50 │   │   │   │   return func(self, *args, **kwargs)                                                            │
+│    51 │   │   │   # Can't handle                                                                                    │
+│    52 │   │   │   except RequestHumanTakeover:                                                                      │
+│    53 │   │   │   │   break                                                                                         │
+│                                                                                                                     │
+│ ┌───────────────────────────────────────── locals ──────────────────────────────────────────┐                       │
+│ │           _ = 3                                                                           │                       │
+│ │        args = ('emulator-5554',)                                                          │                       │
+│ │           e = AttributeError("'Devices' object has no attribute 'u2_devices'")            │                       │
+│ │        func = <function Devices.device_info_print at 0x0000024F201BB550>                  │                       │
+│ │  get_serial = <function retry.<locals>.get_serial at 0x0000024F201BB5E0>                  │                       │
+│ │        init = <function retry.<locals>.retry_wrapper.<locals>.init at 0x0000024F20274D30> │                       │
+│ │      kwargs = {}                                                                          │                       │
+│ │ RETRY_TRIES = 5                                                                           │                       │
+│ │        self = <__main__.Devices object at 0x0000024F1EB93EE0>                             │                       │
+│ │      serial = 'emulator-5554'                                                             │                       │
+│ └───────────────────────────────────────────────────────────────────────────────────────────┘                       │
+│                                                                                                                     │
+│ F:\code\workpace\study\pyCharm\python_study_project\qianv_tool\module\devices\devices.py:181 in device_info_print   │
+│                                                                                                                     │
+│   178 │   │   :return:                                                                                              │
+│   179 │   │   """                                                                                                   │
+│   180 │   │                                                                                                         │
+│ > 181 │   │   a = self.u2_device(serial)                                                                            │
+│   182 │   │   print(a.info)                                                                                         │
+│   183 │                                                                                                             │
+│   184 │   @retry                                                                                                    │
+│                                                                                                                     │
+│ ┌───────────────────────── locals ─────────────────────────┐                                                        │
+│ │   self = <__main__.Devices object at 0x0000024F1EB93EE0> │                                                        │
+│ │ serial = 'emulator-5554'                                 │                                                        │
+│ └──────────────────────────────────────────────────────────┘                                                        │
+│                                                                                                                     │
+│ F:\code\workpace\study\pyCharm\python_study_project\qianv_tool\module\devices\connection\uiautomator.py:62 in       │
+│ u2_device                                                                                                           │
+│                                                                                                                     │
+│    59 │   │   device.set_new_command_timeout(604800)                                                                │
+│    60 │   │                                                                                                         │
+│    61 │   │   logger.attr('u2.Device', f'Device(atx_agent_url={device._get_atx_agent_url()})')                      │
+│ >  62 │   │   self.u2_devices[serial] = device                                                                      │
+│    63 │   │   return device                                                                                         │
+│    64 │                                                                                                             │
+│    65 │   def get_u2(self,serial) ->u2.Device:                                                                      │
+│                                                                                                                     │
+│ ┌────────────────────────── locals ───────────────────────────┐                                                     │
+│ │ device = <uiautomator2.Device object at 0x0000024F2024BE80> │                                                     │
+│ │   self = <__main__.Devices object at 0x0000024F1EB93EE0>    │                                                     │
+│ │ serial = 'emulator-5554'                                    │                                                     │
+│ └─────────────────────────────────────────────────────────────┘                                                     │
+└─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+AttributeError: 'Devices' object has no attribute 'u2_devices'                                                         
+2023-12-16 16:24:51.532 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:5096)                               
+2023-12-16 16:24:51.534 | ERROR | AttributeError: 'Devices' object has no attribute 'u2_devices'                       
+┌───────────────────────────────────────── Traceback (most recent call last) ─────────────────────────────────────────┐
+│ F:\code\workpace\study\pyCharm\python_study_project\qianv_tool\module\devices\devices.py:50 in retry_wrapper        │
+│                                                                                                                     │
+│    47 │   │   │   │   if callable(init):                                                                            │
+│    48 │   │   │   │   │   retry_sleep(_)                                                                            │
+│    49 │   │   │   │   │   init()                                                                                    │
+│ >  50 │   │   │   │   return func(self, *args, **kwargs)                                                            │
+│    51 │   │   │   # Can't handle                                                                                    │
+│    52 │   │   │   except RequestHumanTakeover:                                                                      │
+│    53 │   │   │   │   break                                                                                         │
+│                                                                                                                     │
+│ ┌───────────────────────────────────────── locals ──────────────────────────────────────────┐                       │
+│ │           _ = 4                                                                           │                       │
+│ │        args = ('emulator-5554',)                                                          │                       │
+│ │           e = AttributeError("'Devices' object has no attribute 'u2_devices'")            │                       │
+│ │        func = <function Devices.device_info_print at 0x0000024F201BB550>                  │                       │
+│ │  get_serial = <function retry.<locals>.get_serial at 0x0000024F201BB5E0>                  │                       │
+│ │        init = <function retry.<locals>.retry_wrapper.<locals>.init at 0x0000024F201D8280> │                       │
+│ │      kwargs = {}                                                                          │                       │
+│ │ RETRY_TRIES = 5                                                                           │                       │
+│ │        self = <__main__.Devices object at 0x0000024F1EB93EE0>                             │                       │
+│ │      serial = 'emulator-5554'                                                             │                       │
+│ └───────────────────────────────────────────────────────────────────────────────────────────┘                       │
+│                                                                                                                     │
+│ F:\code\workpace\study\pyCharm\python_study_project\qianv_tool\module\devices\devices.py:181 in device_info_print   │
+│                                                                                                                     │
+│   178 │   │   :return:                                                                                              │
+│   179 │   │   """                                                                                                   │
+│   180 │   │                                                                                                         │
+│ > 181 │   │   a = self.u2_device(serial)                                                                            │
+│   182 │   │   print(a.info)                                                                                         │
+│   183 │                                                                                                             │
+│   184 │   @retry                                                                                                    │
+│                                                                                                                     │
+│ ┌───────────────────────── locals ─────────────────────────┐                                                        │
+│ │   self = <__main__.Devices object at 0x0000024F1EB93EE0> │                                                        │
+│ │ serial = 'emulator-5554'                                 │                                                        │
+│ └──────────────────────────────────────────────────────────┘                                                        │
+│                                                                                                                     │
+│ F:\code\workpace\study\pyCharm\python_study_project\qianv_tool\module\devices\connection\uiautomator.py:62 in       │
+│ u2_device                                                                                                           │
+│                                                                                                                     │
+│    59 │   │   device.set_new_command_timeout(604800)                                                                │
+│    60 │   │                                                                                                         │
+│    61 │   │   logger.attr('u2.Device', f'Device(atx_agent_url={device._get_atx_agent_url()})')                      │
+│ >  62 │   │   self.u2_devices[serial] = device                                                                      │
+│    63 │   │   return device                                                                                         │
+│    64 │                                                                                                             │
+│    65 │   def get_u2(self,serial) ->u2.Device:                                                                      │
+│                                                                                                                     │
+│ ┌────────────────────────── locals ───────────────────────────┐                                                     │
+│ │ device = <uiautomator2.Device object at 0x0000024F1EFD0730> │                                                     │
+│ │   self = <__main__.Devices object at 0x0000024F1EB93EE0>    │                                                     │
+│ │ serial = 'emulator-5554'                                    │                                                     │
+│ └─────────────────────────────────────────────────────────────┘                                                     │
+└─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+AttributeError: 'Devices' object has no attribute 'u2_devices'                                                         
+2023-12-16 16:24:51.613 | CRITICAL | Retry device_info_print() failed                                                  
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-16 16:26:13.771 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-16 16:27:14.336 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2023-12-16 16:27:17.026 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:5096)                               
+2023-12-16 16:27:24.979 | ERROR | AttributeError: 'Devices' object has no attribute 'u2_devices'                       
+┌───────────────────────────────────────── Traceback (most recent call last) ─────────────────────────────────────────┐
+│ F:\code\workpace\study\pyCharm\python_study_project\qianv_tool\module\devices\connection\uiautomator.py:74 in       │
+│ get_u2                                                                                                              │
+│                                                                                                                     │
+│    71 │   │   for _ in range(3):                                                                                    │
+│    72 │   │   │   try:                                                                                              │
+│    73 │   │   │   │   # 验证连接是否可用                                                                            │
+│ >  74 │   │   │   │   self.u2_devices[serial].info                                                                  │
+│    75 │   │   │   │   break                                                                                         │
+│    76 │   │   │   except Exception:                                                                                 │
+│    77 │   │   │   │   self.lock.acquire()                                                                           │
+│                                                                                                                     │
+│ ┌───────────────────────── locals ─────────────────────────┐                                                        │
+│ │      _ = 0                                               │                                                        │
+│ │   self = <__main__.Devices object at 0x000001BB7EB97CA0> │                                                        │
+│ │ serial = 'emulator-5554'                                 │                                                        │
+│ └──────────────────────────────────────────────────────────┘                                                        │
+└─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+AttributeError: 'Devices' object has no attribute 'u2_devices'                                                         
+                                                                                                                       
+During handling of the above exception, another exception occurred:                                                    
+                                                                                                                       
+┌───────────────────────────────────────── Traceback (most recent call last) ─────────────────────────────────────────┐
+│ F:/code/workpace/study/pyCharm/python_study_project/qianv_tool/module/devices/devices.py:50 in retry_wrapper        │
+│                                                                                                                     │
+│    47 │   │   │   │   if callable(init):                                                                            │
+│    48 │   │   │   │   │   retry_sleep(_)                                                                            │
+│    49 │   │   │   │   │   init()                                                                                    │
+│ >  50 │   │   │   │   return func(self, *args, **kwargs)                                                            │
+│    51 │   │   │   # Can't handle                                                                                    │
+│    52 │   │   │   except RequestHumanTakeover:                                                                      │
+│    53 │   │   │   │   break                                                                                         │
+│                                                                                                                     │
+│ ┌──────────────────────────────────── locals ────────────────────────────────────┐                                  │
+│ │           _ = 0                                                                │                                  │
+│ │        args = ('emulator-5554',)                                               │                                  │
+│ │           e = AttributeError("'Devices' object has no attribute 'u2_devices'") │                                  │
+│ │        func = <function Devices.device_info_print at 0x000001BB7EB9FF70>       │                                  │
+│ │  get_serial = <function retry.<locals>.get_serial at 0x000001BB7EBA23A0>       │                                  │
+│ │        init = None                                                             │                                  │
+│ │      kwargs = {}                                                               │                                  │
+│ │ RETRY_TRIES = 5                                                                │                                  │
+│ │        self = <__main__.Devices object at 0x000001BB7EB97CA0>                  │                                  │
+│ │      serial = 'emulator-5554'                                                  │                                  │
+│ └────────────────────────────────────────────────────────────────────────────────┘                                  │
+│                                                                                                                     │
+│ F:/code/workpace/study/pyCharm/python_study_project/qianv_tool/module/devices/devices.py:181 in device_info_print   │
+│                                                                                                                     │
+│   178 │   │   :return:                                                                                              │
+│   179 │   │   """                                                                                                   │
+│   180 │   │                                                                                                         │
+│ > 181 │   │   a = self.get_u2(serial)                                                                               │
+│   182 │   │   print(a.info)                                                                                         │
+│   183 │                                                                                                             │
+│   184 │   @retry                                                                                                    │
+│                                                                                                                     │
+│ ┌───────────────────────── locals ─────────────────────────┐                                                        │
+│ │   self = <__main__.Devices object at 0x000001BB7EB97CA0> │                                                        │
+│ │ serial = 'emulator-5554'                                 │                                                        │
+│ └──────────────────────────────────────────────────────────┘                                                        │
+│                                                                                                                     │
+│ F:\code\workpace\study\pyCharm\python_study_project\qianv_tool\module\devices\connection\uiautomator.py:78 in       │
+│ get_u2                                                                                                              │
+│                                                                                                                     │
+│    75 │   │   │   │   break                                                                                         │
+│    76 │   │   │   except Exception:                                                                                 │
+│    77 │   │   │   │   self.lock.acquire()                                                                           │
+│ >  78 │   │   │   │   self.u2_device(serial)                                                                        │
+│    79 │   │   │   │   self.lock.release()                                                                           │
+│    80 │   │   return self.u2_devices[serial]                                                                        │
+│    81                                                                                                               │
+│                                                                                                                     │
+│ ┌───────────────────────── locals ─────────────────────────┐                                                        │
+│ │      _ = 0                                               │                                                        │
+│ │   self = <__main__.Devices object at 0x000001BB7EB97CA0> │                                                        │
+│ │ serial = 'emulator-5554'                                 │                                                        │
+│ └──────────────────────────────────────────────────────────┘                                                        │
+│                                                                                                                     │
+│ F:\code\workpace\study\pyCharm\python_study_project\qianv_tool\module\devices\connection\uiautomator.py:62 in       │
+│ u2_device                                                                                                           │
+│                                                                                                                     │
+│    59 │   │   device.set_new_command_timeout(604800)                                                                │
+│    60 │   │                                                                                                         │
+│    61 │   │   logger.attr('u2.Device', f'Device(atx_agent_url={device._get_atx_agent_url()})')                      │
+│ >  62 │   │   self.u2_devices[serial] = device                                                                      │
+│    63 │   │   return device                                                                                         │
+│    64 │                                                                                                             │
+│    65 │   def get_u2(self,serial) ->u2.Device:                                                                      │
+│                                                                                                                     │
+│ ┌────────────────────────── locals ───────────────────────────┐                                                     │
+│ │ device = <uiautomator2.Device object at 0x000001BB7EC05D60> │                                                     │
+│ │   self = <__main__.Devices object at 0x000001BB7EB97CA0>    │                                                     │
+│ │ serial = 'emulator-5554'                                    │                                                     │
+│ └─────────────────────────────────────────────────────────────┘                                                     │
+└─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+AttributeError: 'Devices' object has no attribute 'u2_devices'                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-16 16:28:24.496 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2023-12-16 16:28:44.148 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:5096)                               
+2023-12-16 16:28:49.130 | ERROR | AttributeError: 'Devices' object has no attribute 'u2_devices'                       
+┌───────────────────────────────────────── Traceback (most recent call last) ─────────────────────────────────────────┐
+│ F:\code\workpace\study\pyCharm\python_study_project\qianv_tool\module\devices\connection\uiautomator.py:74 in       │
+│ get_u2                                                                                                              │
+│                                                                                                                     │
+│    71 │   │   for _ in range(3):                                                                                    │
+│    72 │   │   │   try:                                                                                              │
+│    73 │   │   │   │   # 验证连接是否可用                                                                            │
+│ >  74 │   │   │   │   self.u2_devices[serial].info                                                                  │
+│    75 │   │   │   │   break                                                                                         │
+│    76 │   │   │   except Exception:                                                                                 │
+│    77 │   │   │   │   self.lock.acquire()                                                                           │
+│                                                                                                                     │
+│ ┌───────────────────────── locals ─────────────────────────┐                                                        │
+│ │      _ = 0                                               │                                                        │
+│ │   self = <__main__.Devices object at 0x000002777A7F7D00> │                                                        │
+│ │ serial = 'emulator-5554'                                 │                                                        │
+│ └──────────────────────────────────────────────────────────┘                                                        │
+└─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+AttributeError: 'Devices' object has no attribute 'u2_devices'                                                         
+                                                                                                                       
+During handling of the above exception, another exception occurred:                                                    
+                                                                                                                       
+┌───────────────────────────────────────── Traceback (most recent call last) ─────────────────────────────────────────┐
+│ F:/code/workpace/study/pyCharm/python_study_project/qianv_tool/module/devices/devices.py:50 in retry_wrapper        │
+│                                                                                                                     │
+│    47 │   │   │   │   if callable(init):                                                                            │
+│    48 │   │   │   │   │   retry_sleep(_)                                                                            │
+│    49 │   │   │   │   │   init()                                                                                    │
+│ >  50 │   │   │   │   return func(self, *args, **kwargs)                                                            │
+│    51 │   │   │   # Can't handle                                                                                    │
+│    52 │   │   │   except RequestHumanTakeover:                                                                      │
+│    53 │   │   │   │   break                                                                                         │
+│                                                                                                                     │
+│ ┌──────────────────────────────────── locals ────────────────────────────────────┐                                  │
+│ │           _ = 0                                                                │                                  │
+│ │        args = ('emulator-5554',)                                               │                                  │
+│ │           e = AttributeError("'Devices' object has no attribute 'u2_devices'") │                                  │
+│ │        func = <function Devices.device_info_print at 0x000002777A7FFF70>       │                                  │
+│ │  get_serial = <function retry.<locals>.get_serial at 0x000002777A8013A0>       │                                  │
+│ │        init = None                                                             │                                  │
+│ │      kwargs = {}                                                               │                                  │
+│ │ RETRY_TRIES = 5                                                                │                                  │
+│ │        self = <__main__.Devices object at 0x000002777A7F7D00>                  │                                  │
+│ │      serial = 'emulator-5554'                                                  │                                  │
+│ └────────────────────────────────────────────────────────────────────────────────┘                                  │
+│                                                                                                                     │
+│ F:/code/workpace/study/pyCharm/python_study_project/qianv_tool/module/devices/devices.py:181 in device_info_print   │
+│                                                                                                                     │
+│   178 │   │   :return:                                                                                              │
+│   179 │   │   """                                                                                                   │
+│   180 │   │                                                                                                         │
+│ > 181 │   │   a = self.get_u2(serial)                                                                               │
+│   182 │   │   print(a.info)                                                                                         │
+│   183 │                                                                                                             │
+│   184 │   @retry                                                                                                    │
+│                                                                                                                     │
+│ ┌───────────────────────── locals ─────────────────────────┐                                                        │
+│ │   self = <__main__.Devices object at 0x000002777A7F7D00> │                                                        │
+│ │ serial = 'emulator-5554'                                 │                                                        │
+│ └──────────────────────────────────────────────────────────┘                                                        │
+│                                                                                                                     │
+│ F:\code\workpace\study\pyCharm\python_study_project\qianv_tool\module\devices\connection\uiautomator.py:78 in       │
+│ get_u2                                                                                                              │
+│                                                                                                                     │
+│    75 │   │   │   │   break                                                                                         │
+│    76 │   │   │   except Exception:                                                                                 │
+│    77 │   │   │   │   self.lock.acquire()                                                                           │
+│ >  78 │   │   │   │   self.u2_device(serial)                                                                        │
+│    79 │   │   │   │   self.lock.release()                                                                           │
+│    80 │   │   return self.u2_devices[serial]                                                                        │
+│    81                                                                                                               │
+│                                                                                                                     │
+│ ┌───────────────────────── locals ─────────────────────────┐                                                        │
+│ │      _ = 0                                               │                                                        │
+│ │   self = <__main__.Devices object at 0x000002777A7F7D00> │                                                        │
+│ │ serial = 'emulator-5554'                                 │                                                        │
+│ └──────────────────────────────────────────────────────────┘                                                        │
+│                                                                                                                     │
+│ F:\code\workpace\study\pyCharm\python_study_project\qianv_tool\module\devices\connection\uiautomator.py:62 in       │
+│ u2_device                                                                                                           │
+│                                                                                                                     │
+│    59 │   │   device.set_new_command_timeout(604800)                                                                │
+│    60 │   │                                                                                                         │
+│    61 │   │   logger.attr('u2.Device', f'Device(atx_agent_url={device._get_atx_agent_url()})')                      │
+│ >  62 │   │   self.u2_devices[serial] = device                                                                      │
+│    63 │   │   return device                                                                                         │
+│    64 │                                                                                                             │
+│    65 │   def get_u2(self,serial) ->u2.Device:                                                                      │
+│                                                                                                                     │
+│ ┌────────────────────────── locals ───────────────────────────┐                                                     │
+│ │ device = <uiautomator2.Device object at 0x000002777A86CCA0> │                                                     │
+│ │   self = <__main__.Devices object at 0x000002777A7F7D00>    │                                                     │
+│ │ serial = 'emulator-5554'                                    │                                                     │
+│ └─────────────────────────────────────────────────────────────┘                                                     │
+└─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+AttributeError: 'Devices' object has no attribute 'u2_devices'                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-16 16:30:00.943 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2023-12-16 16:30:07.763 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:5096)                               
+2023-12-16 16:30:18.047 | ERROR | AttributeError: 'Devices' object has no attribute 'u2_devices'                       
+┌───────────────────────────────────────── Traceback (most recent call last) ─────────────────────────────────────────┐
+│ F:\code\workpace\study\pyCharm\python_study_project\qianv_tool\module\devices\connection\uiautomator.py:74 in       │
+│ get_u2                                                                                                              │
+│                                                                                                                     │
+│    71 │   │   for _ in range(3):                                                                                    │
+│    72 │   │   │   try:                                                                                              │
+│    73 │   │   │   │   # 验证连接是否可用                                                                            │
+│ >  74 │   │   │   │   print(self.u2_devices[serial].info)                                                           │
+│    75 │   │   │   │   break                                                                                         │
+│    76 │   │   │   except Exception as e:                                                                            │
+│    77 │   │   │   │   print(e)                                                                                      │
+│                                                                                                                     │
+│ ┌───────────────────────── locals ─────────────────────────┐                                                        │
+│ │      _ = 0                                               │                                                        │
+│ │   self = <__main__.Devices object at 0x000001CB83696D90> │                                                        │
+│ │ serial = 'emulator-5554'                                 │                                                        │
+│ └──────────────────────────────────────────────────────────┘                                                        │
+└─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+AttributeError: 'Devices' object has no attribute 'u2_devices'                                                         
+                                                                                                                       
+During handling of the above exception, another exception occurred:                                                    
+                                                                                                                       
+┌───────────────────────────────────────── Traceback (most recent call last) ─────────────────────────────────────────┐
+│ F:/code/workpace/study/pyCharm/python_study_project/qianv_tool/module/devices/devices.py:50 in retry_wrapper        │
+│                                                                                                                     │
+│    47 │   │   │   │   if callable(init):                                                                            │
+│    48 │   │   │   │   │   retry_sleep(_)                                                                            │
+│    49 │   │   │   │   │   init()                                                                                    │
+│ >  50 │   │   │   │   return func(self, *args, **kwargs)                                                            │
+│    51 │   │   │   # Can't handle                                                                                    │
+│    52 │   │   │   except RequestHumanTakeover:                                                                      │
+│    53 │   │   │   │   break                                                                                         │
+│                                                                                                                     │
+│ ┌──────────────────────────────────── locals ────────────────────────────────────┐                                  │
+│ │           _ = 0                                                                │                                  │
+│ │        args = ('emulator-5554',)                                               │                                  │
+│ │           e = AttributeError("'Devices' object has no attribute 'u2_devices'") │                                  │
+│ │        func = <function Devices.device_info_print at 0x000001CB8369EEE0>       │                                  │
+│ │  get_serial = <function retry.<locals>.get_serial at 0x000001CB836A1310>       │                                  │
+│ │        init = None                                                             │                                  │
+│ │      kwargs = {}                                                               │                                  │
+│ │ RETRY_TRIES = 5                                                                │                                  │
+│ │        self = <__main__.Devices object at 0x000001CB83696D90>                  │                                  │
+│ │      serial = 'emulator-5554'                                                  │                                  │
+│ └────────────────────────────────────────────────────────────────────────────────┘                                  │
+│                                                                                                                     │
+│ F:/code/workpace/study/pyCharm/python_study_project/qianv_tool/module/devices/devices.py:181 in device_info_print   │
+│                                                                                                                     │
+│   178 │   │   :return:                                                                                              │
+│   179 │   │   """                                                                                                   │
+│   180 │   │                                                                                                         │
+│ > 181 │   │   a = self.get_u2(serial)                                                                               │
+│   182 │   │   print(a.info)                                                                                         │
+│   183 │                                                                                                             │
+│   184 │   @retry                                                                                                    │
+│                                                                                                                     │
+│ ┌───────────────────────── locals ─────────────────────────┐                                                        │
+│ │   self = <__main__.Devices object at 0x000001CB83696D90> │                                                        │
+│ │ serial = 'emulator-5554'                                 │                                                        │
+│ └──────────────────────────────────────────────────────────┘                                                        │
+│                                                                                                                     │
+│ F:\code\workpace\study\pyCharm\python_study_project\qianv_tool\module\devices\connection\uiautomator.py:79 in       │
+│ get_u2                                                                                                              │
+│                                                                                                                     │
+│    76 │   │   │   except Exception as e:                                                                            │
+│    77 │   │   │   │   print(e)                                                                                      │
+│    78 │   │   │   │   self.lock.acquire()                                                                           │
+│ >  79 │   │   │   │   self.u2_device(serial)                                                                        │
+│    80 │   │   │   │   self.lock.release()                                                                           │
+│    81 │   │   return self.u2_devices[serial]                                                                        │
+│    82                                                                                                               │
+│                                                                                                                     │
+│ ┌───────────────────────── locals ─────────────────────────┐                                                        │
+│ │      _ = 0                                               │                                                        │
+│ │   self = <__main__.Devices object at 0x000001CB83696D90> │                                                        │
+│ │ serial = 'emulator-5554'                                 │                                                        │
+│ └──────────────────────────────────────────────────────────┘                                                        │
+│                                                                                                                     │
+│ F:\code\workpace\study\pyCharm\python_study_project\qianv_tool\module\devices\connection\uiautomator.py:62 in       │
+│ u2_device                                                                                                           │
+│                                                                                                                     │
+│    59 │   │   device.set_new_command_timeout(604800)                                                                │
+│    60 │   │                                                                                                         │
+│    61 │   │   logger.attr('u2.Device', f'Device(atx_agent_url={device._get_atx_agent_url()})')                      │
+│ >  62 │   │   self.u2_devices[serial] = device                                                                      │
+│    63 │   │   return device                                                                                         │
+│    64 │                                                                                                             │
+│    65 │   def get_u2(self,serial) ->u2.Device:                                                                      │
+│                                                                                                                     │
+│ ┌────────────────────────── locals ───────────────────────────┐                                                     │
+│ │ device = <uiautomator2.Device object at 0x000001CB8370BF10> │                                                     │
+│ │   self = <__main__.Devices object at 0x000001CB83696D90>    │                                                     │
+│ │ serial = 'emulator-5554'                                    │                                                     │
+│ └─────────────────────────────────────────────────────────────┘                                                     │
+└─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+AttributeError: 'Devices' object has no attribute 'u2_devices'                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-16 16:31:05.198 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2023-12-16 16:31:32.036 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:5096)                               
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-16 16:32:18.016 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2023-12-16 16:32:20.493 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:5096)                               
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-16 16:32:42.994 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2023-12-16 16:32:46.099 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:5096)                               
+2023-12-16 16:33:03.384 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:5096)                               
+2023-12-16 16:33:10.759 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:5096)                               
+2023-12-16 16:33:39.197 | ERROR | InvalidVersion: Invalid version: ''                                                  
+2023-12-16 16:33:49.904 | INFO | Restart ATX                                                                           

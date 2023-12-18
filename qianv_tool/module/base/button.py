@@ -17,7 +17,7 @@ from qianv_tool.module.base.resource import Resource
 word_ocr = PaddleOCR(use_angle_cls=True, lang="ch")
 
 class Button(Resource):
-    def __init__(self, area, text, color, button, file=None, name=None):
+    def __init__(self, area, text, color, button, initial_area=None, file=None, name=None):
         """Initialize a Button instance.
 
         Args:
@@ -40,6 +40,7 @@ class Button(Resource):
         self.raw_button = button
         self.raw_file = file
         self.raw_name = name
+        self.raw_initial_area = initial_area  if initial_area else area
         self.raw_text = text
 
         self._button_offset = None
@@ -62,6 +63,10 @@ class Button(Resource):
     @cached_property
     def area(self):
         return self.parse_property(self.raw_area)
+
+    @cached_property
+    def initial_area(self):
+        return self.parse_property(self.raw_initial_area)
 
     @cached_property
     def text(self):
@@ -126,7 +131,9 @@ class Button(Resource):
     def area_origin(self):
         x1, y1, x2, y2 = map(int, map(round,self.area))
         return x1,y1
-
+    def button_origin(self):
+        x1, y1, x2, y2 = map(int, map(round,self.button))
+        return x1,y1
     ## ---------------------- 【认证】 一些通用方法 end --------------------------
 
     @property
@@ -146,8 +153,10 @@ class Button(Resource):
         Returns:
             bool: True if button appears on screenshot.
         """
+        temp = crop(image, self.button, copy=False)
+        image_show(temp, self.image_test)
         return color_similar(
-            color1=get_color(image, self.area),
+            color1=get_color(image, self.button),
             color2=self.color,
             threshold=threshold
         )
@@ -191,10 +200,10 @@ class Button(Resource):
                 self.image = []
                 for image in imageio.mimread(self.file):
                     image = image[:, :, :3].copy() if len(image.shape) == 3 else image
-                    image = crop(image, self.area)
+                    image = crop(image, self.initial_area)
                     self.image.append(image)
             else:
-                self.image = load_image(self.file, self.area)
+                self.image = load_image(self.file, self.initial_area)
             self._match_init = True
 
     def ensure_binary_template(self):
@@ -252,16 +261,21 @@ class Button(Resource):
             offset = np.array((-3, -offset, 3, offset))
         # 对图片进行剪切
         image = crop(image, offset + self.area, copy=False)
+        image_show(image,self.image_test)
         # 文字识别源图
         orc_reuslt = word_ocr.ocr(image, cls=True)
-        for idx in range(len(orc_reuslt)):
-            res = orc_reuslt[idx]
-            for line in res:
-                image_word = image_word + line[1][0]
+        image_word = ''
+        try:
+            for idx in range(len(orc_reuslt)):
+                res = orc_reuslt[idx]
+                for line in res:
+                    image_word = image_word + line[1][0]
+        except Exception:
+            return False
         # 进行匹配
         if model==1 and self.text in image_word:
             return True
-        elif model==1 and self.text == image_word:
+        elif model==2 and self.text == image_word:
             return True
         else:
             return False
@@ -272,7 +286,7 @@ class Button(Resource):
            通过模板匹配检测按钮。 对于某些按钮，其位置可能不是静态的。
         Args:
             image: Screenshot.
-            offset (int, tuple): Detection area offset.
+            offset (int, tuple): Detection area offset.  offset=(6,5,-6,-5) ==  offset=(-6,-5)
             threshold (float): 0-1. Similarity.
 
         Returns:
@@ -289,7 +303,6 @@ class Button(Resource):
             offset = np.array((-3, -offset, 3, offset))
         # 对图片进行剪切
         image = crop(image, offset + self.area, copy=False)
-
         if self.is_gif:
             for template in self.image:
                 res = cv2.matchTemplate(template, image, cv2.TM_CCOEFF_NORMED)
@@ -309,6 +322,8 @@ class Button(Resource):
                 # 负值表示模板的匹配程度比较差。
             _, similarity, _, point = cv2.minMaxLoc(res)
             self._button_offset = area_offset(self._button, offset[:2] + np.array(point))
+            # image_show(self.image, self.image_test)
+            image_show(image, self.image_test,similarity)
             return similarity > threshold
 
     def match_binary(self, image, offset=30, threshold=0.85):
@@ -318,7 +333,7 @@ class Button(Resource):
 
         Args:
             image: Screenshot.
-            offset (int, tuple): Detection area offset.
+            offset (int, tuple): Detection area offset. offset=(6,5,-6,-5) ==  offset=(-6,-5)
             threshold (float): 0-1. Similarity.
 
         Returns:
@@ -384,7 +399,7 @@ class Button(Resource):
         else:
             offset = np.array((-3, -offset, 3, offset))
         image = crop(image, offset + self.area, copy=False)
-        image_show(image,image_test)
+        image_show(image,self.image_test)
 
         if self.is_gif:
             image_luma = rgb2luma(image)
@@ -485,7 +500,8 @@ class ButtonGrid:
         :param text: 按钮的文本内容
         """
         # 起点按钮的坐上角坐标
-        self.origin = np.array(origin_button.area_origin())
+        self.area_origin = np.array(origin_button.area_origin())
+        self.button_origin = np.array(origin_button.button_origin())
         self.delta = np.array(delta)
         self.grid_shape = np.array(grid_shape)
 
@@ -493,15 +509,18 @@ class ButtonGrid:
         self._text = "" if text==None else text
         self._name = origin_button.name
         self._color = origin_button.color
+        self._file = origin_button.file
+        self._initial_area = origin_button.initial_area
         self.area_shape = origin_button.area_size()
         self.button_shape = origin_button.button_size()
 
     def __getitem__(self, item):
         # item ：网格位置
-        base = np.round(np.array(item) * self.delta + self.origin).astype(int)
-        area = tuple(np.append(base, base + self.area_shape))
-        button = tuple(np.append(base, base + self.button_shape))
-        return Button(area=area, text=self._text, color=self._color, button=button, name='%s_%s_%s' % (self._name, item[0], item[1]))
+        area_base = np.round(np.array(item) * self.delta + self.area_origin).astype(int)
+        button_base = np.round(np.array(item) * self.delta + self.button_origin).astype(int)
+        area = tuple(np.append(area_base, area_base + self.area_shape))
+        button = tuple(np.append(button_base, button_base + self.button_shape))
+        return Button(area=area, text=self._text, color=self._color, button=button,initial_area=self._initial_area,file=self._file, name='%s_%s_%s' % (self._name, item[0], item[1]))
 
     def generate(self):
         for y in range(self.grid_shape[1]):

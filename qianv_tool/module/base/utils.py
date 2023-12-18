@@ -934,8 +934,10 @@ def color_bar_percentage(image, area, prev_color, reverse=False, starter=0, thre
     return 0.
 
 # 显示图像
-def image_show(image,test=False):
+def image_show(image,test=False,similarity=None):
     if(test):
         cv2.imshow('Image', image)
         cv2.waitKey(0)
         cv2.destroyAllWindows()
+        if similarity:
+            print(similarity)

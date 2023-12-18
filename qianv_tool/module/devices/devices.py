@@ -75,6 +75,13 @@ def retry(func):
                         self.device_restart()
                 else:
                     break
+            # AdbError
+            except BaseException as e:
+                if handle_adb_error(e):
+                    def init():
+                        self.get_u2(serial)
+                else:
+                    break
             # RuntimeError: USB device 127.0.0.1:5555 is offline
             except RuntimeError as e:
                 if handle_adb_error(e):
@@ -120,7 +127,6 @@ class Devices(Connection):
         super().__init__()
         self.pc_system_info()
         self.find_devices()
-        self.devices_connection()
 
 
     def info(self):
@@ -179,8 +185,7 @@ class Devices(Connection):
         :return:
         """
 
-        a = self.u2_device(serial)
-        print(a.info)
+        self.get_u2(serial)
 
     @retry
     def device_screenshot(self, serial):
@@ -191,15 +196,19 @@ class Devices(Connection):
         return self.screenshot(serial)
 
     @retry
-    def click( self,serial,button):
+    def click( self,serial,button,offset=None):
         """
         点击指定按钮
-        :param serial:
-        :param button:
+        :param serial:设备id
+        :param button:带点击的按钮
+        :param offset:点击按钮是否有位移
         :return:
         """
         x, y = random_rectangle_point(button.button)
         x, y = ensure_int(x, y)
+        if isinstance(offset, tuple) and len(offset) == 2:
+            x  = x+offset[0]
+            y  = x+offset[1]
         logger.info(
             'Click %s @ %s' % (point2str(x, y), button)
         )
