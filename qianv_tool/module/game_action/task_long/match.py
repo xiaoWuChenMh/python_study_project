@@ -17,7 +17,7 @@ class Match:
         """
         是否还在任务地图
         """
-        image = self.devices.screenshot(self.serial)
+        image = self.devices.device_screenshot(self.serial)
         if self.buttonMatch.image_match(image,TASK_LONG_IS_MAP):
             return True
         else:
@@ -27,7 +27,7 @@ class Match:
         """
         是否一轮任务结束了时的弹框
         """
-        image = self.devices.screenshot(self.serial)
+        image = self.devices.device_screenshot(self.serial)
         if self.buttonMatch.image_match(image,TASK_LONG_TASK_RECEIVE):
             return True
         else:
@@ -47,7 +47,7 @@ class Match:
         """
         严谨的判断：是否点击第一个任务列表的区域,即一条龙任务
         """
-        image = self.devices.screenshot(self.serial)
+        image = self.devices.device_screenshot(self.serial)
         if self.buttonMatch.word_match(image,TASK_LONG_FIRST_LIST,text='条龙'):
             offset = self.__is_yao_shou()
             self.devices.click(self.serial, TASK_LONG_FIRST_LIST, offset)
@@ -66,7 +66,7 @@ class Match:
 
     def __is_yao_shou( self ):
         """今日是否有妖兽入侵"""
-        image = self.devices.screenshot(self.serial)
+        image = self.devices.device_screenshot(self.serial)
         if self.buttonMatch.word_match(image, HOME_TASK_FIRST_IS_YAO,text='妖兽入侵'):
             delta = HOME_TASK_FIRST_IS_YAO.area_size()
             return (0,delta[1]+5)

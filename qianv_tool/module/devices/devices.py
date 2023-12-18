@@ -208,7 +208,7 @@ class Devices(Connection):
         x, y = ensure_int(x, y)
         if isinstance(offset, tuple) and len(offset) == 2:
             x  = x+offset[0]
-            y  = x+offset[1]
+            y  = y+offset[1]
         logger.info(
             'Click %s @ %s' % (point2str(x, y), button)
         )

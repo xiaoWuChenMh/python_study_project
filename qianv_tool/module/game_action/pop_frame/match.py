@@ -6,18 +6,18 @@ from qianv_tool.module.game_action.pop_frame.assets import *
 
 class Match:
 
-    def __init__( self, devices, serial, switch_time=1):
+    def __init__( self, devices, serial, reply_wait=1):
         self.buttonMatch = ButtonMatch()
         self.devices: Devices = devices
         self.serial = serial
         # 窗口切换等待时间
-        self.switch_time = switch_time
+        self.reply_wait = reply_wait
 
     def click_top_npc_dialogue( self ):
         """
          查找顶层的npc对话框，并点击
         """
-        image = self.devices.screenshot(self.serial)
+        image = self.devices.device_screenshot(self.serial)
         is_dialogue = self.buttonMatch.image_match(image, POP_NPC_DIALOGUE, offset=(-6,0))
         if is_dialogue:
             delta = POP_NPC_DIALOGUE_SITE.area_size()
@@ -34,7 +34,7 @@ class Match:
         """
         点击底部的npc文字版对话框
         """
-        image = self.devices.screenshot(self.serial)
+        image = self.devices.device_screenshot(self.serial)
         if self.buttonMatch.image_match(image, POP_NPC_TEXT_TAG, offset=(0,-4), threshold=0.81):
             self.devices.click(self.serial, POP_NPC_TEXT_TAG)
             return True

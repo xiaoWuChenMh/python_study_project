@@ -244,7 +244,7 @@ class Button(Resource):
         self._match_luma_init = False
 
 
-    def word(self, image, offset=30, model=1):
+    def word(self, image, text, offset=30, model=1):
         """
 
         :param image: 源图
@@ -252,6 +252,12 @@ class Button(Resource):
         :param model(int): 匹配模式 1-模糊；2-严格
         :return:
         """
+        if text == None:
+            text = [self.text]
+        elif isinstance(text, str):
+            text = [text]
+        else:
+            text = np.array(text)
         if isinstance(offset, tuple):
             if len(offset) == 2:
                 offset = np.array((-offset[0], -offset[1], offset[0], offset[1]))
@@ -273,10 +279,14 @@ class Button(Resource):
         except Exception:
             return False
         # 进行匹配
-        if model==1 and self.text in image_word:
-            return True
-        elif model==2 and self.text == image_word:
-            return True
+        if model==1 :
+            for vl in self.text:
+                if vl in image_word:
+                    return True
+        elif model==2 :
+            for vl in self.text:
+                if vl == image_word:
+                    return True
         else:
             return False
 

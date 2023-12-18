@@ -16,16 +16,17 @@ class Match:
 
     def use_prop( self ):
         """ 使用道具 """
-        image = self.devices.screenshot(self.serial)
+        image = self.devices.device_screenshot(self.serial)
         if self.buttonMatch.image_match(image, TASK_SM_USE_PROP, offset=(-2,-7)):
             self.devices.click(self.serial, TASK_SM_USE_PROP)
+
             return True
         return False
 
 
     def is_task_finish( self ):
         """ 任务是否完成"""
-        image = self.devices.screenshot(self.serial)
+        image = self.devices.device_screenshot(self.serial)
         if self.buttonMatch.image_match(image, TASK_SM_TASK_FINISH, offset=(-2,-7)):
             self.devices.click(self.serial, TASK_SM_TASK_FINISH)
             return True
@@ -35,9 +36,9 @@ class Match:
         """
         严谨的判断：是否点击第一个任务列表的区域,即师门
         """
-        image = self.devices.screenshot(self.serial)
-        offset = self.__is_yao_shou()
-        if self.buttonMatch.word_match(image,TASK_SM_FIRST_LIST,text='师门',offset=offset):
+        image = self.devices.device_screenshot(self.serial)
+        offset = (0,0) # self.__is_yao_shou() 不能通过文字识别来判断了，会导致TASK_SM_FIRST_LIST识别不出来，是因为两张图相近，就懒了么？
+        if self.buttonMatch.word_match(image,TASK_SM_FIRST_LIST,text=['师门','师','门'],offset=offset):
             self.devices.click(self.serial, TASK_SM_FIRST_LIST, offset)
             return True
         else:
@@ -47,7 +48,7 @@ class Match:
         """
         严谨的判断：第一个任务列表的区域是否为师门
         """
-        image = self.devices.screenshot(self.serial)
+        image = self.devices.device_screenshot(self.serial)
         offset = self.__is_yao_shou()
         if self.buttonMatch.word_match(image,TASK_SM_FIRST_LIST,text='师门',offset=offset):
             return True
@@ -64,12 +65,12 @@ class Match:
 
     def __is_yao_shou( self ):
         """今日是否有妖兽入侵"""
-        image = self.devices.screenshot(self.serial)
+        image = self.devices.device_screenshot(self.serial)
         if self.buttonMatch.word_match(image, HOME_TASK_FIRST_IS_YAO,text='妖兽入侵'):
             delta = HOME_TASK_FIRST_IS_YAO.area_size()
             return (0,delta[1]+5)
         else:
-            return None
+            return (0,0)
 
     # 提交法宝
 

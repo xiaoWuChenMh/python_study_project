@@ -7,10 +7,11 @@ from qianv_tool.module.game_action.mian_window.assets import *
 
 class Match:
 
-    def __init__(self,devices,serial):
+    def __init__(self,devices, serial, reply_wait):
         self.buttonMatch = ButtonMatch()
         self.devices:Devices = devices
         self.serial = serial
+        self.reply_wait = reply_wait
 
     def start_gua_ji(self):
         """
@@ -18,7 +19,7 @@ class Match:
             检查挂机功能是否未启动，是-点击-返回true；否-首先检查挂机功能是否启动，是-返回true；否-返回False
         :return:
         """
-        image = self.devices.screenshot(self.serial)
+        image = self.devices.device_screenshot(self.serial)
         if self.buttonMatch.word_match(image,HOME_GUA_JI_NOT,model=2):
             self.devices.click(self.serial,HOME_GUA_JI_NOT)
             return True
@@ -32,7 +33,7 @@ class Match:
          取消挂机：
             首先检查挂机功能是否启动，是-点击-返回true；否-检查挂机功能是否未启动，是-返回true；否-返回False
         """
-        image = self.devices.screenshot(self.serial)
+        image = self.devices.device_screenshot(self.serial)
         if self.buttonMatch.word_match(image, HOME_GUA_JI_HAVE, model=1):
             self.devices.click(self.serial, HOME_GUA_JI_HAVE)
             return True
@@ -44,7 +45,7 @@ class Match:
         """
         点击挂机位置区域
         """
-        image = self.devices.screenshot(self.serial)
+        image = self.devices.device_screenshot(self.serial)
         self.devices.click(self.serial, HOME_GUA_JI_NOT)
         return True
 
@@ -61,7 +62,7 @@ class Match:
         """
         打开队伍列表,首先检查是否打开了，没有就打开
         """
-        image = self.devices.screenshot(self.serial)
+        image = self.devices.device_screenshot(self.serial)
         if self.buttonMatch.image_match(image, HOME_SELECT_TEAM,offset=(-4,0),interval=1,threshold=0.83):
             return True
         elif self.buttonMatch.image_match(image, HOME_SELECT_TASK, interval=0.5):
@@ -74,7 +75,7 @@ class Match:
         """
         打开任务列表,首先检查是否打开了，没有就打开
         """
-        image = self.devices.screenshot(self.serial)
+        image = self.devices.device_screenshot(self.serial)
         if self.buttonMatch.image_match(image, HOME_SELECT_TASK):
             return True
         elif self.buttonMatch.image_match(image, HOME_SELECT_TEAM,offset=(-4,0),interval=0.5,threshold=0.83):
@@ -87,7 +88,7 @@ class Match:
         """
          打开活动窗口
         """
-        image = self.devices.screenshot(self.serial)
+        image = self.devices.device_screenshot(self.serial)
         if self.buttonMatch.image_match(image, HOME_ACTIVE,offset=(-7,-1),interval=0.5):
             self.devices.click(self.serial, HOME_ACTIVE)
             return True
@@ -100,7 +101,7 @@ class Match:
         :param model:匹配模式 1-模糊（默认）；2-严格
         :return:
         """
-        image = self.devices.screenshot(self.serial)
+        image = self.devices.device_screenshot(self.serial)
         if self.buttonMatch.word_match(image, HOME_MAP_TITLE, model=model, text=text):
             return True
         else:
@@ -109,7 +110,7 @@ class Match:
         """
          点击地图线路区域
         """
-        image = self.devices.screenshot(self.serial)
+        image = self.devices.device_screenshot(self.serial)
         self.devices.click(self.serial, HOME_MAP_TITLE)
         return True
 
@@ -121,7 +122,7 @@ class Match:
         """
         if not self.open_team_list():
             return False
-        image = self.devices.screenshot(self.serial)
+        image = self.devices.device_screenshot(self.serial)
         if min_people_num<=5 and self.buttonMatch.image_match(image, HOME_5TEM_FOLLOW, offset=(-6,-7)):
             self.devices.click(self.serial, HOME_5TEM_FOLLOW_CANCEL)
             time.sleep(1)  # 等待1秒钟
@@ -147,7 +148,7 @@ class Match:
 
     def __is_yao_shou( self ):
         """今日是否有妖兽入侵"""
-        image = self.devices.screenshot(self.serial)
+        image = self.devices.device_screenshot(self.serial)
         if self.buttonMatch.word_match(image, HOME_TASK_FIRST_IS_YAO,text='妖兽入侵'):
             delta = HOME_TASK_FIRST_IS_YAO.area_size()
             return (0,delta[1]+5)

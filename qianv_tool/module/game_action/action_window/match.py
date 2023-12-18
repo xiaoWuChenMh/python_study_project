@@ -7,10 +7,11 @@ from qianv_tool.module.game_action.action_window.assets import *
 
 class Match:
 
-    def __init__( self, devices, serial ):
+    def __init__( self, devices, serial, reply_wait):
         self.buttonMatch = ButtonMatch()
         self.devices: Devices = devices
         self.serial = serial
+        self.reply_wait = reply_wait
 
 
 
@@ -26,7 +27,8 @@ class Match:
         注意2：返回True的情况：1没有打开活动窗口；2、激活任务；3、任务已参与；
 
         """
-        image = self.devices.screenshot(self.serial)
+        result = False
+        image = self.devices.device_screenshot(self.serial)
         statu = not self.buttonMatch.image_match(image, ACTION_WINDOW_CLOSE, offset=(-2,-6))
         while not statu :
             delta = ACTION_WINDOW_TASK_SITE.area_size()
@@ -34,10 +36,10 @@ class Match:
             target_button = self.buttonMatch.grid_button_word_match(image, ACTION_WINDOW_TASK_TAG, delta, (2, 4), text, offset=(-2,-3),)
             if target_button:
                 self.devices.click(self.serial, target_button)
-                image = self.devices.screenshot(self.serial)
+                image = self.devices.device_screenshot(self.serial)
                 statu = True
             else:
-                image = self.devices.screenshot(self.serial)
+                image = self.devices.device_screenshot(self.serial)
                 statu = not self.buttonMatch.image_match(image, ACTION_WINDOW_CLOSE, offset=(-2,-6))
             # 找到任务 且 任务窗口还未关闭，说明当前任务已接
             if statu and  self.buttonMatch.image_match(image, ACTION_WINDOW_CLOSE, offset=(-2, -6)):
