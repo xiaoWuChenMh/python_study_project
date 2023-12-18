@@ -46,7 +46,15 @@ class Match:
                 self.devices.click(self.serial, ACTION_WINDOW_CLOSE)
         return statu
 
-
+    def find_task_position(self,position):
+        """
+        查找指定位置的“参与” 和 “已参加”按钮后，进行后续操作
+        :param position:
+        :return:
+        """
+        #根据位置获取 参与button 和 已参与butotn
+        #有参与就点击，有已参与就退出，否则返回False
+        pass
 
 
 if __name__ == "__main__":

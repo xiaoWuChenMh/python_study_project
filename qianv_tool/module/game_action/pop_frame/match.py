@@ -13,11 +13,6 @@ class Match:
         # 窗口切换等待时间
         self.switch_time = switch_time
 
-    def click_action( self ):
-        # 检查当前是否有动作页面
-        # 有就点击第一个
-        pass
-
     def click_top_npc_dialogue( self ):
         """
          查找顶层的npc对话框，并点击

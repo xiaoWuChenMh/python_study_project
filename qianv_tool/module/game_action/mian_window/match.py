@@ -144,6 +144,7 @@ class Match:
             return True
         else:
             return False
+
     def __is_yao_shou( self ):
         """今日是否有妖兽入侵"""
         image = self.devices.screenshot(self.serial)

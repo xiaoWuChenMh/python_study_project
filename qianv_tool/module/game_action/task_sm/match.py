@@ -7,12 +7,12 @@ from qianv_tool.module.game_action.mian_window.assets import HOME_TASK_FIRST_IS_
 
 class Match:
 
-    def __init__( self, devices, serial, switch_time=1 ):
+    def __init__( self, devices, serial, reply_wait=1 ):
         self.buttonMatch = ButtonMatch()
         self.devices: Devices = devices
         self.serial = serial
         # 窗口切换等待时间
-        self.switch_time = switch_time
+        self.reply_wait = reply_wait
 
     def use_prop( self ):
         """ 使用道具 """
@@ -36,13 +36,23 @@ class Match:
         严谨的判断：是否点击第一个任务列表的区域,即师门
         """
         image = self.devices.screenshot(self.serial)
-        if self.buttonMatch.word_match(image,TASK_SM_FIRST_LIST,text='师门'):
-            offset = self.__is_yao_shou()
+        offset = self.__is_yao_shou()
+        if self.buttonMatch.word_match(image,TASK_SM_FIRST_LIST,text='师门',offset=offset):
             self.devices.click(self.serial, TASK_SM_FIRST_LIST, offset)
             return True
         else:
             return False
 
+    def is_first_task_list_area_strict( self ):
+        """
+        严谨的判断：第一个任务列表的区域是否为师门
+        """
+        image = self.devices.screenshot(self.serial)
+        offset = self.__is_yao_shou()
+        if self.buttonMatch.word_match(image,TASK_SM_FIRST_LIST,text='师门',offset=offset):
+            return True
+        else:
+            return False
 
     def click_first_task_list_area( self ):
         """
