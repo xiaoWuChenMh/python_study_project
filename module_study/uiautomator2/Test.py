@@ -15,7 +15,7 @@ print(a.info)
 
 
 # 截图
-a.screenshot('image/师门_使用道具2_莲花.jpg')
+a.screenshot('image/师门_提交装备_cpn商店.jpg')
 # d.screenshot('image/home2.png')
 # c.screenshot('image/home3.png')
 # d.screenshot('image/继续登录.png')

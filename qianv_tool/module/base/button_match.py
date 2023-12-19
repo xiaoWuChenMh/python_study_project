@@ -97,9 +97,7 @@ class ButtonMatch:
             return False
         if isinstance(offset, bool):
             offset = self.BUTTON_OFFSET
-        if text != None:
-            button.text=text
-        appear = button.word(image,offset,model)
+        appear = button.word(image,text,offset,model)
         if appear and interval:
             self.interval_timer[button.name].reset()
         return appear

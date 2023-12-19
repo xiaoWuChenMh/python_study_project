@@ -15,7 +15,7 @@ class Match:
 
 
 
-    def find_task_receive( self ,text):
+    def find_task_receive( self ,text, reply_wait=1):
         """
          查找，并领取任务，因为喇叭和飘花会影响文字识别，所以只有在活动页面内就多次尝试寻找并点击，所以要不要加一个根据位置直接点击的（我觉得很有必要）？
          text:活动文本，师门、龙、重温、宗派、货运、门派、战龙、跑商
@@ -36,6 +36,7 @@ class Match:
             target_button = self.buttonMatch.grid_button_word_match(image, ACTION_WINDOW_TASK_TAG, delta, (2, 4), text, offset=(-2,-3),)
             if target_button:
                 self.devices.click(self.serial, target_button)
+                time.sleep(reply_wait)
                 image = self.devices.device_screenshot(self.serial)
                 statu = True
             else:
@@ -44,8 +45,12 @@ class Match:
             # 找到任务 且 任务窗口还未关闭，说明当前任务已接
             if statu and  self.buttonMatch.image_match(image, ACTION_WINDOW_CLOSE, offset=(-2, -6)):
                 self.devices.click(self.serial, ACTION_WINDOW_CLOSE)
-                time.sleep(0.5)
+                time.sleep(reply_wait)
+                image = self.devices.device_screenshot(self.serial)
+            # 当已参与了任务，上一个关闭只会消除浮层，所以还得需要一个关闭操作
+            if statu and  self.buttonMatch.image_match(image, ACTION_WINDOW_CLOSE, offset=(-2, -6)):
                 self.devices.click(self.serial, ACTION_WINDOW_CLOSE)
+                time.sleep(reply_wait)
         return statu
 
     def find_task_position(self,position):

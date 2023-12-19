@@ -175,6 +175,15 @@ class Uiautomator(Adb):
         """
         self.get_u2(serial).click(x, y)
 
+
+    def swipe_uiautomator2( self,serial, sx, sy, ex, ey):
+        """
+        滑动
+        起始坐标：sx, sy
+        目标坐标： ex, ey
+        """
+        self.get_u2(serial).swipe(sx, sy, ex, ey)
+
     def screenshot(self,serial):
         """
          截图，并做一些前置操作（颜色、去噪）

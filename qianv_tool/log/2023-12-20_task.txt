@@ -1,0 +1,429 @@
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-20 01:49:22.061 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2023-12-20 01:49:22.076 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:10590)                              
+2023-12-20 01:49:22.731 | INFO | Click (1029,   45) @ HOME_ACTIVE                                                      
+2023-12-20 01:49:25.733 | INFO | Click ( 627,  218) @ ACTION_WINDOW_TASK_TAG_0_0                                       
+2023-12-20 01:49:26.121 | INFO | 日常任务-师门:激活成功,开始执行任务逻辑                                               
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-20 01:52:29.424 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2023-12-20 01:52:29.433 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:10590)                              
+2023-12-20 01:52:30.063 | INFO | Click (1035,   37) @ HOME_ACTIVE                                                      
+2023-12-20 01:52:32.636 | INFO | Click ( 636,  239) @ ACTION_WINDOW_TASK_TAG_0_0                                       
+2023-12-20 01:52:33.002 | INFO | 日常任务-师门:激活成功,开始执行任务逻辑                                               
+2023-12-20 01:52:34.373 | INFO | Click (1150,  425) @ POP_NPC_DIALOGUE_0_1                                             
+2023-12-20 01:52:34.534 | INFO | 日常任务-师门:click top npc dialogue;                                                 
+2023-12-20 01:52:34.536 | INFO | 日常任务-师门:status change 1;                                                        
+2023-12-20 01:52:47.695 | ERROR |                                                                                      
+┌───────────────────────────────────────── Traceback (most recent call last) ─────────────────────────────────────────┐
+│ F:\code\workpace\study\pyCharm\python_study_project\qianv_tool\module\devices\devices.py:50 in retry_wrapper        │
+│                                                                                                                     │
+│    47 │   │   │   │   if callable(init):                                                                            │
+│    48 │   │   │   │   │   retry_sleep(_)                                                                            │
+│    49 │   │   │   │   │   init()                                                                                    │
+│ >  50 │   │   │   │   return func(self, *args, **kwargs)                                                            │
+│    51 │   │   │   # Can't handle                                                                                    │
+│    52 │   │   │   except RequestHumanTakeover:                                                                      │
+│    53 │   │   │   │   break                                                                                         │
+│                                                                                                                     │
+│ ┌──────────────────────────────────────── locals ────────────────────────────────────────┐                          │
+│ │           _ = 0                                                                        │                          │
+│ │        args = ('emulator-5556',)                                                       │                          │
+│ │           e = KeyboardInterrupt()                                                      │                          │
+│ │        func = <function Devices.device_screenshot at 0x000002151D4620D0>               │                          │
+│ │  get_serial = <function retry.<locals>.get_serial at 0x000002151D462160>               │                          │
+│ │        init = None                                                                     │                          │
+│ │      kwargs = {}                                                                       │                          │
+│ │ RETRY_TRIES = 5                                                                        │                          │
+│ │        self = <qianv_tool.module.devices.devices.Devices object at 0x0000021507B337F0> │                          │
+│ │      serial = 'emulator-5556'                                                          │                          │
+│ └────────────────────────────────────────────────────────────────────────────────────────┘                          │
+│                                                                                                                     │
+│ F:\code\workpace\study\pyCharm\python_study_project\qianv_tool\module\devices\devices.py:196 in device_screenshot   │
+│                                                                                                                     │
+│   193 │   │   截图                                                                                                  │
+│   194 │   │   :return:                                                                                              │
+│   195 │   │   """                                                                                                   │
+│ > 196 │   │   return self.screenshot(serial)                                                                        │
+│   197 │                                                                                                             │
+│   198 │   @retry                                                                                                    │
+│   199 │   def click( self,serial,button,offset=None):                                                               │
+│                                                                                                                     │
+│ ┌───────────────────────────────────── locals ──────────────────────────────────────┐                               │
+│ │   self = <qianv_tool.module.devices.devices.Devices object at 0x0000021507B337F0> │                               │
+│ │ serial = 'emulator-5556'                                                          │                               │
+│ └───────────────────────────────────────────────────────────────────────────────────┘                               │
+│                                                                                                                     │
+│ F:\code\workpace\study\pyCharm\python_study_project\qianv_tool\module\devices\connection\uiautomator.py:212 in      │
+│ screenshot                                                                                                          │
+│                                                                                                                     │
+│   209 │   │   self.__image_check(image, 'Empty image after cv2.cvtColor')                                           │
+│   210 │   │                                                                                                         │
+│   211 │   │   # 可选：对图片去噪                                                                                    │
+│ > 212 │   │   cv2.fastNlMeansDenoising(image, image, h=17, templateWindowSize=1,                                    │
+│       searchWindowSize=2)                                                                                           │
+│   213 │   │   self.__image_check(image, 'Empty image after cv2.fastNlMeansDenoising')                               │
+│   214 │   │                                                                                                         │
+│   215 │   │   # 图片校验，非1280*720的会给出错误信息                                                                │
+│                                                                                                                     │
+│ ┌───────────────────────────────────── locals ──────────────────────────────────────┐                               │
+│ │ device = <uiautomator2.Device object at 0x000002151D48A850>                       │                               │
+│ │  image = array([[[81, 69, 46],                                                    │                               │
+│ │          │   │   [78, 66, 44],                                                    │                               │
+│ │          │   │   [68, 57, 36],                                                    │                               │
+│ │          │   │   ...,                                                             │                               │
+│ │          │   │   [14, 16, 31],                                                    │                               │
+│ │          │   │   [ 8,  7,  4],                                                    │                               │
+│ │          │   │   [12, 11,  2]],                                                   │                               │
+│ │          │                                                                        │                               │
+│ │          │      [[79, 68, 44],                                                    │                               │
+│ │          │   │   [76, 65, 41],                                                    │                               │
+│ │          │   │   [66, 57, 34],                                                    │                               │
+│ │          │   │   ...,                                                             │                               │
+│ │          │   │   [16, 19, 32],                                                    │                               │
+│ │          │   │   [10,  9,  6],                                                    │                               │
+│ │          │   │   [13, 13,  7]],                                                   │                               │
+│ │          │                                                                        │                               │
+│ │          │      [[75, 68, 40],                                                    │                               │
+│ │          │   │   [72, 65, 37],                                                    │                               │
+│ │          │   │   [63, 57, 32],                                                    │                               │
+│ │          │   │   ...,                                                             │                               │
+│ │          │   │   [48, 59, 79],                                                    │                               │
+│ │          │   │   [13, 17, 13],                                                    │                               │
+│ │          │   │   [13, 16, 11]],                                                   │                               │
+│ │          │                                                                        │                               │
+│ │          │      ...,                                                              │                               │
+│ │          │                                                                        │                               │
+│ │          │      [[16, 25, 34],                                                    │                               │
+│ │          │   │   [16, 25, 34],                                                    │                               │
+│ │          │   │   [16, 25, 34],                                                    │                               │
+│ │          │   │   ...,                                                             │                               │
+│ │          │   │   [40, 68, 75],                                                    │                               │
+│ │          │   │   [40, 69, 76],                                                    │                               │
+│ │          │   │   [40, 69, 76]],                                                   │                               │
+│ │          │                                                                        │                               │
+│ │          │      [[16, 25, 34],                                                    │                               │
+│ │          │   │   [16, 25, 34],                                                    │                               │
+│ │          │   │   [16, 25, 34],                                                    │                               │
+│ │          │   │   ...,                                                             │                               │
+│ │          │   │   [38, 69, 76],                                                    │                               │
+│ │          │   │   [38, 69, 76],                                                    │                               │
+│ │          │   │   [39, 70, 76]],                                                   │                               │
+│ │          │                                                                        │                               │
+│ │          │      [[16, 25, 34],                                                    │                               │
+│ │          │   │   [16, 25, 34],                                                    │                               │
+│ │          │   │   [16, 25, 34],                                                    │                               │
+│ │          │   │   ...,                                                             │                               │
+│ │          │   │   [36, 69, 76],                                                    │                               │
+│ │          │   │   [36, 69, 76],                                                    │                               │
+│ │          │   │   [37, 69, 76]]], dtype=uint8)                                     │                               │
+│ │   self = <qianv_tool.module.devices.devices.Devices object at 0x0000021507B337F0> │                               │
+│ │ serial = 'emulator-5556'                                                          │                               │
+│ └───────────────────────────────────────────────────────────────────────────────────┘                               │
+└─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+KeyboardInterrupt                                                                                                      
+2023-12-20 01:52:47.932 | CRITICAL | Possible reason #1: If you are using BlueStacks or LD player or WSA, please enable
+ADB in the settings of your emulator                                                                                   
+2023-12-20 01:52:47.934 | CRITICAL | Possible reason #2: Emulator died, please restart emulator                        
+2023-12-20 01:52:47.935 | CRITICAL | Possible reason #3: Serial incorrect, no such device exists or emulator is not    
+running                                                                                                                
+2023-12-20 01:52:47.937 | CRITICAL | Retry device_screenshot() failed                                                  
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-20 01:53:51.665 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2023-12-20 01:53:51.772 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:10590)                              
+2023-12-20 01:53:52.534 | INFO | Click (1018,   57) @ HOME_ACTIVE                                                      
+2023-12-20 01:53:55.530 | INFO | Click ( 676,  219) @ ACTION_WINDOW_TASK_TAG_0_0                                       
+2023-12-20 01:53:55.920 | INFO | Click (1252,   64) @ ACTION_WINDOW_CLOSE                                              
+2023-12-20 01:53:56.588 | INFO | Click (1245,   66) @ ACTION_WINDOW_CLOSE                                              
+2023-12-20 01:53:56.767 | INFO | 日常任务-师门:激活成功,开始执行任务逻辑                                               
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-20 01:54:11.419 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2023-12-20 01:54:11.434 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:10590)                              
+2023-12-20 01:54:12.071 | INFO | Click (1022,   52) @ HOME_ACTIVE                                                      
+2023-12-20 01:54:15.039 | INFO | Click ( 641,  235) @ ACTION_WINDOW_TASK_TAG_0_0                                       
+2023-12-20 01:54:15.424 | INFO | 日常任务-师门:激活成功,开始执行任务逻辑                                               
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-20 01:57:56.213 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2023-12-20 01:57:56.229 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:10590)                              
+2023-12-20 01:57:56.878 | INFO | Click (1025,   47) @ HOME_ACTIVE                                                      
+2023-12-20 01:57:59.797 | INFO | Click ( 653,  233) @ ACTION_WINDOW_TASK_TAG_0_0                                       
+2023-12-20 01:58:01.123 | INFO | 日常任务-师门:激活成功,开始执行任务逻辑                                               
+2023-12-20 01:58:04.576 | INFO | Click (1118,  429) @ POP_NPC_DIALOGUE_0_1                                             
+2023-12-20 01:58:04.748 | INFO | 日常任务-师门:click top npc dialogue;                                                 
+2023-12-20 01:58:04.751 | INFO | 日常任务-师门:status change 1;                                                        
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-20 01:59:25.094 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2023-12-20 01:59:25.124 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:10590)                              
+2023-12-20 01:59:25.787 | INFO | Click (1017,   38) @ HOME_ACTIVE                                                      
+2023-12-20 01:59:28.707 | INFO | Click ( 652,  252) @ ACTION_WINDOW_TASK_TAG_0_0                                       
+2023-12-20 01:59:30.041 | INFO | 日常任务-师门:激活成功,开始执行任务逻辑                                               
+2023-12-20 01:59:37.783 | INFO | Click (1147,  422) @ POP_NPC_DIALOGUE_0_1                                             
+2023-12-20 01:59:45.318 | INFO | 日常任务-师门:click top npc dialogue;                                                 
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-20 02:01:34.708 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2023-12-20 02:01:34.738 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:10590)                              
+2023-12-20 02:01:35.426 | INFO | Click (1031,   46) @ HOME_ACTIVE                                                      
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-20 02:02:39.809 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2023-12-20 02:02:39.839 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:10590)                              
+2023-12-20 02:02:40.455 | INFO | Click (1031,   42) @ HOME_ACTIVE                                                      
+2023-12-20 02:02:43.023 | INFO | Click ( 616,  217) @ ACTION_WINDOW_TASK_TAG_0_0                                       
+2023-12-20 02:02:45.363 | INFO | 日常任务-师门:激活成功,开始执行任务逻辑                                               
+2023-12-20 02:02:45.567 | INFO | Click (1155,  432) @ POP_NPC_DIALOGUE_0_1                                             
+2023-12-20 02:02:45.749 | INFO | 日常任务-师门:click top npc dialogue;                                                 
+2023-12-20 02:02:45.753 | INFO | 日常任务-师门:status change 1;                                                        
+2023-12-20 02:02:47.372 | INFO | Click (1211,  682) @ POP_NPC_TEXT_TAG                                                 
+2023-12-20 02:02:47.542 | INFO | 日常任务-师门:click npc speak tex;                                                    
+2023-12-20 02:02:50.368 | INFO | Click (1220,  698) @ POP_NPC_TEXT_TAG                                                 
+2023-12-20 02:02:50.538 | INFO | 日常任务-师门:click npc speak tex;                                                    
+2023-12-20 02:02:51.115 | INFO | Click (  87,  204) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:02:51.292 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:02:54.751 | INFO | 日常任务-师门: Reactivation task threshold increased ,value is 1 ！！                 
+2023-12-20 02:02:59.690 | INFO | Click ( 133,  203) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:02:59.878 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:03:04.247 | INFO | Click (1088,  503) @ TASK_SM_USE_PROP                                                 
+2023-12-20 02:03:04.418 | INFO | 日常任务-师门:use prop;                                                               
+2023-12-20 02:03:10.797 | INFO | Click (  87,  205) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:03:10.971 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:03:15.249 | INFO | Click (1064,  478) @ TASK_SM_USE_PROP                                                 
+2023-12-20 02:03:15.430 | INFO | 日常任务-师门:use prop;                                                               
+2023-12-20 02:03:21.868 | INFO | Click (  92,  213) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:03:22.037 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:03:26.222 | INFO | Click (1240,  680) @ POP_NPC_TEXT_TAG                                                 
+2023-12-20 02:03:26.390 | INFO | 日常任务-师门:click npc speak tex;                                                    
+2023-12-20 02:03:27.006 | INFO | Click (  70,  225) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:03:27.173 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:03:31.205 | INFO | Click (1230,  666) @ POP_NPC_TEXT_TAG                                                 
+2023-12-20 02:03:31.386 | INFO | 日常任务-师门:click npc speak tex;                                                    
+2023-12-20 02:03:31.959 | INFO | Click ( 122,  220) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:03:32.127 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:03:35.544 | INFO | 日常任务-师门: Reactivation task threshold increased ,value is 1 ！！                 
+2023-12-20 02:03:40.410 | INFO | Click ( 123,  220) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:03:40.583 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:03:45.176 | INFO | Click ( 167,  211) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:03:45.349 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:03:49.599 | INFO | Click (1035,  469) @ TASK_SM_USE_PROP                                                 
+2023-12-20 02:03:49.769 | INFO | 日常任务-师门:use prop;                                                               
+2023-12-20 02:03:56.163 | INFO | Click ( 154,  210) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:03:56.342 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:04:01.024 | INFO | Click (  77,  203) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:04:01.195 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:04:05.810 | INFO | Click ( 150,  210) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:04:05.978 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:04:10.076 | INFO | Click (1224,  685) @ POP_NPC_TEXT_TAG                                                 
+2023-12-20 02:04:10.254 | INFO | 日常任务-师门:click npc speak tex;                                                    
+2023-12-20 02:04:10.833 | INFO | Click ( 189,  216) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:04:11.000 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:04:14.417 | INFO | 日常任务-师门: Reactivation task threshold increased ,value is 1 ！！                 
+2023-12-20 02:04:19.310 | INFO | Click (  44,  210) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:04:19.480 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:04:24.472 | INFO | Click (  91,  204) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:04:24.644 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:04:28.792 | INFO | Click (1217,  690) @ POP_NPC_TEXT_TAG                                                 
+2023-12-20 02:04:28.966 | INFO | 日常任务-师门:click npc speak tex;                                                    
+2023-12-20 02:04:29.581 | INFO | Click ( 112,  214) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:04:29.759 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:04:33.981 | INFO | Click (1229,  676) @ POP_NPC_TEXT_TAG                                                 
+2023-12-20 02:04:34.159 | INFO | 日常任务-师门:click npc speak tex;                                                    
+2023-12-20 02:04:34.747 | INFO | Click ( 119,  207) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:04:34.923 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:04:38.534 | INFO | 日常任务-师门: Reactivation task threshold increased ,value is 1 ！！                 
+2023-12-20 02:04:43.503 | INFO | Click (  67,  216) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:04:43.669 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:04:48.205 | INFO | Click (1071,  495) @ TASK_SM_USE_PROP                                                 
+2023-12-20 02:04:48.375 | INFO | 日常任务-师门:use prop;                                                               
+2023-12-20 02:04:54.794 | INFO | Click (  78,  206) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:04:54.962 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:04:59.272 | INFO | Click (1220,  667) @ POP_NPC_TEXT_TAG                                                 
+2023-12-20 02:04:59.448 | INFO | 日常任务-师门:click npc speak tex;                                                    
+2023-12-20 02:05:02.339 | INFO | Click (1224,  685) @ POP_NPC_TEXT_TAG                                                 
+2023-12-20 02:05:02.510 | INFO | 日常任务-师门:click npc speak tex;                                                    
+2023-12-20 02:05:03.107 | INFO | Click ( 103,  221) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:05:03.275 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:05:06.822 | INFO | 日常任务-师门: Reactivation task threshold increased ,value is 1 ！！                 
+2023-12-20 02:05:11.784 | INFO | Click (  71,  200) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:05:11.956 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:05:16.727 | INFO | Click (  86,  211) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:05:16.897 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:05:21.660 | INFO | Click (  79,  210) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:05:21.834 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:05:24.599 | INFO | Click (1180,  309) @ POP_NPC_DIALOGUE_0_3                                             
+2023-12-20 02:05:24.776 | INFO | 日常任务-师门:click top npc dialogue;                                                 
+2023-12-20 02:05:26.291 | INFO | Click (1221,  686) @ POP_NPC_TEXT_TAG                                                 
+2023-12-20 02:05:26.464 | INFO | 日常任务-师门:click npc speak tex;                                                    
+2023-12-20 02:05:27.066 | INFO | Click (  72,  206) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:05:27.239 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:05:31.410 | INFO | Click (1220,  680) @ POP_NPC_TEXT_TAG                                                 
+2023-12-20 02:05:31.586 | INFO | 日常任务-师门:click npc speak tex;                                                    
+2023-12-20 02:05:32.188 | INFO | Click ( 118,  226) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:05:32.370 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:05:38.596 | INFO | 日常任务-师门: Reactivation task threshold increased ,value is 1 ！！                 
+2023-12-20 02:05:43.528 | INFO | Click ( 130,  205) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:05:43.699 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:05:48.519 | INFO | Click (  26,  204) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:05:48.688 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:05:53.425 | INFO | Click ( 137,  216) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:05:53.595 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:05:58.418 | INFO | Click (  93,  219) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:05:58.586 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:06:03.516 | INFO | Click ( 149,  205) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:06:03.681 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:06:08.659 | INFO | Click (  90,  210) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:06:08.831 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:06:13.821 | INFO | Click ( 130,  213) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:06:14.001 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:06:18.333 | INFO | Click (1236,  692) @ POP_NPC_TEXT_TAG                                                 
+2023-12-20 02:06:18.510 | INFO | 日常任务-师门:click npc speak tex;                                                    
+2023-12-20 02:06:19.225 | INFO | Click (  55,  207) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:06:19.401 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:06:25.914 | INFO | 日常任务-师门: Reactivation task threshold increased ,value is 1 ！！                 
+2023-12-20 02:06:30.961 | INFO | Click (  71,  216) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:06:31.139 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:06:35.509 | INFO | Click (1227,  669) @ POP_NPC_TEXT_TAG                                                 
+2023-12-20 02:06:35.683 | INFO | 日常任务-师门:click npc speak tex;                                                    
+2023-12-20 02:06:36.304 | INFO | Click ( 170,  203) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:06:36.473 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:06:40.728 | INFO | Click (1231,  696) @ POP_NPC_TEXT_TAG                                                 
+2023-12-20 02:06:40.900 | INFO | 日常任务-师门:click npc speak tex;                                                    
+2023-12-20 02:06:41.493 | INFO | Click ( 110,  199) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:06:41.663 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:06:45.242 | INFO | 日常任务-师门: Reactivation task threshold increased ,value is 1 ！！                 
+2023-12-20 02:06:50.239 | INFO | Click (  41,  213) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:06:50.416 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:06:54.956 | INFO | Click (1068,  477) @ TASK_SM_USE_PROP                                                 
+2023-12-20 02:06:55.123 | INFO | 日常任务-师门:use prop;                                                               
+2023-12-20 02:07:01.614 | INFO | Click ( 168,  214) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:07:01.783 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:07:06.009 | INFO | Click (1215,  690) @ POP_NPC_TEXT_TAG                                                 
+2023-12-20 02:07:06.178 | INFO | 日常任务-师门:click npc speak tex;                                                    
+2023-12-20 02:07:06.810 | INFO | Click ( 124,  207) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:07:06.978 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:07:11.910 | INFO | Click ( 121,  206) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:07:12.081 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:07:16.940 | INFO | Click ( 107,  211) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:07:17.110 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:07:21.576 | INFO | Click (1104,  476) @ TASK_SM_USE_PROP                                                 
+2023-12-20 02:07:21.744 | INFO | 日常任务-师门:use prop;                                                               
+2023-12-20 02:07:28.207 | INFO | Click (  90,  206) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:07:28.384 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:07:32.686 | INFO | Click (1236,  678) @ POP_NPC_TEXT_TAG                                                 
+2023-12-20 02:07:32.867 | INFO | 日常任务-师门:click npc speak tex;                                                    
+2023-12-20 02:07:33.550 | INFO | Click (  95,  217) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:07:33.720 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:07:37.926 | INFO | Click (1229,  669) @ POP_NPC_TEXT_TAG                                                 
+2023-12-20 02:07:38.097 | INFO | 日常任务-师门:click npc speak tex;                                                    
+2023-12-20 02:07:38.706 | INFO | Click (  92,  212) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:07:38.883 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:07:41.419 | INFO | Click (1000,  638) @ SHOPPING_PLAYER                                                  
+2023-12-20 02:07:43.811 | INFO | Click (1193,   76) @ SHOPPING_PLAYER_CLOSE                                            
+2023-12-20 02:07:45.980 | INFO | 日常任务-师门:player store;                                                           
+2023-12-20 02:07:48.344 | INFO | Click ( 107,  198) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:07:48.513 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:07:54.782 | INFO | 日常任务-师门: Reactivation task threshold increased ,value is 1 ！！                 
+2023-12-20 02:07:59.815 | INFO | Click (  83,  223) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:07:59.995 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:08:05.423 | INFO | Click ( 144,  212) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:08:05.592 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:08:10.938 | INFO | Click ( 130,  216) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:08:11.105 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:08:13.850 | INFO | Click (1122,  414) @ POP_NPC_DIALOGUE_0_1                                             
+2023-12-20 02:08:14.024 | INFO | 日常任务-师门:click top npc dialogue;                                                 
+2023-12-20 02:08:15.965 | INFO | Click (1222,  683) @ POP_NPC_TEXT_TAG                                                 
+2023-12-20 02:08:16.134 | INFO | 日常任务-师门:click npc speak tex;                                                    
+2023-12-20 02:08:17.544 | INFO | Click (1151,  430) @ POP_NPC_DIALOGUE_0_1                                             
+2023-12-20 02:08:17.714 | INFO | 日常任务-师门:click top npc dialogue;                                                 
+2023-12-20 02:08:19.324 | INFO | Click (1219,  675) @ POP_NPC_TEXT_TAG                                                 
+2023-12-20 02:08:19.494 | INFO | 日常任务-师门:click npc speak tex;                                                    
+2023-12-20 02:08:22.880 | INFO | Click ( 169,  210) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:08:23.050 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:08:27.145 | INFO | Click (1235,  683) @ POP_NPC_TEXT_TAG                                                 
+2023-12-20 02:08:27.313 | INFO | 日常任务-师门:click npc speak tex;                                                    
+2023-12-20 02:08:27.931 | INFO | Click ( 151,  215) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:08:28.121 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:08:31.660 | INFO | 日常任务-师门: Reactivation task threshold increased ,value is 1 ！！                 
+2023-12-20 02:08:36.567 | INFO | Click (  86,  208) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:08:36.734 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:08:41.587 | INFO | Click ( 100,  206) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:08:41.758 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:08:46.571 | INFO | Click ( 111,  199) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:08:46.739 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:08:51.610 | INFO | Click ( 185,  207) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:08:51.786 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:08:56.714 | INFO | Click (  75,  205) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:08:56.886 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:09:01.943 | INFO | Click ( 137,  215) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:09:02.111 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:09:06.320 | INFO | Click (1227,  675) @ POP_NPC_TEXT_TAG                                                 
+2023-12-20 02:09:06.492 | INFO | 日常任务-师门:click npc speak tex;                                                    
+2023-12-20 02:09:07.143 | INFO | Click (  66,  208) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:09:07.312 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:09:11.470 | INFO | Click (1226,  686) @ POP_NPC_TEXT_TAG                                                 
+2023-12-20 02:09:11.637 | INFO | 日常任务-师门:click npc speak tex;                                                    
+2023-12-20 02:09:12.209 | INFO | Click (  78,  205) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:09:12.381 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:09:14.880 | INFO | Click (1048,  651) @ SHOPPING_PLAYER                                                  
+2023-12-20 02:09:17.215 | INFO | Click (1186,   76) @ SHOPPING_PLAYER_CLOSE                                            
+2023-12-20 02:09:19.380 | INFO | 日常任务-师门:player store;                                                           
+2023-12-20 02:09:21.623 | INFO | Click ( 133,  218) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:09:21.795 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:09:28.143 | INFO | 日常任务-师门: Reactivation task threshold increased ,value is 1 ！！                 
+2023-12-20 02:09:33.110 | INFO | Click ( 147,  220) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:09:33.280 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:09:38.121 | INFO | Click ( 109,  207) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:09:38.290 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:09:43.147 | INFO | Click ( 148,  214) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:09:43.313 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:09:46.081 | INFO | Click (1142,  420) @ POP_NPC_DIALOGUE_0_1                                             
+2023-12-20 02:09:46.250 | INFO | 日常任务-师门:click top npc dialogue;                                                 
+2023-12-20 02:09:47.777 | INFO | Click (1229,  675) @ POP_NPC_TEXT_TAG                                                 
+2023-12-20 02:09:47.952 | INFO | 日常任务-师门:click npc speak tex;                                                    
+2023-12-20 02:09:48.597 | INFO | Click ( 138,  212) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:09:48.773 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-20 02:10:59.467 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2023-12-20 02:10:59.601 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:10590)                              
+2023-12-20 02:11:00.321 | INFO | Click (  65,  222) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:11:07.673 | INFO | 日常任务-师门:激活成功,开始执行任务逻辑                                               
+2023-12-20 02:11:08.643 | INFO | Click (  36,  207) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:11:08.809 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:11:14.735 | INFO | 日常任务-师门: Reactivation task threshold increased ,value is 1 ！！                 
+2023-12-20 02:11:19.747 | INFO | Click (  44,  209) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:11:19.915 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:11:26.898 | INFO | Click (  35,  219) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:11:27.064 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:11:34.501 | INFO | Click (  44,  209) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:11:34.674 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:11:39.352 | INFO | Click (  31,  214) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:11:39.524 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:11:42.239 | INFO | Click (1121,  417) @ POP_NPC_DIALOGUE_0_1                                             
+2023-12-20 02:11:42.417 | INFO | 日常任务-师门:click top npc dialogue;                                                 
+2023-12-20 02:11:43.921 | INFO | Click (1225,  666) @ POP_NPC_TEXT_TAG                                                 
+2023-12-20 02:11:44.093 | INFO | 日常任务-师门:click npc speak tex;                                                    
+2023-12-20 02:11:44.672 | INFO | Click (  40,  218) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:11:44.867 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:11:48.914 | INFO | Click (1233,  685) @ POP_NPC_TEXT_TAG                                                 
+2023-12-20 02:11:49.087 | INFO | 日常任务-师门:click npc speak tex;                                                    
+2023-12-20 02:11:49.688 | INFO | Click (  63,  212) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:11:49.866 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:11:55.818 | INFO | 日常任务-师门: Reactivation task threshold increased ,value is 1 ！！                 
+2023-12-20 02:12:00.651 | INFO | Click (  53,  203) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:12:00.815 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+2023-12-20 02:12:05.351 | INFO | Click (  33,  220) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 02:12:05.522 | INFO | 日常任务-师门:click task list;Clear activate threshold                                

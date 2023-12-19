@@ -11,7 +11,7 @@ from qianv_tool.module.game_action.action_window.match import Match as MatchActi
 class TaskSmRun:
 
 
-    def __init__( self, devices, serial, position, reply_wait=1,switch_map=3,use_prop_wait=6):
+    def __init__( self, devices, serial, position, reply_wait=2,switch_map=3,use_prop_wait=6):
         # 设备管理对象
         self.devices: Devices = devices
         # 设备ID
@@ -73,7 +73,7 @@ class TaskSmRun:
             return True
         elif self.match_main.open_active_window():
             time.sleep(self.reply_wait)
-            if self.position==0 and self.match_action.find_task_receive('师门'):
+            if self.position==0 and self.match_action.find_task_receive('师门',self.reply_wait):
                 self.status = 0
                 self.activate_again_try = 0
                 return True
@@ -106,11 +106,8 @@ class TaskSmRun:
 
     def __click_npc_speak_text(self):
         """点击底部npc的文案"""
-        if self.status in (0, 1) and self.match_frame.click_botton_npc_text_dialogue():
+        if self.status == 1 and self.match_frame.click_botton_npc_text_dialogue():
             logger.info(f'日常任务-师门:click npc speak tex;')
-            if self.status == 0:
-                self.status == 1
-                logger.info(f'日常任务-师门:status change 1;')
 
     def __use_prop(self):
         """使用道具"""
@@ -140,8 +137,11 @@ class TaskSmRun:
 
     def __click_task_dialogue(self):
         """点击任务对话框"""
-        if self.status in (1, 2) and self.match_frame.click_top_npc_dialogue():
+        if self.status in (0, 1, 2) and self.match_frame.click_top_npc_dialogue():
             logger.info(f'日常任务-师门:click top npc dialogue;')
+            if self.status == 0:
+                self.status = 1
+                logger.info(f'日常任务-师门:status change 1;')
             if self.status == 2:
                 self.status = 3
                 self.status_tag_time = time.time()
@@ -150,14 +150,15 @@ class TaskSmRun:
     def __submit_equipment(self):
         """提交装备的相关操作"""
         if self.status == 1 and self.match_sm.is_submit_equipment():
-            self.status == 2
+            self.status = 2
+            logger.info(f'日常任务-师门:status change 2;')
             self.status_tag_time = time.time()
             time.sleep(self.reply_wait)
             self.click_submit_equipment_buy_other()
             logger.info(f'日常任务-师门: 提交装备-首次-点击购买;')
         if self.status == 3 and self.match_sm.submit_equipment_real():
             self.status = 0
-            logger.info(f'日常任务-师门: 提交装备-再次-提交;')
+            logger.info(f'日常任务-师门: 提交装备-再次-提交 and status change 0;')
         if self.status == 1 and self.match_sm.submit_equipment_confirm():
             logger.info(f'日常任务-师门: 提交装备-确定提交-蓝装以上会触发;')
 
@@ -174,7 +175,8 @@ class TaskSmRun:
         if not self.match_sm.is_first_task_list_area_strict():
             self.activate_again_try  = self.activate_again_try+1
             logger.info(f'日常任务-师门: Reactivation task threshold increased ,value is {self.activate_again_try} ！！')
-            # TODO 有时是因为识别文字失败导致的，所以可以加一个移动功能(找到中心点所谓偏移下，然后点击 or 找到上下移动的地方，进行滑动）
+            # 有时是因为识别文字失败导致的，所以可加一个人物移动
+            devices.swipe(serial, 600, 300, 700, 500)
             # 过图时间卡，导致激活判断阈值错误累计，因此休眠一下
             time.sleep(self.switch_map)
 
@@ -201,7 +203,8 @@ if __name__ == "__main__":
 
     devices = Devices()
     devices_info = devices.devices_info
-    for serial in devices_info:
-        app = TaskSmRun(devices, serial, 0, 1)
-        app.run()
+    for serial in devices_info :
+        if serial != 'emulator-5554':
+            app = TaskSmRun(devices, serial, 0, 2)
+            app.run()
 

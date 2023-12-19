@@ -38,7 +38,7 @@ class Match:
         """
         image = self.devices.device_screenshot(self.serial)
         offset = (0,0) # self.__is_yao_shou() 不能通过文字识别来判断了，会导致TASK_SM_FIRST_LIST识别不出来，是因为两张图相近，就懒了么？
-        if self.buttonMatch.word_match(image,TASK_SM_FIRST_LIST,text=['师门','师','门'],offset=offset):
+        if self.buttonMatch.word_match(image,TASK_SM_FIRST_LIST,text=['师门','师'],offset=offset):
             self.devices.click(self.serial, TASK_SM_FIRST_LIST, offset)
             return True
         else:
@@ -66,19 +66,19 @@ class Match:
     def is_submit_equipment(self):
         """是否触发提交装备"""
         image = self.devices.device_screenshot(self.serial)
-        if self.buttonMatch.image_match(image,TASK_SM_SUBMIT_EQUIPMENT_START,offset=(0,0)):
-            self.devices.click(self.serial, TASK_SM_SUBMIT_EQUIPMENT_START)
+        if self.buttonMatch.image_match(image,TASK_SM_SUBMIT_EQUIPMENT_REAL,offset=(-5,-6)):
+            self.devices.click(self.serial, TASK_SM_SUBMIT_EQUIPMENT_REAL)
             return True
         else:
             return False
     def click_submit_equipment_buy_other(self):
         """
-         提交装备-购买其他
+         提交装备-npc商店购买
          TODO:还没有对应的资源按钮对象
         """
         image = self.devices.device_screenshot(self.serial)
-        if self.buttonMatch.image_match(image,TASK_SM_SUBMIT_EQUIPMENT_START,offset=(0,0)):
-            self.devices.click(self.serial, TASK_SM_SUBMIT_EQUIPMENT_START)
+        if self.buttonMatch.image_match(image,TASK_SM_SUBMIT_EQUIPMENT_STORE,offset=(-3,-6)):
+            self.devices.click(self.serial, TASK_SM_SUBMIT_EQUIPMENT_STORE)
             return True
         else:
             return False
@@ -98,7 +98,7 @@ class Match:
 
     def submit_equipment_confirm(self):
         """
-         提交装备-确定提交-蓝装以上会需要
+         提交装备-确定提交-相对珍贵的装备会需要
          TODO:对应的资源按钮对象里的button属性需要修正
         """
         image = self.devices.device_screenshot(self.serial)
@@ -132,6 +132,6 @@ if __name__ == "__main__":
             print(devices_info[serial])
             app = Match(devices, serial)
             # print(app.is_map('金陵'))
-            print(app.is_task_finish())
+            print(app.is_submit_equipment())
 
 

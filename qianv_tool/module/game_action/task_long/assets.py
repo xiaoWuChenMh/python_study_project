@@ -5,5 +5,5 @@ from qianv_tool.module.base.template import Template
 # Don't modify it manually.
 
 TASK_LONG_FIRST_LIST = Button(area={'game': (0, 192, 216, 232)},text={'game': '宝图任务（10/20）'}, color={'game': (64, 65, 34)}, button={'game': (0, 192, 216, 232)}, file={'game': './assets/game/task_long/TASK_LONG_FIRST_LIST.png'})
-TASK_LONG_IS_MAP = Button(area={'game': (832, 136, 872, 152)},text={'game': ''}, color={'game': (88, 52, 16)}, button={'game': (832, 136, 872, 152)}, file={'game': './assets/game/task_long/TASK_LONG_IS_MAP.png'})
+TASK_LONG_IS_MAP = Button(area={'game': (840, 120, 864, 152)},text={'game': ''}, color={'game': (133, 111, 66)}, button={'game': (840, 120, 864, 152)}, file={'game': './assets/game/task_long/TASK_LONG_IS_MAP.png'})
 TASK_LONG_TASK_RECEIVE = Button(area={'game': (376, 232, 904, 416)},text={'game': '本轮一条龙结束，是否继续领取'}, color={'game': (42, 75, 113)}, button={'game': (720, 408, 856, 456)}, file={'game': './assets/game/task_long/TASK_LONG_TASK_RECEIVE.png'})

@@ -269,7 +269,7 @@ class Button(Resource):
         image = crop(image, offset + self.area, copy=False)
         image_show(image,self.image_test)
         # 文字识别源图
-        orc_reuslt = word_ocr.ocr(image, cls=True)
+        orc_reuslt = word_ocr.ocr(image, cls=True, bin=True)
         image_word = ''
         try:
             for idx in range(len(orc_reuslt)):
@@ -280,11 +280,11 @@ class Button(Resource):
             return False
         # 进行匹配
         if model==1 :
-            for vl in self.text:
+            for vl in text:
                 if vl in image_word:
                     return True
         elif model==2 :
-            for vl in self.text:
+            for vl in text:
                 if vl == image_word:
                     return True
         else:

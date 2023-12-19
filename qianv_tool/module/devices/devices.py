@@ -199,6 +199,7 @@ class Devices(Connection):
     def click( self,serial,button,offset=None):
         """
         点击指定按钮
+        TODO 加一个随机睡眠n秒，来对冲多次点击相隔实现将近的问题。
         :param serial:设备id
         :param button:带点击的按钮
         :param offset:点击按钮是否有位移
@@ -215,9 +216,13 @@ class Devices(Connection):
         self.click_uiautomator2(serial,x,y)
 
     @retry
-    def shake(self,serial):
-        """手机摇一摇,只支持模拟器,待测试"""
-        self.shake_emulator(serial)
+    def swipe( self,serial, sx, sy, ex, ey):
+        """
+        滑动
+        direction: 手指右滑方向，4选1 "left", "right", "up", "down"
+        scale: 滑动距离，默认0.2即屏幕宽度的20%
+        """
+        self.swipe_uiautomator2(serial, sx, sy, ex, ey)
 
     @retry
     def central_site_click(self, serial, offset=None):

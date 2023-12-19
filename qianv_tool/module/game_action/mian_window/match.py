@@ -162,8 +162,8 @@ if __name__ == "__main__":
     devices_info = devices.devices_info
     for serial in devices_info:
         print(devices_info[serial])
-        if serial=='emulator-5554':
-            app = Match(devices, serial)
-            # print(app.is_map('金陵'))
-            print(app.click_first_task_list_area())
+        if serial!='emulator-5554':
+            app = Match(devices, serial, 1)
+            print(app.is_map('湖中屋'))
+            # print(app.open_active_window())
 

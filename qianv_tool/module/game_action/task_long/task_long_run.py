@@ -37,8 +37,8 @@ class TaskSmRun:
 
         # 匹配动作行为的对象
         self.match_long = MatchLong(devices,serial,reply_wait)
-        self.match_sm = MatchSm(devices,serial,reply_wait)
         self.match_shopping = MatchShopping(devices,serial,reply_wait)
+        self.match_main = MatchMain(devices,serial,reply_wait)
         self.match_action = MatchAction(devices,serial,reply_wait)
         self.match_frame = MatchFrame(devices,serial,reply_wait)
 
@@ -75,6 +75,14 @@ class TaskSmRun:
             return True
         else:
             return self.match_action.find_task_position(self.position)
+
+
+    def is_task_map( self ):
+        """
+        因为有喇叭干扰，切图过小无法识别，所以双判断吧，先判图，没找到看文字
+        """
+        self.match_main.is_map(text=['蛙鸣池','蒲家村角落','金銮殿','金銮','桃花扇','湖中屋','夜宴','仙人口袋','水妖','水妖巢穴'])
+
 
     def __execution(self):
         """

@@ -19,11 +19,11 @@ class Match:
         """npc 商店购买物品 [ok]"""
         image = self.devices.device_screenshot(self.serial)
         result = False
-        if self.buttonMatch.image_match(image, SHOPPING_NPC, offset=(0,0), interval=0.5):
-            self.devices.click(self.serial, SHOPPING_NPC)
+        if self.buttonMatch.image_match(image, SHOPPING_NPC, offset=(-5,-6), interval=0.5,threshold=0.83):
+            # self.devices.click(self.serial, SHOPPING_NPC)
             time.sleep(self.reply_wait)
             result = True
-        if result and self.buttonMatch.image_match(image, SHOPPING_NPC_CLOSE, offset=(0,0), interval=0.5):
+        if result and self.buttonMatch.image_match(image, SHOPPING_NPC_CLOSE, offset=(0,-3), interval=0.5,threshold=0.83):
             self.devices.click(self.serial, SHOPPING_NPC_CLOSE)
             time.sleep(self.reply_wait)
             result = True
@@ -75,6 +75,6 @@ if __name__ == "__main__":
             print(devices_info[serial])
             app = Match(devices, serial)
             # print(app.is_map('金陵'))
-            print(app.player_store())
+            print(app.npc_store())
 
 

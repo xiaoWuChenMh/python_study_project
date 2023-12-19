@@ -59,3 +59,4 @@ if __name__ == "__main__":
             # print(app.click_botton_npc_text_dialogue())
 
 
+    # 问题：因为抢不到怪，所以一直完成不了当前环节的任务，所有是不是得加一个切换人少线路的功能？

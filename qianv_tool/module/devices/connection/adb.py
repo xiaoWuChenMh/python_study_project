@@ -168,12 +168,6 @@ class Adb:
         logger.info(f'Execute: {cmd}')
         return sys_command(cmd)
 
-    def shake_emulator(self,serial):
-        """模拟器手机摇一摇"""
-        cmd = ["am","broadcast","-a","com.microvirt.intent.action.SHAKE"]
-        self.adb_shell()
-
-        self.adb_shell(cmd,serial)
 
 
 if __name__ == "__main__":
