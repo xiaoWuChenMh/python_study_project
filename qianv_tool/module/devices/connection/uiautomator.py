@@ -210,6 +210,21 @@ class Uiautomator(Adb):
 
         return image
 
+
+    def central_coordinate(self,serial):
+        """
+         获取屏幕中央点位
+        :param serial:
+        :return:
+        """
+        # 获取模拟器屏幕的尺寸
+        screen_width, screen_height = self.get_u2(serial).window_size()
+        # 计算中心点的坐标
+        center_x = screen_width // 2
+        center_y = screen_height // 2
+        return (center_x,center_y)
+
+
     def __image_check(self,image,error_message):
         if image is None:
             raise ImageTruncated(error_message)

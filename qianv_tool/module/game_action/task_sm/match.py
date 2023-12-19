@@ -63,6 +63,51 @@ class Match:
         self.devices.click(self.serial, TASK_SM_FIRST_LIST,offset)
         return True
 
+    def is_submit_equipment(self):
+        """是否触发提交装备"""
+        image = self.devices.device_screenshot(self.serial)
+        if self.buttonMatch.image_match(image,TASK_SM_SUBMIT_EQUIPMENT_START,offset=(0,0)):
+            self.devices.click(self.serial, TASK_SM_SUBMIT_EQUIPMENT_START)
+            return True
+        else:
+            return False
+    def click_submit_equipment_buy_other(self):
+        """
+         提交装备-购买其他
+         TODO:还没有对应的资源按钮对象
+        """
+        image = self.devices.device_screenshot(self.serial)
+        if self.buttonMatch.image_match(image,TASK_SM_SUBMIT_EQUIPMENT_START,offset=(0,0)):
+            self.devices.click(self.serial, TASK_SM_SUBMIT_EQUIPMENT_START)
+            return True
+        else:
+            return False
+
+    def submit_equipment_real(self):
+        """
+         提交装备-正式提交
+         TODO:还没有对应的资源按钮对象
+        """
+        image = self.devices.device_screenshot(self.serial)
+        if self.buttonMatch.image_match(image,TASK_SM_SUBMIT_EQUIPMENT_START,offset=(0,0)):
+            self.devices.click(self.serial, TASK_SM_SUBMIT_EQUIPMENT_START)
+            return True
+        else:
+            return False
+
+
+    def submit_equipment_confirm(self):
+        """
+         提交装备-确定提交-蓝装以上会需要
+         TODO:对应的资源按钮对象里的button属性需要修正
+        """
+        image = self.devices.device_screenshot(self.serial)
+        if self.buttonMatch.image_match(image,TASK_SM_SUBMIT_EQUIPMENT_DECITION,offset=(0,0)):
+            self.devices.click(self.serial, TASK_SM_SUBMIT_EQUIPMENT_DECITION)
+            return True
+        else:
+            return False
+
     def __is_yao_shou( self ):
         """今日是否有妖兽入侵"""
         image = self.devices.device_screenshot(self.serial)

@@ -1,34 +1,39 @@
 
 import time
 from qianv_tool.module.logger import logger
-from qianv_tool.module.game_action.task_sm.match import Match as MatchSm
 from qianv_tool.module.game_action.task_long.match import Match as MatchLong
+from qianv_tool.module.game_action.mian_window.match import Match as MatchMain
 from qianv_tool.module.game_action.pop_frame.match import Match as MatchFrame
 from qianv_tool.module.game_action.shopping.match import Match as MatchShopping
 from qianv_tool.module.game_action.action_window.match import Match as MatchAction
 
 
+
 class TaskSmRun:
 
-    def __init__( self, devices, serial, reply_wait,position ):
+
+    def __init__( self, devices, serial, position, reply_wait=1,switch_map=3, dungeon_min_time=120 ):
         # 设备管理对象
         self.devices: Devices = devices
         # 设备ID
         self.serial = serial
         # 响应等待时间
         self.reply_wait = reply_wait
+        # 过图等待时间
+        self.switch_map = switch_map
+        # 副本最小执行时间
+        self.dungeon_min_time = dungeon_min_time
         # 任务所处位置（0-自动查找，1-第一位，2-第二位，...）
         self.position = position
 
         # 任务状态
         self.status = 0
-        #状态标记时间
-        self.status_tag_time = 0
-        #特殊状态需要的超时判断时间（默认60秒）
-        self.timeout = 60
-
         # 任务启动失败重试次数
         self.try_num = 3
+        # 再次激活判断阈值
+        self.activate_threshold_again = 3
+        self.activate_again_try = 0
+
 
         # 匹配动作行为的对象
         self.match_long = MatchLong(devices,serial,reply_wait)

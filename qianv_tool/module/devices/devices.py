@@ -214,7 +214,25 @@ class Devices(Connection):
         )
         self.click_uiautomator2(serial,x,y)
 
-    # 滑动
+    @retry
+    def shake(self,serial):
+        """手机摇一摇,只支持模拟器,待测试"""
+        self.shake_emulator(serial)
+
+    @retry
+    def central_site_click(self, serial, offset=None):
+        """
+        点击屏幕位置，支持偏移
+        :param serial:
+        :param offset:
+        :return:
+        """
+        x,y = self.central_coordinate(serial)
+        if isinstance(offset, tuple) and len(offset) == 2:
+            x = x+offset[0]
+            y = y+offset[1]
+        self.click_uiautomator2(serial, x, y)
+
 
 if __name__ == "__main__":
     __devices = Devices()
