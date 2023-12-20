@@ -88,24 +88,26 @@ class TaskSmRun:
         :return:
         """
         while True:
-            self.__click_npc_speak_text()
             self.__use_prop()
             self.__npc_store()
             self.__player_store()
             self.__click_task_dialogue()
             self.__submit_equipment()
             # 确定退出副本？-->点确定
-            # 注意：保证激活任务and点击任务栏按钮在最后！！！！
+            # ===== 必须这样排序，并放到最后 start ！！！！！！ ============
+            self.__click_npc_speak_text()
             self.__is_activate()
             self.__click_task_list()
+            # ==== 必须这样排序，并放到最后 end ！！！！！！ ===============
             self.__status_timeout_decide()
             if self.match_sm.is_task_finish():
                 logger.info(f'日常任务-师门（{self.serial}）: 任务完成，退出师门任务自动操作！')
                 break
 
     def __is_activate( self ):
-        """判断师门任务是否激活"""
+        """判断师门任务是否激活,因文字识别率低，导致会多次重走激活逻辑"""
         if not self.match_sm.is_first_task_list_area_strict():
+            self.match_main.open_active_window()
             self.__activation()
 
 
