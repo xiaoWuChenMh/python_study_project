@@ -1,5 +1,6 @@
 
 import time
+import threading
 from qianv_tool.module.logger import logger
 from qianv_tool.module.game_action.task_sm.match import Match as MatchSm
 from qianv_tool.module.game_action.mian_window.match import Match as MatchMain
@@ -195,7 +196,9 @@ class TaskSmRun:
         return True
 
 
-
+def run_exe(serial):
+    app = TaskSmRun(devices, serial, 0, 2)
+    app.run()
 
 if __name__ == "__main__":
 
@@ -204,7 +207,6 @@ if __name__ == "__main__":
     devices = Devices()
     devices_info = devices.devices_info
     for serial in devices_info :
-        if serial != 'emulator-5554':
-            app = TaskSmRun(devices, serial, 0, 2)
-            app.run()
+        threading.Thread(target=run_exe(serial)).run()
+
 
