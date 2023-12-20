@@ -13,6 +13,7 @@ class Match:
         self.serial = serial
         # 窗口切换等待时间
         self.reply_wait = reply_wait
+        self.sm_text = ['师门','师','帅']
 
     def use_prop( self ):
         """ 使用道具 """
@@ -38,7 +39,7 @@ class Match:
         """
         image = self.devices.device_screenshot(self.serial)
         offset = (0,0) # self.__is_yao_shou() 不能通过文字识别来判断了，会导致TASK_SM_FIRST_LIST识别不出来，是因为两张图相近，就懒了么？
-        if self.buttonMatch.word_match(image,TASK_SM_FIRST_LIST,text=['师门','师'],offset=offset):
+        if self.buttonMatch.word_match(image,TASK_SM_FIRST_LIST,text=self.sm_text,offset=offset):
             self.devices.click(self.serial, TASK_SM_FIRST_LIST, offset)
             return True
         else:
@@ -49,8 +50,8 @@ class Match:
         严谨的判断：第一个任务列表的区域是否为师门
         """
         image = self.devices.device_screenshot(self.serial)
-        offset = self.__is_yao_shou()
-        if self.buttonMatch.word_match(image,TASK_SM_FIRST_LIST,text='师门',offset=offset):
+        offset =(0,0) # self.__is_yao_shou() 不能通过文字识别来判断了，会导致TASK_SM_FIRST_LIST识别不出来，是因为两张图相近，就懒了么？
+        if self.buttonMatch.word_match(image,TASK_SM_FIRST_LIST,text=self.sm_text,offset=offset):
             return True
         else:
             return False
@@ -132,6 +133,6 @@ if __name__ == "__main__":
             print(devices_info[serial])
             app = Match(devices, serial)
             # print(app.is_map('金陵'))
-            print(app.is_submit_equipment())
+            print(app.is_first_task_list_area_strict())
 
 

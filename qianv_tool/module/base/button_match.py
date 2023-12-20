@@ -20,6 +20,8 @@ class ButtonMatch:
 
     def __init__(self):
         self.interval_timer = {}
+        # gridButton文字匹配成功后的坐标位
+        self.grid_word_index = 0
 
     def __interval(self,button,interval):
         """启动定时"""
@@ -113,10 +115,13 @@ class ButtonMatch:
         :param offset(int, tuple): Detection area offset
         :return: 匹配到返回button,否则 None
         """
+        self.grid_word_index = 0
         button_grip = ButtonGrid(origin_button=origin_button, delta=delta, grid_shape=grid_shape, text=text)
         for button in button_grip.buttons():
+            self.grid_word_index += 1
             if  self.word_match(image,button,text,offset=offset):
                 return button
+        self.grid_word_index = 0
         return None
 
     def grid_button_image_match(self, image, origin_button, delta, grid_shape, offset=0, threshold=None):

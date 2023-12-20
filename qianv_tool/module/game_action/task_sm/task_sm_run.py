@@ -34,15 +34,14 @@ class TaskSmRun:
         self.timeout = 60
         # 任务启动失败重试次数
         self.try_num = 3
-        # 再次激活判断阈值
-        self.activate_threshold_again = 3
-        self.activate_again_try = 0
         # 匹配动作行为的对象
         self.match_shopping = MatchShopping(devices,serial,reply_wait)
         self.match_main = MatchMain(devices,serial,reply_wait)
         self.match_sm = MatchSm(devices,serial,reply_wait)
         self.match_action = MatchAction(devices,serial,reply_wait)
         self.match_frame = MatchFrame(devices,serial,reply_wait)
+        # 让人物移动一下
+        # devices.swipe(serial, 600, 300, 700, 500)
 
     def run(self):
         """
@@ -51,14 +50,14 @@ class TaskSmRun:
         try_num = self.try_num
         while try_num>0:
             if self.__activation():
-                logger.info(f'日常任务-师门:激活成功,开始执行任务逻辑')
+                logger.info(f'日常任务-师门（{self.serial}）:激活成功,开始执行任务逻辑')
                 self.__execution()
                 break
             else:
                 try_num  = try_num-1
-                logger.info(f'日常任务-师门:激活失败,剩余尝试次数{try_num}。')
+                logger.info(f'日常任务-师门（{self.serial}）:激活失败,剩余尝试次数{try_num}。')
         if try_num==0:
-            logger.info(f'日常任务-师门：激活失败且超过尝试次数，退出任务！')
+            logger.info(f'日常任务-师门（{self.serial}）：激活失败且超过尝试次数，退出任务！')
             return False
         else:
             return True
@@ -68,18 +67,15 @@ class TaskSmRun:
         """
         激活任务
         """
-        if self.match_sm.click_first_task_list_area_strict():
-            self.status = 1
-            self.activate_again_try = 0
-            return True
-        elif self.match_main.open_active_window():
+        if self.match_action.is_active_window() or self.match_main.open_active_window():
             time.sleep(self.reply_wait)
+            self.serial
             if self.position==0 and self.match_action.find_task_receive('师门',self.reply_wait):
-                self.status = 0
-                self.activate_again_try = 0
+                self.status = 1
+                self.position = self.match_action.buttonMatch.grid_word_index
                 return True
             if self.position>0:
-                return self.match_action.find_task_position(self.position)
+                return self.match_action.find_task_position(self.position,'师门',self.reply_wait)
             else:
                 return False
         else:
@@ -94,92 +90,83 @@ class TaskSmRun:
         while True:
             self.__click_npc_speak_text()
             self.__use_prop()
-            self.__click_task_list()
             self.__npc_store()
             self.__player_store()
             self.__click_task_dialogue()
             self.__submit_equipment()
-            self.__activate_again()
+            # 确定退出副本？-->点确定
+            # 注意：保证激活任务and点击任务栏按钮在最后！！！！
+            self.__is_activate()
+            self.__click_task_list()
             self.__status_timeout_decide()
             if self.match_sm.is_task_finish():
-                logger.info(f'日常任务-师门: 任务完成，退出师门任务自动操作！')
+                logger.info(f'日常任务-师门（{self.serial}）: 任务完成，退出师门任务自动操作！')
                 break
+
+    def __is_activate( self ):
+        """判断师门任务是否激活"""
+        if not self.match_sm.is_first_task_list_area_strict():
+            self.__activation()
+
 
     def __click_npc_speak_text(self):
         """点击底部npc的文案"""
-        if self.status == 1 and self.match_frame.click_botton_npc_text_dialogue():
-            logger.info(f'日常任务-师门:click npc speak tex;')
+        while self.status == 1 and self.match_frame.click_botton_npc_text_dialogue():
+            logger.info(f'日常任务-师门（{self.serial}）:click npc speak tex;')
 
     def __use_prop(self):
         """使用道具"""
         if self.status == 1 and self.match_sm.use_prop():
-            logger.info(f'日常任务-师门:use prop;')
+            logger.info(f'日常任务-师门（{self.serial}）:use prop;')
             time.sleep(self.use_prop_wait)
         # TODO 有银叶子后会导致一些道具使用失败，例如荷花，而且银叶子这些也不会触发道具，所以还需要一个道具2来点击银叶子等
 
     def __click_task_list(self):
         """点击任务列表"""
-        if self.status in (1, 3) and self.match_sm.click_first_task_list_area_strict():
-            self.activate_again_try = 0
-            logger.info(f'日常任务-师门:click task list;Clear activate threshold')
+        if self.status in (1, 3) and self.match_sm.click_first_task_list_area():
+            logger.info(f'日常任务-师门（{self.serial}）:click task list;')
             time.sleep(self.reply_wait)
 
     def __npc_store(self):
         """npc商店购买商品"""
         if self.status == 1 and self.match_shopping.npc_store():
-            logger.info(f'日常任务-师门:npc store;')
+            logger.info(f'日常任务-师门（{self.serial}）:npc store;')
 
     def __player_store(self):
         """玩家商店购买商品"""
         if self.status == 1 and self.match_shopping.is_fabao_search():
-            logger.info(f'日常任务-师门:player store search;')
+            logger.info(f'日常任务-师门（{self.serial}）:player store search;')
         if self.status == 1 and self.match_shopping.player_store():
-            logger.info(f'日常任务-师门:player store;')
+            logger.info(f'日常任务-师门（{self.serial}）:player store;')
 
     def __click_task_dialogue(self):
         """点击任务对话框"""
         if self.status in (0, 1, 2) and self.match_frame.click_top_npc_dialogue():
-            logger.info(f'日常任务-师门:click top npc dialogue;')
+            logger.info(f'日常任务-师门（{self.serial}）:click top npc dialogue;')
             if self.status == 0:
                 self.status = 1
-                logger.info(f'日常任务-师门:status change 1;')
+                logger.info(f'日常任务-师门（{self.serial}）:status change 1;')
             if self.status == 2:
                 self.status = 3
                 self.status_tag_time = time.time()
-                logger.info(f'日常任务-师门:status change 3;')
+                logger.info(f'日常任务-师门（{self.serial}）:status change 3;')
 
     def __submit_equipment(self):
         """提交装备的相关操作"""
         if self.status == 1 and self.match_sm.is_submit_equipment():
             self.status = 2
-            logger.info(f'日常任务-师门:status change 2;')
+            logger.info(f'日常任务-师门（{self.serial}）:status change 2;')
             self.status_tag_time = time.time()
             time.sleep(self.reply_wait)
-            self.click_submit_equipment_buy_other()
-            logger.info(f'日常任务-师门: 提交装备-首次-点击购买;')
+            self.match_sm.click_submit_equipment_buy_other()
+            logger.info(f'日常任务-师门（{self.serial}）: 提交装备-首次-点击购买;')
         if self.status == 3 and self.match_sm.submit_equipment_real():
             self.status = 0
-            logger.info(f'日常任务-师门: 提交装备-再次-提交 and status change 0;')
+            logger.info(f'日常任务-师门（{self.serial}）: 提交装备-再次-提交 and status change 0;')
         if self.status == 1 and self.match_sm.submit_equipment_confirm():
-            logger.info(f'日常任务-师门: 提交装备-确定提交-蓝装以上会触发;')
+            logger.info(f'日常任务-师门（{self.serial}）: 提交装备-确定提交-蓝装以上会触发;')
 
-    def __activate_again(self):
-        """
-         再次激活任务判断
-        :return:
-        """
-        if self.activate_again_try>=self.activate_threshold_again:
-            if self.__activation():
-                logger.info(f'日常任务-师门: Activate task again success！！！')
-            else:
-                logger.info(f'日常任务-师门: Activate task again fail！！！')
-        if not self.match_sm.is_first_task_list_area_strict():
-            self.activate_again_try  = self.activate_again_try+1
-            logger.info(f'日常任务-师门: Reactivation task threshold increased ,value is {self.activate_again_try} ！！')
-            # 有时是因为识别文字失败导致的，所以可加一个人物移动
-            devices.swipe(serial, 600, 300, 700, 500)
-            # 过图时间卡，导致激活判断阈值错误累计，因此休眠一下
-            time.sleep(self.switch_map)
+
 
     def __status_timeout_decide(self):
         """
@@ -197,16 +184,26 @@ class TaskSmRun:
 
 
 def run_exe(serial):
-    app = TaskSmRun(devices, serial, 0, 2)
+    app = TaskSmRun(devices, serial, 0, 1)
     app.run()
 
 if __name__ == "__main__":
 
     from qianv_tool.module.devices.devices import Devices
 
+    threads = []
     devices = Devices()
     devices_info = devices.devices_info
-    for serial in devices_info :
-        threading.Thread(target=run_exe(serial)).run()
+    for serial in devices_info:
+        if serial=='emulator-5556':
+            run_exe(serial)
 
-
+    # for serial in devices_info :
+    #     print(devices_info[serial])
+    #     thread = threading.Thread(target=run_exe, args=(serial,))
+    #     threads.append(thread)
+    #     thread.start()
+    #
+    # # join 方法可以让主线程等待所有子线程执行完毕后再结束。
+    # for serial in devices_info:
+    #     thread.join()

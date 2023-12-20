@@ -39,7 +39,10 @@ class Match:
                 time.sleep(reply_wait)
                 image = self.devices.device_screenshot(self.serial)
                 statu = True
+                result = True
             else:
+                self.devices.click(self.serial, ACTION_WINDOW_CLOSE)
+                time.sleep(reply_wait)
                 image = self.devices.device_screenshot(self.serial)
                 statu = not self.buttonMatch.image_match(image, ACTION_WINDOW_CLOSE, offset=(-2,-6))
             # 找到任务 且 任务窗口还未关闭，说明当前任务已接
@@ -51,17 +54,53 @@ class Match:
             if statu and  self.buttonMatch.image_match(image, ACTION_WINDOW_CLOSE, offset=(-2, -6)):
                 self.devices.click(self.serial, ACTION_WINDOW_CLOSE)
                 time.sleep(reply_wait)
-        return statu
+        return statu and result
 
-    def find_task_position(self,position):
+    def is_active_window(self):
+        """
+         当前是否为活动窗口
+        """
+        image = self.devices.device_screenshot(self.serial)
+        if self.buttonMatch.image_match(image, ACTION_WINDOW_CLOSE, offset=(-2, -6)):
+            return True
+        else:
+            return False
+    def find_task_position(self,position, text, reply_wait):
         """
         查找指定位置的“参与” 和 “已参加”按钮后，进行后续操作
         :param position:
         :return:
         """
-        #根据位置获取 参与button 和 已参与butotn
-        #有参与就点击，有已参与就退出，否则返回False
-        pass
+        image = self.devices.device_screenshot(self.serial)
+        if position >=1 and position <= 8:
+            ACTION_WINDOW_BUTTON, offset = self.__position_button_mapping(position)
+            if self.buttonMatch.image_match(image, ACTION_WINDOW_BUTTON, offset=offset):
+                self.devices.click(self.serial, ACTION_WINDOW_BUTTON)
+                time.sleep(reply_wait)
+            image = self.devices.device_screenshot(self.serial)
+            if self.buttonMatch.image_match(image, ACTION_WINDOW_CLOSE, offset=(-2, -6)):
+                self.devices.click(self.serial, ACTION_WINDOW_CLOSE)
+            return True
+        else :
+            return self.find_task_receive(text,reply_wait)
+
+    def __position_button_mapping( self, position):
+        if position == 1 :
+           return ACTION_WINDOW_BUTTON1,(8, 5, 0 ,-5)
+        elif position == 2 :
+            return ACTION_WINDOW_BUTTON2,(5, 6, -5 ,-6)
+        elif position == 3 :
+           return ACTION_WINDOW_BUTTON3,(5, 5, -8 ,-3)
+        elif position == 4 :
+            return ACTION_WINDOW_BUTTON4,(5, 5, -8 ,-3)
+        elif position == 5 :
+            return ACTION_WINDOW_BUTTON5,(5, 5, -8 ,-6)
+        elif position == 6 :
+            return ACTION_WINDOW_BUTTON6,(8, 8, -3 ,-4)
+        elif position == 7 :
+            return ACTION_WINDOW_BUTTON7,(5, 5, -8 ,-6)
+        else:
+            return ACTION_WINDOW_BUTTON8,(8, 8, -1 ,-3)
 
 
 if __name__ == "__main__":
@@ -73,8 +112,8 @@ if __name__ == "__main__":
     for serial in devices_info:
         if serial=='emulator-5554':
             print(devices_info[serial])
-            app = Match(devices, serial)
+            app = Match(devices, serial,2)
             # print(app.is_map('金陵'))
-            print(app.find_task_receive('师门'))
+            print(app.find_task_position(1,'师门',2))
 
 

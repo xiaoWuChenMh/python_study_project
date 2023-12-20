@@ -427,3 +427,188 @@ running
 2023-12-20 02:12:00.815 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
 2023-12-20 02:12:05.351 | INFO | Click (  33,  220) @ TASK_SM_FIRST_LIST                                               
 2023-12-20 02:12:05.522 | INFO | 日常任务-师门:click task list;Clear activate threshold                                
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-20 23:07:29.518 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2023-12-20 23:07:29.526 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:3266)                               
+2023-12-20 23:07:30.332 | INFO | Click (1011,   44) @ HOME_ACTIVE                                                      
+2023-12-20 23:07:33.507 | INFO | Click ( 675,  234) @ ACTION_WINDOW_TASK_TAG_0_0                                       
+2023-12-20 23:07:35.826 | INFO | 日常任务-师门:激活成功,开始执行任务逻辑                                               
+2023-12-20 23:07:36.503 | INFO | 日常任务-师门: Reactivation task threshold increased ,value is 1 ！！                 
+2023-12-20 23:07:41.779 | INFO | 日常任务-师门: Reactivation task threshold increased ,value is 2 ！！                 
+2023-12-20 23:07:47.038 | INFO | 日常任务-师门: Reactivation task threshold increased ,value is 3 ！！                 
+2023-12-20 23:07:51.969 | INFO | Click (1008,   42) @ HOME_ACTIVE                                                      
+2023-12-20 23:07:54.477 | INFO | Click ( 624,  225) @ ACTION_WINDOW_TASK_TAG_0_0                                       
+2023-12-20 23:07:56.789 | INFO | 日常任务-师门: Activate task again success！！！                                      
+2023-12-20 23:07:57.525 | INFO | 日常任务-师门: Reactivation task threshold increased ,value is 1 ！！                 
+2023-12-20 23:08:01.566 | INFO | 日常任务-师门: Reactivation task threshold increased ,value is 2 ！！                 
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-20 23:09:32.274 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2023-12-20 23:09:32.283 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:3266)                               
+2023-12-20 23:09:32.638 | INFO | Click (1022,   42) @ HOME_ACTIVE                                                      
+2023-12-20 23:09:35.163 | INFO | Click ( 682,  227) @ ACTION_WINDOW_TASK_TAG_0_0                                       
+2023-12-20 23:09:37.498 | INFO | 日常任务-师门（emulator-5554）:激活成功,开始执行任务逻辑                              
+2023-12-20 23:09:38.169 | INFO | 日常任务-师门（emulator-5554）: Reactivation task threshold increased ,value is 1 ！！
+2023-12-20 23:09:43.226 | INFO | 日常任务-师门（emulator-5554）: Reactivation task threshold increased ,value is 2 ！！
+2023-12-20 23:09:48.320 | INFO | 日常任务-师门（emulator-5554）: Reactivation task threshold increased ,value is 3 ！！
+2023-12-20 23:09:53.231 | INFO | Click (1009,   47) @ HOME_ACTIVE                                                      
+2023-12-20 23:09:55.541 | INFO | 日常任务-师门（emulator-5554）: Activate task again success！！！                     
+2023-12-20 23:09:56.052 | INFO | 日常任务-师门（emulator-5554）: Reactivation task threshold increased ,value is 1 ！！
+2023-12-20 23:10:01.100 | INFO | 日常任务-师门（emulator-5554）: Reactivation task threshold increased ,value is 2 ！！
+2023-12-20 23:10:06.208 | INFO | 日常任务-师门（emulator-5554）: Reactivation task threshold increased ,value is 3 ！！
+2023-12-20 23:10:11.075 | INFO | Click (1019,   51) @ HOME_ACTIVE                                                      
+2023-12-20 23:10:13.391 | INFO | 日常任务-师门（emulator-5554）: Activate task again success！！！                     
+2023-12-20 23:10:13.917 | INFO | 日常任务-师门（emulator-5554）: Reactivation task threshold increased ,value is 1 ！！
+2023-12-20 23:10:19.252 | INFO | 日常任务-师门（emulator-5554）: Reactivation task threshold increased ,value is 2 ！！
+2023-12-20 23:10:24.535 | INFO | 日常任务-师门（emulator-5554）: Reactivation task threshold increased ,value is 3 ！！
+2023-12-20 23:10:29.567 | INFO | Click (1038,   46) @ HOME_ACTIVE                                                      
+2023-12-20 23:10:32.077 | INFO | Click ( 636,  241) @ ACTION_WINDOW_TASK_TAG_0_0                                       
+2023-12-20 23:10:34.386 | INFO | Click (1244,   65) @ ACTION_WINDOW_CLOSE                                              
+2023-12-20 23:10:36.699 | INFO | Click (1244,   60) @ ACTION_WINDOW_CLOSE                                              
+2023-12-20 23:10:38.861 | INFO | 日常任务-师门（emulator-5554）: Activate task again success！！！                     
+2023-12-20 23:10:39.537 | INFO | 日常任务-师门（emulator-5554）: Reactivation task threshold increased ,value is 1 ！！
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-20 23:11:02.642 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2023-12-20 23:11:02.658 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:3266)                               
+2023-12-20 23:11:03.255 | INFO | Click (1008,   48) @ HOME_ACTIVE                                                      
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-20 23:11:45.989 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2023-12-20 23:11:48.177 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:3266)                               
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-20 23:12:26.922 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2023-12-20 23:12:31.348 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:3266)                               
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-20 23:13:11.097 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2023-12-20 23:13:13.023 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:3266)                               
+2023-12-20 23:19:39.534 | INFO | Click (  60,  211) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 23:19:39.705 | INFO | 日常任务-师门（emulator-5554）:激活成功,开始执行任务逻辑                              
+2023-12-20 23:19:46.284 | INFO | Click (  61,  215) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 23:19:46.458 | INFO | 日常任务-师门（emulator-5554）:click task list;Clear activate threshold               
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-20 23:25:52.534 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-20 23:26:15.169 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2023-12-20 23:26:15.177 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:3266)                               
+2023-12-20 23:26:15.743 | INFO | Click (1018,   42) @ HOME_ACTIVE                                                      
+2023-12-20 23:26:18.250 | INFO | Click ( 668,  222) @ ACTION_WINDOW_TASK_TAG_0_0                                       
+2023-12-20 23:26:20.574 | INFO | Click (1255,   65) @ ACTION_WINDOW_CLOSE                                              
+2023-12-20 23:26:22.884 | INFO | Click (1241,   72) @ ACTION_WINDOW_CLOSE                                              
+2023-12-20 23:26:25.053 | INFO | 日常任务-师门（emulator-5554）:激活成功,开始执行任务逻辑                              
+2023-12-20 23:26:25.898 | INFO | 日常任务-师门（emulator-5554）: Reactivation task threshold increased ,value is 1 ！！
+2023-12-20 23:26:31.189 | INFO | 日常任务-师门（emulator-5554）: Reactivation task threshold increased ,value is 2 ！！
+2023-12-20 23:26:36.428 | INFO | 日常任务-师门（emulator-5554）: Reactivation task threshold increased ,value is 3 ！！
+2023-12-20 23:26:41.506 | INFO | Click (1033,   41) @ HOME_ACTIVE                                                      
+2023-12-20 23:26:44.006 | INFO | Click ( 662,  243) @ ACTION_WINDOW_TASK_TAG_0_0                                       
+2023-12-20 23:26:46.333 | INFO | Click (1248,   62) @ ACTION_WINDOW_CLOSE                                              
+2023-12-20 23:26:48.666 | INFO | Click (1244,   70) @ ACTION_WINDOW_CLOSE                                              
+2023-12-20 23:26:50.826 | INFO | 日常任务-师门（emulator-5554）: Activate task again success！！！                     
+2023-12-20 23:26:51.479 | INFO | 日常任务-师门（emulator-5554）: Reactivation task threshold increased ,value is 1 ！！
+2023-12-20 23:26:56.755 | INFO | 日常任务-师门（emulator-5554）: Reactivation task threshold increased ,value is 2 ！！
+2023-12-20 23:27:01.955 | INFO | 日常任务-师门（emulator-5554）: Reactivation task threshold increased ,value is 3 ！！
+2023-12-20 23:27:06.866 | INFO | Click (  74,  214) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 23:27:07.030 | INFO | 日常任务-师门（emulator-5554）: Activate task again success！！！                     
+2023-12-20 23:27:07.747 | INFO | 日常任务-师门（emulator-5554）: Reactivation task threshold increased ,value is 1 ！！
+2023-12-20 23:27:12.475 | INFO | Click (1017,  492) @ TASK_SM_USE_PROP                                                 
+2023-12-20 23:27:12.636 | INFO | 日常任务-师门（emulator-5554）:use prop;                                              
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-20 23:27:34.490 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2023-12-20 23:27:53.957 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:3266)                               
+2023-12-20 23:28:07.455 | INFO | Click (  31,  207) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 23:28:07.624 | INFO | 日常任务-师门（emulator-5554）:激活成功,开始执行任务逻辑                              
+2023-12-20 23:28:07.999 | INFO | Click (1034,  481) @ TASK_SM_USE_PROP                                                 
+2023-12-20 23:28:08.167 | INFO | 日常任务-师门（emulator-5554）:use prop;                                              
+2023-12-20 23:28:16.701 | INFO | Click (  54,  223) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 23:28:16.873 | INFO | 日常任务-师门（emulator-5554）:click task list;Clear activate threshold               
+2023-12-20 23:28:20.666 | INFO | 日常任务-师门（emulator-5554）: Reactivation task threshold increased ,value is 1 ！！
+2023-12-20 23:28:29.055 | INFO | Click (  39,  220) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 23:28:29.227 | INFO | 日常任务-师门（emulator-5554）:click task list;Clear activate threshold               
+2023-12-20 23:28:32.956 | INFO | 日常任务-师门（emulator-5554）: Reactivation task threshold increased ,value is 1 ！！
+2023-12-20 23:28:37.531 | INFO | Click (1228,  681) @ POP_NPC_TEXT_TAG                                                 
+2023-12-20 23:28:37.710 | INFO | 日常任务-师门（emulator-5554）:click npc speak tex;                                   
+2023-12-20 23:28:39.882 | INFO | 日常任务-师门（emulator-5554）: Reactivation task threshold increased ,value is 2 ！！
+2023-12-20 23:28:47.490 | INFO | Click (  73,  218) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 23:28:47.657 | INFO | 日常任务-师门（emulator-5554）:click task list;Clear activate threshold               
+2023-12-20 23:28:51.489 | INFO | 日常任务-师门（emulator-5554）: Reactivation task threshold increased ,value is 1 ！！
+2023-12-20 23:28:58.939 | INFO | Click (  54,  222) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 23:28:59.116 | INFO | 日常任务-师门（emulator-5554）:click task list;Clear activate threshold               
+2023-12-20 23:29:11.018 | INFO | 日常任务-师门（emulator-5554）: Reactivation task threshold increased ,value is 1 ！！
+2023-12-20 23:29:20.551 | INFO | Click (  47,  206) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 23:29:20.719 | INFO | 日常任务-师门（emulator-5554）:click task list;Clear activate threshold               
+2023-12-20 23:29:41.857 | INFO | 日常任务-师门（emulator-5554）: Reactivation task threshold increased ,value is 1 ！！
+2023-12-20 23:29:46.613 | INFO | Click (1066,  482) @ TASK_SM_USE_PROP                                                 
+2023-12-20 23:29:46.786 | INFO | 日常任务-师门（emulator-5554）:use prop;                                              
+2023-12-20 23:29:59.413 | INFO | 日常任务-师门（emulator-5554）: Reactivation task threshold increased ,value is 2 ！！
+2023-12-20 23:30:04.185 | INFO | Click (1057,  482) @ TASK_SM_USE_PROP                                                 
+2023-12-20 23:30:04.353 | INFO | 日常任务-师门（emulator-5554）:use prop;                                              
+2023-12-20 23:30:17.144 | INFO | 日常任务-师门（emulator-5554）: Reactivation task threshold increased ,value is 3 ！！
+2023-12-20 23:30:28.903 | INFO | Click (1025,   50) @ HOME_ACTIVE                                                      
+2023-12-20 23:30:38.019 | INFO | Click ( 661,  231) @ ACTION_WINDOW_TASK_TAG_0_0                                       
+2023-12-20 23:30:40.353 | INFO | Click (1241,   70) @ ACTION_WINDOW_CLOSE                                              
+2023-12-20 23:30:42.662 | INFO | Click (1245,   63) @ ACTION_WINDOW_CLOSE                                              
+2023-12-20 23:30:44.839 | INFO | 日常任务-师门（emulator-5554）: Activate task again success！！！                     
+2023-12-20 23:31:08.299 | INFO | 日常任务-师门（emulator-5554）: Reactivation task threshold increased ,value is 1 ！！
+2023-12-20 23:31:44.845 | INFO | 日常任务-师门（emulator-5554）: Reactivation task threshold increased ,value is 2 ！！
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-20 23:36:17.980 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2023-12-20 23:36:17.998 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:3266)                               
+2023-12-20 23:36:18.073 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:2753)                               
+2023-12-20 23:36:18.132 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:2478)                               
+2023-12-20 23:36:28.527 | INFO | Click (  66,  215) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 23:36:28.700 | INFO | 日常任务-师门（emulator-5554）:激活成功,开始执行任务逻辑                              
+2023-12-20 23:36:28.741 | INFO | Click (1023,   53) @ HOME_ACTIVE                                                      
+2023-12-20 23:36:28.842 | INFO | Click (1017,   48) @ HOME_ACTIVE                                                      
+2023-12-20 23:36:29.420 | INFO | Click (  61,  218) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 23:36:29.586 | INFO | 日常任务-师门（emulator-5554）:click task list;Clear activate threshold               
+2023-12-20 23:36:31.874 | INFO | 日常任务-师门（emulator-5556）:激活成功,开始执行任务逻辑                              
+2023-12-20 23:36:32.179 | INFO | Click (1026,  648) @ SHOPPING_PLAYER                                                  
+2023-12-20 23:36:32.434 | INFO | Click ( 629,  225) @ ACTION_WINDOW_TASK_TAG_0_0                                       
+2023-12-20 23:36:34.655 | INFO | Click ( 789,  441) @ SHOPPING_PLAYER_CONFIRM                                          
+2023-12-20 23:36:34.899 | INFO | 日常任务-师门（emulator-5558）:激活成功,开始执行任务逻辑                              
+2023-12-20 23:36:37.036 | INFO | Click (1172,   66) @ SHOPPING_PLAYER_CLOSE                                            
+2023-12-20 23:36:39.210 | INFO | 日常任务-师门（emulator-5554）:player store;                                          
+2023-12-20 23:36:42.047 | INFO | Click (  54,  199) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 23:36:42.220 | INFO | 日常任务-师门（emulator-5554）:click task list;Clear activate threshold               
+2023-12-20 23:36:42.788 | INFO | 日常任务-师门（emulator-5558）: Reactivation task threshold increased ,value is 1 ！！
+2023-12-20 23:36:42.792 | INFO | 日常任务-师门（emulator-5556）: Reactivation task threshold increased ,value is 1 ！！
+2023-12-20 23:36:46.370 | INFO | Click (  59,  217) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 23:36:46.536 | INFO | 日常任务-师门（emulator-5554）:click task list;Clear activate threshold               
+2023-12-20 23:36:47.787 | INFO | 日常任务-师门（emulator-5558）: Reactivation task threshold increased ,value is 2 ！！
+2023-12-20 23:36:47.840 | INFO | 日常任务-师门（emulator-5556）: Reactivation task threshold increased ,value is 2 ！！
+2023-12-20 23:36:50.705 | INFO | Click (  73,  210) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 23:36:50.869 | INFO | 日常任务-师门（emulator-5554）:click task list;Clear activate threshold               
+2023-12-20 23:36:52.705 | INFO | 日常任务-师门（emulator-5556）: Reactivation task threshold increased ,value is 3 ！！
+2023-12-20 23:36:52.937 | INFO | 日常任务-师门（emulator-5558）: Reactivation task threshold increased ,value is 3 ！！
+2023-12-20 23:36:55.063 | INFO | Click (  52,  209) @ TASK_SM_FIRST_LIST                                               
+2023-12-20 23:36:55.230 | INFO | 日常任务-师门（emulator-5554）:click task list;Clear activate threshold               
+2023-12-20 23:36:58.086 | INFO | 日常任务-师门（emulator-5556）: Activate task again fail！！！                        
+2023-12-20 23:36:58.142 | INFO | Click (1019,   42) @ HOME_ACTIVE                                                      
+2023-12-20 23:36:58.299 | INFO | 日常任务-师门（emulator-5556）: Reactivation task threshold increased ,value is 4 ！！
+2023-12-20 23:37:00.641 | INFO | 日常任务-师门（emulator-5558）: Activate task again success！！！                     
+2023-12-20 23:37:01.039 | INFO | 日常任务-师门（emulator-5558）: Reactivation task threshold increased ,value is 1 ！！
+2023-12-20 23:37:01.079 | INFO | 日常任务-师门（emulator-5554）: Reactivation task threshold increased ,value is 1 ！！
+2023-12-20 23:37:03.295 | INFO | 日常任务-师门（emulator-5556）: Activate task again fail！！！                        
+2023-12-20 23:37:03.483 | INFO | 日常任务-师门（emulator-5556）: Reactivation task threshold increased ,value is 5 ！！
+2023-12-20 23:37:06.099 | INFO | 日常任务-师门（emulator-5558）: Reactivation task threshold increased ,value is 2 ！！
+2023-12-20 23:37:08.524 | INFO | 日常任务-师门（emulator-5556）: Activate task again fail！！！                        
+2023-12-20 23:37:08.744 | INFO | 日常任务-师门（emulator-5556）: Reactivation task threshold increased ,value is 6 ！！
+2023-12-20 23:37:10.105 | INFO | 日常任务-师门（emulator-5554）: Reactivation task threshold increased ,value is 2 ！！
+2023-12-20 23:37:11.069 | INFO | 日常任务-师门（emulator-5558）: Reactivation task threshold increased ,value is 3 ！！

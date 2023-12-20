@@ -48,5 +48,5 @@ class ImageTool:
 if __name__ == "__main__":
     app = ImageTool()
     # app.change_game_source()
-    app.change_game('action_window')
+    app.change_game('task_sm')
 

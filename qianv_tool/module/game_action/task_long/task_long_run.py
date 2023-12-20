@@ -82,10 +82,10 @@ class TaskSmRun:
         self.match_main.restart_team_follow(3)
         if self.match_long.click_first_task_list_area_strict():
             return True
-        if self.position==0 and self.match_action.find_task_receive('龙'):
+        if self.position==0 and self.match_action.find_task_receive('龙',self.reply_wait):
             return True
         else:
-            return self.match_action.find_task_position(self.position)
+            return self.match_action.find_task_position(self.position,'龙',self.reply_wait)
 
 
 

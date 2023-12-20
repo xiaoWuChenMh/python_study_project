@@ -5,6 +5,7 @@ from qianv_tool.module.base.template import Template
 # Don't modify it manually.
 
 TASK_SM_FIRST_LIST = Button(area={'game': (0, 192, 96, 232)},text={'game': '[师门]寻'}, color={'game': (66, 67, 43)}, button={'game': (0, 192, 96, 232)}, file={'game': './assets/game/task_sm/TASK_SM_FIRST_LIST.png'})
+TASK_SM_OUT_MAP = Button(area={'game': (408, 272, 880, 472)},text={'game': '即将离开副本，是否继续取消确定'}, color={'game': (58, 87, 120)}, button={'game': (720, 416, 848, 448)}, file={'game': './assets/game/task_sm/TASK_SM_OUT_MAP.png'})
 TASK_SM_SUBMIT_EQUIPMENT_DECITION = Button(area={'game': (408, 312, 872, 464)},text={'game': '（装备上交后将无法找回。取消确定'}, color={'game': (64, 92, 122)}, button={'game': (408, 312, 872, 464)}, file={'game': './assets/game/task_sm/TASK_SM_SUBMIT_EQUIPMENT_DECITION.png'})
 TASK_SM_SUBMIT_EQUIPMENT_REAL = Button(area={'game': (336, 552, 440, 584)},text={'game': '上交'}, color={'game': (117, 160, 216)}, button={'game': (336, 552, 440, 584)}, file={'game': './assets/game/task_sm/TASK_SM_SUBMIT_EQUIPMENT_REAL.png'})
 TASK_SM_SUBMIT_EQUIPMENT_START = Button(area={'game': (488, 544, 616, 584)},text={'game': '购买其他'}, color={'game': (86, 121, 165)}, button={'game': (488, 544, 616, 584)}, file={'game': './assets/game/task_sm/TASK_SM_SUBMIT_EQUIPMENT_START.png'})

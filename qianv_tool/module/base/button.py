@@ -3,10 +3,12 @@ import imageio
 from PIL import ImageDraw
 from paddleocr import PaddleOCR
 from qianv_tool.module.base.utils import *
-from qianv_tool.config.exe_config  import ExecuteConfig as ButtonExt
-
-from qianv_tool.module.base.decorator import cached_property
 from qianv_tool.module.base.resource import Resource
+from qianv_tool.module.base.decorator import cached_property
+from qianv_tool.config.exe_config  import ExecuteConfig as ButtonExt
+from qianv_tool.module.logger import logger
+
+
 
 
 # 图片匹配：match ，对目标图片进行剪裁，然后和button对象进行对比,前提是需要先调用ensure_template（）
@@ -277,6 +279,7 @@ class Button(Resource):
                 for line in res:
                     image_word = image_word + line[1][0]
         except Exception:
+            logger.info(f'文字识别错误，返回None')
             return False
         # 进行匹配
         if model==1 :
