@@ -20,7 +20,6 @@ class Match:
         image = self.devices.device_screenshot(self.serial)
         if self.buttonMatch.image_match(image, TASK_SM_USE_PROP, offset=(-2,-7)):
             self.devices.click(self.serial, TASK_SM_USE_PROP)
-
             return True
         return False
 
@@ -109,6 +108,19 @@ class Match:
         else:
             return False
 
+    def out_map(self):
+        """
+         出副本:还没有验证
+        :return:
+        """
+        image = self.devices.device_screenshot(self.serial)
+        if self.buttonMatch.image_match(image, TASK_SM_OUT_MAP, offset=(0, 0)):
+            self.devices.click(self.serial, TASK_SM_OUT_MAP)
+            return True
+        else:
+            return False
+
+
     def __is_yao_shou( self ):
         """今日是否有妖兽入侵"""
         image = self.devices.device_screenshot(self.serial)
@@ -118,9 +130,7 @@ class Match:
         else:
             return (0,0)
 
-    # 提交法宝
 
-    # 进入副本+出副本
 
 if __name__ == "__main__":
 

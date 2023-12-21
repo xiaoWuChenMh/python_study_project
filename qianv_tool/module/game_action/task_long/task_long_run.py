@@ -31,7 +31,8 @@ class TaskSmRun:
         # 执行轮数（向上取整）
         self.execute_round_num = math.ceil(execute_num/5)
 
-
+        # 任务状态
+        self.status = 0
         # 任务启动失败重试次数
         self.try_num = 3
         #当前执行次数
@@ -80,13 +81,14 @@ class TaskSmRun:
         激活任务
         """
         self.match_main.restart_team_follow(3)
-        if self.match_long.click_first_task_list_area_strict():
-            return True
         if self.position==0 and self.match_action.find_task_receive('龙',self.reply_wait):
+            self.position = self.match_action.buttonMatch.grid_word_index
+            self.status = 1
             return True
+        elif self.position>0:
+            return self.match_action.find_task_position(self.position, '龙', self.reply_wait)
         else:
-            return self.match_action.find_task_position(self.position,'龙',self.reply_wait)
-
+            return False
 
 
     def __execution(self):
@@ -100,42 +102,43 @@ class TaskSmRun:
             self.__continue_task()
             self.__in_dungeon()
             self.__process_stuck
-            if self.curr_execute_num>=self.execute_num :
-                logger.info(f'日常任务-龙: 当前执行次数达到{self.curr_execute_num},退出任务！')
-                break
-            if self.curr_execute_round_num>=self.execute_round_num:
-                logger.info(f'日常任务-龙: 当前执行轮数达到{self.curr_execute_round_num},退出任务！')
+            if self.__is_finish():
                 break
 
     def __npc_dialogue(self):
         """npc对话相关"""
-        if self.match_frame.click_top_npc_dialogue():
-            logger.info(f'日常任务-龙:click top npc dialogue;')
+        if self.status in (1,2) and self.match_frame.click_top_npc_dialogue():
             time.sleep(self.reply_wait)
             self.stuck_try += 1
             self.in_dungeon_count = 0
             self.is_sleep = True
-        if self.match_frame.click_botton_npc_text_dialogue():
-            logger.info(f'日常任务-龙:click npc speak tex;')
+            if self.status == 2:
+                self.status = 3
+        if self.status in (1,3) and self.match_frame.click_botton_npc_text_dialogue():
             time.sleep(self.reply_wait)
+            if self.status == 3:
+                self.status = 1
 
     def __click_task_list(self):
         """点击任务列表"""
-        if self.match_long.click_first_task_list_area_strict():
-            logger.info(f'日常任务-龙:click task list;')
+        if self.status == 1 and self.match_long.click_first_task_list_area_strict():
             time.sleep(self.reply_wait)
             self.match_main.cancel_gua_ji()
 
     def __continue_task(self):
         """询问是否继续执行任务"""
-        if self.match_long.is_task_finsh():
+        if self.status == 1 and self.match_long.is_task_finsh():
             time.sleep(self.switch_map)
+            self.match_long.is_task_finsh()
             self.stuck_try = 1
             self.curr_execute_round_num+=1
+            self.status = 2
             logger.info(f'日常任务-龙: 当前准备执行第{self.curr_execute_round_num}轮任务')
 
     def __in_dungeon(self):
         """副本内执行逻辑"""
+        if self.status != 1 :
+            return False
         if self.__is_dungeon():
             self.stuck_try = 0
             self.in_dungeon_count+=1
@@ -145,7 +148,6 @@ class TaskSmRun:
                 self.curr_execute_num+=1
                 self.is_sleep =False
                 self.match_main.click_gua_ji_area()
-            logger.info(f'日常任务-龙: 当前在副本内')
         else:
             self.match_main.cancel_gua_ji()
 
@@ -154,10 +156,10 @@ class TaskSmRun:
         流程卡住处理
         :return:
         """
-        if self.stuck_try>=self.stuck_threshold:
+        if self.status == 1 and self.stuck_try>=self.stuck_threshold:
             self.match_main.restart_team_follow(3)
             self.stuck_try = 0
-            time.sleep(self.reply_wait * 3)
+            time.sleep(self.reply_wait * 2)
         
 
     def __is_dungeon( self ):
@@ -172,6 +174,14 @@ class TaskSmRun:
         else:
             return False
 
+    def __is_finish(self):
+        """任务是否完成"""
+        if self.curr_execute_num >= self.execute_num:
+            logger.info(f'日常任务-龙: 当前执行次数达到{self.curr_execute_num},退出任务！')
+            return True
+        if self.curr_execute_round_num >= self.execute_round_num:
+            logger.info(f'日常任务-龙: 当前执行轮数达到{self.curr_execute_round_num},退出任务！')
+            return True
 
 
 if __name__ == "__main__":

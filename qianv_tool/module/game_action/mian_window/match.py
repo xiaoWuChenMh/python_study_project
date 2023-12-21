@@ -146,6 +146,30 @@ class Match:
         else:
             return False
 
+    def press_drug_quick(self):
+        """按下药品快捷键"""
+        self.devices.click(self.serial, HOME_DRUG_QUICK)
+
+    def use_skill(self,index):
+        """
+        根据技能索引，释放相应的技能
+        :param index:
+        :return:
+        """
+        if index == 1:
+            self.devices.click(self.serial,HOME_SKILL_BUTTON1)
+        elif index == 2:
+            self.devices.click(self.serial,HOME_SKILL_BUTTON2)
+        elif index == 3:
+            self.devices.click(self.serial,HOME_SKILL_BUTTON3)
+        elif index == 4:
+            self.devices.click(self.serial,HOME_SKILL_BUTTON4)
+        elif index == 5:
+            self.devices.click(self.serial,HOME_SKILL_BUTTON5)
+        else:
+            return False
+        return True
+
     def __is_yao_shou( self ):
         """今日是否有妖兽入侵"""
         image = self.devices.device_screenshot(self.serial)
@@ -153,7 +177,7 @@ class Match:
             delta = HOME_TASK_FIRST_IS_YAO.area_size()
             return (0,delta[1]+5)
         else:
-            return None
+            return (0,0)
 
 if __name__ == "__main__":
 

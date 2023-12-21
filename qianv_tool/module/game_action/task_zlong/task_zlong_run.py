@@ -174,7 +174,7 @@ class TaskSmRun:
         return True
 
 
-def run_exe(serial):
+def run_exe(serial,devices):
     app = TaskSmRun(devices, serial, 0, 1)
     app.run()
 
@@ -191,7 +191,7 @@ if __name__ == "__main__":
 
     # for serial in devices_info :
     #     print(devices_info[serial])
-    #     thread = threading.Thread(target=run_exe, args=(serial,))
+    #     thread = threading.Thread(target=run_exe, args=(serial,devices,))
     #     threads.append(thread)
     #     thread.start()
     #
