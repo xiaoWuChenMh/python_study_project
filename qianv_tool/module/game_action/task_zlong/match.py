@@ -1,4 +1,4 @@
-
+import math
 import time
 from qianv_tool.module.logger import logger
 from qianv_tool.module.base.button_match import ButtonMatch
@@ -80,16 +80,18 @@ class Match:
 
 
 
+
 if __name__ == "__main__":
+
 
     from qianv_tool.module.devices.devices import Devices
 
-    devices = Devices()
-    devices_info = devices.devices_info
-    for serial in devices_info:
-        if serial=='emulator-5554':
-            print(devices_info[serial])
-            app = Match(devices, serial)
-            print(app.is_first_task_list_area_strict())
+    # devices = Devices()
+    # devices_info = devices.devices_info
+    # for serial in devices_info:
+    #     if serial=='emulator-5554':
+    #         print(devices_info[serial])
+    #         app = Match(devices, serial)
+    #         print(app.calculate_points())
 
 
