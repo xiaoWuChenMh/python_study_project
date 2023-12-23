@@ -19,7 +19,7 @@ from qianv_tool.module.logger import logger
 # use_angle_cls=True ：使用方向分类器识别180度旋转文字
 # use_gpu=False ：不使用GPU
 # lang="ch" ：识别中文
-word_ocr = PaddleOCR(use_angle_cls=True, lang="ch",use_gpu=False)
+word_ocr = PaddleOCR(use_angle_cls=True, lang="ch")
 
 class Button(Resource):
     def __init__(self, area, text, color, button, initial_area=None, file=None, name=None):
@@ -273,8 +273,8 @@ class Button(Resource):
         # 对图片进行剪切
         image = crop(image, offset + self.area, copy=False)
         image_show(image,self.image_test)
-        # 文字识别源图 ，加参数试一试：det=False
-        orc_reuslt = word_ocr.ocr(image, cls=False, bin=True)
+        # 文字识别源图 ，加参数试一试：,det=False
+        orc_reuslt = word_ocr.ocr(image, cls=True, bin=True)
         image_word = ''
         try:
             for idx in range(len(orc_reuslt)):
