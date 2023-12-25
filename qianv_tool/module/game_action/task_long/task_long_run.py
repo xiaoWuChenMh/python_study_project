@@ -33,6 +33,10 @@ class TaskSmRun:
 
         # 任务状态
         self.status = 0
+        #状态标记时间
+        self.status_tag_time = 0
+        #特殊状态需要的超时判断时间（默认60秒）
+        self.timeout = 60
         # 任务启动失败重试次数
         self.try_num = 3
         #当前执行次数
@@ -81,15 +85,28 @@ class TaskSmRun:
         激活任务
         """
         self.match_main.restart_team_follow(3)
-        if self.position==0 and self.match_action.find_task_receive('龙',self.reply_wait):
-            self.position = self.match_action.buttonMatch.grid_word_index
-            self.status = 1
-            return True
-        elif self.position>0:
-            return self.match_action.find_task_position(self.position, '龙', self.reply_wait)
+
+        if  self.match_main.open_active_window():
+            time.sleep(self.reply_wait)
+            if self.position==0 and self.match_action.find_task_receive('龙',self.reply_wait):
+                self.position = self.match_action.buttonMatch.grid_word_index
+                self.__activation_status()
+                return True
+            elif self.position>0 and self.match_action.find_task_position(self.position, '龙', self.reply_wait):
+                self.__activation_status()
+                return True
+            else:
+                return False
         else:
             return False
 
+    def __activation_status( self ):
+        """修改激活状态"""
+        if self.match_action.action_button_click:
+            self.status = 0
+            self.status_tag_time = time.time()
+        else:
+            self.status = 1
 
     def __execution(self):
         """
@@ -101,29 +118,30 @@ class TaskSmRun:
             self.__click_task_list()
             self.__continue_task()
             self.__in_dungeon()
-            self.__process_stuck
+            self.__process_stuck()
+            self.__status_timeout_decide()
             if self.__is_finish():
                 break
 
     def __npc_dialogue(self):
         """npc对话相关"""
-        if self.status in (1,2) and self.match_frame.click_top_npc_dialogue():
+        if self.status in (0,1,2) and self.match_frame.click_top_npc_dialogue():
             time.sleep(self.reply_wait)
             self.stuck_try += 1
             self.in_dungeon_count = 0
             self.is_sleep = True
             if self.status == 2:
                 self.status = 3
-        if self.status in (1,3) and self.match_frame.click_botton_npc_text_dialogue():
-            time.sleep(self.reply_wait)
+            if self.status == 0:
+                self.status = 1
+        while self.status in (1,3) and self.match_frame.click_botton_npc_text_dialogue():
             if self.status == 3:
                 self.status = 1
 
     def __click_task_list(self):
         """点击任务列表"""
-        if self.status == 1 and self.match_long.click_first_task_list_area_strict():
+        if self.status == 1 and self.match_long.click_first_task_list_area():
             time.sleep(self.reply_wait)
-            self.match_main.cancel_gua_ji()
 
     def __continue_task(self):
         """询问是否继续执行任务"""
@@ -144,10 +162,10 @@ class TaskSmRun:
             self.in_dungeon_count+=1
             if self.in_dungeon_count>3 and self.is_sleep:
                 logger.info(f'日常任务-龙: 确定刚进入副本，程序睡眠{self.dungeon_min_time}秒')
-                time.sleep(self.dungeon_min_time-3)
                 self.curr_execute_num+=1
                 self.is_sleep =False
-                self.match_main.click_gua_ji_area()
+                self.match_main.start_gua_ji()
+                time.sleep(self.dungeon_min_time - 3)
         else:
             self.match_main.cancel_gua_ji()
 
@@ -157,9 +175,10 @@ class TaskSmRun:
         :return:
         """
         if self.status == 1 and self.stuck_try>=self.stuck_threshold:
+            self.__npc_dialogue()
             self.match_main.restart_team_follow(3)
             self.stuck_try = 0
-            time.sleep(self.reply_wait * 2)
+            time.sleep(self.switch_map )
         
 
     def __is_dungeon( self ):
@@ -183,6 +202,18 @@ class TaskSmRun:
             logger.info(f'日常任务-龙: 当前执行轮数达到{self.curr_execute_round_num},退出任务！')
             return True
 
+    def __status_timeout_decide(self):
+        """
+        状态超时判断
+        :return:
+        """
+        if self.status not in (0,):
+            return True
+        time_total = time.time()-self.status_tag_time
+        if time_total>self.timeout:
+            self.status = 1
+        return True
+
 
 if __name__ == "__main__":
 
@@ -191,5 +222,6 @@ if __name__ == "__main__":
     devices = Devices()
     devices_info = devices.devices_info
     for serial in devices_info:
-        app = TaskSmRun(devices, serial, 0, execute_num=40,dungeon_min_time=140)
-        app.run()
+        if serial == 'emulator-5554':
+            app = TaskSmRun(devices, serial, 0, execute_num=20,dungeon_min_time=150)
+            app.run()

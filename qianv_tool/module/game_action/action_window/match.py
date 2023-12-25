@@ -12,6 +12,8 @@ class Match:
         self.devices: Devices = devices
         self.serial = serial
         self.reply_wait = reply_wait
+        # 活动按钮是否被点击了
+        self.action_button_click = False
 
 
 
@@ -40,6 +42,7 @@ class Match:
                 image = self.devices.device_screenshot(self.serial)
                 statu = True
                 result = True
+                self.action_button_click = True
             else:
                 self.devices.click(self.serial, ACTION_WINDOW_CLOSE)
                 time.sleep(reply_wait)
@@ -53,6 +56,7 @@ class Match:
             # 当已参与了任务，上一个关闭只会消除浮层，所以还得需要一个关闭操作
             if statu and  self.buttonMatch.image_match(image, ACTION_WINDOW_CLOSE, offset=(-2, -6)):
                 self.devices.click(self.serial, ACTION_WINDOW_CLOSE)
+                self.action_button_click = False
                 time.sleep(reply_wait)
         return statu and result
 
@@ -77,6 +81,9 @@ class Match:
             if self.buttonMatch.image_match(image, ACTION_WINDOW_BUTTON, offset=offset):
                 self.devices.click(self.serial, ACTION_WINDOW_BUTTON)
                 time.sleep(reply_wait)
+                self.action_button_click = True
+            else:
+                self.action_button_click = False
             image = self.devices.device_screenshot(self.serial)
             if self.buttonMatch.image_match(image, ACTION_WINDOW_CLOSE, offset=(-2, -6)):
                 self.devices.click(self.serial, ACTION_WINDOW_CLOSE)
@@ -114,6 +121,6 @@ if __name__ == "__main__":
             print(devices_info[serial])
             app = Match(devices, serial,2)
             # print(app.is_map('金陵'))
-            print(app.find_task_position(1,'师门',2))
+            print(app.is_active_window())
 
 

@@ -2,12 +2,12 @@ import uiautomator2 as u2
 import numpy as np
 import cv2
 # 链接设备
-a = u2.connect('emulator-5554')
-print(a.info)
+# a = u2.connect('emulator-5554')
+# print(a.info)
 # d = u2.connect('emulator-5556')
 # print(d.info)
-# c = u2.connect('emulator-5558')
-# print(c.info)
+c = u2.connect('emulator-5558')
+print(c.info)
 # d = u2.connect('emulator-5560')
 # print(d.info)
 # 输出设备信息
@@ -15,7 +15,7 @@ print(a.info)
 
 
 # 截图
-a.screenshot('image/参加活动.jpg')
+# a.screenshot('image/参加活动.jpg')
 # d.screenshot('image/战龙_完成1.jpg')
 # c.screenshot('image/活动页面-未参与1.jpg')
 # d.screenshot('image/战龙_终结战龙_求生1.jpg')

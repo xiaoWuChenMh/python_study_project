@@ -67,20 +67,28 @@ class TaskSmRun:
         """
         激活任务
         """
+        self.__click_npc_speak_text()
         if self.match_action.is_active_window() or self.match_main.open_active_window():
             time.sleep(self.reply_wait)
             self.serial
             if self.position==0 and self.match_action.find_task_receive('师门',self.reply_wait):
-                self.status = 1
                 self.position = self.match_action.buttonMatch.grid_word_index
+                self.__activation_status()
                 return True
-            if self.position>0:
-                return self.match_action.find_task_position(self.position,'师门',self.reply_wait)
+            if self.position>0 and self.match_action.find_task_position(self.position,'师门',self.reply_wait):
+                self.__activation_status()
+                return True
             else:
                 return False
         else:
             return False
-
+    def __activation_status( self ):
+        """修改激活状态"""
+        if self.match_action.action_button_click:
+            self.status = 4
+            self.status_tag_time = time.time()
+        else:
+            self.status = 1
 
     def __execution(self):
         """
@@ -91,29 +99,35 @@ class TaskSmRun:
             self.__use_prop()
             self.__npc_store()
             self.__player_store()
-            self.__click_task_dialogue()
             self.__submit_equipment()
-            # 确定退出副本？-->点确定
+            self.__click_out_map()
             # ===== 必须这样排序，并放到最后 start ！！！！！！ ============
             self.__click_npc_speak_text()
             self.__is_activate()
+            self.__click_task_dialogue()
             self.__click_task_list()
             # ==== 必须这样排序，并放到最后 end ！！！！！！ ===============
             self.__status_timeout_decide()
             if self.match_sm.is_task_finish():
                 logger.info(f'日常任务-师门（{self.serial}）: 任务完成，退出师门任务自动操作！')
+                time.sleep(self.reply_wait)
+                # 防止没有取消完成弹框，在判断一次
+                self.match_sm.is_task_finish()
                 break
 
+    def __click_out_map( self ):
+        """点击退出副本"""
+        self.match_sm.out_map()
     def __is_activate( self ):
         """判断师门任务是否激活,因文字识别率低，导致会多次重走激活逻辑"""
         if not self.match_sm.is_first_task_list_area_strict():
-            self.match_main.open_active_window()
             self.__activation()
 
     def __click_npc_speak_text(self):
         """点击底部npc的文案"""
         while self.status == 1 and self.match_frame.click_botton_npc_text_dialogue():
-            time.sleep(0.5)
+            pass
+
 
     def __use_prop(self):
         """使用道具"""
@@ -122,12 +136,14 @@ class TaskSmRun:
 
     def __click_task_list(self):
         """点击任务列表"""
-        if self.status in (1, 3) and self.match_sm.click_first_task_list_area():
-            time.sleep(self.reply_wait)
+        if self.status in (1, 3) and self.match_main.open_task_list():
+            if not self.match_action.action_button_click:
+                self.match_sm.click_first_task_list_area()
+                time.sleep(self.reply_wait)
 
     def __npc_store(self):
         """npc商店购买商品"""
-        if self.status == 1 and self.match_shopping.npc_store():
+        if self.status in (1,3) and self.match_shopping.npc_store():
             pass
 
     def __player_store(self):
@@ -140,7 +156,7 @@ class TaskSmRun:
     def __click_task_dialogue(self):
         """点击任务对话框"""
         if self.status in (0, 1, 2) and self.match_frame.click_top_npc_dialogue():
-            if self.status == 0:
+            if self.status == 4:
                 self.status = 1
             if self.status == 2:
                 self.status = 3
@@ -153,8 +169,9 @@ class TaskSmRun:
             self.status_tag_time = time.time()
             time.sleep(self.reply_wait)
             self.match_sm.click_submit_equipment_buy_other()
+            time.sleep(self.switch_map)
         if self.status == 3 and self.match_sm.submit_equipment_real():
-            self.status = 0
+            self.status = 1
         if self.status == 1 and self.match_sm.submit_equipment_confirm():
             pass
 
@@ -164,12 +181,10 @@ class TaskSmRun:
         状态超时判断
         :return:
         """
-        if self.status not in (2,3):
+        if self.status not in (2,3,4):
             return True
         time_total = time.time()-self.status_tag_time
-        if self.status == 2 and time_total>self.timeout:
-            self.status = 1
-        if self.status == 3 and time_total>self.timeout:
+        if time_total>self.timeout:
             self.status = 1
         return True
 
@@ -185,16 +200,17 @@ if __name__ == "__main__":
     threads = []
     devices = Devices()
     devices_info = devices.devices_info
-    for serial in devices_info:
-        if serial=='emulator-5556':
-            run_exe(serial)
 
-    # for serial in devices_info :
-    #     print(devices_info[serial])
-    #     thread = threading.Thread(target=run_exe, args=(serial,))
-    #     threads.append(thread)
-    #     thread.start()
-    #
-    # # join 方法可以让主线程等待所有子线程执行完毕后再结束。
+
     # for serial in devices_info:
-    #     thread.join()
+    #     if serial=='emulator-5558':
+    #         run_exe(serial)
+
+    for serial in devices_info :
+        print(devices_info[serial])
+        thread = threading.Thread(target=run_exe, args=(serial,))
+        threads.append(thread)
+        thread.start()
+    # join 方法可以让主线程等待所有子线程执行完毕后再结束。
+    for serial in devices_info:
+        thread.join()

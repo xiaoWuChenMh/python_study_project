@@ -13,7 +13,7 @@ class Match:
         self.serial = serial
         # 窗口切换等待时间
         self.reply_wait = reply_wait
-        self.sm_text = ['师门','师','帅']
+        self.sm_text = ['师门','师','帅','拜访','赠言','师父','教训','寻物','巡逻','历练','完成','青凤']
 
     def use_prop( self ):
         """ 使用道具 """
@@ -66,8 +66,8 @@ class Match:
     def is_submit_equipment(self):
         """是否触发提交装备"""
         image = self.devices.device_screenshot(self.serial)
-        if self.buttonMatch.image_match(image,TASK_SM_SUBMIT_EQUIPMENT_REAL,offset=(-5,-6)):
-            self.devices.click(self.serial, TASK_SM_SUBMIT_EQUIPMENT_REAL)
+        if self.buttonMatch.image_match(image,TASK_SM_SUBMIT_EQUIPMENT_START,offset=(-5,-6)):
+            self.devices.click(self.serial, TASK_SM_SUBMIT_EQUIPMENT_START)
             return True
         else:
             return False
@@ -89,8 +89,8 @@ class Match:
          TODO:还没有对应的资源按钮对象
         """
         image = self.devices.device_screenshot(self.serial)
-        if self.buttonMatch.image_match(image,TASK_SM_SUBMIT_EQUIPMENT_START,offset=(0,0)):
-            self.devices.click(self.serial, TASK_SM_SUBMIT_EQUIPMENT_START)
+        if self.buttonMatch.image_match(image,TASK_SM_SUBMIT_EQUIPMENT_REAL,offset=(-3,-6)):
+            self.devices.click(self.serial, TASK_SM_SUBMIT_EQUIPMENT_REAL)
             return True
         else:
             return False
@@ -139,10 +139,10 @@ if __name__ == "__main__":
     devices = Devices()
     devices_info = devices.devices_info
     for serial in devices_info:
-        if serial=='emulator-5554':
+        if serial=='emulator-5558':
             print(devices_info[serial])
             app = Match(devices, serial)
             # print(app.is_map('金陵'))
-            print(app.is_first_task_list_area_strict())
+            print(app.is_task_finish())
 
 

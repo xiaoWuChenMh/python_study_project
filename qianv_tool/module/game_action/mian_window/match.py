@@ -127,21 +127,25 @@ class Match:
             self.devices.click(self.serial, HOME_5TEM_FOLLOW_CANCEL)
             time.sleep(1)  # 等待1秒钟
             self.devices.click(self.serial, HOME_5TEM_FOLLOW)
+            self.open_task_list()
             return True
         elif min_people_num<=4 and self.buttonMatch.image_match(image, HOME_4TEM_FOLLOW, offset=(6,5,-4,-5)):
             self.devices.click(self.serial, HOME_4TEM_FOLLOW_CANCEL)
             time.sleep(1)  # 等待1秒钟
             self.devices.click(self.serial, HOME_4TEM_FOLLOW)
+            self.open_task_list()
             return True
         elif min_people_num<=3 and self.buttonMatch.image_match(image, HOME_3TEM_FOLLOW, offset=(-6,-5)):
             self.devices.click(self.serial, HOME_3TEM_FOLLOW_CANCEL)
             time.sleep(1)  # 等待1秒钟
             self.devices.click(self.serial, HOME_3TEM_FOLLOW)
+            self.open_task_list()
             return True
         elif min_people_num<=2 and self.buttonMatch.image_match(image, HOME_2TEM_FOLLOW, offset=(-5,-6)) :
             self.devices.click(self.serial, HOME_2TEM_FOLLOW_CANCEL)
             time.sleep(1)  # 等待1秒钟
             self.devices.click(self.serial, HOME_2TEM_FOLLOW)
+            self.open_task_list()
             return True
         else:
             return False
@@ -186,8 +190,7 @@ if __name__ == "__main__":
     devices_info = devices.devices_info
     for serial in devices_info:
         print(devices_info[serial])
-        if serial!='emulator-5554':
+        if serial=='emulator-5554':
             app = Match(devices, serial, 1)
-            print(app.is_map('湖中屋'))
-            # print(app.open_active_window())
+            print(app.open_team_list())
 

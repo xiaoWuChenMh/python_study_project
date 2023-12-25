@@ -8,10 +8,11 @@ from qianv_tool.module.game_action.mian_window.assets import HOME_TASK_FIRST_IS_
 
 class Match:
 
-    def __init__( self, devices, serial ):
+    def __init__( self, devices, serial, reply_wait ):
         self.buttonMatch = ButtonMatch()
         self.devices: Devices = devices
         self.serial = serial
+        self.reply_wait = reply_wait
 
     def is_task_map( self ):
         """
