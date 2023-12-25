@@ -20,8 +20,12 @@ def generate_circle_points(center=(100, 200), radius=30, start_point=(130, 230),
     # 计算起始点相对于圆心的角度
     start_angle = math.atan2(start_point_relative[1], start_point_relative[0])
 
-    # 每个点之间的角度间隔
+    # 每个点之间的角度间隔，顺时针生成点
     angle_increment = 2 * math.pi / num_points
+
+    # 每个点之间的角度间隔，使用负值来逆时针生成点
+    # angle_increment = -2 * math.pi / num_points
+
 
     # 生成点
     points = []
