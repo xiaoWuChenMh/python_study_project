@@ -21,7 +21,7 @@ class Match:
         result = False
         if self.buttonMatch.image_match(image, SHOPPING_NPC, offset=(-5,-6), interval=0.5,threshold=0.83):
             self.devices.click(self.serial, SHOPPING_NPC)
-            time.sleep(self.reply_wait)
+            # time.sleep(self.reply_wait)
             result = True
         if result and self.buttonMatch.image_match(image, SHOPPING_NPC_CLOSE, offset=(0,-3), interval=0.5,threshold=0.83):
             self.devices.click(self.serial, SHOPPING_NPC_CLOSE)

@@ -3,7 +3,7 @@ import time
 from qianv_tool.module.logger import logger
 from qianv_tool.module.base.button_match import ButtonMatch
 from qianv_tool.module.game_action.task_sm.assets import *
-from qianv_tool.module.game_action.mian_window.assets import HOME_TASK_FIRST_IS_YAO
+from qianv_tool.module.game_action.mian_window.assets import HOME_TASK_FIRST_IS_YAO,HOME_TASK_FIRST_IS_SHI
 
 class Match:
 
@@ -13,7 +13,7 @@ class Match:
         self.serial = serial
         # 窗口切换等待时间
         self.reply_wait = reply_wait
-        self.sm_text = ['师门','师','帅','拜访','赠言','师父','教训','寻物','巡逻','历练','完成','青凤']
+        self.sm_text = ['师门','师','帅','拜访','赠言','师父','教训','寻物','巡逻','鬼怪','历练','完成','青凤','河灯']
 
     def use_prop( self ):
         """ 使用道具 """
@@ -37,7 +37,7 @@ class Match:
         严谨的判断：是否点击第一个任务列表的区域,即师门
         """
         image = self.devices.device_screenshot(self.serial)
-        offset = (0,0) # self.__is_yao_shou() 不能通过文字识别来判断了，会导致TASK_SM_FIRST_LIST识别不出来，是因为两张图相近，就懒了么？
+        offset=self.__is_task_first_offset()
         if self.buttonMatch.word_match(image,TASK_SM_FIRST_LIST,text=self.sm_text,offset=offset):
             self.devices.click(self.serial, TASK_SM_FIRST_LIST, offset)
             return True
@@ -49,7 +49,7 @@ class Match:
         严谨的判断：第一个任务列表的区域是否为师门
         """
         image = self.devices.device_screenshot(self.serial)
-        offset =(0,0) # self.__is_yao_shou() 不能通过文字识别来判断了，会导致TASK_SM_FIRST_LIST识别不出来，是因为两张图相近，就懒了么？
+        offset=self.__is_task_first_offset()
         if self.buttonMatch.word_match(image,TASK_SM_FIRST_LIST,text=self.sm_text,offset=offset):
             return True
         else:
@@ -59,7 +59,7 @@ class Match:
         """
         点击第一个任务列表的区域,即师门
         """
-        offset=self.__is_yao_shou()
+        offset=self.__is_task_first_offset()
         self.devices.click(self.serial, TASK_SM_FIRST_LIST,offset)
         return True
 
@@ -121,15 +121,20 @@ class Match:
             return False
 
 
-    def __is_yao_shou( self ):
-        """今日是否有妖兽入侵"""
+    def __is_task_first_offset( self, move=8 ):
+        """
+         任务栏是否需要位移
+            今日是否有妖兽入侵、十世镜
+        """
         image = self.devices.device_screenshot(self.serial)
-        if self.buttonMatch.word_match(image, HOME_TASK_FIRST_IS_YAO,text='妖兽入侵'):
+        if self.buttonMatch.image_match(image, HOME_TASK_FIRST_IS_YAO,offset=(0,0)):
             delta = HOME_TASK_FIRST_IS_YAO.area_size()
-            return (0,delta[1]+5)
+            return (0, delta[1]+move, 0, delta[1]+move)
+        elif self.buttonMatch.image_match(image, HOME_TASK_FIRST_IS_SHI,offset=(0,-6)):
+            delta = HOME_TASK_FIRST_IS_SHI.area_size()
+            return (0, delta[1]+move, 0,delta[1]+move)
         else:
-            return (0,0)
-
+            return (0, 0)
 
 
 if __name__ == "__main__":
@@ -143,6 +148,6 @@ if __name__ == "__main__":
             print(devices_info[serial])
             app = Match(devices, serial)
             # print(app.is_map('金陵'))
-            print(app.is_task_finish())
+            print(app.is_first_task_list_area_strict())
 
 

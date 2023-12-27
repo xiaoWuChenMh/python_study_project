@@ -54,7 +54,7 @@ class Match:
         点击第一个任务列表的区域
         注意周周六日的活动影响，会有偏移
         """
-        offset=self.__is_yao_shou()
+        offset=self.__is_task_first_offset()
         self.devices.click(self.serial, HOME_TASK_FIRST_COMM,offset)
         return True
 
@@ -65,8 +65,8 @@ class Match:
         image = self.devices.device_screenshot(self.serial)
         if self.buttonMatch.image_match(image, HOME_SELECT_TEAM,offset=(-4,0),interval=1,threshold=0.83):
             return True
-        elif self.buttonMatch.image_match(image, HOME_SELECT_TASK, interval=0.5):
-            self.devices.click(self.serial, HOME_SELECT_TEAM)
+        elif self.buttonMatch.image_match(image, HOME_SELECT_TASK, interval=0.5,offset=(-6,-6)):
+            self.devices.click(self.serial, HOME_SELECT_TEAM,offset=(-4,0))
             return True
         else:
             return False
@@ -76,10 +76,10 @@ class Match:
         打开任务列表,首先检查是否打开了，没有就打开
         """
         image = self.devices.device_screenshot(self.serial)
-        if self.buttonMatch.image_match(image, HOME_SELECT_TASK):
+        if self.buttonMatch.image_match(image, HOME_SELECT_TASK,offset=(-6,-6)):
             return True
         elif self.buttonMatch.image_match(image, HOME_SELECT_TEAM,offset=(-4,0),interval=0.5,threshold=0.83):
-            self.devices.click(self.serial, HOME_SELECT_TASK)
+            self.devices.click(self.serial, HOME_SELECT_TASK,offset=(-6,-6))
             return True
         else:
             return False
@@ -90,7 +90,7 @@ class Match:
         """
         image = self.devices.device_screenshot(self.serial)
         if self.buttonMatch.image_match(image, HOME_ACTIVE,offset=(-7,-1),interval=0.5):
-            self.devices.click(self.serial, HOME_ACTIVE)
+            self.devices.click(self.serial, HOME_ACTIVE,offset=(-7,-1))
             return True
         else:
             return False
@@ -174,14 +174,21 @@ class Match:
             return False
         return True
 
-    def __is_yao_shou( self ):
-        """今日是否有妖兽入侵"""
+    def __is_task_first_offset( self ):
+        """
+         任务栏是否需要位移
+            今日是否有妖兽入侵、十世镜
+        """
         image = self.devices.device_screenshot(self.serial)
-        if self.buttonMatch.word_match(image, HOME_TASK_FIRST_IS_YAO,text='妖兽入侵'):
+        if self.buttonMatch.image_match(image, HOME_TASK_FIRST_IS_YAO,offset=(0,0)):
             delta = HOME_TASK_FIRST_IS_YAO.area_size()
-            return (0,delta[1]+5)
+            return (0, delta[1]+5, 0, 0)
+        elif self.buttonMatch.image_match(image, HOME_TASK_FIRST_IS_SHI,offset=(0,-6)):
+            delta = HOME_TASK_FIRST_IS_SHI.area_size()
+            return  (0, delta[1]+5, 0, delta[1]+5)
         else:
-            return (0,0)
+            return (0, 0)
+
 
 if __name__ == "__main__":
 
@@ -190,7 +197,7 @@ if __name__ == "__main__":
     devices_info = devices.devices_info
     for serial in devices_info:
         print(devices_info[serial])
-        if serial=='emulator-5554':
+        if serial=='emulator-5560':
             app = Match(devices, serial, 1)
-            print(app.open_team_list())
+            print(app.open_task_list())
 

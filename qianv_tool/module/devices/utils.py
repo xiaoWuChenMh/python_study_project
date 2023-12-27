@@ -6,11 +6,10 @@
 #
 #
 ##################################################################################
-import re
 import cv2
+import math
 import time
 import socket
-import random
 import numpy as np
 from adbutils import AdbTimeout
 from qianv_tool.module.logger import logger
@@ -305,3 +304,40 @@ def point2str(x, y, length=4):
         str: String with numbers right aligned, such as '( 100,  80)'.
     """
     return '(%s, %s)' % (str(int(x)).rjust(length), str(int(y)).rjust(length))
+
+
+def generate_circle_points(center=(100, 200), radius=30, start_point=(130, 230), num_points=30 ):
+        """
+        根据给定的圆心和起始点生成一系列的绕圆一周的坐标点，最后会回到起始点
+        这个函数首先计算起始点对应的角度，然后计算每个点之间的角度间隔。接着，它在循环中生成每个点的坐标，并将它们添加到列表中。
+        最后，它将起始点添加到列表的末尾，以便闭合圆周
+        :param center: 圆心坐标
+        :param radius: 圆的半径
+        :param start_point: 起始点
+        :param num_points: 30
+        :return:
+        """
+        # 将起始点转换为相对于圆心的坐标
+        start_point_relative = (start_point[0] - center[0], start_point[1] - center[1])
+
+        # 计算起始点相对于圆心的角度
+        start_angle = math.atan2(start_point_relative[1], start_point_relative[0])
+
+        # 每个点之间的角度间隔
+        angle_increment = 2 * math.pi / num_points
+
+        # 生成点
+        points = []
+        for i in range(num_points):
+            angle = start_angle + angle_increment * i
+            x_relative = radius * math.cos(angle)
+            y_relative = radius * math.sin(angle)
+            # 将相对于圆心的坐标转换回原始坐标系
+            x = math.ceil(x_relative + center[0])
+            y = math.ceil(y_relative + center[1])
+            points.append((x, y))
+
+        # 添加起始点以闭合循环
+        points.append(start_point)
+
+        return points

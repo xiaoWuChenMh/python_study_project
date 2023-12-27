@@ -17,7 +17,7 @@ class Match:
 
 
 
-    def find_task_receive( self ,text, reply_wait=1):
+    def find_task_receive( self ,text,):
         """
          查找，并领取任务，因为喇叭和飘花会影响文字识别，所以只有在活动页面内就多次尝试寻找并点击，所以要不要加一个根据位置直接点击的（我觉得很有必要）？
          text:活动文本，师门、龙、重温、宗派、货运、门派、战龙、跑商
@@ -38,26 +38,26 @@ class Match:
             target_button = self.buttonMatch.grid_button_word_match(image, ACTION_WINDOW_TASK_TAG, delta, (2, 4), text, offset=(-2,-3),)
             if target_button:
                 self.devices.click(self.serial, target_button)
-                time.sleep(reply_wait)
+                time.sleep(self.reply_wait)
                 image = self.devices.device_screenshot(self.serial)
                 statu = True
                 result = True
                 self.action_button_click = True
             else:
                 self.devices.click(self.serial, ACTION_WINDOW_CLOSE)
-                time.sleep(reply_wait)
+                time.sleep(self.reply_wait)
                 image = self.devices.device_screenshot(self.serial)
                 statu = not self.buttonMatch.image_match(image, ACTION_WINDOW_CLOSE, offset=(-2,-6))
             # 找到任务 且 任务窗口还未关闭，说明当前任务已接
             if statu and  self.buttonMatch.image_match(image, ACTION_WINDOW_CLOSE, offset=(-2, -6)):
                 self.devices.click(self.serial, ACTION_WINDOW_CLOSE)
-                time.sleep(reply_wait)
+                time.sleep(self.reply_wait)
                 image = self.devices.device_screenshot(self.serial)
             # 当已参与了任务，上一个关闭只会消除浮层，所以还得需要一个关闭操作
             if statu and  self.buttonMatch.image_match(image, ACTION_WINDOW_CLOSE, offset=(-2, -6)):
                 self.devices.click(self.serial, ACTION_WINDOW_CLOSE)
                 self.action_button_click = False
-                time.sleep(reply_wait)
+                time.sleep(self.reply_wait)
         return statu and result
 
     def is_active_window(self):
@@ -69,7 +69,18 @@ class Match:
             return True
         else:
             return False
-    def find_task_position(self,position, text, reply_wait):
+    def close_active_window(self):
+        """
+         关闭活动窗口
+        """
+        image = self.devices.device_screenshot(self.serial)
+        if self.buttonMatch.image_match(image, ACTION_WINDOW_CLOSE, offset=(-2, -6)):
+            time.sleep(self.reply_wait)
+            self.devices.click(self.serial, ACTION_WINDOW_CLOSE)
+            return True
+        else:
+            return False
+    def find_task_position(self,position, text):
         """
         查找指定位置的“参与” 和 “已参加”按钮后，进行后续操作
         :param position:
@@ -80,16 +91,17 @@ class Match:
             ACTION_WINDOW_BUTTON, offset = self.__position_button_mapping(position)
             if self.buttonMatch.image_match(image, ACTION_WINDOW_BUTTON, offset=offset):
                 self.devices.click(self.serial, ACTION_WINDOW_BUTTON)
-                time.sleep(reply_wait)
+                time.sleep(self.reply_wait)
                 self.action_button_click = True
             else:
                 self.action_button_click = False
             image = self.devices.device_screenshot(self.serial)
             if self.buttonMatch.image_match(image, ACTION_WINDOW_CLOSE, offset=(-2, -6)):
                 self.devices.click(self.serial, ACTION_WINDOW_CLOSE)
+                time.sleep(self.reply_wait)
             return True
         else :
-            return self.find_task_receive(text,reply_wait)
+            return self.find_task_receive(text,self.reply_wait)
 
     def __position_button_mapping( self, position):
         if position == 1 :

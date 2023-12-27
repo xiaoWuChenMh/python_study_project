@@ -1,0 +1,483 @@
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-25 01:19:18.162 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-25 01:19:36.696 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-25 01:20:30.822 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-25 01:20:40.403 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-25 01:20:57.406 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2023-12-25 01:20:57.414 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:11402)                              
+2023-12-25 01:20:57.602 | INFO | Click position : -800 @ 360                                                           
+2023-12-25 01:20:57.612 | ERROR | AssertionError:                                                                      
+┌───────────────────────────────────────── Traceback (most recent call last) ─────────────────────────────────────────┐
+│ F:\code\workpace\study\pyCharm\python_study_project\qianv_tool\module\devices\devices.py:48 in retry_wrapper        │
+│                                                                                                                     │
+│    45 │   │   │   │   if callable(init):                                                                            │
+│    46 │   │   │   │   │   retry_sleep(_)                                                                            │
+│    47 │   │   │   │   │   init()                                                                                    │
+│ >  48 │   │   │   │   return func(self, *args, **kwargs)                                                            │
+│    49 │   │   │   # Can't handle                                                                                    │
+│    50 │   │   │   except RequestHumanTakeover:                                                                      │
+│    51 │   │   │   │   break                                                                                         │
+│                                                                                                                     │
+│ ┌──────────────────────────────────────── locals ────────────────────────────────────────┐                          │
+│ │           _ = 0                                                                        │                          │
+│ │        args = ('emulator-5554', (-800, 360))                                           │                          │
+│ │           e = AssertionError()                                                         │                          │
+│ │        func = <function Devices.click_position at 0x0000025339B88CA0>                  │                          │
+│ │  get_serial = <function retry.<locals>.get_serial at 0x0000025339B88D30>               │                          │
+│ │        init = None                                                                     │                          │
+│ │      kwargs = {}                                                                       │                          │
+│ │ RETRY_TRIES = 5                                                                        │                          │
+│ │        self = <qianv_tool.module.devices.devices.Devices object at 0x00000253242232E0> │                          │
+│ │      serial = 'emulator-5554'                                                          │                          │
+│ └────────────────────────────────────────────────────────────────────────────────────────┘                          │
+│                                                                                                                     │
+│ F:\code\workpace\study\pyCharm\python_study_project\qianv_tool\module\devices\devices.py:238 in click_position      │
+│                                                                                                                     │
+│   235 │   │   │   x  = x+offset[0]                                                                                  │
+│   236 │   │   │   y  = y+offset[1]                                                                                  │
+│   237 │   │   logger.info(f'Click position : {x} @ {y}' )                                                           │
+│ > 238 │   │   self.click_uiautomator2(serial,x,y)                                                                   │
+│   239 │                                                                                                             │
+│   240 │   @retry                                                                                                    │
+│   241 │   def swipe( self,serial, sx, sy, ex, ey):                                                                  │
+│                                                                                                                     │
+│ ┌────────────────────────────────────── locals ───────────────────────────────────────┐                             │
+│ │   offset = None                                                                     │                             │
+│ │ position = (-800, 360)                                                              │                             │
+│ │     self = <qianv_tool.module.devices.devices.Devices object at 0x00000253242232E0> │                             │
+│ │   serial = 'emulator-5554'                                                          │                             │
+│ │        x = -800                                                                     │                             │
+│ │        y = 360                                                                      │                             │
+│ └─────────────────────────────────────────────────────────────────────────────────────┘                             │
+│                                                                                                                     │
+│ F:\code\workpace\study\pyCharm\python_study_project\qianv_tool\module\devices\connection\uiautomator.py:176 in      │
+│ click_uiautomator2                                                                                                  │
+│                                                                                                                     │
+│   173 │   │   """                                                                                                   │
+│   174 │   │   点击功能                                                                                              │
+│   175 │   │   """                                                                                                   │
+│ > 176 │   │   self.get_u2(serial).click(x, y)                                                                       │
+│   177 │                                                                                                             │
+│   178 │                                                                                                             │
+│   179 │   def swipe_uiautomator2( self,serial, sx, sy, ex, ey):                                                     │
+│                                                                                                                     │
+│ ┌───────────────────────────────────── locals ──────────────────────────────────────┐                               │
+│ │   self = <qianv_tool.module.devices.devices.Devices object at 0x00000253242232E0> │                               │
+│ │ serial = 'emulator-5554'                                                          │                               │
+│ │      x = -800                                                                     │                               │
+│ │      y = 360                                                                      │                               │
+│ └───────────────────────────────────────────────────────────────────────────────────┘                               │
+│                                                                                                                     │
+│ F:\Program Files\develop\conda_env\envs\py39\lib\site-packages\uiautomator2\__init__.py:1078 in click               │
+│                                                                                                                     │
+│   1075 │   │   return _Touch()                                                                                      │
+│   1076 │                                                                                                            │
+│   1077 │   def click(self, x: Union[float, int], y: Union[float, int]):                                             │
+│ > 1078 │   │   x, y = self.pos_rel2abs(x, y)                                                                        │
+│   1079 │   │   with self._operation_delay("click"):                                                                 │
+│   1080 │   │   │   self.jsonrpc.click(x, y)                                                                         │
+│   1081                                                                                                              │
+│                                                                                                                     │
+│ ┌───────────────────────── locals ──────────────────────────┐                                                       │
+│ │ self = <uiautomator2.Device object at 0x0000025339B84BE0> │                                                       │
+│ │    x = -800                                               │                                                       │
+│ │    y = 360                                                │                                                       │
+│ └───────────────────────────────────────────────────────────┘                                                       │
+│                                                                                                                     │
+│ F:\Program Files\develop\conda_env\envs\py39\lib\site-packages\uiautomator2\__init__.py:1010 in _convert            │
+│                                                                                                                     │
+│   1007 │   │   size = []                                                                                            │
+│   1008 │   │                                                                                                        │
+│   1009 │   │   def _convert(x, y):                                                                                  │
+│ > 1010 │   │   │   assert x >= 0                                                                                    │
+│   1011 │   │   │   assert y >= 0                                                                                    │
+│   1012 │   │   │                                                                                                    │
+│   1013 │   │   │   if (x < 1 or y < 1) and not size:                                                                │
+│                                                                                                                     │
+│ ┌───────────────────────── locals ──────────────────────────┐                                                       │
+│ │ self = <uiautomator2.Device object at 0x0000025339B84BE0> │                                                       │
+│ │ size = []                                                 │                                                       │
+│ │    x = -800                                               │                                                       │
+│ │    y = 360                                                │                                                       │
+│ └───────────────────────────────────────────────────────────┘                                                       │
+└─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+AssertionError                                                                                                         
+2023-12-25 01:20:58.135 | CRITICAL | Possible reason #1: If you are using BlueStacks or LD player or WSA, please enable
+ADB in the settings of your emulator                                                                                   
+2023-12-25 01:20:58.136 | CRITICAL | Possible reason #2: Emulator died, please restart emulator                        
+2023-12-25 01:20:58.138 | CRITICAL | Possible reason #3: Serial incorrect, no such device exists or emulator is not    
+running                                                                                                                
+2023-12-25 01:20:58.139 | CRITICAL | Retry click_position() failed                                                     
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-25 01:21:34.030 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2023-12-25 01:21:34.049 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:11402)                              
+2023-12-25 01:21:42.903 | INFO | Click position : -800 @ 360                                                           
+2023-12-25 01:21:42.920 | ERROR | AssertionError:                                                                      
+┌───────────────────────────────────────── Traceback (most recent call last) ─────────────────────────────────────────┐
+│ F:\code\workpace\study\pyCharm\python_study_project\qianv_tool\module\devices\devices.py:48 in retry_wrapper        │
+│                                                                                                                     │
+│    45 │   │   │   │   if callable(init):                                                                            │
+│    46 │   │   │   │   │   retry_sleep(_)                                                                            │
+│    47 │   │   │   │   │   init()                                                                                    │
+│ >  48 │   │   │   │   return func(self, *args, **kwargs)                                                            │
+│    49 │   │   │   # Can't handle                                                                                    │
+│    50 │   │   │   except RequestHumanTakeover:                                                                      │
+│    51 │   │   │   │   break                                                                                         │
+│                                                                                                                     │
+│ ┌──────────────────────────────────────── locals ────────────────────────────────────────┐                          │
+│ │           _ = 0                                                                        │                          │
+│ │        args = ('emulator-5554', (-800, 360))                                           │                          │
+│ │           e = AssertionError()                                                         │                          │
+│ │        func = <function Devices.click_position at 0x00000220AC11B9D0>                  │                          │
+│ │  get_serial = <function retry.<locals>.get_serial at 0x00000220AC11BA60>               │                          │
+│ │        init = None                                                                     │                          │
+│ │      kwargs = {}                                                                       │                          │
+│ │ RETRY_TRIES = 5                                                                        │                          │
+│ │        self = <qianv_tool.module.devices.devices.Devices object at 0x0000022099375040> │                          │
+│ │      serial = 'emulator-5554'                                                          │                          │
+│ └────────────────────────────────────────────────────────────────────────────────────────┘                          │
+│                                                                                                                     │
+│ F:\code\workpace\study\pyCharm\python_study_project\qianv_tool\module\devices\devices.py:238 in click_position      │
+│                                                                                                                     │
+│   235 │   │   │   x  = x+offset[0]                                                                                  │
+│   236 │   │   │   y  = y+offset[1]                                                                                  │
+│   237 │   │   logger.info(f'Click position : {x} @ {y}' )                                                           │
+│ > 238 │   │   self.click_uiautomator2(serial,x,y)                                                                   │
+│   239 │                                                                                                             │
+│   240 │   @retry                                                                                                    │
+│   241 │   def swipe( self,serial, sx, sy, ex, ey):                                                                  │
+│                                                                                                                     │
+│ ┌────────────────────────────────────── locals ───────────────────────────────────────┐                             │
+│ │   offset = None                                                                     │                             │
+│ │ position = (-800, 360)                                                              │                             │
+│ │     self = <qianv_tool.module.devices.devices.Devices object at 0x0000022099375040> │                             │
+│ │   serial = 'emulator-5554'                                                          │                             │
+│ │        x = -800                                                                     │                             │
+│ │        y = 360                                                                      │                             │
+│ └─────────────────────────────────────────────────────────────────────────────────────┘                             │
+│                                                                                                                     │
+│ F:\code\workpace\study\pyCharm\python_study_project\qianv_tool\module\devices\connection\uiautomator.py:176 in      │
+│ click_uiautomator2                                                                                                  │
+│                                                                                                                     │
+│   173 │   │   """                                                                                                   │
+│   174 │   │   点击功能                                                                                              │
+│   175 │   │   """                                                                                                   │
+│ > 176 │   │   self.get_u2(serial).click(x, y)                                                                       │
+│   177 │                                                                                                             │
+│   178 │                                                                                                             │
+│   179 │   def swipe_uiautomator2( self,serial, sx, sy, ex, ey):                                                     │
+│                                                                                                                     │
+│ ┌───────────────────────────────────── locals ──────────────────────────────────────┐                               │
+│ │   self = <qianv_tool.module.devices.devices.Devices object at 0x0000022099375040> │                               │
+│ │ serial = 'emulator-5554'                                                          │                               │
+│ │      x = -800                                                                     │                               │
+│ │      y = 360                                                                      │                               │
+│ └───────────────────────────────────────────────────────────────────────────────────┘                               │
+│                                                                                                                     │
+│ F:\Program Files\develop\conda_env\envs\py39\lib\site-packages\uiautomator2\__init__.py:1078 in click               │
+│                                                                                                                     │
+│   1075 │   │   return _Touch()                                                                                      │
+│   1076 │                                                                                                            │
+│   1077 │   def click(self, x: Union[float, int], y: Union[float, int]):                                             │
+│ > 1078 │   │   x, y = self.pos_rel2abs(x, y)                                                                        │
+│   1079 │   │   with self._operation_delay("click"):                                                                 │
+│   1080 │   │   │   self.jsonrpc.click(x, y)                                                                         │
+│   1081                                                                                                              │
+│                                                                                                                     │
+│ ┌───────────────────────── locals ──────────────────────────┐                                                       │
+│ │ self = <uiautomator2.Device object at 0x00000220A5B52E80> │                                                       │
+│ │    x = -800                                               │                                                       │
+│ │    y = 360                                                │                                                       │
+│ └───────────────────────────────────────────────────────────┘                                                       │
+│                                                                                                                     │
+│ F:\Program Files\develop\conda_env\envs\py39\lib\site-packages\uiautomator2\__init__.py:1010 in _convert            │
+│                                                                                                                     │
+│   1007 │   │   size = []                                                                                            │
+│   1008 │   │                                                                                                        │
+│   1009 │   │   def _convert(x, y):                                                                                  │
+│ > 1010 │   │   │   assert x >= 0                                                                                    │
+│   1011 │   │   │   assert y >= 0                                                                                    │
+│   1012 │   │   │                                                                                                    │
+│   1013 │   │   │   if (x < 1 or y < 1) and not size:                                                                │
+│                                                                                                                     │
+│ ┌───────────────────────── locals ──────────────────────────┐                                                       │
+│ │ self = <uiautomator2.Device object at 0x00000220A5B52E80> │                                                       │
+│ │ size = []                                                 │                                                       │
+│ │    x = -800                                               │                                                       │
+│ │    y = 360                                                │                                                       │
+│ └───────────────────────────────────────────────────────────┘                                                       │
+└─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+AssertionError                                                                                                         
+2023-12-25 01:21:44.265 | CRITICAL | Possible reason #1: If you are using BlueStacks or LD player or WSA, please enable
+ADB in the settings of your emulator                                                                                   
+2023-12-25 01:21:44.271 | CRITICAL | Possible reason #2: Emulator died, please restart emulator                        
+2023-12-25 01:21:44.276 | CRITICAL | Possible reason #3: Serial incorrect, no such device exists or emulator is not    
+running                                                                                                                
+2023-12-25 01:21:44.281 | CRITICAL | Retry click_position() failed                                                     
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-25 01:22:17.999 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2023-12-25 01:22:18.016 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:11402)                              
+2023-12-25 01:22:20.827 | INFO | Click position : 800 @ 360                                                            
+2023-12-25 01:22:21.995 | INFO | Click position : 797 @ 394                                                            
+2023-12-25 01:22:23.161 | INFO | Click position : 787 @ 426                                                            
+2023-12-25 01:22:24.331 | INFO | Click position : 770 @ 455                                                            
+2023-12-25 01:22:25.495 | INFO | Click position : 748 @ 479                                                            
+2023-12-25 01:22:26.662 | INFO | Click position : 720 @ 499                                                            
+2023-12-25 01:22:27.827 | INFO | Click position : 690 @ 513                                                            
+2023-12-25 01:22:28.991 | INFO | Click position : 657 @ 520                                                            
+2023-12-25 01:22:30.154 | INFO | Click position : 624 @ 520                                                            
+2023-12-25 01:22:31.321 | INFO | Click position : 591 @ 513                                                            
+2023-12-25 01:22:32.484 | INFO | Click position : 560 @ 499                                                            
+2023-12-25 01:22:33.648 | INFO | Click position : 533 @ 479                                                            
+2023-12-25 01:22:34.814 | INFO | Click position : 511 @ 455                                                            
+2023-12-25 01:22:35.983 | INFO | Click position : 494 @ 426                                                            
+2023-12-25 01:22:37.151 | INFO | Click position : 484 @ 394                                                            
+2023-12-25 01:22:38.318 | INFO | Click position : 480 @ 360                                                            
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-25 01:23:12.047 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2023-12-25 01:23:12.058 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:11402)                              
+2023-12-25 01:23:12.216 | INFO | Click position : 760 @ 360                                                            
+2023-12-25 01:23:13.373 | INFO | Click position : 758 @ 385                                                            
+2023-12-25 01:23:14.534 | INFO | Click position : 750 @ 409                                                            
+2023-12-25 01:23:15.694 | INFO | Click position : 738 @ 431                                                            
+2023-12-25 01:23:16.860 | INFO | Click position : 721 @ 450                                                            
+2023-12-25 01:23:18.020 | INFO | Click position : 700 @ 464                                                            
+2023-12-25 01:23:19.178 | INFO | Click position : 678 @ 475                                                            
+2023-12-25 01:23:20.337 | INFO | Click position : 653 @ 480                                                            
+2023-12-25 01:23:21.495 | INFO | Click position : 628 @ 480                                                            
+2023-12-25 01:23:22.651 | INFO | Click position : 603 @ 475                                                            
+2023-12-25 01:23:23.807 | INFO | Click position : 580 @ 464                                                            
+2023-12-25 01:23:24.975 | INFO | Click position : 560 @ 450                                                            
+2023-12-25 01:23:26.137 | INFO | Click position : 543 @ 431                                                            
+2023-12-25 01:23:27.310 | INFO | Click position : 531 @ 409                                                            
+2023-12-25 01:23:28.467 | INFO | Click position : 523 @ 385                                                            
+2023-12-25 01:23:29.625 | INFO | Click position : 520 @ 360                                                            
+2023-12-25 01:23:30.781 | INFO | Click position : 523 @ 336                                                            
+2023-12-25 01:23:31.937 | INFO | Click position : 531 @ 312                                                            
+2023-12-25 01:23:33.105 | INFO | Click position : 543 @ 290                                                            
+2023-12-25 01:23:34.267 | INFO | Click position : 560 @ 271                                                            
+2023-12-25 01:23:35.423 | INFO | Click position : 580 @ 257                                                            
+2023-12-25 01:23:36.580 | INFO | Click position : 603 @ 246                                                            
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-25 01:23:58.213 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2023-12-25 01:23:58.221 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:11402)                              
+2023-12-25 01:23:58.393 | INFO | Click position : 712 @ 360                                                            
+2023-12-25 01:23:59.554 | INFO | Click position : 709 @ 383                                                            
+2023-12-25 01:24:00.713 | INFO | Click position : 699 @ 403                                                            
+2023-12-25 01:24:01.874 | INFO | Click position : 683 @ 419                                                            
+2023-12-25 01:24:03.030 | INFO | Click position : 663 @ 429                                                            
+2023-12-25 01:24:04.190 | INFO | Click position : 640 @ 432                                                            
+2023-12-25 01:24:05.348 | INFO | Click position : 618 @ 429                                                            
+2023-12-25 01:24:06.505 | INFO | Click position : 598 @ 419                                                            
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-25 01:24:13.446 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2023-12-25 01:24:13.454 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:11402)                              
+2023-12-25 01:24:13.622 | INFO | Click position : 751 @ 360                                                            
+2023-12-25 01:24:14.780 | INFO | Click position : 746 @ 395                                                            
+2023-12-25 01:24:15.940 | INFO | Click position : 730 @ 426                                                            
+2023-12-25 01:24:17.098 | INFO | Click position : 706 @ 450                                                            
+2023-12-25 01:24:18.261 | INFO | Click position : 675 @ 466                                                            
+2023-12-25 01:24:19.417 | INFO | Click position : 640 @ 471                                                            
+2023-12-25 01:24:20.574 | INFO | Click position : 606 @ 466                                                            
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-25 01:24:27.002 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2023-12-25 01:24:27.010 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:11402)                              
+2023-12-25 01:24:27.161 | INFO | Click position : 730 @ 360                                                            
+2023-12-25 01:24:28.321 | INFO | Click position : 726 @ 388                                                            
+2023-12-25 01:24:29.477 | INFO | Click position : 713 @ 413                                                            
+2023-12-25 01:24:30.634 | INFO | Click position : 693 @ 433                                                            
+2023-12-25 01:24:31.790 | INFO | Click position : 668 @ 446                                                            
+2023-12-25 01:24:32.948 | INFO | Click position : 640 @ 450                                                            
+2023-12-25 01:24:34.103 | INFO | Click position : 613 @ 446                                                            
+2023-12-25 01:24:35.263 | INFO | Click position : 588 @ 433                                                            
+2023-12-25 01:24:36.417 | INFO | Click position : 568 @ 413                                                            
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-25 01:26:24.466 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2023-12-25 01:26:24.474 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:11402)                              
+2023-12-25 01:26:24.620 | INFO | Click position : 565 @ 311                                                            
+2023-12-25 01:26:25.777 | INFO | Click position : 584 @ 290                                                            
+2023-12-25 01:26:26.937 | INFO | Click position : 609 @ 276                                                            
+2023-12-25 01:26:28.104 | INFO | Click position : 636 @ 271                                                            
+2023-12-25 01:26:29.265 | INFO | Click position : 664 @ 274                                                            
+2023-12-25 01:26:30.420 | INFO | Click position : 690 @ 285                                                            
+2023-12-25 01:26:31.576 | INFO | Click position : 711 @ 304                                                            
+2023-12-25 01:26:32.733 | INFO | Click position : 725 @ 329                                                            
+2023-12-25 01:26:33.890 | INFO | Click position : 730 @ 356                                                            
+2023-12-25 01:26:35.047 | INFO | Click position : 727 @ 384                                                            
+2023-12-25 01:26:36.203 | INFO | Click position : 716 @ 410                                                            
+2023-12-25 01:26:37.364 | INFO | Click position : 697 @ 431                                                            
+2023-12-25 01:26:38.521 | INFO | Click position : 672 @ 445                                                            
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-25 01:27:22.503 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2023-12-25 01:27:22.511 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:11402)                              
+2023-12-25 01:27:22.689 | INFO | Click position : 662 @ 273                                                            
+2023-12-25 01:27:23.846 | INFO | Click position : 688 @ 284                                                            
+2023-12-25 01:27:25.004 | INFO | Click position : 709 @ 303                                                            
+2023-12-25 01:27:26.163 | INFO | Click position : 724 @ 327                                                            
+2023-12-25 01:27:27.327 | INFO | Click position : 730 @ 354                                                            
+2023-12-25 01:27:28.484 | INFO | Click position : 728 @ 382                                                            
+2023-12-25 01:27:29.640 | INFO | Click position : 717 @ 408                                                            
+2023-12-25 01:27:30.797 | INFO | Click position : 698 @ 429                                                            
+2023-12-25 01:27:31.957 | INFO | Click position : 674 @ 444                                                            
+2023-12-25 01:27:33.119 | INFO | Click position : 647 @ 450                                                            
+2023-12-25 01:27:34.276 | INFO | Click position : 619 @ 448                                                            
+2023-12-25 01:27:35.444 | INFO | Click position : 593 @ 437                                                            
+2023-12-25 01:27:36.603 | INFO | Click position : 572 @ 418                                                            
+2023-12-25 01:27:37.764 | INFO | Click position : 557 @ 394                                                            
+2023-12-25 01:27:38.920 | INFO | Click position : 551 @ 367                                                            
+2023-12-25 01:27:40.077 | INFO | Click position : 553 @ 339                                                            
+2023-12-25 01:27:41.234 | INFO | Click position : 564 @ 313                                                            
+2023-12-25 01:27:42.390 | INFO | Click position : 583 @ 292                                                            
+2023-12-25 01:27:43.550 | INFO | Click position : 607 @ 277                                                            
+2023-12-25 01:27:44.710 | INFO | Click position : 634 @ 271                                                            
+2023-12-25 01:27:45.871 | INFO | Click position : 730.0 @ 0                                                            
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-25 01:27:55.993 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2023-12-25 01:27:56.002 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:11402)                              
+2023-12-25 01:27:56.169 | INFO | Click position : 662 @ 273                                                            
+2023-12-25 01:27:57.327 | INFO | Click position : 688 @ 284                                                            
+2023-12-25 01:27:58.486 | INFO | Click position : 709 @ 303                                                            
+2023-12-25 01:27:59.644 | INFO | Click position : 724 @ 327                                                            
+2023-12-25 01:28:00.801 | INFO | Click position : 730 @ 354                                                            
+2023-12-25 01:28:01.961 | INFO | Click position : 728 @ 382                                                            
+2023-12-25 01:28:03.117 | INFO | Click position : 717 @ 408                                                            
+2023-12-25 01:28:04.273 | INFO | Click position : 698 @ 429                                                            
+2023-12-25 01:28:05.430 | INFO | Click position : 674 @ 444                                                            
+2023-12-25 01:28:06.596 | INFO | Click position : 647 @ 450                                                            
+2023-12-25 01:28:07.756 | INFO | Click position : 619 @ 448                                                            
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-25 01:28:32.805 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2023-12-25 01:28:32.813 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:11402)                              
+2023-12-25 01:28:32.965 | INFO | Click position : 678 @ 247                                                            
+2023-12-25 01:28:34.123 | INFO | Click position : 712 @ 264                                                            
+2023-12-25 01:28:35.279 | INFO | Click position : 738 @ 291                                                            
+2023-12-25 01:28:36.434 | INFO | Click position : 755 @ 324                                                            
+2023-12-25 01:28:37.594 | INFO | Click position : 760 @ 361                                                            
+2023-12-25 01:28:38.751 | INFO | Click position : 754 @ 398                                                            
+2023-12-25 01:28:39.906 | INFO | Click position : 737 @ 432                                                            
+2023-12-25 01:28:41.063 | INFO | Click position : 710 @ 458                                                            
+2023-12-25 01:28:42.220 | INFO | Click position : 677 @ 475                                                            
+2023-12-25 01:28:43.378 | INFO | Click position : 640 @ 480                                                            
+2023-12-25 01:28:44.540 | INFO | Click position : 603 @ 474                                                            
+2023-12-25 01:28:45.701 | INFO | Click position : 569 @ 457                                                            
+2023-12-25 01:28:46.857 | INFO | Click position : 543 @ 430                                                            
+2023-12-25 01:28:48.014 | INFO | Click position : 526 @ 397                                                            
+2023-12-25 01:28:49.171 | INFO | Click position : 521 @ 360                                                            
+2023-12-25 01:28:50.334 | INFO | Click position : 527 @ 323                                                            
+2023-12-25 01:28:51.490 | INFO | Click position : 544 @ 289                                                            
+2023-12-25 01:28:52.647 | INFO | Click position : 571 @ 263                                                            
+2023-12-25 01:28:53.803 | INFO | Click position : 604 @ 246                                                            
+2023-12-25 01:28:54.963 | INFO | Click position : 641 @ 241                                                            
+2023-12-25 01:28:56.127 | INFO | Click position : 760.0 @ 0                                                            
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-25 01:30:06.293 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2023-12-25 01:30:06.310 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:11402)                              
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-25 01:30:39.084 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2023-12-25 01:30:39.101 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:11402)                              
+2023-12-25 01:30:42.259 | INFO | Click position : 760 @ 360                                                            
+2023-12-25 01:30:43.424 | INFO | Click position : 755 @ 398                                                            
+2023-12-25 01:30:44.587 | INFO | Click position : 738 @ 431                                                            
+2023-12-25 01:30:45.751 | INFO | Click position : 711 @ 458                                                            
+2023-12-25 01:30:46.914 | INFO | Click position : 678 @ 475                                                            
+2023-12-25 01:30:48.081 | INFO | Click position : 640 @ 480                                                            
+2023-12-25 01:30:49.244 | INFO | Click position : 603 @ 475                                                            
+2023-12-25 01:30:50.410 | INFO | Click position : 570 @ 458                                                            
+2023-12-25 01:30:51.574 | INFO | Click position : 543 @ 431                                                            
+2023-12-25 01:30:52.737 | INFO | Click position : 526 @ 398                                                            
+2023-12-25 01:30:53.911 | INFO | Click position : 520 @ 360                                                            
+2023-12-25 01:30:55.077 | INFO | Click position : 526 @ 323                                                            
+2023-12-25 01:30:56.247 | INFO | Click position : 543 @ 290                                                            
+2023-12-25 01:30:57.415 | INFO | Click position : 570 @ 263                                                            
+2023-12-25 01:30:58.587 | INFO | Click position : 603 @ 246                                                            
+2023-12-25 01:30:59.750 | INFO | Click position : 640 @ 240                                                            
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-25 01:31:15.659 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2023-12-25 01:31:15.674 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:11402)                              
+2023-12-25 01:31:15.818 | INFO | Click position : 760 @ 360                                                            
+2023-12-25 01:31:16.984 | INFO | Click position : 755 @ 398                                                            
+2023-12-25 01:31:18.150 | INFO | Click position : 738 @ 431                                                            
+2023-12-25 01:31:19.313 | INFO | Click position : 711 @ 458                                                            
+2023-12-25 01:31:20.477 | INFO | Click position : 678 @ 475                                                            
+2023-12-25 01:31:21.646 | INFO | Click position : 640 @ 480                                                            
+2023-12-25 01:31:22.809 | INFO | Click position : 603 @ 475                                                            
+2023-12-25 01:31:23.969 | INFO | Click position : 570 @ 458                                                            
+2023-12-25 01:31:25.135 | INFO | Click position : 543 @ 431                                                            
+2023-12-25 01:31:26.299 | INFO | Click position : 526 @ 398                                                            
+2023-12-25 01:31:27.467 | INFO | Click position : 520 @ 360                                                            
+2023-12-25 01:31:28.630 | INFO | Click position : 526 @ 323                                                            
+2023-12-25 01:31:29.798 | INFO | Click position : 543 @ 290                                                            
+2023-12-25 01:31:30.967 | INFO | Click position : 570 @ 263                                                            
+2023-12-25 01:31:32.133 | INFO | Click position : 603 @ 246                                                            
+2023-12-25 01:31:33.297 | INFO | Click position : 640 @ 240                                                            
+2023-12-25 01:31:34.460 | INFO | Click position : 678 @ 246                                                            
+2023-12-25 01:31:35.628 | INFO | Click position : 711 @ 263                                                            
+2023-12-25 01:31:36.794 | INFO | Click position : 738 @ 290                                                            
+2023-12-25 01:31:37.964 | INFO | Click position : 755 @ 323                                                            
+2023-12-25 01:31:39.131 | INFO | Click position : 760.0 @ 360.0                                                        
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2023-12-25 01:31:58.083 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2023-12-25 01:31:58.092 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:11402)                              
+2023-12-25 01:31:58.275 | INFO | Click position : 760 @ 360                                                            
+2023-12-25 01:31:59.437 | INFO | Click position : 755 @ 398                                                            
+2023-12-25 01:32:00.593 | INFO | Click position : 738 @ 431                                                            
+2023-12-25 01:32:01.750 | INFO | Click position : 711 @ 458                                                            
+2023-12-25 01:32:02.910 | INFO | Click position : 678 @ 475                                                            
+2023-12-25 01:32:04.066 | INFO | Click position : 640 @ 480                                                            
+2023-12-25 01:32:05.223 | INFO | Click position : 603 @ 475                                                            
+2023-12-25 01:32:06.380 | INFO | Click position : 570 @ 458                                                            
+2023-12-25 01:32:07.533 | INFO | Click position : 543 @ 431                                                            
+2023-12-25 01:32:08.693 | INFO | Click position : 526 @ 398                                                            
+2023-12-25 01:32:09.850 | INFO | Click position : 520 @ 360                                                            
+2023-12-25 01:32:11.007 | INFO | Click position : 526 @ 323                                                            
+2023-12-25 01:32:12.167 | INFO | Click position : 543 @ 290                                                            
+2023-12-25 01:32:13.323 | INFO | Click position : 570 @ 263                                                            
+2023-12-25 01:32:14.486 | INFO | Click position : 603 @ 246                                                            
+2023-12-25 01:32:15.643 | INFO | Click position : 640 @ 240                                                            
+2023-12-25 01:32:16.800 | INFO | Click position : 678 @ 246                                                            
+2023-12-25 01:32:17.964 | INFO | Click position : 711 @ 263                                                            
+2023-12-25 01:32:19.124 | INFO | Click position : 738 @ 290                                                            
+2023-12-25 01:32:20.287 | INFO | Click position : 755 @ 323                                                            
+2023-12-25 01:32:21.443 | INFO | Click position : 760.0 @ 360.0                                                        

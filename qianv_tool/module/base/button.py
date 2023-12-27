@@ -273,15 +273,16 @@ class Button(Resource):
         # 对图片进行剪切
         image = crop(image, offset + self.area, copy=False)
         image_show(image,self.image_test)
-        # 文字识别源图 ，加参数试一试：,det=False
-        orc_reuslt = word_ocr.ocr(image, cls=True, bin=True)
         image_word = ''
         try:
+            # 文字识别源图 ，加参数试一试：
+            orc_reuslt = word_ocr.ocr(image, cls=True, bin=True)
             for idx in range(len(orc_reuslt)):
                 res = orc_reuslt[idx]
                 for line in res:
                     image_word = image_word + line[1][0]
-        except Exception:
+        except Exception as e:
+            logger.warn(f'文字识别错误,错误信息：{e}')
             return False
         # 进行匹配
         if model==1 :

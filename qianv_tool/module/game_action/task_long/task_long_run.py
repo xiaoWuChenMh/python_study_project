@@ -1,6 +1,7 @@
 
 import math
 import time
+import multiprocessing
 from qianv_tool.module.logger import logger
 from qianv_tool.module.game_action.task_long.match import Match as MatchLong
 from qianv_tool.module.game_action.mian_window.match import Match as MatchMain
@@ -10,7 +11,7 @@ from qianv_tool.module.game_action.action_window.match import Match as MatchActi
 
 
 
-class TaskSmRun:
+class TaskLongRun:
 
 
     def __init__( self, devices, serial, position, reply_wait=1,switch_map=3, dungeon_min_time=120,execute_num=25 ):
@@ -85,14 +86,13 @@ class TaskSmRun:
         激活任务
         """
         self.match_main.restart_team_follow(3)
-
         if  self.match_main.open_active_window():
             time.sleep(self.reply_wait)
-            if self.position==0 and self.match_action.find_task_receive('龙',self.reply_wait):
+            if self.position==0 and self.match_action.find_task_receive('龙'):
                 self.position = self.match_action.buttonMatch.grid_word_index
                 self.__activation_status()
                 return True
-            elif self.position>0 and self.match_action.find_task_position(self.position, '龙', self.reply_wait):
+            elif self.position>0 and self.match_action.find_task_position(self.position, '龙'):
                 self.__activation_status()
                 return True
             else:
@@ -165,6 +165,7 @@ class TaskSmRun:
                 self.curr_execute_num+=1
                 self.is_sleep =False
                 self.match_main.start_gua_ji()
+                # 有时会报错：KeyboardInterrupt
                 time.sleep(self.dungeon_min_time - 3)
         else:
             self.match_main.cancel_gua_ji()
@@ -187,8 +188,10 @@ class TaskSmRun:
         """
         text = ['蛙鸣池', '蒲家村角落', '金銮殿', '金銮', '桃花扇', '湖中屋', '夜宴', '仙人口袋', '水妖', '水妖巢穴']
         if self.match_long.is_task_map():
+            logger.info(f'日常任务-龙: 基于图片匹配，得知当前处在副本中')
             return True
         elif self.match_main.is_map(text=text):
+            logger.info(f'日常任务-龙: 基于文字匹配，得知当前处在副本中')
             return True
         else:
             return False
@@ -214,14 +217,29 @@ class TaskSmRun:
             self.status = 1
         return True
 
+def run_exe(serial,devices):
+    app = TaskLongRun(devices, serial, 2, 2,dungeon_min_time=180,execute_num=15)
+    app.run()
 
 if __name__ == "__main__":
 
     from qianv_tool.module.devices.devices import Devices
 
+    multi_process = []
     devices = Devices()
     devices_info = devices.devices_info
+
+    #
     for serial in devices_info:
-        if serial == 'emulator-5554':
-            app = TaskSmRun(devices, serial, 0, execute_num=20,dungeon_min_time=150)
-            app.run()
+        if serial=='emulator-5554':
+            run_exe(serial,devices)
+
+    # for serial in devices_info :
+    #     print(devices_info[serial])
+    #     # process = threading.Thread(target=run_exe, args=(serial,))
+    #     process = multiprocessing.Process(target=run_exe, args=(serial,devices,))
+    #     multi_process.append(process)
+    #     process.start()
+    # # join 方法可以让主线程等待所有子线程执行完毕后再结束。
+    # for process in multi_process:
+    #     process.join()

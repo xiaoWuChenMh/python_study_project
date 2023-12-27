@@ -8,8 +8,6 @@
 # 初始化过程： find_devices Then init_devices  Then 是否能正确连接 （否：关闭u2服务 then 重启atx服务） then 再次测试 then 重试3次不行报错
 ################################################################################################################
 
-import time
-import copy
 from functools import wraps
 from json.decoder import JSONDecodeError
 from adbutils.errors import AdbError
@@ -210,9 +208,33 @@ class Devices(Connection):
         if isinstance(offset, tuple) and len(offset) == 2:
             x  = x+offset[0]
             y  = y+offset[1]
+        if isinstance(offset, tuple) and len(offset) == 4:
+            x  = x+offset[0]
+            y  = y+offset[1]
         logger.info(
             'Click %s @ %s' % (point2str(x, y), button)
         )
+        self.click_uiautomator2(serial,x,y)
+
+
+    @retry
+    def click_position( self,serial,position,offset=None):
+        """
+        点击指定按钮
+        TODO 加一个随机睡眠n秒，来对冲多次点击相隔实现将近的问题。
+        :param serial:设备id
+        :param position:要点击的坐标点
+        :param offset:点击的坐标是否有偏移
+        :return:
+        """
+        x, y = position[0],position[1]
+        if isinstance(offset, tuple) and len(offset) == 2:
+            x  = x+offset[0]
+            y  = y+offset[1]
+        if isinstance(offset, tuple) and len(offset) == 4:
+            x  = x+offset[0]
+            y  = y+offset[1]
+        logger.info(f'Click position : {x} @ {y}' )
         self.click_uiautomator2(serial,x,y)
 
     @retry
