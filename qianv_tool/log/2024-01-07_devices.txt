@@ -1,7 +1,12 @@
 ═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
                                                          START                                                         
 ═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
-2023-12-25 01:05:29.837 | INFO | Assets extract                                                                        
+2024-01-07 16:01:36.461 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2024-01-07 16:01:40.644 | WARNING | Device emulator-5554 is offline, disconnect it before connecting                   
+2024-01-07 16:01:40.646 | WARNING | Device emulator-5556 is offline, disconnect it before connecting                   
+2024-01-07 16:01:40.648 | WARNING | Device emulator-5558 is offline, disconnect it before connecting                   
+2024-01-07 16:01:40.649 | WARNING | Device emulator-5560 is offline, disconnect it before connecting                   
+2024-01-07 16:01:40.650 | WARNING | Device emulator-5562 is offline, disconnect it before connecting                   
 ═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
                                                          START                                                         
 ═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -17,16 +22,23 @@
 ═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
                                                          START                                                         
 ═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
-═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
-                                                         START                                                         
-═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
-═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
-                                                         START                                                         
-═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
-2023-12-25 01:05:40.589 | INFO | Module: task_long(3)                                                                  
-2023-12-25 01:05:46.286 | INFO | Module: shopping(6)                                                                   
-2023-12-25 01:05:52.820 | INFO | Module: action_window(11)                                                             
-2023-12-25 01:05:55.218 | INFO | Module: pop_frame(12)                                                                 
-2023-12-25 01:05:55.443 | INFO | Module: task_sm(9)                                                                    
-2023-12-25 01:06:00.553 | INFO | Module: task_zlong(13)                                                                
-2023-12-25 01:06:05.202 | INFO | Module: mian_window(24)                                                               
+2024-01-07 16:01:41.915 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:2295)                               
+2024-01-07 16:01:41.916 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:2310)                               
+2024-01-07 16:01:41.934 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:2303)                               
+2024-01-07 16:01:41.940 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:2305)                               
+2024-01-07 16:01:41.944 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:2298)                               
+2024-01-07 16:01:42.063 | ERROR | InvalidVersion: Invalid version: ''                                                  
+2024-01-07 16:01:42.065 | INFO | restart_device_service: emulator-5560                                                 
+2024-01-07 16:01:42.067 | ERROR | InvalidVersion: Invalid version: ''                                                  
+2024-01-07 16:01:42.068 | ERROR | InvalidVersion: Invalid version: ''                                                  
+2024-01-07 16:01:42.069 | INFO | restart_device_service: emulator-5554                                                 
+2024-01-07 16:01:42.070 | INFO | restart_device_service: emulator-5562                                                 
+2024-01-07 16:01:42.095 | ERROR | InvalidVersion: Invalid version: ''                                                  
+2024-01-07 16:01:42.096 | INFO | restart_device_service: emulator-5556                                                 
+2024-01-07 16:01:42.102 | ERROR | InvalidVersion: Invalid version: ''                                                  
+2024-01-07 16:01:42.104 | INFO | restart_device_service: emulator-5558                                                 
+2024-01-07 16:01:47.103 | INFO | Restart ATX                                                                           
+2024-01-07 16:01:47.105 | INFO | Restart ATX                                                                           
+2024-01-07 16:01:47.117 | INFO | Restart ATX                                                                           
+2024-01-07 16:01:47.134 | INFO | Restart ATX                                                                           
+2024-01-07 16:01:47.134 | INFO | Restart ATX                                                                           

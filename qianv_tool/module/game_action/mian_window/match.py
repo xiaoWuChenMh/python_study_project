@@ -91,6 +91,7 @@ class Match:
         image = self.devices.device_screenshot(self.serial)
         if self.buttonMatch.image_match(image, HOME_ACTIVE,offset=(-7,-1),interval=0.5):
             self.devices.click(self.serial, HOME_ACTIVE,offset=(-7,-1))
+            time.sleep(self.reply_wait)
             return True
         else:
             return False
@@ -122,6 +123,7 @@ class Match:
         """
         if not self.open_team_list():
             return False
+        time.sleep(self.reply_wait)
         image = self.devices.device_screenshot(self.serial)
         if min_people_num<=5 and self.buttonMatch.image_match(image, HOME_5TEM_FOLLOW, offset=(-6,-7)):
             self.devices.click(self.serial, HOME_5TEM_FOLLOW_CANCEL)
@@ -174,6 +176,18 @@ class Match:
             return False
         return True
 
+    def close_map_page( self ,input_image=None):
+        """
+         关闭地图页面
+        """
+        image = self.devices.device_screenshot(self.serial) if input_image is None else input_image
+        if self.buttonMatch.image_match(image, HOME_MAP_PAGE_CLOSE, offset=(-2, -6)):
+            time.sleep(self.reply_wait)
+            self.devices.click(self.serial, HOME_MAP_PAGE_CLOSE)
+            return True
+        else:
+            return False
+
     def __is_task_first_offset( self ):
         """
          任务栏是否需要位移
@@ -197,7 +211,7 @@ if __name__ == "__main__":
     devices_info = devices.devices_info
     for serial in devices_info:
         print(devices_info[serial])
-        if serial=='emulator-5560':
+        if serial=='emulator-5556':
             app = Match(devices, serial, 1)
-            print(app.open_task_list())
+            print(app.close_map_page())
 

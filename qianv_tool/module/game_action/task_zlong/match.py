@@ -3,7 +3,6 @@ import time
 from qianv_tool.module.logger import logger
 from qianv_tool.module.base.button_match import ButtonMatch
 from qianv_tool.module.game_action.task_zlong.assets import *
-from qianv_tool.module.devices.utils import (image_size,generate_circle_points)
 from qianv_tool.module.game_action.mian_window.assets import HOME_TASK_FIRST_IS_YAO,HOME_TASK_FIRST_IS_SHI
 
 class Match:
@@ -45,27 +44,27 @@ class Match:
         else:
             return False
 
-    def is_task_kill_click(self):
+    def is_task_kill_click(self, input_image=None):
         """ 是否为刺杀任务 """
-        image = self.devices.device_screenshot(self.serial)
+        image = self.devices.device_screenshot(self.serial) if input_image is None else input_image
         if self.buttonMatch.image_match(image,TASK_ZLONG_Kill,offset=(0,0)):
             self.devices.click(self.serial,TASK_ZLONG_Kill,offset=(0,0))
             return True
         else:
             return False
 
-    def is_last_deat_click(self):
+    def is_last_deat_click(self, input_image=None):
         """ 最后的任务是否为劲敌"""
-        image = self.devices.device_screenshot(self.serial)
+        image = self.devices.device_screenshot(self.serial) if input_image is None else input_image
         if self.buttonMatch.image_match(image,TASK_ZLONG_LAST_BEAT,offset=(0,0)):
             self.devices.click(self.serial,TASK_ZLONG_LAST_BEAT,offset=(0,0))
             return True
         else:
             return False
 
-    def is_last_run_click(self):
+    def is_last_run_click(self, input_image=None):
         """ 最后的任务是否为幻？？ """
-        image = self.devices.device_screenshot(self.serial)
+        image = self.devices.device_screenshot(self.serial) if input_image is None else input_image
         if self.buttonMatch.image_match(image,TASK_ZLONG_LAST_RUN,offset=(0,0)):
             self.devices.click(self.serial,TASK_ZLONG_LAST_RUN,offset=(0,0))
             return True
@@ -82,9 +81,9 @@ class Match:
             return False
 
 
-    def use_prop( self ):
+    def use_prop( self , input_image=None):
         """ 使用道具 """
-        image = self.devices.device_screenshot(self.serial)
+        image = self.devices.device_screenshot(self.serial) if input_image is None else input_image
         if self.buttonMatch.image_match(image, TASK_ZLOONG_USE_PROP, offset=(-2,-7)):
             self.devices.click(self.serial, TASK_ZLOONG_USE_PROP, offset=(-2,-7))
             return True
@@ -94,7 +93,7 @@ class Match:
         """判断当前任务是否完成"""
         image = self.devices.device_screenshot(self.serial)
         offset = self.__is_task_first_offset()
-        if self.buttonMatch.word_match(image,TASK_ZLONG_FIRST_LIST,text='完成',offset=offset):
+        if self.buttonMatch.word_match(image,TASK_ZLONG_FIRST_LIST,text='刺探完成',offset=offset):
             return True
         return False
 
@@ -112,7 +111,7 @@ class Match:
 
     def click_first_task_list_area( self ):
         """
-        非严谨的判断：是否点击第一个任务列表的区域,即师门
+        非严谨的判断：是否点击第一个任务列表的区域,即战龙
         """
         image = self.devices.device_screenshot(self.serial)
         offset = self.__is_task_first_offset()
@@ -123,16 +122,22 @@ class Match:
         """
         求生任务中跑动的位置
         """
-        image = self.devices.device_screenshot(self.serial)
-        center_wh = image_size(image)
-        center = (center_wh[0] / 2, center_wh[1] / 2)
-        radius = math.ceil(center_wh[1]/11*2)
-        start_point = (center[0]+radius,center[1])
-
-        positions = generate_circle_points(center=center,radius=radius,start_point = start_point, num_points=20)
-        for po in positions:
-            self.devices.click_position(self.serial, po)
-            time.sleep(1)
+        time.sleep(6)
+        self.devices.click(self.serial, TASK_ZLONG_ESCAPE_STEP_1)
+        time.sleep(2)
+        self.devices.click(self.serial, TASK_ZLONG_ESCAPE_STEP_2)
+        time.sleep(2)
+        self.devices.click(self.serial, TASK_ZLONG_ESCAPE_STEP_3)
+        time.sleep(2)
+        self.devices.click(self.serial, TASK_ZLONG_ESCAPE_STEP_4)
+        time.sleep(2)
+        self.devices.click(self.serial, TASK_ZLONG_ESCAPE_STEP_5)
+        time.sleep(3)
+        self.devices.click(self.serial, TASK_ZLONG_ESCAPE_STEP_6)
+        time.sleep(2)
+        self.devices.click(self.serial, TASK_ZLONG_ESCAPE_STEP_7)
+        time.sleep(2)
+        self.devices.click(self.serial, TASK_ZLONG_ESCAPE_STEP_8)
     def come_bank( self ):
         """
          点击帮会窗口
@@ -159,6 +164,10 @@ class Match:
         else:
             return False
 
+    def get_screenshot( self ):
+        """获取截图"""
+        image = self.devices.device_screenshot(self.serial)
+        return image
 
     def __is_task_first_offset( self ):
         """
@@ -183,10 +192,10 @@ if __name__ == "__main__":
     devices = Devices()
     devices_info = devices.devices_info
     for serial in devices_info:
-        if serial=='emulator-5554':
+        if serial=='emulator-5558':
             print(devices_info[serial])
             app = Match(devices, serial)
             # print(app.is_run())
-            print(app.run_positions_exe())
+            print(app.is_curr_task_finish())
 
 

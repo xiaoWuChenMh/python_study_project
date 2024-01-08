@@ -15,13 +15,13 @@ class Match:
         self.reply_wait = reply_wait
 
 
-    def npc_store( self ):
+    def npc_store( self , input_image=None):
         """npc 商店购买物品 [ok]"""
-        image = self.devices.device_screenshot(self.serial)
+        image = self.devices.device_screenshot(self.serial) if input_image is None else input_image
         result = False
         if self.buttonMatch.image_match(image, SHOPPING_NPC, offset=(-5,-6), interval=0.5,threshold=0.83):
             self.devices.click(self.serial, SHOPPING_NPC)
-            # time.sleep(self.reply_wait)
+            time.sleep(self.reply_wait)
             result = True
         if result and self.buttonMatch.image_match(image, SHOPPING_NPC_CLOSE, offset=(0,-3), interval=0.5,threshold=0.83):
             self.devices.click(self.serial, SHOPPING_NPC_CLOSE)
@@ -31,9 +31,9 @@ class Match:
             result = False
         return result
 
-    def player_store( self ):
+    def player_store( self, input_image=None):
         """玩家 商店购买物品 [ok]"""
-        image = self.devices.device_screenshot(self.serial)
+        image = self.devices.device_screenshot(self.serial) if input_image is None else input_image
         result = False
         if self.buttonMatch.image_match(image, SHOPPING_PLAYER, offset=(-5,-6), interval=0.5):
             # 点击购买
@@ -55,12 +55,23 @@ class Match:
         else:
             result = False
         return result
+    def close_buy_windwo( self ,input_image=None):
+        """
+         关闭购买窗口
+        """
+        image = self.devices.device_screenshot(self.serial) if input_image is None else input_image
+        if self.buttonMatch.image_match(image, SHOPPING_PLAYER_CLOSE, offset=(0,-6), interval=0.5,threshold=0.81):
+            self.devices.click(self.serial, SHOPPING_PLAYER_CLOSE)
+            image = self.devices.device_screenshot(self.serial)
+        if self.buttonMatch.image_match(image, SHOPPING_NPC_CLOSE, offset=(0,-3), interval=0.5,threshold=0.83):
+            self.devices.click(self.serial, SHOPPING_NPC_CLOSE)
 
-    def is_fabao_search( self ):
+    def is_fabao_search( self , input_image=None):
         """ 是否 法宝搜索页面，是就点击搜索"""
-        image = self.devices.device_screenshot(self.serial)
+        image = self.devices.device_screenshot(self.serial) if input_image is None else input_image
         if self.buttonMatch.image_match(image, SHOPPING_FABAO_SEARCH, offset=(0,0)):
             self.devices.click(self.serial, SHOPPING_FABAO_SEARCH)
+            time.sleep(self.reply_wait)
             return True
         return False
 

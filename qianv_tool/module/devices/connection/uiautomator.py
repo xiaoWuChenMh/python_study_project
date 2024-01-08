@@ -68,17 +68,25 @@ class Uiautomator(Adb):
         :param serial:
         :return:
         """
-        for _ in range(3):
-            try:
-                # 验证连接是否可用
-                self.u2_devices[serial].info
-                break
-            except Exception as e:
-                print(e)
-                self.lock.acquire()
-                self.u2_device(serial)
-                self.lock.release()
+        if serial not in self.u2_devices:
+            self.lock.acquire()
+            self.u2_device(serial)
+            self.lock.release()
+        # 验证连接是否可用
+        print(self.u2_devices[serial].info)
+        # for _ in range(3):
+        #     try:
+        #
+        #         break
+        #     except Exception as e:
+        #         print(e)
+        #         self.lock.acquire()
+        #         self.u2_device(serial)
+        #         self.lock.release()
+
         return self.u2_devices[serial]
+
+
 
 
     def is_over_http(self,serial):

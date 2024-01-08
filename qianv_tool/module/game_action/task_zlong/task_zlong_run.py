@@ -83,12 +83,10 @@ class TaskZlongRun:
         :return:
         """
         while True:
-            self.__use_prop()
             self.__click_task_dialogue()
             self.__click_npc_speak_text()
             self.__task_failure()
-            self.__final_enemy()
-            self.__final_escape()
+            self.__use_prop()
             self.__try_receive_task()
             # 激活任务
             if self.match_zhan_long.is_task_finish_click():
@@ -102,12 +100,14 @@ class TaskZlongRun:
         if self.match_main.open_active_window():
             time.sleep(self.reply_wait)
             if self.position==0 and self.match_action.find_task_receive('战龙'):
-                self.match_zhan_long.click_first_task_list_area_strict()
+                if not self.match_action.action_button_click :
+                    self.match_zhan_long.click_first_task_list_area()
                 return True
             if self.position>0:
                 self.match_action.find_task_position(self.position, '战龙')
-                self.match_zhan_long.click_first_task_list_area_strict()
-                return
+                if not self.match_action.action_button_click :
+                    self.match_zhan_long.click_first_task_list_area()
+                return True
             else:
                 return False
         else:
@@ -115,20 +115,25 @@ class TaskZlongRun:
 
     def __use_prop(self):
         """使用道具"""
-        if self.match_zhan_long.is_task_kill_click():
+        image = self.match_zhan_long.get_screenshot()
+        if self.match_zhan_long.is_task_kill_click(image):
             logger.info(f'日常任务-战龙（{self.serial}）: 触发刺杀任务！')
+            time.sleep(self.use_prop_wait)
             start_time = time.time()
             time_total = 0
-            # 未检测到任务栏有完成标识 且 执行时间未超过2分钟，就一直释放技能
-            while not self.match_zhan_long.is_curr_task_finish() and time_total<120:
+            # 执行时间未超过2分钟，就一直释放技能 (暂时没找到太好的办法判断是否完成刺杀任务，文字识别不成功)
+            while time_total<120:
                 for index in (1,2,3,4,5):
                     self.match_main.use_skill(index)
                     time.sleep(0.5)
                 self.match_main.press_drug_quick()
                 time_total = time.time() - start_time
-        if self.match_zhan_long.use_prop():
+        self.__final_enemy(image)
+        self.__final_escape(image)
+        # 使用道具，也会点掉终极战龙
+        if self.match_zhan_long.use_prop(image):
             logger.info(f'日常任务-战龙（{self.serial}）: 使用道具！')
-            time.sleep(self.reply_wait)
+            time.sleep(self.use_prop_wait)
 
     def __click_task_dialogue(self):
         """点击任务对话框"""
@@ -146,32 +151,42 @@ class TaskZlongRun:
         """
         任务失败处理逻辑
         """
+        # 如果在副本中，先等待从副本退出
+        if self.match_zhan_long.is_out_map_tag():
+            time.sleep(self.reply_wait)
+            return True
         if self.match_zhan_long.is_task_fail_click():
             logger.info(f'日常任务-战龙（{self.serial}）: 任务失败-放弃任务')
             self.match_zhan_long.give_up_task()
             logger.info(f'日常任务-战龙（{self.serial}）: 任务失败-回帮')
             self.match_zhan_long.come_bank()
 
-    def __final_enemy( self ):
+    def __final_enemy( self ,image):
         """最终战龙-劲敌"""
-        if self.match_zhan_long.is_last_deat_click():
+        if self.match_zhan_long.is_last_deat_click(image):
+            time.sleep(self.use_prop_wait)
+            start_time = time.time()
+            time_total = 0
             logger.info(f'日常任务-战龙（{self.serial}）: 最终战龙-劲敌')
-            while self.match_zhan_long.is_out_map_tag():
+            # 双重校验判断是否释放技能：有副本标识 or 未超过10秒
+            while self.match_zhan_long.is_out_map_tag() or time_total<10:
                 for index in (1, 2, 3, 4, 5):
                     self.match_main.use_skill(index)
                     time.sleep(0.5)
                 self.match_main.press_drug_quick()
+                time_total = time.time() - start_time
 
-    def __final_escape( self ):
+    def __final_escape( self ,image):
         """最终战龙-求生"""
-        if self.match_zhan_long.is_last_run_click():
+        if self.match_zhan_long.is_last_run_click(image):
             logger.info(f'日常任务-战龙（{self.serial}）: 最终战龙-求生')
+            time.sleep(self.use_prop_wait)
             time.sleep(self.switch_map)
             self.match_zhan_long.run_positions_exe()
 
 
 def run_exe(serial,devices):
-    app = TaskZlongRun(devices, serial, 5, 1)
+    app = TaskZlongRun(devices, serial, 7, 1)
     app.run()
 
 if __name__ == "__main__":
@@ -182,9 +197,9 @@ if __name__ == "__main__":
     multi_process = []
     devices = Devices()
     devices_info = devices.devices_info
-
+    #
     for serial in devices_info:
-        if serial=='emulator-5554':
+        if serial=='emulator-5562':
             run_exe(serial,devices)
 
     # for serial in devices_info :

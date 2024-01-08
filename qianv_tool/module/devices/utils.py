@@ -341,3 +341,4 @@ def generate_circle_points(center=(100, 200), radius=30, start_point=(130, 230),
         points.append(start_point)
 
         return points
+

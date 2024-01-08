@@ -41,14 +41,14 @@ class TaskLongRun:
         # 任务启动失败重试次数
         self.try_num = 3
         #当前执行次数
-        self.curr_execute_num=1
+        self.curr_execute_num= 0
         #当前执行轮次
-        self.curr_execute_round_num=1
+        self.curr_execute_round_num= 0
         # 卡图阈值
         self.stuck_threshold = 3
         self.stuck_try = 0
         # 副本标识(判断副本内计数)
-        self.in_dungeon_count =0
+        self.in_dungeon_count =1
         # 进入副本后是否需要睡眠
         self.is_sleep = True
 
@@ -85,7 +85,7 @@ class TaskLongRun:
         """
         激活任务
         """
-        self.match_main.restart_team_follow(3)
+        self.match_main.restart_team_follow()
         if  self.match_main.open_active_window():
             time.sleep(self.reply_wait)
             if self.position==0 and self.match_action.find_task_receive('龙'):
@@ -158,6 +158,7 @@ class TaskLongRun:
         if self.status != 1 :
             return False
         if self.__is_dungeon():
+            # 取消跟随【有时候到了副本中还有时跟随状态】
             self.stuck_try = 0
             self.in_dungeon_count+=1
             if self.in_dungeon_count>3 and self.is_sleep:
@@ -177,7 +178,7 @@ class TaskLongRun:
         """
         if self.status == 1 and self.stuck_try>=self.stuck_threshold:
             self.__npc_dialogue()
-            self.match_main.restart_team_follow(3)
+            self.match_main.restart_team_follow()
             self.stuck_try = 0
             time.sleep(self.switch_map )
         
@@ -218,7 +219,7 @@ class TaskLongRun:
         return True
 
 def run_exe(serial,devices):
-    app = TaskLongRun(devices, serial, 2, 2,dungeon_min_time=180,execute_num=15)
+    app = TaskLongRun(devices, serial, 1, 1,dungeon_min_time=180,execute_num=45)
     app.run()
 
 if __name__ == "__main__":

@@ -69,11 +69,11 @@ class Match:
             return True
         else:
             return False
-    def close_active_window(self):
+    def close_active_window(self,input_image=None):
         """
          关闭活动窗口
         """
-        image = self.devices.device_screenshot(self.serial)
+        image = self.devices.device_screenshot(self.serial) if input_image is None else input_image
         if self.buttonMatch.image_match(image, ACTION_WINDOW_CLOSE, offset=(-2, -6)):
             time.sleep(self.reply_wait)
             self.devices.click(self.serial, ACTION_WINDOW_CLOSE)

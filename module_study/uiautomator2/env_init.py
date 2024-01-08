@@ -23,5 +23,5 @@ check_pc_info = 'python -c "import platform;print(platform.architecture()[0]);pr
 
 # print(cmdExe(adb_command))
 # print(cmdExe(init_uiautomator_command))
-print(cmdExe(check_pc_info))
+print(cmdExe(adb_command))
 

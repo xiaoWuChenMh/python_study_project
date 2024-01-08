@@ -3,7 +3,7 @@ import matplotlib
 matplotlib.use('TkAgg')  # 在导入 pyplot 之前设置后端
 import matplotlib.pyplot as plt
 
-def generate_circle_points(center=(100, 200), radius=30, start_point=(130, 230), num_points=15):
+def generate_circle_points(center=(100, 200), radius=30, start_point=(130, 230), num_points=30):
     """
     根据给定的圆心和起始点生成一系列的绕圆一周的坐标点，最后会回到起始点
     这个函数首先计算起始点对应的角度，然后计算每个点之间的角度间隔。接着，它在循环中生成每个点的坐标，并将它们添加到列表中。
@@ -77,11 +77,13 @@ def show_circle(center,radius,circle_points):
     plt.show()
 
 # 圆心坐标
-center = (100, 200)
+center = (794.2857142857142, 360.0)
 # 圆的半径
-radius = 30
+radius = 154.28571428571428
+# 起点
+start_point = (640.0, 360.0)
 # 生成点
-circle_points = generate_circle_points(center=center, start_point=(130, 230))
+circle_points = generate_circle_points(center=center, start_point=(640.0, 360.0),radius = radius)
 # 绘制圆
 show_circle(center,radius,circle_points)
 

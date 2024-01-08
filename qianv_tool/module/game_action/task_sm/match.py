@@ -15,18 +15,18 @@ class Match:
         self.reply_wait = reply_wait
         self.sm_text = ['师门','师','帅','拜访','赠言','师父','教训','寻物','巡逻','鬼怪','历练','完成','青凤','河灯']
 
-    def use_prop( self ):
+    def use_prop( self, input_image=None):
         """ 使用道具 """
-        image = self.devices.device_screenshot(self.serial)
+        image =  image = self.devices.device_screenshot(self.serial) if input_image is None else input_image
         if self.buttonMatch.image_match(image, TASK_SM_USE_PROP, offset=(-2,-7)):
             self.devices.click(self.serial, TASK_SM_USE_PROP)
             return True
         return False
 
 
-    def is_task_finish( self ):
+    def is_task_finish( self, input_image=None ):
         """ 任务是否完成"""
-        image = self.devices.device_screenshot(self.serial)
+        image =  image = self.devices.device_screenshot(self.serial) if input_image is None else input_image
         if self.buttonMatch.image_match(image, TASK_SM_TASK_FINISH, offset=(-2,-7)):
             self.devices.click(self.serial, TASK_SM_TASK_FINISH)
             return True
@@ -63,11 +63,18 @@ class Match:
         self.devices.click(self.serial, TASK_SM_FIRST_LIST,offset)
         return True
 
+    def click_submit_equipment(self, input_image=None):
+        """是否触发提交装备"""
+        image = self.devices.device_screenshot(self.serial) if input_image is None else input_image
+        if self.buttonMatch.image_match(image,TASK_SM_SUBMIT_EQUIPMENT_START,offset=(-5,-6)):
+            self.devices.click(self.serial, TASK_SM_SUBMIT_EQUIPMENT_START)
+            return True
+        else:
+            return False
     def is_submit_equipment(self):
         """是否触发提交装备"""
         image = self.devices.device_screenshot(self.serial)
         if self.buttonMatch.image_match(image,TASK_SM_SUBMIT_EQUIPMENT_START,offset=(-5,-6)):
-            self.devices.click(self.serial, TASK_SM_SUBMIT_EQUIPMENT_START)
             return True
         else:
             return False
@@ -83,12 +90,12 @@ class Match:
         else:
             return False
 
-    def submit_equipment_real(self):
+    def submit_equipment_real(self, input_image=None):
         """
          提交装备-正式提交
          TODO:还没有对应的资源按钮对象
         """
-        image = self.devices.device_screenshot(self.serial)
+        image = self.devices.device_screenshot(self.serial) if input_image is None else input_image
         if self.buttonMatch.image_match(image,TASK_SM_SUBMIT_EQUIPMENT_REAL,offset=(-3,-6)):
             self.devices.click(self.serial, TASK_SM_SUBMIT_EQUIPMENT_REAL)
             return True
@@ -108,18 +115,35 @@ class Match:
         else:
             return False
 
-    def out_map(self):
-        """
-         出副本:还没有验证
-        :return:
-        """
-        image = self.devices.device_screenshot(self.serial)
-        if self.buttonMatch.image_match(image, TASK_SM_OUT_MAP, offset=(0, 0)):
-            self.devices.click(self.serial, TASK_SM_OUT_MAP)
+    def is_out_map_tag(self, input_image=None):
+        """ 是否为出副本标识 """
+        image = self.devices.device_screenshot(self.serial) if input_image is None else input_image
+        if self.buttonMatch.image_match(image,TASK_SM_OUT_MAP_TAG,offset=(-9,-8)):
             return True
         else:
             return False
 
+    def click_advanced_notice( self ,input_image=None):
+        """点击师门进阶通知"""
+        image = self.devices.device_screenshot(self.serial) if input_image is None else input_image
+        if self.buttonMatch.image_match(image, TASK_SM_ADVANCED_NOTICE, offset=(-2,-7)):
+            self.devices.click(self.serial, TASK_SM_ADVANCED_NOTICE)
+            return True
+        else:
+            return False
+    def click_notice_confirm( self ,input_image=None):
+        """点击 通知确认按钮"""
+        image = self.devices.device_screenshot(self.serial) if input_image is None else input_image
+        if self.buttonMatch.image_match(image, TASK_SM_NOTICE_CONFIRM, offset=(-2,-7)):
+            self.devices.click(self.serial, TASK_SM_NOTICE_CONFIRM)
+            return True
+        else:
+            return False
+
+    def get_screenshot( self ):
+        """获取截图"""
+        image = self.devices.device_screenshot(self.serial)
+        return image
 
     def __is_task_first_offset( self, move=8 ):
         """

@@ -13,11 +13,11 @@ class Match:
         # 窗口切换等待时间
         self.reply_wait = reply_wait
 
-    def click_top_npc_dialogue( self ):
+    def click_top_npc_dialogue( self , input_image=None):
         """
          查找顶层的npc对话框，并点击
         """
-        image = self.devices.device_screenshot(self.serial)
+        image = self.devices.device_screenshot(self.serial) if input_image is None else input_image
         is_dialogue = self.buttonMatch.image_match(image, POP_NPC_DIALOGUE, offset=(-6,0))
         if is_dialogue:
             delta = POP_NPC_DIALOGUE_SITE.area_size()
