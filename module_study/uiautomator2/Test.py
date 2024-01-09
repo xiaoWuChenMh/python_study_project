@@ -3,9 +3,9 @@ import numpy as np
 import cv2
 
 # 链接设备
-a = u2.connect('emulator-5556')
+a = u2.connect('emulator-5562')
 print(a.info)
-a.screenshot('image/首页_地图1.png')
+a.screenshot('image/师门_是否确认退出副本.jpg')
 # for x in range(100):
 #     a.screenshot(f'image/师门_进入后地点_{x}.jpg')
 

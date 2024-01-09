@@ -4,7 +4,7 @@ import multiprocessing
 from qianv_tool.module.logger import logger
 
 
-class TaskZlongRun:
+class StartDevices:
 
 
     def __init__( self, devices, serial):
@@ -21,7 +21,7 @@ class TaskZlongRun:
 
 
 def run_exe(serial,devices):
-    app = TaskZlongRun(devices, serial)
+    app = StartDevices(devices, serial)
     app.run()
 
 if __name__ == "__main__":

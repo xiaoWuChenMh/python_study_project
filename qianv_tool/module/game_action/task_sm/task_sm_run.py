@@ -212,6 +212,9 @@ class TaskSmRun:
                 for index in (1, 2, 3, 4, 5):
                     self.match_main.use_skill(index)
                     random_sleep()
+                if self.__is_task_finish(None):
+                    self.status = 99
+                    break
             return True
         else:
             return False
@@ -234,6 +237,8 @@ class TaskSmRun:
             self.status = 11
 
     def __is_task_finish( self, image ):
+        if self.status == 99 :
+            return True
         if self.match_sm.is_task_finish(image):
             logger.info(f'日常任务-师门（{self.serial}）: 任务完成，退出师门任务自动操作！')
             time.sleep(self.reply_wait)
@@ -250,10 +255,12 @@ class TaskSmRun:
             # 取消：npc对话框（底部）
             self.__npc_dialog_bottom()
             image = self.match_sm.get_screenshot()
-            # 关闭：师门进阶通知
+            # 确认：师门进阶通知
             self.match_sm.click_advanced_notice(image)
-            # 关闭：确认按钮：改为副本退出按钮的判断吧！！！！
+            # 确认：购买药品通知
             self.match_sm.click_notice_confirm(image)
+            # 确认：退出副本按钮
+            self.match_sm.click_instance_exit_notice(image)
             # 关闭：活动窗口
             self.match_action.close_active_window(image)
             # 关闭：购物窗口
@@ -297,18 +304,18 @@ if __name__ == "__main__":
     devices_info = devices.devices_info
 
     # 指定某人执行任务
-    for serial in devices_info:
-        if serial=='emulator-5562': # 5560
-            run_exe(serial,devices)
+    # for serial in devices_info:
+    #    if serial=='emulator-5562': # 5560
+    #        run_exe(serial,devices)
 
-    # for serial in devices_info :
-    #     print(devices_info[serial])
-    #     try:
-    #         process = multiprocessing.Process(target=run_exe, args=(serial,devices,))
-    #         multi_process.append(process)
-    #         process.start()
-    #     except Exception as e:
-    #         print(e)
-    # # join 方法可以让主线程等待所有子线程执行完毕后再结束。
-    # for process in multi_process:
-    #     process.join()
+    for serial in devices_info :
+         print(devices_info[serial])
+         try:
+             process = multiprocessing.Process(target=run_exe, args=(serial,devices,))
+             multi_process.append(process)
+             process.start()
+         except Exception as e:
+             print(e)
+     # join 方法可以让主线程等待所有子线程执行完毕后再结束。
+    for process in multi_process:
+         process.join()

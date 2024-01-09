@@ -188,6 +188,7 @@ class Match:
         else:
             return False
 
+
     def __is_task_first_offset( self ):
         """
          任务栏是否需要位移
@@ -211,7 +212,7 @@ if __name__ == "__main__":
     devices_info = devices.devices_info
     for serial in devices_info:
         print(devices_info[serial])
-        if serial=='emulator-5556':
+        if serial=='emulator-5554':
             app = Match(devices, serial, 1)
             print(app.close_map_page())
 

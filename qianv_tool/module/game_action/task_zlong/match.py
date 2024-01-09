@@ -122,22 +122,24 @@ class Match:
         """
         求生任务中跑动的位置
         """
-        time.sleep(6)
+        time.sleep(4)
         self.devices.click(self.serial, TASK_ZLONG_ESCAPE_STEP_1)
         time.sleep(2)
         self.devices.click(self.serial, TASK_ZLONG_ESCAPE_STEP_2)
-        time.sleep(2)
+        time.sleep(1)
         self.devices.click(self.serial, TASK_ZLONG_ESCAPE_STEP_3)
-        time.sleep(2)
+        time.sleep(1)
         self.devices.click(self.serial, TASK_ZLONG_ESCAPE_STEP_4)
         time.sleep(2)
         self.devices.click(self.serial, TASK_ZLONG_ESCAPE_STEP_5)
-        time.sleep(3)
+        time.sleep(2)
         self.devices.click(self.serial, TASK_ZLONG_ESCAPE_STEP_6)
         time.sleep(2)
         self.devices.click(self.serial, TASK_ZLONG_ESCAPE_STEP_7)
         time.sleep(2)
         self.devices.click(self.serial, TASK_ZLONG_ESCAPE_STEP_8)
+        time.sleep(3)
+        self.devices.click(self.serial, TASK_ZLONG_ESCAPE_STEP_1)
     def come_bank( self ):
         """
          点击帮会窗口

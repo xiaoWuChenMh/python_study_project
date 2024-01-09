@@ -35,13 +35,23 @@ class Match:
         点击底部的npc文字版对话框
         """
         image = self.devices.device_screenshot(self.serial)
-        if self.buttonMatch.image_match(image, POP_NPC_TEXT_TAG, offset=(0,-4), threshold=0.81):
-            self.devices.click(self.serial, POP_NPC_TEXT_TAG)
+        tag = self.buttonMatch.image_match(image, POP_NPC_TEXT_TAG, offset=(0,-4), threshold=0.81)
+        bank_speak = self.is_bank_speak_button(image)
+        if tag and not bank_speak:
+            self.devices.click(self.serial, POP_NPC_TEXT_TAG,offset=(0,-4))
             return True
         else :
             return False
 
-
+    def is_bank_speak_button( self ,input_image=None):
+        """
+         是否为帮会发言按钮
+        """
+        image = self.devices.device_screenshot(self.serial) if input_image is None else input_image
+        if self.buttonMatch.image_match(image, HOME_BANK_SPEAK_BUTTON, offset=(-4, -6)):
+            return True
+        else:
+            return False
 
 
 if __name__ == "__main__":
@@ -55,7 +65,7 @@ if __name__ == "__main__":
             print(devices_info[serial])
             app = Match(devices, serial)
             # print(app.is_map('金陵'))
-            print(app.click_top_npc_dialogue())
+            print(app.click_botton_npc_text_dialogue())
             # print(app.click_botton_npc_text_dialogue())
 
 

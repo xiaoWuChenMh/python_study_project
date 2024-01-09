@@ -219,7 +219,7 @@ class TaskLongRun:
         return True
 
 def run_exe(serial,devices):
-    app = TaskLongRun(devices, serial, 1, 1,dungeon_min_time=180,execute_num=45)
+    app = TaskLongRun(devices, serial, 2, 1,dungeon_min_time=180,execute_num=45)
     app.run()
 
 if __name__ == "__main__":

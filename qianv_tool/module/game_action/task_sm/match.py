@@ -134,12 +134,19 @@ class Match:
     def click_notice_confirm( self ,input_image=None):
         """点击 通知确认按钮"""
         image = self.devices.device_screenshot(self.serial) if input_image is None else input_image
-        if self.buttonMatch.image_match(image, TASK_SM_NOTICE_CONFIRM, offset=(-2,-7)):
-            self.devices.click(self.serial, TASK_SM_NOTICE_CONFIRM)
+        if self.buttonMatch.image_match(image, TASK_SM_NOTICE_CONFIRM, offset=(-5,-6), interval=0.5,threshold=0.83):
+            self.devices.click(self.serial, TASK_SM_NOTICE_CONFIRM,offset=(-5,-6),)
             return True
         else:
             return False
-
+    def click_instance_exit_notice( self ,input_image=None):
+        """点击 通知确认按钮"""
+        image = self.devices.device_screenshot(self.serial) if input_image is None else input_image
+        if self.buttonMatch.image_match(image, TASK_INSTANCE_EXIT_NOTICE, offset=(-2,-7)):
+            self.devices.click(self.serial, TASK_INSTANCE_EXIT_NOTICE)
+            return True
+        else:
+            return False
     def get_screenshot( self ):
         """获取截图"""
         image = self.devices.device_screenshot(self.serial)
@@ -172,6 +179,6 @@ if __name__ == "__main__":
             print(devices_info[serial])
             app = Match(devices, serial)
             # print(app.is_map('金陵'))
-            print(app.is_first_task_list_area_strict())
+            print(app.click_notice_confirm())
 
 

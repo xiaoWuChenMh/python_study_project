@@ -2,6 +2,7 @@
 import time
 import multiprocessing
 from qianv_tool.module.logger import logger
+from qianv_tool.module.game_action.util import (random_sleep,time_sleep)
 from qianv_tool.module.game_action.task_zlong.match import Match as MatchZlong
 from qianv_tool.module.game_action.mian_window.match import Match as MatchMain
 from qianv_tool.module.game_action.pop_frame.match import Match as MatchFrame
@@ -175,6 +176,8 @@ class TaskZlongRun:
                     time.sleep(0.5)
                 self.match_main.press_drug_quick()
                 time_total = time.time() - start_time
+            time_sleep(self.switch_map)
+            self.match_zhan_long.click_first_task_list_area()
 
     def __final_escape( self ,image):
         """最终战龙-求生"""
@@ -184,9 +187,9 @@ class TaskZlongRun:
             time.sleep(self.switch_map)
             self.match_zhan_long.run_positions_exe()
 
-
+  # 清理： 地图、活动页、为什么有的时候点击列表页后没反应在点击任务首页会导致点击到别的任务
 def run_exe(serial,devices):
-    app = TaskZlongRun(devices, serial, 7, 1)
+    app = TaskZlongRun(devices, serial, 8, 1)
     app.run()
 
 if __name__ == "__main__":
