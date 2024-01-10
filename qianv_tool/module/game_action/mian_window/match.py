@@ -128,25 +128,25 @@ class Match:
         if min_people_num<=5 and self.buttonMatch.image_match(image, HOME_5TEM_FOLLOW, offset=(-6,-7)):
             self.devices.click(self.serial, HOME_5TEM_FOLLOW_CANCEL)
             time.sleep(1)  # 等待1秒钟
-            self.devices.click(self.serial, HOME_5TEM_FOLLOW)
+            self.devices.click(self.serial, HOME_5TEM_FOLLOW, offset=(-6,-7))
             self.open_task_list()
             return True
         elif min_people_num<=4 and self.buttonMatch.image_match(image, HOME_4TEM_FOLLOW, offset=(6,5,-4,-5)):
             self.devices.click(self.serial, HOME_4TEM_FOLLOW_CANCEL)
             time.sleep(1)  # 等待1秒钟
-            self.devices.click(self.serial, HOME_4TEM_FOLLOW)
+            self.devices.click(self.serial, HOME_4TEM_FOLLOW, offset=(6,5,-4,-5))
             self.open_task_list()
             return True
         elif min_people_num<=3 and self.buttonMatch.image_match(image, HOME_3TEM_FOLLOW, offset=(-6,-5)):
             self.devices.click(self.serial, HOME_3TEM_FOLLOW_CANCEL)
             time.sleep(1)  # 等待1秒钟
-            self.devices.click(self.serial, HOME_3TEM_FOLLOW)
+            self.devices.click(self.serial, HOME_3TEM_FOLLOW, offset=(-6,-5))
             self.open_task_list()
             return True
         elif min_people_num<=2 and self.buttonMatch.image_match(image, HOME_2TEM_FOLLOW, offset=(-5,-6)) :
             self.devices.click(self.serial, HOME_2TEM_FOLLOW_CANCEL)
             time.sleep(1)  # 等待1秒钟
-            self.devices.click(self.serial, HOME_2TEM_FOLLOW)
+            self.devices.click(self.serial, HOME_2TEM_FOLLOW, offset=(-5,-6))
             self.open_task_list()
             return True
         else:

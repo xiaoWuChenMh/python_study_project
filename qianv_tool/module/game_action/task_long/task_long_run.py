@@ -85,7 +85,9 @@ class TaskLongRun:
         """
         激活任务
         """
-        self.match_main.restart_team_follow()
+        # 在副本中，就不在点击队伍跟随了
+        if not self.__is_dungeon():
+            self.match_main.restart_team_follow()
         if  self.match_main.open_active_window():
             time.sleep(self.reply_wait)
             if self.position==0 and self.match_action.find_task_receive('龙'):
@@ -158,7 +160,6 @@ class TaskLongRun:
         if self.status != 1 :
             return False
         if self.__is_dungeon():
-            # 取消跟随【有时候到了副本中还有时跟随状态】
             self.stuck_try = 0
             self.in_dungeon_count+=1
             if self.in_dungeon_count>3 and self.is_sleep:
@@ -219,7 +220,7 @@ class TaskLongRun:
         return True
 
 def run_exe(serial,devices):
-    app = TaskLongRun(devices, serial, 2, 1,dungeon_min_time=180,execute_num=45)
+    app = TaskLongRun(devices, serial, 2, 1,dungeon_min_time=180,execute_num=40)
     app.run()
 
 if __name__ == "__main__":

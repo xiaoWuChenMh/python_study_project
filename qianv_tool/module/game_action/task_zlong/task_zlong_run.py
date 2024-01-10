@@ -60,7 +60,7 @@ class TaskZlongRun:
 
     def __activation(self):
         """
-        激活任务
+        激活任务前，执行了类似一条龙的清理任务比较好
         """
         self.match_action.close_active_window()
         if self.match_zhan_long.click_first_task_list_area_strict():
@@ -189,7 +189,7 @@ class TaskZlongRun:
 
   # 清理： 地图、活动页、为什么有的时候点击列表页后没反应在点击任务首页会导致点击到别的任务
 def run_exe(serial,devices):
-    app = TaskZlongRun(devices, serial, 8, 1)
+    app = TaskZlongRun(devices, serial, 4, 1)
     app.run()
 
 if __name__ == "__main__":
@@ -202,7 +202,7 @@ if __name__ == "__main__":
     devices_info = devices.devices_info
     #
     for serial in devices_info:
-        if serial=='emulator-5562':
+        if serial=='emulator-5558':
             run_exe(serial,devices)
 
     # for serial in devices_info :
