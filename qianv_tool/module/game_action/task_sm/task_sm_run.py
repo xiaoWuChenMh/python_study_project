@@ -9,7 +9,8 @@ from qianv_tool.module.game_action.pop_frame.match import Match as MatchFrame
 from qianv_tool.module.game_action.shopping.match import Match as MatchShopping
 from qianv_tool.module.game_action.action_window.match import Match as MatchAction
 
-
+# 问题：为什么会“点击添砖加瓦”任务
+# 问题：进入阿乌这种副本怎么办？
 class TaskSmRun:
 
 
@@ -71,6 +72,9 @@ class TaskSmRun:
         """
         激活任务
         """
+        # 取消挂机
+        self.match_main.cancel_gua_ji()
+        # 执行激活流程
         if self.status in (0,10,11) and self.match_main.open_active_window():
             time.sleep(self.reply_wait)
             self.serial
@@ -148,7 +152,7 @@ class TaskSmRun:
          return : true:匹配成功；False: 匹配失败
         """
         is_exe = False
-        while self.status in (10, 11) and self.match_frame.click_botton_npc_text_dialogue():
+        while self.status in (0, 10, 11) and self.match_frame.click_botton_npc_text_dialogue():
             logger.info(f'日常任务-师门（{self.serial}）: 点击 npc对话框（底部），状态{self.status}')
             self.status = 11 if self.status == 10 else self.status
             random_sleep()
@@ -205,13 +209,11 @@ class TaskSmRun:
         """副本内操作"""
         if self.status == 11 and self.match_sm.is_out_map_tag(image):
             logger.info(f'日常任务-师门（{self.serial}）: 副本内：释放技能，状态{self.status}')
-            for index in (1, 2, 3, 4, 5):
-                self.match_main.use_skill(index)
-                random_sleep()
+            self.match_main.start_gua_ji()
             while self.match_sm.is_out_map_tag():
-                for index in (1, 2, 3, 4, 5):
-                    self.match_main.use_skill(index)
-                    random_sleep()
+                time_sleep(self.reply_wait)
+                if self.__npc_dialog_bottom():
+                    break
                 if self.__is_task_finish(None):
                     self.status = 99
                     break
@@ -305,7 +307,7 @@ if __name__ == "__main__":
 
     # 指定某人执行任务
     # for serial in devices_info:
-    #    if serial=='emulator-5562': # 5560
+    #    if serial=='emulator-5560': # 5560
     #        run_exe(serial,devices)
 
     for serial in devices_info :

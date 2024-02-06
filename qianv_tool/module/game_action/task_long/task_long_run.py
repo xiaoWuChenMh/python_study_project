@@ -10,7 +10,7 @@ from qianv_tool.module.game_action.shopping.match import Match as MatchShopping
 from qianv_tool.module.game_action.action_window.match import Match as MatchAction
 
 
-
+# 问题：会误点主线任务，因为当等级不满足主线任务时，主线任务的描述里会有一条龙和师门的名词。
 class TaskLongRun:
 
 
@@ -128,6 +128,7 @@ class TaskLongRun:
     def __npc_dialogue(self):
         """npc对话相关"""
         if self.status in (0,1,2) and self.match_frame.click_top_npc_dialogue():
+            logger.info(f'日常任务-龙: click_top_npc_dialogue ，当前状态{self.status}')
             time.sleep(self.reply_wait)
             self.stuck_try += 1
             self.in_dungeon_count = 0
@@ -147,17 +148,17 @@ class TaskLongRun:
 
     def __continue_task(self):
         """询问是否继续执行任务"""
-        if self.status == 1 and self.match_long.is_task_finsh():
+        if self.match_long.is_task_finsh():
             time.sleep(self.switch_map)
             self.match_long.is_task_finsh()
-            self.stuck_try = 1
+            self.stuck_try = 0
             self.curr_execute_round_num+=1
             self.status = 2
             logger.info(f'日常任务-龙: 当前准备执行第{self.curr_execute_round_num}轮任务')
 
     def __in_dungeon(self):
         """副本内执行逻辑"""
-        if self.status != 1 :
+        if self.status not in (1,3 ) :
             return False
         if self.__is_dungeon():
             self.stuck_try = 0
@@ -167,7 +168,7 @@ class TaskLongRun:
                 self.curr_execute_num+=1
                 self.is_sleep =False
                 self.match_main.start_gua_ji()
-                # 有时会报错：KeyboardInterrupt
+                self.match_main.un_team_follow()
                 time.sleep(self.dungeon_min_time - 3)
         else:
             self.match_main.cancel_gua_ji()
@@ -179,6 +180,7 @@ class TaskLongRun:
         """
         if self.status == 1 and self.stuck_try>=self.stuck_threshold:
             self.__npc_dialogue()
+            logger.info(f'日常任务-龙: 任务流程卡住，去重新点击跟随')
             self.match_main.restart_team_follow()
             self.stuck_try = 0
             time.sleep(self.switch_map )
@@ -220,7 +222,7 @@ class TaskLongRun:
         return True
 
 def run_exe(serial,devices):
-    app = TaskLongRun(devices, serial, 2, 1,dungeon_min_time=180,execute_num=40)
+    app = TaskLongRun(devices, serial, 2, 1,dungeon_min_time=120,execute_num=40)
     app.run()
 
 if __name__ == "__main__":
@@ -233,7 +235,7 @@ if __name__ == "__main__":
 
     #
     for serial in devices_info:
-        if serial=='emulator-5554':
+        if serial=='emulator-5556':
             run_exe(serial,devices)
 
     # for serial in devices_info :

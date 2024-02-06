@@ -71,11 +71,11 @@ class Match:
         else:
             return False
 
-    def open_task_list(self):
+    def open_task_list(self,input_image=None):
         """
         打开任务列表,首先检查是否打开了，没有就打开
         """
-        image = self.devices.device_screenshot(self.serial)
+        image = self.devices.device_screenshot(self.serial) if input_image is None else input_image
         if self.buttonMatch.image_match(image, HOME_SELECT_TASK,offset=(-6,-6)):
             return True
         elif self.buttonMatch.image_match(image, HOME_SELECT_TEAM,offset=(-4,0),interval=0.5,threshold=0.83):
@@ -147,6 +147,39 @@ class Match:
             self.devices.click(self.serial, HOME_2TEM_FOLLOW_CANCEL)
             time.sleep(1)  # 等待1秒钟
             self.devices.click(self.serial, HOME_2TEM_FOLLOW, offset=(-5,-6))
+            self.open_task_list()
+            return True
+        else:
+            return False
+
+    def un_team_follow( self,min_people_num=5 ):
+        """
+         取消队伍跟随
+        :param min_people_num:最小队伍任务，默认5人
+        :return:
+        """
+        if not self.open_team_list():
+            return False
+        time.sleep(self.reply_wait)
+        image = self.devices.device_screenshot(self.serial)
+        if min_people_num<=5 and self.buttonMatch.image_match(image, HOME_5TEM_FOLLOW, offset=(-6,-7)):
+            self.devices.click(self.serial, HOME_5TEM_FOLLOW_CANCEL)
+            time.sleep(1)  # 等待1秒钟
+            self.open_task_list()
+            return True
+        elif min_people_num<=4 and self.buttonMatch.image_match(image, HOME_4TEM_FOLLOW, offset=(6,5,-4,-5)):
+            self.devices.click(self.serial, HOME_4TEM_FOLLOW_CANCEL)
+            time.sleep(1)  # 等待1秒钟
+            self.open_task_list()
+            return True
+        elif min_people_num<=3 and self.buttonMatch.image_match(image, HOME_3TEM_FOLLOW, offset=(-6,-5)):
+            self.devices.click(self.serial, HOME_3TEM_FOLLOW_CANCEL)
+            time.sleep(1)  # 等待1秒钟
+            self.open_task_list()
+            return True
+        elif min_people_num<=2 and self.buttonMatch.image_match(image, HOME_2TEM_FOLLOW, offset=(-5,-6)) :
+            self.devices.click(self.serial, HOME_2TEM_FOLLOW_CANCEL)
+            time.sleep(1)  # 等待1秒钟
             self.open_task_list()
             return True
         else:

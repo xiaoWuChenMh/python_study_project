@@ -166,6 +166,7 @@ class TaskZlongRun:
         """最终战龙-劲敌"""
         if self.match_zhan_long.is_last_deat_click(image):
             time.sleep(self.use_prop_wait)
+            time.sleep(self.switch_map)
             start_time = time.time()
             time_total = 0
             logger.info(f'日常任务-战龙（{self.serial}）: 最终战龙-劲敌')
@@ -187,7 +188,7 @@ class TaskZlongRun:
             time.sleep(self.switch_map)
             self.match_zhan_long.run_positions_exe()
 
-  # 清理： 地图、活动页、为什么有的时候点击列表页后没反应在点击任务首页会导致点击到别的任务
+  # 清理： 地图、活动页、取消挂机、为什么有的时候点击列表页后没反应在点击任务首页会导致点击到别的任务
 def run_exe(serial,devices):
     app = TaskZlongRun(devices, serial, 4, 1)
     app.run()
@@ -201,15 +202,15 @@ if __name__ == "__main__":
     devices = Devices()
     devices_info = devices.devices_info
     #
-    for serial in devices_info:
-        if serial=='emulator-5558':
-            run_exe(serial,devices)
+    # for serial in devices_info:
+    #     if serial=='emulator-5558':
+    #         run_exe(serial,devices)
 
-    # for serial in devices_info :
-    #     print(devices_info[serial])
-    #     process = multiprocessing.Process(target=run_exe, args=(serial,devices,))
-    #     multi_process.append(process)
-    #     process.start()
-    # # join 方法可以让主线程等待所有子线程执行完毕后再结束。
-    # for process in multi_process:
-    #     process.join()
+    for serial in devices_info :
+        print(devices_info[serial])
+        process = multiprocessing.Process(target=run_exe, args=(serial,devices,))
+        multi_process.append(process)
+        process.start()
+    # join 方法可以让主线程等待所有子线程执行完毕后再结束。
+    for process in multi_process:
+        process.join()

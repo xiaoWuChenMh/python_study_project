@@ -13,7 +13,7 @@ class Match:
         self.serial = serial
         # 窗口切换等待时间
         self.reply_wait = reply_wait
-        self.sm_text = ['师门','师','帅','内奸','研习','拜访','赠言','师父','教训','寻物','巡逻','鬼怪','历练','完成','青凤','河灯']
+        self.sm_text = ['师门','内奸','研习','拜访','赠言','师父','教训','寻物','巡逻','鬼怪','历练','完成','青凤','河灯']
 
     def use_prop( self, input_image=None):
         """ 使用道具 """
@@ -152,7 +152,7 @@ class Match:
         image = self.devices.device_screenshot(self.serial)
         return image
 
-    def __is_task_first_offset( self, move=8 ):
+    def __is_task_first_offset( self, move=17 ):
         """
          任务栏是否需要位移
             今日是否有妖兽入侵、十世镜

@@ -62,13 +62,13 @@ class Match:
         """
         点击第一个任务列表的区域,即一条龙任务
         """
-        offset = self.__is_task_first_offset(15)
+        offset = self.__is_task_first_offset()
         image = self.devices.device_screenshot(self.serial)
         self.buttonMatch.word_match(image, TASK_LONG_FIRST_LIST, text=self.long_text, offset=offset)
         self.devices.click(self.serial, TASK_LONG_FIRST_LIST,offset=offset)
         return True
 
-    def __is_task_first_offset( self,move=5 ):
+    def __is_task_first_offset( self,move=17 ):
         """
          任务栏是否需要位移
             今日是否有妖兽入侵、十世镜

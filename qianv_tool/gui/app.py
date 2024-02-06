@@ -11,7 +11,7 @@ from qianv_tool.gui.frame.run_frame import RunFrame
 from qianv_tool.gui.frame.routine_frame import RoutineFrame
 from qianv_tool.gui.frame.bang_hua_frame import BangHuaFrame
 from qianv_tool.gui.frame.jia_yuan_frame import JiaYunFrame
-
+from qianv_tool.module.devices.devices import Devices
 
 class App(ctk.CTk):
 
@@ -32,9 +32,9 @@ class App(ctk.CTk):
         # 2、create home frame 创建home框架
         self.devices_frame =DevicesFrame(self,image)
         self.run_frame =RunFrame(self,image)
-        self.routine_frame = RoutineFrame(self,image)
-        self.bang_hui_frame = BangHuaFrame(self,image)
-        self.jia_yun_frame = JiaYunFrame(self,image)
+        self.routine_frame = RoutineFrame(self,image,devices)
+        self.bang_hui_frame = BangHuaFrame(self,image,devices)
+        self.jia_yun_frame = JiaYunFrame(self,image,devices)
 
 
 
@@ -53,5 +53,6 @@ class App(ctk.CTk):
 
 
 if __name__ == "__main__":
-    app = App()
+    devices = Devices()
+    app = App(devices)
     app.mainloop()

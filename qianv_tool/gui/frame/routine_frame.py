@@ -11,8 +11,9 @@ from qianv_tool.gui.frame.task.long_task import LongTask
 from qianv_tool.gui.frame.task.shi_men_task import ShiMenTask
 
 class RoutineFrame(ctk.CTkFrame):
-    def __init__(self, master,image):
+    def __init__(self, master,image,devices):
         super().__init__(master,corner_radius=0, fg_color="transparent")
+        self.devices = devices
         # 居中配置
         self.grid_columnconfigure(0, weight=1)
         self.grid_rowconfigure(0, weight=1)

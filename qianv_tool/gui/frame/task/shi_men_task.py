@@ -19,10 +19,14 @@ class ShiMenTask(ctk.CTkScrollableFrame):
         # 获取设备信息
         self.devices = DevidesInfo().get_info()
 
-        # 操作区域
-        for i, device in devices:
+        # 操作区域(测试数据）
+        for i, device in enumerate(self.devices):
             submitFrom =self.createSubmitForm(self,device)
             submitFrom.grid(row=i, column=0, sticky="nsew")
+
+        # for i, device in self.devices:
+        #     submitFrom =self.createSubmitForm(self,device)
+        #     submitFrom.grid(row=i, column=0, sticky="nsew")
 
 
     def createSubmitForm(self,operate,device):
