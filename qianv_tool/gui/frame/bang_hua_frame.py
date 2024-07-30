@@ -11,8 +11,9 @@ from qianv_tool.gui.frame.task.zhan_long_task import ZhanLongTask
 from qianv_tool.gui.frame.task.bang_hua_task import BangHuaTask
 
 class BangHuaFrame(ctk.CTkFrame):
-    def __init__(self, master,image):
+    def __init__(self, master,image,devices):
         super().__init__(master,corner_radius=0, fg_color="transparent")
+        self.devices = devices
         # 居中配置
         self.grid_columnconfigure(0, weight=1)
         self.grid_rowconfigure(0, weight=1)
@@ -28,9 +29,9 @@ class BangHuaFrame(ctk.CTkFrame):
         a = tabVidew.getTab(0)
 
         # 初始化各个tab页的内容
-        self.zhan_long_task_frame = ZhanLongTask(tabVidew.getTab(0),image)
+        self.zhan_long_task_frame = ZhanLongTask(tabVidew.getTab(0),image, self.devices)
         self.zhan_long_task_frame.grid(row=0, column=0,sticky="nsew")
-        self.bang_hua_task_frame = BangHuaTask(tabVidew.getTab(1),image)
+        self.bang_hua_task_frame = BangHuaTask(tabVidew.getTab(1),image, self.devices)
         self.bang_hua_task_frame.grid(row=0, column=0,sticky="nsew")
 
 

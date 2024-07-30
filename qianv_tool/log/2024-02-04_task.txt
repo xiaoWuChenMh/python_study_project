@@ -1,0 +1,810 @@
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2024-02-04 13:44:06.752 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2024-02-04 13:44:11.357 | WARNING | Device emulator-5556 is offline, disconnect it before connecting                   
+2024-02-04 13:44:11.360 | WARNING | Device emulator-5558 is offline, disconnect it before connecting                   
+2024-02-04 13:44:11.363 | WARNING | Device emulator-5560 is offline, disconnect it before connecting                   
+2024-02-04 13:44:11.365 | WARNING | Device emulator-5562 is offline, disconnect it before connecting                   
+2024-02-04 13:44:12.366 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:10757)                              
+2024-02-04 13:44:12.833 | ERROR | InvalidVersion: Invalid version: ''                                                  
+2024-02-04 13:44:12.835 | INFO | restart_device_service: emulator-5556                                                 
+2024-02-04 13:44:17.987 | INFO | Restart ATX                                                                           
+2024-02-04 13:44:41.606 | INFO | Click ( 143,  173) @ HOME_SELECT_TEAM                                                 
+2024-02-04 13:44:43.536 | INFO | Click ( 206,  466) @ HOME_5TEM_FOLLOW_CANCEL                                          
+2024-02-04 13:44:44.721 | INFO | Click (  87,  482) @ HOME_5TEM_FOLLOW                                                 
+2024-02-04 13:44:45.632 | INFO | Click (  64,  147) @ HOME_SELECT_TASK                                                 
+2024-02-04 13:44:46.569 | INFO | Click (1022,   45) @ HOME_ACTIVE                                                      
+2024-02-04 13:44:49.745 | INFO | Click (1250,   59) @ ACTION_WINDOW_CLOSE                                              
+2024-02-04 13:44:50.919 | INFO | 日常任务-龙:激活成功,开始执行任务逻辑                                                 
+2024-02-04 13:44:53.755 | WARNING | 文字识别错误,错误信息：'NoneType' object is not iterable                           
+2024-02-04 13:44:53.757 | INFO | Click ( 123,  211) @ TASK_LONG_FIRST_LIST                                             
+2024-02-04 13:44:55.969 | WARNING | 文字识别错误,错误信息：'NoneType' object is not iterable                           
+2024-02-04 13:44:56.330 | WARNING | 文字识别错误,错误信息：'NoneType' object is not iterable                           
+2024-02-04 13:44:56.360 | WARNING | 文字识别错误,错误信息：'NoneType' object is not iterable                           
+2024-02-04 13:44:57.696 | WARNING | 文字识别错误,错误信息：'NoneType' object is not iterable                           
+2024-02-04 13:44:57.699 | INFO | Click ( 125,  217) @ TASK_LONG_FIRST_LIST                                             
+2024-02-04 13:44:59.858 | WARNING | 文字识别错误,错误信息：'NoneType' object is not iterable                           
+2024-02-04 13:45:00.273 | WARNING | 文字识别错误,错误信息：'NoneType' object is not iterable                           
+2024-02-04 13:45:00.300 | WARNING | 文字识别错误,错误信息：'NoneType' object is not iterable                           
+2024-02-04 13:45:02.036 | WARNING | 文字识别错误,错误信息：'NoneType' object is not iterable                           
+2024-02-04 13:45:02.040 | INFO | Click ( 116,  223) @ TASK_LONG_FIRST_LIST                                             
+2024-02-04 13:45:04.246 | WARNING | 文字识别错误,错误信息：'NoneType' object is not iterable                           
+2024-02-04 13:45:04.670 | WARNING | 文字识别错误,错误信息：'NoneType' object is not iterable                           
+2024-02-04 13:45:04.699 | WARNING | 文字识别错误,错误信息：'NoneType' object is not iterable                           
+2024-02-04 13:45:06.404 | WARNING | 文字识别错误,错误信息：'NoneType' object is not iterable                           
+2024-02-04 13:45:06.407 | INFO | Click (  65,  213) @ TASK_LONG_FIRST_LIST                                             
+2024-02-04 13:45:08.648 | WARNING | 文字识别错误,错误信息：'NoneType' object is not iterable                           
+2024-02-04 13:45:09.138 | WARNING | 文字识别错误,错误信息：'NoneType' object is not iterable                           
+2024-02-04 13:45:09.166 | WARNING | 文字识别错误,错误信息：'NoneType' object is not iterable                           
+2024-02-04 13:45:10.889 | WARNING | 文字识别错误,错误信息：'NoneType' object is not iterable                           
+2024-02-04 13:45:10.893 | INFO | Click ( 114,  212) @ TASK_LONG_FIRST_LIST                                             
+2024-02-04 13:45:13.073 | WARNING | 文字识别错误,错误信息：'NoneType' object is not iterable                           
+2024-02-04 13:45:13.496 | WARNING | 文字识别错误,错误信息：'NoneType' object is not iterable                           
+2024-02-04 13:45:13.528 | WARNING | 文字识别错误,错误信息：'NoneType' object is not iterable                           
+2024-02-04 13:45:15.251 | WARNING | 文字识别错误,错误信息：'NoneType' object is not iterable                           
+2024-02-04 13:45:15.254 | INFO | Click ( 131,  214) @ TASK_LONG_FIRST_LIST                                             
+2024-02-04 13:45:17.576 | WARNING | 文字识别错误,错误信息：'NoneType' object is not iterable                           
+2024-02-04 13:45:17.898 | ERROR |                                                                                      
+┌───────────────────────────────────────── Traceback (most recent call last) ─────────────────────────────────────────┐
+│ F:\code\workpace\study\pyCharm\python_study_project\qianv_tool\module\devices\devices.py:48 in retry_wrapper        │
+│                                                                                                                     │
+│    45 │   │   │   │   if callable(init):                                                                            │
+│    46 │   │   │   │   │   retry_sleep(_)                                                                            │
+│    47 │   │   │   │   │   init()                                                                                    │
+│ >  48 │   │   │   │   return func(self, *args, **kwargs)                                                            │
+│    49 │   │   │   # Can't handle                                                                                    │
+│    50 │   │   │   except RequestHumanTakeover:                                                                      │
+│    51 │   │   │   │   break                                                                                         │
+│                                                                                                                     │
+│ ┌──────────────────────────────────────── locals ────────────────────────────────────────┐                          │
+│ │           _ = 0                                                                        │                          │
+│ │        args = ('emulator-5556',)                                                       │                          │
+│ │           e = KeyboardInterrupt()                                                      │                          │
+│ │        func = <function Devices.device_screenshot at 0x000002CCEBEA54C0>               │                          │
+│ │  get_serial = <function retry.<locals>.get_serial at 0x000002CCEBEA5550>               │                          │
+│ │        init = None                                                                     │                          │
+│ │      kwargs = {}                                                                       │                          │
+│ │ RETRY_TRIES = 5                                                                        │                          │
+│ │        self = <qianv_tool.module.devices.devices.Devices object at 0x000002CCD65439A0> │                          │
+│ │      serial = 'emulator-5556'                                                          │                          │
+│ └────────────────────────────────────────────────────────────────────────────────────────┘                          │
+│                                                                                                                     │
+│ F:\code\workpace\study\pyCharm\python_study_project\qianv_tool\module\devices\devices.py:194 in device_screenshot   │
+│                                                                                                                     │
+│   191 │   │   截图                                                                                                  │
+│   192 │   │   :return:                                                                                              │
+│   193 │   │   """                                                                                                   │
+│ > 194 │   │   return self.screenshot(serial)                                                                        │
+│   195 │                                                                                                             │
+│   196 │   @retry                                                                                                    │
+│   197 │   def click( self,serial,button,offset=None):                                                               │
+│                                                                                                                     │
+│ ┌───────────────────────────────────── locals ──────────────────────────────────────┐                               │
+│ │   self = <qianv_tool.module.devices.devices.Devices object at 0x000002CCD65439A0> │                               │
+│ │ serial = 'emulator-5556'                                                          │                               │
+│ └───────────────────────────────────────────────────────────────────────────────────┘                               │
+│                                                                                                                     │
+│ F:\code\workpace\study\pyCharm\python_study_project\qianv_tool\module\devices\connection\uiautomator.py:205 in      │
+│ screenshot                                                                                                          │
+│                                                                                                                     │
+│   202 │   │   device = self.get_u2(serial)                                                                          │
+│   203 │   │                                                                                                         │
+│   204 │   │   # 调用设备的截图功能截图，并发送到当前赋值给image变量                                                 │
+│ > 205 │   │   image = device.screenshot(format='raw')                                                               │
+│   206 │   │                                                                                                         │
+│   207 │   │   # 这行代码将输入的"image"数据读入一个类型为np.uint8的NumPy数组中。                                    │
+│   208 │   │   image = np.frombuffer(image, np.uint8)                                                                │
+│                                                                                                                     │
+│ ┌───────────────────────────────────── locals ──────────────────────────────────────┐                               │
+│ │ device = <uiautomator2.Device object at 0x000002CCEBEA6EB0>                       │                               │
+│ │   self = <qianv_tool.module.devices.devices.Devices object at 0x000002CCD65439A0> │                               │
+│ │ serial = 'emulator-5556'                                                          │                               │
+│ └───────────────────────────────────────────────────────────────────────────────────┘                               │
+│                                                                                                                     │
+│ F:\Program Files\develop\conda_env\envs\py39\lib\site-packages\decorator.py:232 in fun                              │
+│                                                                                                                     │
+│   229 │   │   def fun(*args, **kw):                                                                                 │
+│   230 │   │   │   if not kwsyntax:                                                                                  │
+│   231 │   │   │   │   args, kw = fix(args, kw, sig)                                                                 │
+│ > 232 │   │   │   return caller(func, *(extras + args), **kw)                                                       │
+│   233 │   fun.__name__ = func.__name__                                                                              │
+│   234 │   fun.__doc__ = func.__doc__                                                                                │
+│   235 │   fun.__wrapped__ = func                                                                                    │
+│                                                                                                                     │
+│ ┌──────────────────────────────────── locals ────────────────────────────────────┐                                  │
+│ │     args = (<uiautomator2.Device object at 0x000002CCEBEA6EB0>, None, 'raw')   │                                  │
+│ │   caller = <function retry.<locals>.retry_decorator at 0x000002CCEBE90DC0>     │                                  │
+│ │   extras = ()                                                                  │                                  │
+│ │     func = <function _Device.screenshot at 0x000002CCEBE90EE0>                 │                                  │
+│ │       kw = {}                                                                  │                                  │
+│ │ kwsyntax = False                                                               │                                  │
+│ │      sig = <Signature (self, filename: Optional[str] = None, format='pillow')> │                                  │
+│ └────────────────────────────────────────────────────────────────────────────────┘                                  │
+│                                                                                                                     │
+│ F:\Program Files\develop\conda_env\envs\py39\lib\site-packages\retry\api.py:73 in retry_decorator                   │
+│                                                                                                                     │
+│    70 │   def retry_decorator(f, *fargs, **fkwargs):                                                                │
+│    71 │   │   args = fargs if fargs else list()                                                                     │
+│    72 │   │   kwargs = fkwargs if fkwargs else dict()                                                               │
+│ >  73 │   │   return __retry_internal(partial(f, *args, **kwargs), exceptions, tries, delay,                        │
+│       max_delay, backoff, jitter,                                                                                   │
+│    74 │   │   │   │   │   │   │   │   logger)                                                                       │
+│    75 │                                                                                                             │
+│    76 │   return retry_decorator                                                                                    │
+│                                                                                                                     │
+│ ┌──────────────────────────────────────────────────── locals ─────────────────────────────────────────────────────┐ │
+│ │       args = (<uiautomator2.Device object at 0x000002CCEBEA6EB0>, None, 'raw')                                  │ │
+│ │    backoff = 1                                                                                                  │ │
+│ │      delay = 0.5                                                                                                │ │
+│ │ exceptions = (<class 'OSError'>, <class 'SyntaxError'>)                                                         │ │
+│ │          f = <function _Device.screenshot at 0x000002CCEBE90EE0>                                                │ │
+│ │      fargs = (<uiautomator2.Device object at 0x000002CCEBEA6EB0>, None, 'raw')                                  │ │
+│ │    fkwargs = {}                                                                                                 │ │
+│ │     jitter = 0.1                                                                                                │ │
+│ │     kwargs = {}                                                                                                 │ │
+│ │     logger = <module 'logging' from 'F:\\Program                                                                │ │
+│ │              Files\\develop\\conda_env\\envs\\py39\\lib\\logging\\__init__.py'>                                 │ │
+│ │  max_delay = 1                                                                                                  │ │
+│ │      tries = 5                                                                                                  │ │
+│ └─────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ │
+│                                                                                                                     │
+│ F:\Program Files\develop\conda_env\envs\py39\lib\site-packages\retry\api.py:33 in __retry_internal                  │
+│                                                                                                                     │
+│    30 │   _tries, _delay = tries, delay                                                                             │
+│    31 │   while _tries:                                                                                             │
+│    32 │   │   try:                                                                                                  │
+│ >  33 │   │   │   return f()                                                                                        │
+│    34 │   │   except exceptions as e:                                                                               │
+│    35 │   │   │   _tries -= 1                                                                                       │
+│    36 │   │   │   if not _tries:                                                                                    │
+│                                                                                                                     │
+│ ┌──────────────────────────────────────────────────── locals ─────────────────────────────────────────────────────┐ │
+│ │     _delay = 0.5                                                                                                │ │
+│ │     _tries = 5                                                                                                  │ │
+│ │    backoff = 1                                                                                                  │ │
+│ │      delay = 0.5                                                                                                │ │
+│ │ exceptions = (<class 'OSError'>, <class 'SyntaxError'>)                                                         │ │
+│ │          f = functools.partial(<function _Device.screenshot at 0x000002CCEBE90EE0>, <uiautomator2.Device object │ │
+│ │              at 0x000002CCEBEA6EB0>, None, 'raw')                                                               │ │
+│ │     jitter = 0.1                                                                                                │ │
+│ │     logger = <module 'logging' from 'F:\\Program                                                                │ │
+│ │              Files\\develop\\conda_env\\envs\\py39\\lib\\logging\\__init__.py'>                                 │ │
+│ │  max_delay = 1                                                                                                  │ │
+│ │      tries = 5                                                                                                  │ │
+│ └─────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ │
+│                                                                                                                     │
+│ F:\Program Files\develop\conda_env\envs\py39\lib\site-packages\uiautomator2\__init__.py:938 in screenshot           │
+│                                                                                                                     │
+│    935 │   │   │   screenshot().save("saved.png")                                                                   │
+│    936 │   │   │   cv2.imwrite('saved.jpg', screenshot(format='opencv'))                                            │
+│    937 │   │   """                                                                                                  │
+│ >  938 │   │   r = self.http.get("/screenshot/0", timeout=10)                                                       │
+│    939 │   │   if filename:                                                                                         │
+│    940 │   │   │   with open(filename, 'wb') as f:                                                                  │
+│    941 │   │   │   │   f.write(r.content)                                                                           │
+│                                                                                                                     │
+│ ┌─────────────────────────── locals ────────────────────────────┐                                                   │
+│ │ filename = None                                               │                                                   │
+│ │   format = 'raw'                                              │                                                   │
+│ │     self = <uiautomator2.Device object at 0x000002CCEBEA6EB0> │                                                   │
+│ └───────────────────────────────────────────────────────────────┘                                                   │
+│                                                                                                                     │
+│ F:\Program Files\develop\conda_env\envs\py39\lib\site-packages\requests\sessions.py:602 in get                      │
+│                                                                                                                     │
+│   599 │   │   """                                                                                                   │
+│   600 │   │                                                                                                         │
+│   601 │   │   kwargs.setdefault("allow_redirects", True)                                                            │
+│ > 602 │   │   return self.request("GET", url, **kwargs)                                                             │
+│   603 │                                                                                                             │
+│   604 │   def options(self, url, **kwargs):                                                                         │
+│   605 │   │   r"""Sends a OPTIONS request. Returns :class:`Response` object.                                        │
+│                                                                                                                     │
+│ ┌───────────────────────────────── locals ──────────────────────────────────┐                                       │
+│ │ kwargs = {'timeout': 10, 'allow_redirects': True}                         │                                       │
+│ │   self = <uiautomator2._AgentRequestSession object at 0x000002CCEBEA6880> │                                       │
+│ │    url = '/screenshot/0'                                                  │                                       │
+│ └───────────────────────────────────────────────────────────────────────────┘                                       │
+│                                                                                                                     │
+│ F:\Program Files\develop\conda_env\envs\py39\lib\site-packages\uiautomator2\__init__.py:203 in request              │
+│                                                                                                                     │
+│    200 │   │   try:                                                                                                 │
+│    201 │   │   │   # may raise adbutils.AdbError when device offline                                                │
+│    202 │   │   │   url = self.__client.path2url(url)                                                                │
+│ >  203 │   │   │   return super().request(method, url, **kwargs)                                                    │
+│    204 │   │   except (requests.ConnectionError, requests.ReadTimeout,                                              │
+│    205 │   │   │   │   adbutils.AdbError) as e:                                                                     │
+│    206 │   │   │   if not retry:                                                                                    │
+│                                                                                                                     │
+│ ┌───────────────────────────────── locals ──────────────────────────────────┐                                       │
+│ │ kwargs = {'timeout': 10, 'allow_redirects': True}                         │                                       │
+│ │ method = 'GET'                                                            │                                       │
+│ │  retry = True                                                             │                                       │
+│ │   self = <uiautomator2._AgentRequestSession object at 0x000002CCEBEA6880> │                                       │
+│ │    url = 'http://127.0.0.1:10757/screenshot/0'                            │                                       │
+│ └───────────────────────────────────────────────────────────────────────────┘                                       │
+│                                                                                                                     │
+│ F:\Program Files\develop\conda_env\envs\py39\lib\site-packages\uiautomator2\__init__.py:119 in request              │
+│                                                                                                                     │
+│    116 │   │   │   │     "$ curl -X {method} -d '{data}' '{url}'".format(                                           │
+│    117 │   │   │   │   │     method=method, url=url, data=data))  # yaml: disable                                   │
+│    118 │   │   try:                                                                                                 │
+│ >  119 │   │   │   resp = super(TimeoutRequestsSession,                                                             │
+│    120 │   │   │   │   │   │    self).request(method, url, **kwargs)                                                │
+│    121 │   │   except requests.ConnectionError as e:                                                                │
+│    122 │   │   │   # High possibly atx-agent is down                                                                │
+│                                                                                                                     │
+│ ┌────────────────────────────────── locals ──────────────────────────────────┐                                      │
+│ │  kwargs = {'timeout': (3, 10), 'allow_redirects': True}                    │                                      │
+│ │  method = 'GET'                                                            │                                      │
+│ │    self = <uiautomator2._AgentRequestSession object at 0x000002CCEBEA6880> │                                      │
+│ │     url = 'http://127.0.0.1:10757/screenshot/0'                            │                                      │
+│ │ verbose = False                                                            │                                      │
+│ └────────────────────────────────────────────────────────────────────────────┘                                      │
+│                                                                                                                     │
+│ F:\Program Files\develop\conda_env\envs\py39\lib\site-packages\requests\sessions.py:589 in request                  │
+│                                                                                                                     │
+│   586 │   │   │   "allow_redirects": allow_redirects,                                                               │
+│   587 │   │   }                                                                                                     │
+│   588 │   │   send_kwargs.update(settings)                                                                          │
+│ > 589 │   │   resp = self.send(prep, **send_kwargs)                                                                 │
+│   590 │   │                                                                                                         │
+│   591 │   │   return resp                                                                                           │
+│   592                                                                                                               │
+│                                                                                                                     │
+│ ┌────────────────────────────────────────── locals ───────────────────────────────────────────┐                     │
+│ │ allow_redirects = True                                                                      │                     │
+│ │            auth = None                                                                      │                     │
+│ │            cert = None                                                                      │                     │
+│ │         cookies = None                                                                      │                     │
+│ │            data = None                                                                      │                     │
+│ │           files = None                                                                      │                     │
+│ │         headers = None                                                                      │                     │
+│ │           hooks = None                                                                      │                     │
+│ │            json = None                                                                      │                     │
+│ │          method = 'GET'                                                                     │                     │
+│ │          params = None                                                                      │                     │
+│ │            prep = <PreparedRequest [GET]>                                                   │                     │
+│ │         proxies = {}                                                                        │                     │
+│ │             req = <Request [GET]>                                                           │                     │
+│ │            self = <uiautomator2._AgentRequestSession object at 0x000002CCEBEA6880>          │                     │
+│ │     send_kwargs = {                                                                         │                     │
+│ │                   │   'timeout': (3, 10),                                                   │                     │
+│ │                   │   'allow_redirects': True,                                              │                     │
+│ │                   │   'proxies': OrderedDict(),                                             │                     │
+│ │                   │   'stream': False,                                                      │                     │
+│ │                   │   'verify': True,                                                       │                     │
+│ │                   │   'cert': None                                                          │                     │
+│ │                   }                                                                         │                     │
+│ │        settings = {'proxies': OrderedDict(), 'stream': False, 'verify': True, 'cert': None} │                     │
+│ │          stream = None                                                                      │                     │
+│ │         timeout = (3, 10)                                                                   │                     │
+│ │             url = 'http://127.0.0.1:10757/screenshot/0'                                     │                     │
+│ │          verify = None                                                                      │                     │
+│ └─────────────────────────────────────────────────────────────────────────────────────────────┘                     │
+│                                                                                                                     │
+│ F:\Program Files\develop\conda_env\envs\py39\lib\site-packages\requests\sessions.py:703 in send                     │
+│                                                                                                                     │
+│   700 │   │   start = preferred_clock()                                                                             │
+│   701 │   │                                                                                                         │
+│   702 │   │   # Send the request                                                                                    │
+│ > 703 │   │   r = adapter.send(request, **kwargs)                                                                   │
+│   704 │   │                                                                                                         │
+│   705 │   │   # Total elapsed time of the request (approximately)                                                   │
+│   706 │   │   elapsed = preferred_clock() - start                                                                   │
+│                                                                                                                     │
+│ ┌──────────────────────────────────────────────────── locals ─────────────────────────────────────────────────────┐ │
+│ │         adapter = <requests.adapters.HTTPAdapter object at 0x000002CCEBEA6D60>                                  │ │
+│ │ allow_redirects = True                                                                                          │ │
+│ │           hooks = {'response': []}                                                                              │ │
+│ │          kwargs = {'timeout': (3, 10), 'proxies': OrderedDict(), 'stream': False, 'verify': True, 'cert': None} │ │
+│ │         request = <PreparedRequest [GET]>                                                                       │ │
+│ │            self = <uiautomator2._AgentRequestSession object at 0x000002CCEBEA6880>                              │ │
+│ │           start = 94.2790372                                                                                    │ │
+│ │          stream = False                                                                                         │ │
+│ └─────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ │
+│                                                                                                                     │
+│ F:\Program Files\develop\conda_env\envs\py39\lib\site-packages\requests\adapters.py:486 in send                     │
+│                                                                                                                     │
+│   483 │   │   │   timeout = TimeoutSauce(connect=timeout, read=timeout)                                             │
+│   484 │   │                                                                                                         │
+│   485 │   │   try:                                                                                                  │
+│ > 486 │   │   │   resp = conn.urlopen(                                                                              │
+│   487 │   │   │   │   method=request.method,                                                                        │
+│   488 │   │   │   │   url=url,                                                                                      │
+│   489 │   │   │   │   body=request.body,                                                                            │
+│                                                                                                                     │
+│ ┌────────────────────────────────────── locals ──────────────────────────────────────┐                              │
+│ │    cert = None                                                                     │                              │
+│ │ chunked = False                                                                    │                              │
+│ │    conn = <urllib3.connectionpool.HTTPConnectionPool object at 0x000002CCEBEB76A0> │                              │
+│ │ connect = 3                                                                        │                              │
+│ │ proxies = OrderedDict()                                                            │                              │
+│ │    read = 10                                                                       │                              │
+│ │ request = <PreparedRequest [GET]>                                                  │                              │
+│ │    self = <requests.adapters.HTTPAdapter object at 0x000002CCEBEA6D60>             │                              │
+│ │  stream = False                                                                    │                              │
+│ │ timeout = Timeout(connect=3, read=10, total=None)                                  │                              │
+│ │     url = '/screenshot/0'                                                          │                              │
+│ │  verify = True                                                                     │                              │
+│ └────────────────────────────────────────────────────────────────────────────────────┘                              │
+│                                                                                                                     │
+│ F:\Program Files\develop\conda_env\envs\py39\lib\site-packages\urllib3\connectionpool.py:790 in urlopen             │
+│                                                                                                                     │
+│    787 │   │   │   response_conn = conn if not release_conn else None                                               │
+│    788 │   │   │                                                                                                    │
+│    789 │   │   │   # Make the request on the HTTPConnection object                                                  │
+│ >  790 │   │   │   response = self._make_request(                                                                   │
+│    791 │   │   │   │   conn,                                                                                        │
+│    792 │   │   │   │   method,                                                                                      │
+│    793 │   │   │   │   url,                                                                                         │
+│                                                                                                                     │
+│ ┌──────────────────────────────────────────────────── locals ─────────────────────────────────────────────────────┐ │
+│ │     assert_same_host = False                                                                                    │ │
+│ │                 body = None                                                                                     │ │
+│ │             body_pos = None                                                                                     │ │
+│ │              chunked = False                                                                                    │ │
+│ │           clean_exit = False                                                                                    │ │
+│ │                 conn = None                                                                                     │ │
+│ │       decode_content = False                                                                                    │ │
+│ │   destination_scheme = None                                                                                     │ │
+│ │                  err = None                                                                                     │ │
+│ │              headers = {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept':   │ │
+│ │                        '*/*', 'Connection': 'keep-alive'}                                                       │ │
+│ │ http_tunnel_required = False                                                                                    │ │
+│ │               method = 'GET'                                                                                    │ │
+│ │           parsed_url = Url(                                                                                     │ │
+│ │                        │   scheme=None,                                                                         │ │
+│ │                        │   auth=None,                                                                           │ │
+│ │                        │   host=None,                                                                           │ │
+│ │                        │   port=None,                                                                           │ │
+│ │                        │   path='/screenshot/0',                                                                │ │
+│ │                        │   query=None,                                                                          │ │
+│ │                        │   fragment=None                                                                        │ │
+│ │                        )                                                                                        │ │
+│ │         pool_timeout = None                                                                                     │ │
+│ │      preload_content = False                                                                                    │ │
+│ │             redirect = False                                                                                    │ │
+│ │         release_conn = False                                                                                    │ │
+│ │    release_this_conn = True                                                                                     │ │
+│ │        response_conn = <urllib3.connection.HTTPConnection object at 0x000002CCEBEE9580>                         │ │
+│ │          response_kw = {}                                                                                       │ │
+│ │              retries = Retry(total=0, connect=None, read=False, redirect=None, status=None)                     │ │
+│ │                 self = <urllib3.connectionpool.HTTPConnectionPool object at 0x000002CCEBEB76A0>                 │ │
+│ │              timeout = Timeout(connect=3, read=10, total=None)                                                  │ │
+│ │          timeout_obj = Timeout(connect=3, read=10, total=None)                                                  │ │
+│ │                  url = '/screenshot/0'                                                                          │ │
+│ └─────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ │
+│                                                                                                                     │
+│ F:\Program Files\develop\conda_env\envs\py39\lib\site-packages\urllib3\connectionpool.py:536 in _make_request       │
+│                                                                                                                     │
+│    533 │   │                                                                                                        │
+│    534 │   │   # Receive the response from the server                                                               │
+│    535 │   │   try:                                                                                                 │
+│ >  536 │   │   │   response = conn.getresponse()                                                                    │
+│    537 │   │   except (BaseSSLError, OSError) as e:                                                                 │
+│    538 │   │   │   self._raise_timeout(err=e, url=url, timeout_value=read_timeout)                                  │
+│    539 │   │   │   raise                                                                                            │
+│                                                                                                                     │
+│ ┌──────────────────────────────────────────────────── locals ─────────────────────────────────────────────────────┐ │
+│ │                   body = None                                                                                   │ │
+│ │                chunked = False                                                                                  │ │
+│ │                   conn = <urllib3.connection.HTTPConnection object at 0x000002CCEBEE9580>                       │ │
+│ │         decode_content = False                                                                                  │ │
+│ │ enforce_content_length = True                                                                                   │ │
+│ │                headers = {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': │ │
+│ │                          '*/*', 'Connection': 'keep-alive'}                                                     │ │
+│ │                 method = 'GET'                                                                                  │ │
+│ │        preload_content = False                                                                                  │ │
+│ │           read_timeout = 10                                                                                     │ │
+│ │          response_conn = <urllib3.connection.HTTPConnection object at 0x000002CCEBEE9580>                       │ │
+│ │                retries = Retry(total=0, connect=None, read=False, redirect=None, status=None)                   │ │
+│ │                   self = <urllib3.connectionpool.HTTPConnectionPool object at 0x000002CCEBEB76A0>               │ │
+│ │                timeout = Timeout(connect=3, read=10, total=None)                                                │ │
+│ │            timeout_obj = Timeout(connect=3, read=10, total=None)                                                │ │
+│ │                    url = '/screenshot/0'                                                                        │ │
+│ └─────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ │
+│                                                                                                                     │
+│ F:\Program Files\develop\conda_env\envs\py39\lib\site-packages\urllib3\connection.py:461 in getresponse             │
+│                                                                                                                     │
+│   458 │   │   from .response import HTTPResponse                                                                    │
+│   459 │   │                                                                                                         │
+│   460 │   │   # Get the response from http.client.HTTPConnection                                                    │
+│ > 461 │   │   httplib_response = super().getresponse()                                                              │
+│   462 │   │                                                                                                         │
+│   463 │   │   try:                                                                                                  │
+│   464 │   │   │   assert_header_parsing(httplib_response.msg)                                                       │
+│                                                                                                                     │
+│ ┌──────────────────────────────────── locals ─────────────────────────────────────┐                                 │
+│ │ HTTPResponse = <class 'urllib3.response.HTTPResponse'>                          │                                 │
+│ │ resp_options = _ResponseOptions(                                                │                                 │
+│ │                │   request_method='GET',                                        │                                 │
+│ │                │   request_url='/screenshot/0',                                 │                                 │
+│ │                │   preload_content=False,                                       │                                 │
+│ │                │   decode_content=False,                                        │                                 │
+│ │                │   enforce_content_length=True                                  │                                 │
+│ │                )                                                                │                                 │
+│ │         self = <urllib3.connection.HTTPConnection object at 0x000002CCEBEE9580> │                                 │
+│ └─────────────────────────────────────────────────────────────────────────────────┘                                 │
+│                                                                                                                     │
+│ F:\Program Files\develop\conda_env\envs\py39\lib\http\client.py:1377 in getresponse                                 │
+│                                                                                                                     │
+│   1374 │   │                                                                                                        │
+│   1375 │   │   try:                                                                                                 │
+│   1376 │   │   │   try:                                                                                             │
+│ > 1377 │   │   │   │   response.begin()                                                                             │
+│   1378 │   │   │   except ConnectionError:                                                                          │
+│   1379 │   │   │   │   self.close()                                                                                 │
+│   1380 │   │   │   │   raise                                                                                        │
+│                                                                                                                     │
+│ ┌────────────────────────────────── locals ───────────────────────────────────┐                                     │
+│ │ response = <http.client.HTTPResponse object at 0x000002CCEBF9E910>          │                                     │
+│ │     self = <urllib3.connection.HTTPConnection object at 0x000002CCEBEE9580> │                                     │
+│ └─────────────────────────────────────────────────────────────────────────────┘                                     │
+│                                                                                                                     │
+│ F:\Program Files\develop\conda_env\envs\py39\lib\http\client.py:320 in begin                                        │
+│                                                                                                                     │
+│    317 │   │                                                                                                        │
+│    318 │   │   # read until we get a non-100 response                                                               │
+│    319 │   │   while True:                                                                                          │
+│ >  320 │   │   │   version, status, reason = self._read_status()                                                    │
+│    321 │   │   │   if status != CONTINUE:                                                                           │
+│    322 │   │   │   │   break                                                                                        │
+│    323 │   │   │   # skip the header from the 100 response                                                          │
+│                                                                                                                     │
+│ ┌──────────────────────────── locals ────────────────────────────┐                                                  │
+│ │ self = <http.client.HTTPResponse object at 0x000002CCEBF9E910> │                                                  │
+│ └────────────────────────────────────────────────────────────────┘                                                  │
+│                                                                                                                     │
+│ F:\Program Files\develop\conda_env\envs\py39\lib\http\client.py:281 in _read_status                                 │
+│                                                                                                                     │
+│    278 │   │   self.will_close = _UNKNOWN      # conn will close at end of response                                 │
+│    279 │                                                                                                            │
+│    280 │   def _read_status(self):                                                                                  │
+│ >  281 │   │   line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")                                             │
+│    282 │   │   if len(line) > _MAXLINE:                                                                             │
+│    283 │   │   │   raise LineTooLong("status line")                                                                 │
+│    284 │   │   if self.debuglevel > 0:                                                                              │
+│                                                                                                                     │
+│ ┌──────────────────────────── locals ────────────────────────────┐                                                  │
+│ │ self = <http.client.HTTPResponse object at 0x000002CCEBF9E910> │                                                  │
+│ └────────────────────────────────────────────────────────────────┘                                                  │
+│                                                                                                                     │
+│ F:\Program Files\develop\conda_env\envs\py39\lib\socket.py:704 in readinto                                          │
+│                                                                                                                     │
+│   701 │   │   │   raise OSError("cannot read from timed out object")                                                │
+│   702 │   │   while True:                                                                                           │
+│   703 │   │   │   try:                                                                                              │
+│ > 704 │   │   │   │   return self._sock.recv_into(b)                                                                │
+│   705 │   │   │   except timeout:                                                                                   │
+│   706 │   │   │   │   self._timeout_occurred = True                                                                 │
+│   707 │   │   │   │   raise                                                                                         │
+│                                                                                                                     │
+│ ┌─────────────────────── locals ────────────────────────┐                                                           │
+│ │    b = <memory at 0x000002CCEBFA4B80>                 │                                                           │
+│ │ self = <socket.SocketIO object at 0x000002CCEBF9EC70> │                                                           │
+│ └───────────────────────────────────────────────────────┘                                                           │
+└─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+KeyboardInterrupt                                                                                                      
+2024-02-04 13:45:20.714 | CRITICAL | Possible reason #1: If you are using BlueStacks or LD player or WSA, please enable
+ADB in the settings of your emulator                                                                                   
+2024-02-04 13:45:20.717 | CRITICAL | Possible reason #2: Emulator died, please restart emulator                        
+2024-02-04 13:45:20.719 | CRITICAL | Possible reason #3: Serial incorrect, no such device exists or emulator is not    
+running                                                                                                                
+2024-02-04 13:45:20.722 | CRITICAL | Retry device_screenshot() failed                                                  
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2024-02-04 13:45:26.110 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2024-02-04 13:45:26.125 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:10757)                              
+2024-02-04 13:45:28.511 | INFO | Click ( 166,  165) @ HOME_SELECT_TEAM                                                 
+2024-02-04 13:45:30.440 | INFO | 日常任务-龙:激活失败,剩余尝试次数2。                                                  
+2024-02-04 13:45:32.931 | INFO | Click ( 159,  165) @ HOME_SELECT_TEAM                                                 
+2024-02-04 13:45:37.130 | ERROR | RuntimeError: USB device emulator-5556 is offline                                    
+2024-02-04 13:45:38.133 | ERROR |                                                                                      
+┌───────────────────────────────────────── Traceback (most recent call last) ─────────────────────────────────────────┐
+│ F:\Program Files\develop\conda_env\envs\py39\lib\site-packages\adbutils\_adb.py:88 in read                          │
+│                                                                                                                     │
+│    85 │                                                                                                             │
+│    86 │   def read(self, n: int) -> bytes:                                                                          │
+│    87 │   │   try:                                                                                                  │
+│ >  88 │   │   │   return self._read_fully(n)                                                                        │
+│    89 │   │   except socket.timeout:                                                                                │
+│    90 │   │   │   raise AdbTimeout("adb read timeout")                                                              │
+│    91                                                                                                               │
+│                                                                                                                     │
+│ ┌───────────────────────────── locals ──────────────────────────────┐                                               │
+│ │    n = 4                                                          │                                               │
+│ │ self = <adbutils._adb.AdbConnection object at 0x000001A00BDC6070> │                                               │
+│ └───────────────────────────────────────────────────────────────────┘                                               │
+│                                                                                                                     │
+│ F:\Program Files\develop\conda_env\envs\py39\lib\site-packages\adbutils\_adb.py:96 in _read_fully                   │
+│                                                                                                                     │
+│    93 │   │   t = n                                                                                                 │
+│    94 │   │   buffer = b''                                                                                          │
+│    95 │   │   while t > 0:                                                                                          │
+│ >  96 │   │   │   chunk = self.conn.recv(t)                                                                         │
+│    97 │   │   │   if not chunk:                                                                                     │
+│    98 │   │   │   │   break                                                                                         │
+│    99 │   │   │   buffer += chunk                                                                                   │
+│                                                                                                                     │
+│ ┌────────────────────────────── locals ───────────────────────────────┐                                             │
+│ │ buffer = b''                                                        │                                             │
+│ │      n = 4                                                          │                                             │
+│ │   self = <adbutils._adb.AdbConnection object at 0x000001A00BDC6070> │                                             │
+│ │      t = 4                                                          │                                             │
+│ └─────────────────────────────────────────────────────────────────────┘                                             │
+└─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+timeout: timed out                                                                                                     
+                                                                                                                       
+During handling of the above exception, another exception occurred:                                                    
+                                                                                                                       
+┌───────────────────────────────────────── Traceback (most recent call last) ─────────────────────────────────────────┐
+│ F:\code\workpace\study\pyCharm\python_study_project\qianv_tool\module\devices\devices.py:47 in retry_wrapper        │
+│                                                                                                                     │
+│    44 │   │   │   try:                                                                                              │
+│    45 │   │   │   │   if callable(init):                                                                            │
+│    46 │   │   │   │   │   retry_sleep(_)                                                                            │
+│ >  47 │   │   │   │   │   init()                                                                                    │
+│    48 │   │   │   │   return func(self, *args, **kwargs)                                                            │
+│    49 │   │   │   # Can't handle                                                                                    │
+│    50 │   │   │   except RequestHumanTakeover:                                                                      │
+│                                                                                                                     │
+│ ┌───────────────────────────────────────── locals ──────────────────────────────────────────┐                       │
+│ │           _ = 1                                                                           │                       │
+│ │        args = ('emulator-5556',)                                                          │                       │
+│ │           e = KeyboardInterrupt()                                                         │                       │
+│ │        func = <function Devices.device_screenshot at 0x000001A00BD354C0>                  │                       │
+│ │  get_serial = <function retry.<locals>.get_serial at 0x000001A00BD35550>                  │                       │
+│ │        init = <function retry.<locals>.retry_wrapper.<locals>.init at 0x000001A00BDB2430> │                       │
+│ │      kwargs = {}                                                                          │                       │
+│ │ RETRY_TRIES = 5                                                                           │                       │
+│ │        self = <qianv_tool.module.devices.devices.Devices object at 0x000001A0761439A0>    │                       │
+│ │      serial = 'emulator-5556'                                                             │                       │
+│ └───────────────────────────────────────────────────────────────────────────────────────────┘                       │
+│                                                                                                                     │
+│ F:\code\workpace\study\pyCharm\python_study_project\qianv_tool\module\devices\devices.py:80 in init                 │
+│                                                                                                                     │
+│    77 │   │   │   except BaseException as e:                                                                        │
+│    78 │   │   │   │   if handle_adb_error(e):                                                                       │
+│    79 │   │   │   │   │   def init():                                                                               │
+│ >  80 │   │   │   │   │   │   self.get_u2(serial)                                                                   │
+│    81 │   │   │   │   else:                                                                                         │
+│    82 │   │   │   │   │   break                                                                                     │
+│    83 │   │   │   # RuntimeError: USB device 127.0.0.1:5555 is offline                                              │
+│                                                                                                                     │
+│ ┌───────────────────────────────────── locals ──────────────────────────────────────┐                               │
+│ │   self = <qianv_tool.module.devices.devices.Devices object at 0x000001A0761439A0> │                               │
+│ │ serial = 'emulator-5556'                                                          │                               │
+│ └───────────────────────────────────────────────────────────────────────────────────┘                               │
+│                                                                                                                     │
+│ F:\code\workpace\study\pyCharm\python_study_project\qianv_tool\module\devices\connection\uiautomator.py:76 in       │
+│ get_u2                                                                                                              │
+│                                                                                                                     │
+│    73 │   │   │   self.u2_device(serial)                                                                            │
+│    74 │   │   │   self.lock.release()                                                                               │
+│    75 │   │   # 验证连接是否可用                                                                                    │
+│ >  76 │   │   print(self.u2_devices[serial].info)                                                                   │
+│    77 │   │   # for _ in range(3):                                                                                  │
+│    78 │   │   #     try:                                                                                            │
+│    79 │   │   #                                                                                                     │
+│                                                                                                                     │
+│ ┌───────────────────────────────────── locals ──────────────────────────────────────┐                               │
+│ │   self = <qianv_tool.module.devices.devices.Devices object at 0x000001A0761439A0> │                               │
+│ │ serial = 'emulator-5556'                                                          │                               │
+│ └───────────────────────────────────────────────────────────────────────────────────┘                               │
+│                                                                                                                     │
+│ F:\Program Files\develop\conda_env\envs\py39\lib\site-packages\uiautomator2\__init__.py:448 in info                 │
+│                                                                                                                     │
+│    445 │                                                                                                            │
+│    446 │   @property                                                                                                │
+│    447 │   def info(self):                                                                                          │
+│ >  448 │   │   return self.jsonrpc.deviceInfo(http_timeout=10)                                                      │
+│    449 │                                                                                                            │
+│    450 │   @property                                                                                                │
+│    451 │   def wlan_ip(self):                                                                                       │
+│                                                                                                                     │
+│ ┌───────────────────────── locals ──────────────────────────┐                                                       │
+│ │ self = <uiautomator2.Device object at 0x000001A00BD366D0> │                                                       │
+│ └───────────────────────────────────────────────────────────┘                                                       │
+│                                                                                                                     │
+│ F:\Program Files\develop\conda_env\envs\py39\lib\site-packages\uiautomator2\__init__.py:479 in __call__             │
+│                                                                                                                     │
+│    476 │   │   │   def __call__(self, *args, **kwargs):                                                             │
+│    477 │   │   │   │   http_timeout = kwargs.pop('http_timeout', HTTP_TIMEOUT)                                      │
+│    478 │   │   │   │   params = args if args else kwargs                                                            │
+│ >  479 │   │   │   │   return self.server._jsonrpc_retry_call(self.method, params,                                  │
+│    480 │   │   │   │   │   │   │   │   │   │   │   │   │      http_timeout)                                         │
+│    481 │   │                                                                                                        │
+│    482 │   │   return JSONRpcWrapper(self)                                                                          │
+│                                                                                                                     │
+│ ┌──────────────────────────────────────────────── locals ────────────────────────────────────────────────┐          │
+│ │         args = ()                                                                                      │          │
+│ │ http_timeout = 10                                                                                      │          │
+│ │       kwargs = {}                                                                                      │          │
+│ │       params = {}                                                                                      │          │
+│ │         self = <uiautomator2._BaseClient.jsonrpc.<locals>.JSONRpcWrapper object at 0x000001A00BDC6D60> │          │
+│ └────────────────────────────────────────────────────────────────────────────────────────────────────────┘          │
+│                                                                                                                     │
+│ F:\Program Files\develop\conda_env\envs\py39\lib\site-packages\uiautomator2\__init__.py:486 in _jsonrpc_retry_call  │
+│                                                                                                                     │
+│    483 │                                                                                                            │
+│    484 │   def _jsonrpc_retry_call(self, *args, **kwargs):                                                          │
+│    485 │   │   try:                                                                                                 │
+│ >  486 │   │   │   return self._jsonrpc_call(*args, **kwargs)                                                       │
+│    487 │   │   except (requests.ReadTimeout, ServerError) as e:                                                     │
+│    488 │   │   │   self.reset_uiautomator(str(e))  # uiautomator可能出问题了，强制重启一下                          │
+│    489 │   │   except (NullObjectExceptionError,                                                                    │
+│                                                                                                                     │
+│ ┌────────────────────────── locals ───────────────────────────┐                                                     │
+│ │   args = ('deviceInfo', {}, 10)                             │                                                     │
+│ │ kwargs = {}                                                 │                                                     │
+│ │   self = <uiautomator2.Device object at 0x000001A00BD366D0> │                                                     │
+│ └─────────────────────────────────────────────────────────────┘                                                     │
+│                                                                                                                     │
+│ F:\Program Files\develop\conda_env\envs\py39\lib\site-packages\uiautomator2\__init__.py:513 in _jsonrpc_call        │
+│                                                                                                                     │
+│    510 │   │   │   "params": params,                                                                                │
+│    511 │   │   }                                                                                                    │
+│    512 │   │   data = json.dumps(data)                                                                              │
+│ >  513 │   │   res = self.http.post("/jsonrpc/0",                                                                   │
+│    514 │   │   │   │   │   │   │    headers={"Content-Type": "application/json"},                                   │
+│    515 │   │   │   │   │   │   │    data=data,                                                                      │
+│    516 │   │   │   │   │   │   │    timeout=http_timeout)                                                           │
+│                                                                                                                     │
+│ ┌─────────────────────────────────────────────── locals ────────────────────────────────────────────────┐           │
+│ │          data = '{"jsonrpc": "2.0", "id": "da6ea50d827a8816a052a2a92ce70fda", "method": "deviceIn'+18 │           │
+│ │  http_timeout = 10                                                                                    │           │
+│ │        method = 'deviceInfo'                                                                          │           │
+│ │        params = {}                                                                                    │           │
+│ │ request_start = 1707025537.1313455                                                                    │           │
+│ │          self = <uiautomator2.Device object at 0x000001A00BD366D0>                                    │           │
+│ └───────────────────────────────────────────────────────────────────────────────────────────────────────┘           │
+│                                                                                                                     │
+│ F:\Program Files\develop\conda_env\envs\py39\lib\site-packages\requests\sessions.py:637 in post                     │
+│                                                                                                                     │
+│   634 │   │   :rtype: requests.Response                                                                             │
+│   635 │   │   """                                                                                                   │
+│   636 │   │                                                                                                         │
+│ > 637 │   │   return self.request("POST", url, data=data, json=json, **kwargs)                                      │
+│   638 │                                                                                                             │
+│   639 │   def put(self, url, data=None, **kwargs):                                                                  │
+│   640 │   │   r"""Sends a PUT request. Returns :class:`Response` object.                                            │
+│                                                                                                                     │
+│ ┌──────────────────────────────────────────── locals ────────────────────────────────────────────┐                  │
+│ │   data = '{"jsonrpc": "2.0", "id": "da6ea50d827a8816a052a2a92ce70fda", "method": "deviceIn'+18 │                  │
+│ │   json = None                                                                                  │                  │
+│ │ kwargs = {'headers': {'Content-Type': 'application/json'}, 'timeout': 10}                      │                  │
+│ │   self = <uiautomator2._AgentRequestSession object at 0x000001A00BD36850>                      │                  │
+│ │    url = '/jsonrpc/0'                                                                          │                  │
+│ └────────────────────────────────────────────────────────────────────────────────────────────────┘                  │
+│                                                                                                                     │
+│ F:\Program Files\develop\conda_env\envs\py39\lib\site-packages\uiautomator2\__init__.py:223 in request              │
+│                                                                                                                     │
+│    220 │   │   # one reason is futex_wait_queue:                                                                    │
+│        https://stackoverflow.com/questions/9801256/app-hangs-on-futex-wait-queue-me-every-a-co…                     │
+│    221 │   │                                                                                                        │
+│    222 │   │   # fix atx-agent and request again                                                                    │
+│ >  223 │   │   self.__client._prepare_atx_agent()                                                                   │
+│    224 │   │   url = self.__client.path2url(url)                                                                    │
+│    225 │   │   return super().request(method, url, **kwargs)                                                        │
+│    226                                                                                                              │
+│                                                                                                                     │
+│ ┌────────────────────────────────────────────────── locals ───────────────────────────────────────────────────┐     │
+│ │ kwargs = {                                                                                                  │     │
+│ │          │   'data': '{"jsonrpc": "2.0", "id": "da6ea50d827a8816a052a2a92ce70fda", "method": "deviceIn'+18, │     │
+│ │          │   'json': None,                                                                                  │     │
+│ │          │   'headers': {'Content-Type': 'application/json'},                                               │     │
+│ │          │   'timeout': 10                                                                                  │     │
+│ │          }                                                                                                  │     │
+│ │ method = 'POST'                                                                                             │     │
+│ │  retry = True                                                                                               │     │
+│ │   self = <uiautomator2._AgentRequestSession object at 0x000001A00BD36850>                                   │     │
+│ │    url = '/jsonrpc/0'                                                                                       │     │
+│ └─────────────────────────────────────────────────────────────────────────────────────────────────────────────┘     │
+│                                                                                                                     │
+│ F:\Program Files\develop\conda_env\envs\py39\lib\site-packages\uiautomator2\__init__.py:314 in _prepare_atx_agent   │
+│                                                                                                                     │
+│    311 │   │   check running -> push binary -> launch                                                               │
+│    312 │   │   """                                                                                                  │
+│    313 │   │   assert self._serial, "Device serialno is required"                                                   │
+│ >  314 │   │   _d = self._wait_for_device()                                                                         │
+│    315 │   │   if not _d:                                                                                           │
+│    316 │   │   │   raise RuntimeError("USB device %s is offline" % self._serial)                                    │
+│    317 │   │   self.logger.debug("device %s is online", self._serial)                                               │
+│                                                                                                                     │
+│ ┌───────────────────────── locals ──────────────────────────┐                                                       │
+│ │ self = <uiautomator2.Device object at 0x000001A00BD366D0> │                                                       │
+│ └───────────────────────────────────────────────────────────┘                                                       │
+│                                                                                                                     │
+│ F:\Program Files\develop\conda_env\envs\py39\lib\site-packages\uiautomator2\__init__.py:367 in _wait_for_device     │
+│                                                                                                                     │
+│    364 │   │   │   │   │   time.sleep(1.0)                                                                          │
+│    365 │   │   │   │   │   continue                                                                                 │
+│    366 │   │   │   try:                                                                                             │
+│ >  367 │   │   │   │   adb.wait_for(self._serial, timeout=1)                                                        │
+│    368 │   │   │   except adbutils.AdbTimeout:                                                                      │
+│    369 │   │   │   │   continue                                                                                     │
+│    370                                                                                                              │
+│                                                                                                                     │
+│ ┌──────────────────────────────────── locals ─────────────────────────────────────┐                                 │
+│ │     _is_remote = False                                                          │                                 │
+│ │ _RE_remote_adb = re.compile('^\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}:\\d+$') │                                 │
+│ │            adb = <adbutils.AdbClient object at 0x000001A007C328E0>              │                                 │
+│ │       deadline = 1707025540.1323462                                             │                                 │
+│ │           self = <uiautomator2.Device object at 0x000001A00BD366D0>             │                                 │
+│ │        timeout = 3.0                                                            │                                 │
+│ │          title = 'wait-for-device'                                              │                                 │
+│ └─────────────────────────────────────────────────────────────────────────────────┘                                 │
+│                                                                                                                     │
+│ F:\Program Files\develop\conda_env\envs\py39\lib\site-packages\adbutils\_adb.py:219 in wait_for                     │
+│                                                                                                                     │
+│   216 │   │   │   cmds.append("wait-for-" + transport + "-" + state)                                                │
+│   217 │   │   │   c.send_command(":".join(cmds))                                                                    │
+│   218 │   │   │   c.check_okay()                                                                                    │
+│ > 219 │   │   │   c.check_okay()                                                                                    │
+│   220 │                                                                                                             │
+│   221 │   # def reconnect(self, addr: str, timeout: float=None) -> str:                                             │
+│   222 │   #     """ this function is not same as adb reconnect                                                      │
+│                                                                                                                     │
+│ ┌──────────────────────────────── locals ────────────────────────────────┐                                          │
+│ │         c = <adbutils._adb.AdbConnection object at 0x000001A00BDC6070> │                                          │
+│ │      cmds = ['host-serial', 'emulator-5556', 'wait-for-any-device']    │                                          │
+│ │      self = <adbutils.AdbClient object at 0x000001A007C328E0>          │                                          │
+│ │    serial = 'emulator-5556'                                            │                                          │
+│ │     state = 'device'                                                   │                                          │
+│ │   timeout = 1                                                          │                                          │
+│ │ transport = 'any'                                                      │                                          │
+│ └────────────────────────────────────────────────────────────────────────┘                                          │
+│                                                                                                                     │
+│ F:\Program Files\develop\conda_env\envs\py39\lib\site-packages\adbutils\_adb.py:132 in check_okay                   │
+│                                                                                                                     │
+│   129 │   │   return content.decode(encoding, errors='replace')                                                     │
+│   130 │                                                                                                             │
+│   131 │   def check_okay(self):                                                                                     │
+│ > 132 │   │   data = self.read_string(4)                                                                            │
+│   133 │   │   if data == _FAIL:                                                                                     │
+│   134 │   │   │   raise AdbError(self.read_string_block())                                                          │
+│   135 │   │   elif data == _OKAY:                                                                                   │
+│                                                                                                                     │
+│ ┌───────────────────────────── locals ──────────────────────────────┐                                               │
+│ │ self = <adbutils._adb.AdbConnection object at 0x000001A00BDC6070> │                                               │
+│ └───────────────────────────────────────────────────────────────────┘                                               │
+│                                                                                                                     │
+│ F:\Program Files\develop\conda_env\envs\py39\lib\site-packages\adbutils\_adb.py:108 in read_string                  │
+│                                                                                                                     │
+│   105 │   │   self.conn.send("{:04x}".format(len(cmd_bytes)).encode("utf-8") + cmd_bytes)                           │
+│   106 │                                                                                                             │
+│   107 │   def read_string(self, n: int) -> str:                                                                     │
+│ > 108 │   │   data = self.read(n).decode("utf-8", errors="replace")                                                 │
+│   109 │   │   return data                                                                                           │
+│   110 │                                                                                                             │
+│   111 │   def read_string_block(self) -> str:                                                                       │
+│                                                                                                                     │
+│ ┌───────────────────────────── locals ──────────────────────────────┐                                               │
+│ │    n = 4                                                          │                                               │
+│ │ self = <adbutils._adb.AdbConnection object at 0x000001A00BDC6070> │                                               │
+│ └───────────────────────────────────────────────────────────────────┘                                               │
+│                                                                                                                     │
+│ F:\Program Files\develop\conda_env\envs\py39\lib\site-packages\adbutils\_adb.py:88 in read                          │
+│                                                                                                                     │
+│    85 │                                                                                                             │
+│    86 │   def read(self, n: int) -> bytes:                                                                          │
+│    87 │   │   try:                                                                                                  │
+│ >  88 │   │   │   return self._read_fully(n)                                                                        │
+│    89 │   │   except socket.timeout:                                                                                │
+│    90 │   │   │   raise AdbTimeout("adb read timeout")                                                              │
+│    91                                                                                                               │
+│                                                                                                                     │
+│ ┌───────────────────────────── locals ──────────────────────────────┐                                               │
+│ │    n = 4                                                          │                                               │
+│ │ self = <adbutils._adb.AdbConnection object at 0x000001A00BDC6070> │                                               │
+│ └───────────────────────────────────────────────────────────────────┘                                               │
+└─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+KeyboardInterrupt                                                                                                      
+2024-02-04 13:45:39.013 | CRITICAL | Possible reason #1: If you are using BlueStacks or LD player or WSA, please enable
+ADB in the settings of your emulator                                                                                   
+2024-02-04 13:45:39.014 | CRITICAL | Possible reason #2: Emulator died, please restart emulator                        
+2024-02-04 13:45:39.016 | CRITICAL | Possible reason #3: Serial incorrect, no such device exists or emulator is not    
+running                                                                                                                
+2024-02-04 13:45:39.017 | CRITICAL | Retry device_screenshot() failed                                                  

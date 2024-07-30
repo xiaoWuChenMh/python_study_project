@@ -11,8 +11,9 @@ from qianv_tool.gui.frame.task.long_task import LongTask
 from qianv_tool.gui.frame.task.shi_men_task import ShiMenTask
 
 class RoutineFrame(ctk.CTkFrame):
-    def __init__(self, master,image):
+    def __init__(self, master,image,devices):
         super().__init__(master,corner_radius=0, fg_color="transparent")
+        self.devices = devices
         # 居中配置
         self.grid_columnconfigure(0, weight=1)
         self.grid_rowconfigure(0, weight=1)
@@ -28,8 +29,8 @@ class RoutineFrame(ctk.CTkFrame):
         a = tabVidew.getTab(0)
 
         # 初始化各个tab页的内容
-        self.long_task_frame = LongTask(tabVidew.getTab(0),image)
+        self.long_task_frame = LongTask(tabVidew.getTab(0),image,self.devices)
         self.long_task_frame.grid(row=0, column=0,sticky="nsew")
-        self.shi_men_task_frame = ShiMenTask(tabVidew.getTab(1),image)
+        self.shi_men_task_frame = ShiMenTask(tabVidew.getTab(1),image,self.devices)
         self.shi_men_task_frame.grid(row=0, column=0,sticky="nsew")
 

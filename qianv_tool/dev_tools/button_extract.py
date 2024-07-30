@@ -1,5 +1,7 @@
 import os
 
+from paddleocr import PaddleOCR
+
 import imageio
 import numpy as np
 from tqdm.contrib.concurrent import process_map
@@ -17,6 +19,7 @@ from qianv_tool.module.base.template import Template
 """
 ButtonExt.IMPORT_EXP = ButtonExt.IMPORT_EXP.strip().split('\n') + ['']
 
+ocr = PaddleOCR(use_angle_cls=True, lang="ch")
 
 class ImageExtractor:
     def __init__(self, module, file):
@@ -29,9 +32,10 @@ class ImageExtractor:
         # 文件名 和 后缀
         self.name, self.ext = os.path.splitext(file)
         # 初始化 按钮模块对象的属性
-        self.area, self.color, self.button, self.file = {}, {}, {}, {}
+        self.area, self.color, self.button, self.file, self.text = {}, {}, {}, {}, {}
         # 加载 图片资源，并获取模块对象的真实属性
         self.load(ButtonExt.ASSETS_GAME_FOLDER)
+        # need to run only once to download and load model into memory
 
 
     def get_file(self, genre='', server=ButtonExt.ASSETS_GAME_FOLDER):
@@ -75,10 +79,24 @@ class ImageExtractor:
                     logger.warning(f'{file} has multiple different bbox, this will cause unexpected behaviour')
                 if mean is None:
                     mean = new_mean
-            return bbox, mean
+            return bbox, mean,''
         else:
             image = load_image(file)
-            return self._extract(image, file)
+            text = self.get_word(image)
+            bbox, mean = self._extract(image, file)
+            return bbox, mean, text
+
+    def get_word(self,image):
+        text = ""
+        result = ocr.ocr(image, cls=True)
+        for idx in range(len(result)):
+            res = result[idx]
+            try:
+                for line in res:
+                    text = text + line[1][0]
+            except Exception:
+                pass
+        return text
 
     @staticmethod
     def _extract(image, file):
@@ -95,21 +113,25 @@ class ImageExtractor:
     def load(self, server=ButtonExt.ASSETS_GAME_FOLDER):
         file = self.get_file(server=server)
         if os.path.exists(file):
-            area, color = self.extract(file)
+            area, color, text = self.extract(file)
             # 默认按钮点击区域 和 按钮识别区域相同
             button = area
             # 判断是否需要修正识别区域
             override = self.get_file('AREA', server=server)
             if os.path.exists(override):
-                area, _ = self.extract(override)
+                area, _, _ = self.extract(override)
             # 判断是否需要修正颜色
             override = self.get_file('COLOR', server=server)
             if os.path.exists(override):
-                _, color = self.extract(override)
+                _, color, _ = self.extract(override)
             # 判断是否需要修正按钮点击区域
             override = self.get_file('BUTTON', server=server)
             if os.path.exists(override):
-                button, _ = self.extract(override)
+                button, _, _ = self.extract(override)
+            # 判断是否需要修正文本
+            override = self.get_file('TEXT', server=server)
+            if os.path.exists(override):
+                _, _, text = self.extract(override)
             # ----------- 获取:最终的坐标和颜色值 -----------------
             # 按钮识别的区域
             self.area[server] = area
@@ -119,17 +141,22 @@ class ImageExtractor:
             self.button[server] = button
             # 图片资源的相对位置
             self.file[server] = file
+            # 图片上的文字
+            self.text[server] = text
         else:
             logger.attr(server, f'{self.name} not found, use server assets')
             self.area[server] = self.area[ButtonExt.ASSETS_GAME_FOLDER]
             self.color[server] = self.color[ButtonExt.ASSETS_GAME_FOLDER]
             self.button[server] = self.button[ButtonExt.ASSETS_GAME_FOLDER]
             self.file[server] = self.file[ButtonExt.ASSETS_GAME_FOLDER]
+            self.text[server]= self.file[ButtonExt.ASSETS_GAME_FOLDER]
+
+
 
     @property
     def expression(self):
-        return '%s = Button(area=%s, color=%s, button=%s, file=%s)' % (
-            self.name, self.area, self.color, self.button, self.file)
+        return '%s = Button(area=%s,text=%s, color=%s, button=%s, file=%s)' % (
+            self.name, self.area, self.text, self.color, self.button, self.file)
 
 
 class TemplateExtractor(ImageExtractor):
@@ -207,7 +234,7 @@ class ModuleExtractor:
         if not os.path.exists(folder):
             os.mkdir(folder)
         # 将动作解析内容写入文件assets.py 中
-        with open(os.path.join(folder, ButtonExt.BUTTON_FILE), 'w', newline='') as f:
+        with open(os.path.join(folder, ButtonExt.BUTTON_FILE), 'w', newline='',encoding='utf-8') as f:
             # 获取按钮模块对象的内容（expression） 并 写入文件assets.py中
             for text in self.expression:
                 f.write(text + '\n')

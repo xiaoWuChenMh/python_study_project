@@ -1,183 +1,275 @@
 ################################################################################################################
 #                        设备操作
-#  设备信息说明：
-#      devices_info = {'设备ID': {'statu': '状态：0-异常；1-正常', 'product': '命令返回信息', 'model': '命令返回信息', 'device': '命令返回信息', 'transport_id': '命令返回信息'},'设备ID':....}
-#      system_info =  {'system': '64bit', 'cpu': 'AMD64'}
+#
+# find_emulator_devices：发现当前pc上的所有模拟器设备
+# init_devices：初始化所有设备，即安装需要的应用
+# pc_system_info：pc的系统信息
+#
+# 初始化过程： find_devices Then init_devices  Then 是否能正确连接 （否：关闭u2服务 then 重启atx服务） then 再次测试 then 重试3次不行报错
 ################################################################################################################
 
-import uiautomator2 as u2
-import subprocess
-from qianv_tool.module.logger import logger
+from functools import wraps
+from json.decoder import JSONDecodeError
+from adbutils.errors import AdbError
+from qianv_tool.module.devices.connection.connection import Connection
+from qianv_tool.module.devices.utils import *
+from qianv_tool.module.devices.exception import RequestHumanTakeover
+from qianv_tool.module.devices.exception import ImageTruncated
 
-from qianv_tool.module.devices.connection import Connection
+
+
+# 和设备发生连接错误时进行重试的逻辑
+def retry(func):
+
+    # 默认和设备连接失败重试次数
+    RETRY_TRIES = 5
+
+    # 获取设备信息
+    def get_serial(args):
+        for v in args:
+            if is_emulator(v):
+                return v
+            # 其他类型：无，当前仅支持模拟器
+        return None
+
+    @wraps(func)
+    def retry_wrapper(self, *args, **kwargs):
+        """
+        Args:
+            self (Uiautomator2):
+        """
+        serial = get_serial(args)
+        init = None
+        for _ in range(RETRY_TRIES):
+            try:
+                if callable(init):
+                    retry_sleep(_)
+                    init()
+                return func(self, *args, **kwargs)
+            # Can't handle
+            except RequestHumanTakeover:
+                break
+            # When adb server was killed
+            except ConnectionResetError as e:
+                logger.error(e)
+                def init():
+                    self.device_restart()
+            # In `device.set_new_command_timeout(604800)`
+            # json.decoder.JSONDecodeError: Expecting value: line 1 column 2 (char 1)
+            except JSONDecodeError as e:
+                logger.error(e)
+                def init():
+                    # 需要获取所有设备ID
+                    self.init_devices()
+            except ValueError as e:
+                logger.error(e)
+                def init():
+                    # 需要获取所有设备ID
+                    self.restart_device_service(serial)
+            # AdbError
+            except AdbError as e:
+                if handle_adb_error(e):
+                    def init():
+                        self.device_restart()
+                else:
+                    break
+            # AdbError
+            except BaseException as e:
+                if handle_adb_error(e):
+                    def init():
+                        self.get_u2(serial)
+                else:
+                    break
+            # RuntimeError: USB device 127.0.0.1:5555 is offline
+            except RuntimeError as e:
+                if handle_adb_error(e):
+                    def init():
+                        self.device_restart()
+                else:
+                    break
+            # In `assert c.read string(4) == _OKAY`
+            # ADB on emulator not enabled
+            except AssertionError as e:
+                logger.exception(e)
+                possible_reasons(
+                    'If you are using BlueStacks or LD player or WSA, '
+                    'please enable ADB in the settings of your emulator'
+                )
+                break
+            # ImageTruncated
+            except ImageTruncated as e:
+                logger.error(e)
+                def init():
+                    pass
+            # Unknown
+            except Exception as e:
+                logger.exception(e)
+                def init():
+                    pass
+
+        logger.critical(f'Retry {func.__name__}() failed')
+        raise 8
+
+    return retry_wrapper
+
 
 class Devices(Connection):
 
+    # 设备列表：{'设备ID': {'serial': '设备ID','state': '状态：offline-离线；device-在线'},'设备ID':....}
     devices_info = {}
 
+    # 系统信息 {'system': '64bit', 'cpu': 'AMD64'}
     system_info = {}
 
     def __init__( self ):
-        pass
+        super().__init__()
+        self.pc_system_info()
+        self.find_devices()
 
-    def cmdExe( self, command ):
+
+    def info(self):
+        return self.devices_info
+
+    def pc_system_info(self):
         """
-         执行cmd命令
-        :param command: 待执行的命令
+        pc的系统系统：系统架构(system) 和 cpu类型（cpu）
         :return:
         """
-        # 执行命令
-        result = subprocess.run(command, capture_output=True, text=True, shell=True)
-        # 获取输出结果
-        output = result.stdout.strip()
-        # 返回输出结果
-        return output
+        try:
+            adb_command = 'python -c "import platform;print(platform.architecture()[0]);print(platform.machine())"'
+            cmd_result = sys_command(adb_command,shell=True).split('\n')
+            system = cmd_result[0].strip()
+            cpu = cmd_result[1].strip()
+            self.system_info['system'] = system
+            self.system_info['cpu'] = cpu
+            logger.info('cp system info: system(%s) cpu(%s)' % (system, cpu))
+        except Exception as e:
+            self.system_info['system'] = 'null'
+            self.system_info['cpu'] = 'null'
+            logger.info('Get cp system info Error: %s' % (e))
+        return self
+
 
     def find_devices( self ):
         """
          发现设备
         :return:
         """
-        adb_command = 'adb devices -l'
-        cmd_result =  self.cmdExe(adb_command).split('\n')
-        for dv in cmd_result[1:] :
-            device_info = {}
-            try:
-                if 'offline ' in dv:
-                    results = dv.split(' offline ')
-                    device_id = results[0].strip()
-                    logger.info('find device error: %s' % (device_id))
-                    device_info['statu'] = '0'
-                    self.devices_info[device_id] = {}
-                else:
-                    results = dv.split(' device ')
-                    device_id = results[0].strip()
-                    logger.info('find device success: %s' % (device_id) )
-                    device_info['statu'] = '1'
-                    others_info = results[1].strip().split(' ')
-                    for info in others_info:
-                        key = info.split(':')[0].strip()
-                        value = info.split(':')[1].strip()
-                        device_info[key] = value
-                    self.devices_info[device_id] = device_info
-            except Exception:
+        for info in self.adb_client.list():
+            serial = info.serial
+            state = info.state
+            if state == 'offline':
+                logger.warning(f'Device {serial} is offline, disconnect it before connecting')
+            elif state == 'unauthorized':
+                logger.error(f'Device {serial} is unauthorized, please accept ADB debugging on your device')
+            elif state == 'device':
                 pass
-        return self
-
-
-    def install_atx(self):
-        """
-         在设备中安装atx等app
-         命令返回值 # 'Successfully init AdbDevice(serial=emulator-5554) \nSuccessfully init AdbDevice(serial=emulator-5556) \n\x1b[0m'
-        :return:
-        """
-        try:
-            adb_command = 'python -m uiautomator2 init'
-            cmd_result = self.cmdExe(adb_command).split('\n')
-            for dv in cmd_result:
-                if 'Successfully' in dv:
-                    device_id = dv.split('serial=')[1][0:-1]
-                    device_info = self.devices_info[device_id]
-                    device_info['install_tag'] = '1'
-        except Exception:
-            pass
-
-    def check_processor(self):
-        """
-        检查处理器架构：系统架构(system) 和 cpu类型（cpu）
-        :return:
-        """
-        try:
-            adb_command = 'python -c "import platform;print(platform.architecture()[0]);print(platform.machine())"'
-            cmd_result = self.cmdExe(adb_command).split('\n')
-            self.system_info['system'] = cmd_result[0].strip()
-            self.system_info['cpu'] = cmd_result[1].strip()
-        except Exception:
-            self.system_info['system'] = 'null'
-            self.system_info['cpu'] = 'null'
-        return self
-
-    # 设置设备标识 emulator-5554 、emulator-5556、 emulator-5558 、emulator-5560
-    # 不一定管用
-    def init_atx(self,device_id):
-        # 执行 adb shell 命令
-        logger.info('Exe adb shell (%s):  ---------------- start ---------------------' % (device_id))
-        adb_shell_process = subprocess.Popen(['adb', '-s', device_id, 'shell'], stdin=subprocess.PIPE,
-                                             stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        output, error = ('','')
-        try:
-            # 执行 chmod 命令
-            chmod_command = "chmod 775 /data/local/tmp/atx-agent\n"
-            adb_shell_process.stdin.write(chmod_command.encode('utf-8'))
-            adb_shell_process.stdin.flush()
-
-            # 执行 atx-agent 命令
-            agent_command = "/data/local/tmp/atx-agent server -d\n"
-            adb_shell_process.stdin.write(agent_command.encode('utf-8'))
-            adb_shell_process.stdin.flush()
-
-            # 退出 adb shell
-            exit_command = "exit\n"
-            adb_shell_process.stdin.write(exit_command.encode('utf-8'))
-            adb_shell_process.stdin.flush()
-
-            # 获取命令的返回内容和错误信息
-            output, error = adb_shell_process.communicate()
-
-            # 通过uiautomator2 和指定设备建立连接(执行较慢3~5米啊）
-            u2_connect_info = u2.connect(device_id).info
-            if 'currentPackageName' in u2_connect_info:
-                device_info = self.devices_info[device_id]['connect_statu'] = '1'
-                logger.info('connect device success (%s) : %s' % ( device_id, u2_connect_info ))
             else:
-                device_info = self.devices_info[device_id]['connect_statu'] = '0'
-                # 输出命令返回错误信息(正常执行后，error也有信息输出，所以输出前还需要检查是否成功连接，失败后再输出)
-                logger.info('connect device Error Output (%s) : %s' % (device_id, error.decode('utf-8')) )
-            logger.info('connect device Error Output (%s) : %s' % (device_id, error.decode('utf-8')))
-            # 输出命令返回内容
-            if len(output)>3 :
-                logger.info('Command Output (%s): %s' % (device_id,output.decode('utf-8')))
-        except Exception as e:
-            print(e)
-            logger.info('Exe adb shell (%s), init axt error!!!' % (device_id))
-            device_info = self.devices_info[device_id]['connect_statu'] = '0'
-        finally:
-            # 关闭stdin、stdout和stderr
-            adb_shell_process.stdin.close()
-            adb_shell_process.stdout.close()
-            adb_shell_process.stderr.close()
-            # 等待进程结束
-            adb_shell_process.wait()
-
-            logger.info('Exe adb shell (%s):  ---------------- end ---------------------' % (device_id))
+                logger.warning(f'Device {serial} is is having a unknown status: {state}')
+            if serial in self.devices_info:
+                device = self.devices_info[serial]
+                device['serial'] = serial
+                device['state'] = state
+            else:
+                self.devices_info[serial] = {'serial':serial,'state':state}
         return self
 
 
-    def screenshot( self ):
+    @retry
+    def device_info_print( self,serial ):
+        """
+        尝试使用retry,在u2服务没有启动的时候，第一次执行失败，然后通过报错+回调函数调用重启服务后，再次执行该段代码成功
+        :param serial:
+        :return:
+        """
+
+        self.get_u2(serial)
+
+    @retry
+    def device_screenshot(self, serial):
         """
         截图
         :return:
         """
-        pass
+        return self.screenshot(serial)
 
-    def click( self ,button):
+    @retry
+    def click( self,serial,button,offset=None):
         """
         点击指定按钮
-        :param button:
+        TODO 加一个随机睡眠n秒，来对冲多次点击相隔实现将近的问题。
+        :param serial:设备id
+        :param button:带点击的按钮
+        :param offset:点击按钮是否有位移
         :return:
         """
-        pass
+        x, y = random_rectangle_point(button.button)
+        x, y = ensure_int(x, y)
+        if isinstance(offset, tuple) and len(offset) == 2:
+            x  = x+offset[0]
+            y  = y+offset[1]
+        if isinstance(offset, tuple) and len(offset) == 4:
+            x  = x+offset[0]
+            y  = y+offset[1]
+        logger.info(
+            'Click %s @ %s' % (point2str(x, y), button)
+        )
+        self.click_uiautomator2(serial,x,y)
+
+
+    @retry
+    def click_position( self,serial,position,offset=None):
+        """
+        点击指定按钮
+        TODO 加一个随机睡眠n秒，来对冲多次点击相隔实现将近的问题。
+        :param serial:设备id
+        :param position:要点击的坐标点
+        :param offset:点击的坐标是否有偏移
+        :return:
+        """
+        x, y = position[0],position[1]
+        if isinstance(offset, tuple) and len(offset) == 2:
+            x  = x+offset[0]
+            y  = y+offset[1]
+        if isinstance(offset, tuple) and len(offset) == 4:
+            x  = x+offset[0]
+            y  = y+offset[1]
+        logger.info(f'Click position : {x} @ {y}' )
+        self.click_uiautomator2(serial,x,y)
+
+    @retry
+    def swipe( self,serial, sx, sy, ex, ey):
+        """
+        滑动
+        direction: 手指右滑方向，4选1 "left", "right", "up", "down"
+        scale: 滑动距离，默认0.2即屏幕宽度的20%
+        """
+        self.swipe_uiautomator2(serial, sx, sy, ex, ey)
+
+    @retry
+    def central_site_click(self, serial, offset=None):
+        """
+        点击屏幕位置，支持偏移
+        :param serial:
+        :param offset:
+        :return:
+        """
+        x,y = self.central_coordinate(serial)
+        if isinstance(offset, tuple) and len(offset) == 2:
+            x = x+offset[0]
+            y = y+offset[1]
+        self.click_uiautomator2(serial, x, y)
+
 
 if __name__ == "__main__":
     __devices = Devices()
-    __devices.find_devices()
-    # __devices.install_atx()
-    __devices.check_processor()
-    for key, value in __devices.devices_info.items():
-        if value['statu'] == '1' :
-            # 如何判断atx是否正常呢，调用u2.connect('emulator-5554')查看是否报错？
-            __devices.init_atx(key)
+
     print(__devices.devices_info)
     print(__devices.system_info)
+    for serial in __devices.devices_info:
+        __devices.device_info_print(serial)
+
+
+
 
 

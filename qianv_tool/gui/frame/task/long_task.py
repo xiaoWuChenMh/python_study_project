@@ -12,7 +12,7 @@ import qianv_tool.config.ui_option_conf as OPTION
 
 class LongTask(ctk.CTkScrollableFrame):
 
-    def __init__(self, master,image):
+    def __init__(self, master,image,devices):
         super().__init__(master,corner_radius=0)
         self.grid_columnconfigure(0, weight=1)
 
@@ -49,30 +49,57 @@ class LongTask(ctk.CTkScrollableFrame):
                               )
         switch.grid(row=0, column=1, padx=20, pady=(20,0), sticky="nsew")
 
-        # 执行次数:
-        execute_num_value = ctk.StringVar(value="40")
-        execute_num_title = ctk.CTkLabel(submitFrom, text='执行次数')
+        # 任务执行总次数（row=1）: 参考用法：https://github.com/TomSchimansky/CustomTkinter/issues/2134
+        execute_num_value = ctk.StringVar(value="45")
+        execute_num_title = ctk.CTkLabel(submitFrom, text='任务执行总次数')
         execute_num_title.grid(row=1, column=0, padx=10, pady=(5,0), sticky="nsew")
 
         execute_num = ctk.CTkEntry(submitFrom,textvariable=execute_num_value)
         execute_num.grid(row=1, column=1, padx=20, pady=(5, 0), sticky="nsew")
         device['execute_num'] = execute_num
         execute_num_value.trace_add("write", lambda *args: self.execute_num_callback(device) )
-        # 他人申请队长
-        apply_leader_title = ctk.CTkLabel(submitFrom, text='他人申请队长')
-        apply_leader_title.grid(row=2, column=0, padx=10, pady=(5,0), sticky="nsew")
 
-        apply_leader = ctk.CTkComboBox(submitFrom, values=OPTION.APPLY_LEADER_OPTION,command=self.apply_leader_callback)
-        apply_leader.grid(row=2, column=1, padx=20, pady=(5, 0), sticky="nsew")
-        device['apply_leader'] = apply_leader
 
-        # 当前不是队长
-        is_leader_title = ctk.CTkLabel(submitFrom, text='当前不是队长')
-        is_leader_title.grid(row=3, column=0, padx=10, pady=(5,0), sticky="nsew")
+        # 任务待领取位置（row=2）:
+        position_title = ctk.CTkLabel(submitFrom, text='任务待领取位置')
+        position_title.grid(row=2, column=0, padx=10, pady=(5,0), sticky="nsew")
 
-        is_leader = ctk.CTkComboBox(submitFrom, values=OPTION.IS_LEADER_TITLE_OPTION,command=self.is_leader_callback)
-        is_leader.grid(row=3, column=1, padx=20, pady=(5, 10), sticky="nsew")
-        device['is_leader'] = is_leader
+        position = ctk.CTkComboBox(submitFrom, values=OPTION.TASK_POSITION,command=self.position_callback)
+        position.grid(row=2, column=1, padx=20, pady=(5, 0), sticky="nsew")
+        device['position'] = position
+
+
+        # 操作反应等待（row=3）:
+        reply_wait_value = ctk.StringVar(value="1")
+        reply_wait_title = ctk.CTkLabel(submitFrom, text='操作反应等待(秒)')
+        reply_wait_title.grid(row=3, column=0, padx=10, pady=(5,0), sticky="nsew")
+
+        reply_wait = ctk.CTkEntry(submitFrom,textvariable=reply_wait_value)
+        reply_wait.grid(row=3, column=1, padx=20, pady=(5, 0), sticky="nsew")
+        device['reply_wait'] = reply_wait
+        reply_wait_value.trace_add("write", lambda *args: self.reply_wait_callback(device) )
+
+        # 切换地图等待(秒)（row=4）:
+        switch_map_value = ctk.StringVar(value="5")
+        switch_map_title = ctk.CTkLabel(submitFrom, text='切换地图等待(秒)')
+        switch_map_title.grid(row=4, column=0, padx=10, pady=(5,0), sticky="nsew")
+
+        switch_map = ctk.CTkEntry(submitFrom,textvariable=switch_map_value)
+        switch_map.grid(row=4, column=1, padx=20, pady=(5, 0), sticky="nsew")
+        device['switch_map'] = switch_map
+        switch_map_value.trace_add("write", lambda *args: self.switch_map_callback(device) )
+
+
+        # 副本挂机时间（row=5）:
+        dungeon_min_time_value = ctk.StringVar(value="120")
+        dungeon_min_time_title = ctk.CTkLabel(submitFrom, text='副本挂机时间(秒)')
+        dungeon_min_time_title.grid(row=5, column=0, padx=10, pady=(5,0), sticky="nsew")
+
+        dungeon_min_time = ctk.CTkEntry(submitFrom,textvariable=dungeon_min_time_value)
+        dungeon_min_time.grid(row=5, column=1, padx=20, pady=(5, 0), sticky="nsew")
+        device['dungeon_min_time'] = dungeon_min_time
+        dungeon_min_time_value.trace_add("write", lambda *args: self.dungeon_min_time_callback(device) )
+
         return submitFrom
 
 
@@ -82,20 +109,38 @@ class LongTask(ctk.CTkScrollableFrame):
         :param switch_var:
         :return:
         """
-        print("switch toggled, current value:", switch_var.get())
+        # 启动：on; 关闭：off；
+        print(f'任务启动开关状态：{switch_var.get()}')
         if switch_var.get() == "on":
             print("设备名称:", device['name'])
-            # 不能大于40，大于40就修正为40，修改值： execute_num.configure(textvariable=ctk.StringVar(value="22"))
-            print("执行次数:", device['execute_num'].get())
-            print("他人申请队长:", device['apply_leader'].get())
-            print("当前不是队长:", device['is_leader'].get())
+            print( self.submit_check(device))
 
+    def submit_check( self,device ):
+        result = {}
+        execute_num = device['execute_num'].get()
+        result['execute_num'] = 45 if execute_num == '' or int(execute_num) > 45 else int(execute_num)
+        result['position'] = 0 if device['position'].get() == '' else int(device['position'].get())
+        result['reply_wait'] = 1 if device['reply_wait'].get() == '' else int(device['reply_wait'].get())
+        result['switch_map'] = 5 if device['switch_map'].get() == '' else int(device['switch_map'].get())
+        result['dungeon_min_time'] = 120 if device['dungeon_min_time'].get() == '' else int(device['dungeon_min_time'].get())
+        return  result
 
-    def apply_leader_callback(self,choice):
-        print("他人申请队长:", choice)
-
-    def is_leader_callback(self, choice):
-        print("当前不是队长:", choice)
 
     def execute_num_callback(self,device):
-        print("执行次数:", device['execute_num'].get())
+        print("任务执行总次数:", device['execute_num'].get())
+        # 判断是否开启，开启就更新device参数
+        print(self.submit_check(device))
+    def position_callback(self,choice):
+        # 判断是否开启，开启就更新device参数
+        print("任务待领取位置:", choice)
+    def reply_wait_callback(self,device):
+        # 判断是否开启，开启就更新device参数
+        print("操作反应等待(秒):", device['reply_wait'].get())
+    def switch_map_callback(self,device):
+        # 判断是否开启，开启就更新device参数
+        print("切换地图等待(秒):", device['switch_map'].get())
+    def dungeon_min_time_callback(self,device):
+        # 判断是否开启，开启就更新device参数
+        print("副本挂机时间(秒):", device['dungeon_min_time'].get())
+
+

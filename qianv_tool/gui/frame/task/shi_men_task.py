@@ -12,17 +12,21 @@ import qianv_tool.config.ui_option_conf as OPTION
 
 class ShiMenTask(ctk.CTkScrollableFrame):
 
-    def __init__(self, master,image):
+    def __init__(self, master,image,devices):
         super().__init__(master,corner_radius=0)
         self.grid_columnconfigure(0, weight=1)
 
         # 获取设备信息
         self.devices = DevidesInfo().get_info()
 
-        # 操作区域
+        # 操作区域(测试数据）
         for i, device in enumerate(self.devices):
             submitFrom =self.createSubmitForm(self,device)
             submitFrom.grid(row=i, column=0, sticky="nsew")
+
+        # for i, device in self.devices:
+        #     submitFrom =self.createSubmitForm(self,device)
+        #     submitFrom.grid(row=i, column=0, sticky="nsew")
 
 
     def createSubmitForm(self,operate,device):

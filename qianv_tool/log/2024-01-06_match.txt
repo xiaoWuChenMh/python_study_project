@@ -1,0 +1,608 @@
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2024-01-06 12:19:55.371 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2024-01-06 12:21:32.037 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2024-01-06 12:22:31.558 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:1730)                               
+2024-01-06 12:23:28.578 | WARNING | 文字识别错误,错误信息：'NoneType' object is not iterable                           
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2024-01-06 12:25:52.986 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2024-01-06 12:26:08.013 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:1906)                               
+2024-01-06 12:27:53.520 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:1906)                               
+2024-01-06 12:28:20.241 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:1906)                               
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2024-01-06 12:28:39.148 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2024-01-06 12:33:36.140 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2024-01-06 12:34:01.872 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2024-01-06 12:35:37.855 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2024-01-06 12:36:01.618 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:1906)                               
+2024-01-06 12:36:53.046 | ERROR | InvalidVersion: Invalid version: ''                                                  
+2024-01-06 12:37:04.760 | INFO | Restart ATX                                                                           
+2024-01-06 12:37:25.896 | WARNING | 文字识别错误,错误信息：'NoneType' object is not iterable                           
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2024-01-06 12:38:31.814 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2024-01-06 12:38:34.275 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:2683)                               
+2024-01-06 12:38:42.139 | ERROR | InvalidVersion: Invalid version: ''                                                  
+2024-01-06 12:38:49.682 | INFO | Restart ATX                                                                           
+2024-01-06 12:38:55.678 | ERROR | InvalidVersion: Invalid version: ''                                                  
+2024-01-06 12:39:03.268 | INFO | Restart ATX                                                                           
+2024-01-06 12:39:12.837 | ERROR | InvalidVersion: Invalid version: ''                                                  
+2024-01-06 12:39:37.181 | INFO | Restart ATX                                                                           
+2024-01-06 12:39:45.917 | ERROR | ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed       
+connection without response'))                                                                                         
+2024-01-06 12:39:52.404 | WARNING | 文字识别错误,错误信息：'NoneType' object is not iterable                           
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2024-01-06 12:40:33.496 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2024-01-06 12:41:20.186 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2024-01-06 12:41:23.578 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:2908)                               
+2024-01-06 12:41:28.677 | ERROR |                                                                                      
+┌───────────────────────────────────────── Traceback (most recent call last) ─────────────────────────────────────────┐
+│ F:\code\workpace\study\pyCharm\python_study_project\qianv_tool\module\devices\devices.py:48 in retry_wrapper        │
+│                                                                                                                     │
+│    45 │   │   │   │   if callable(init):                                                                            │
+│    46 │   │   │   │   │   retry_sleep(_)                                                                            │
+│    47 │   │   │   │   │   init()                                                                                    │
+│ >  48 │   │   │   │   return func(self, *args, **kwargs)                                                            │
+│    49 │   │   │   # Can't handle                                                                                    │
+│    50 │   │   │   except RequestHumanTakeover:                                                                      │
+│    51 │   │   │   │   break                                                                                         │
+│                                                                                                                     │
+│ ┌──────────────────────────────────────── locals ────────────────────────────────────────┐                          │
+│ │           _ = 0                                                                        │                          │
+│ │        args = ('emulator-5554',)                                                       │                          │
+│ │           e = KeyboardInterrupt()                                                      │                          │
+│ │        func = <function Devices.device_screenshot at 0x000001B9401B35E0>               │                          │
+│ │  get_serial = <function retry.<locals>.get_serial at 0x000001B9401B3670>               │                          │
+│ │        init = None                                                                     │                          │
+│ │      kwargs = {}                                                                       │                          │
+│ │ RETRY_TRIES = 5                                                                        │                          │
+│ │        self = <qianv_tool.module.devices.devices.Devices object at 0x000001B92D426C10> │                          │
+│ │      serial = 'emulator-5554'                                                          │                          │
+│ └────────────────────────────────────────────────────────────────────────────────────────┘                          │
+│                                                                                                                     │
+│ F:\code\workpace\study\pyCharm\python_study_project\qianv_tool\module\devices\devices.py:194 in device_screenshot   │
+│                                                                                                                     │
+│   191 │   │   截图                                                                                                  │
+│   192 │   │   :return:                                                                                              │
+│   193 │   │   """                                                                                                   │
+│ > 194 │   │   return self.screenshot(serial)                                                                        │
+│   195 │                                                                                                             │
+│   196 │   @retry                                                                                                    │
+│   197 │   def click( self,serial,button,offset=None):                                                               │
+│                                                                                                                     │
+│ ┌───────────────────────────────────── locals ──────────────────────────────────────┐                               │
+│ │   self = <qianv_tool.module.devices.devices.Devices object at 0x000001B92D426C10> │                               │
+│ │ serial = 'emulator-5554'                                                          │                               │
+│ └───────────────────────────────────────────────────────────────────────────────────┘                               │
+│                                                                                                                     │
+│ F:\code\workpace\study\pyCharm\python_study_project\qianv_tool\module\devices\connection\uiautomator.py:202 in      │
+│ screenshot                                                                                                          │
+│                                                                                                                     │
+│   199 │   │   :return: 处理后的截图                                                                                 │
+│   200 │   │   """                                                                                                   │
+│   201 │   │                                                                                                         │
+│ > 202 │   │   device = self.get_u2(serial)                                                                          │
+│   203 │   │                                                                                                         │
+│   204 │   │   # 调用设备的截图功能截图，并发送到当前赋值给image变量                                                 │
+│   205 │   │   image = device.screenshot(format='raw')                                                               │
+│                                                                                                                     │
+│ ┌───────────────────────────────────── locals ──────────────────────────────────────┐                               │
+│ │   self = <qianv_tool.module.devices.devices.Devices object at 0x000001B92D426C10> │                               │
+│ │ serial = 'emulator-5554'                                                          │                               │
+│ └───────────────────────────────────────────────────────────────────────────────────┘                               │
+│                                                                                                                     │
+│ F:\code\workpace\study\pyCharm\python_study_project\qianv_tool\module\devices\connection\uiautomator.py:76 in       │
+│ get_u2                                                                                                              │
+│                                                                                                                     │
+│    73 │   │   │   self.u2_device(serial)                                                                            │
+│    74 │   │   │   self.lock.release()                                                                               │
+│    75 │   │   # 验证连接是否可用                                                                                    │
+│ >  76 │   │   self.u2_devices[serial].info                                                                          │
+│    77 │   │   # for _ in range(3):                                                                                  │
+│    78 │   │   #     try:                                                                                            │
+│    79 │   │   #                                                                                                     │
+│                                                                                                                     │
+│ ┌───────────────────────────────────── locals ──────────────────────────────────────┐                               │
+│ │   self = <qianv_tool.module.devices.devices.Devices object at 0x000001B92D426C10> │                               │
+│ │ serial = 'emulator-5554'                                                          │                               │
+│ └───────────────────────────────────────────────────────────────────────────────────┘                               │
+│                                                                                                                     │
+│ in _pydevd_bundle.pydevd_cython_win32_39_64.SafeCallWrapper.__call__:1179                                           │
+│                                                                                                                     │
+│ in _pydevd_bundle.pydevd_cython_win32_39_64.PyDBFrame.trace_dispatch:620                                            │
+│                                                                                                                     │
+│ in _pydevd_bundle.pydevd_cython_win32_39_64.PyDBFrame.trace_dispatch:929                                            │
+│                                                                                                                     │
+│ in _pydevd_bundle.pydevd_cython_win32_39_64.PyDBFrame.trace_dispatch:920                                            │
+│                                                                                                                     │
+│ in _pydevd_bundle.pydevd_cython_win32_39_64.PyDBFrame.do_wait_suspend:317                                           │
+│                                                                                                                     │
+│ F:\Program Files\develop\PyCharm Community Edition 2022.2.1\plugins\python-ce\helpers\pydev\pydevd.py:1160 in       │
+│ do_wait_suspend                                                                                                     │
+│                                                                                                                     │
+│   1157 │   │   │   │   from_this_thread.append(frame_id)                                                            │
+│   1158 │   │                                                                                                        │
+│   1159 │   │   with                                                                                                 │
+│        self._threads_suspended_single_notification.notify_thread_suspended(thread_id,                               │
+│        stop_reason):                                                                                                │
+│ > 1160 │   │   │   self._do_wait_suspend(thread, frame, event, arg, suspend_type,                                   │
+│        from_this_thread)                                                                                            │
+│   1161 │                                                                                                            │
+│   1162 │   def _do_wait_suspend(self, thread, frame, event, arg, suspend_type,                                      │
+│        from_this_thread):                                                                                           │
+│   1163 │   │   info = thread.additional_info                                                                        │
+│                                                                                                                     │
+│ ┌──────────────────────────────────────────────────── locals ─────────────────────────────────────────────────────┐ │
+│ │                    arg = (                                                                                      │ │
+│ │                          │   <class 'packaging.version.InvalidVersion'>,                                        │ │
+│ │                          │   InvalidVersion("Invalid version: ''"),                                             │ │
+│ │                          │   <traceback object at 0x000001B940275C40>                                           │ │
+│ │                          )                                                                                      │ │
+│ │                    cmd = <_pydevd_bundle.pydevd_comm.NetCommand object at 0x000001B9402207C0>                   │ │
+│ │                  event = 'exception'                                                                            │ │
+│ │                  frame = <frame at 0x000001B9401F4DC0, file                                                     │ │
+│ │                          'F:\\code\\workpace\\study\\pyCharm\\python_study_project\\qianv_tool\\module\\device… │ │
+│ │                          line 76, code get_u2>                                                                  │ │
+│ │        frame_to_lineno = {}                                                                                     │ │
+│ │       from_this_thread = []                                                                                     │ │
+│ │ is_unhandled_exception = False                                                                                  │ │
+│ │                message = ''                                                                                     │ │
+│ │                   self = <__main__.PyDB object at 0x000001B92D2A7070>                                           │ │
+│ │   send_suspend_message = True                                                                                   │ │
+│ │            stop_reason = 111                                                                                    │ │
+│ │           suspend_type = 'trace'                                                                                │ │
+│ │                 thread = <_MainThread(MainThread, started 5376)>                                                │ │
+│ │              thread_id = 'pid_9880_id_1894796092128'                                                            │ │
+│ │       thread_stack_str = '<frame id="1895156370880" name="get_u2"                                               │ │
+│ │                          file="F:\\code\\workpace\\study\\pyCharm\\pyt'+936                                     │ │
+│ └─────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ │
+│                                                                                                                     │
+│ F:\Program Files\develop\PyCharm Community Edition 2022.2.1\plugins\python-ce\helpers\pydev\pydevd.py:1175 in       │
+│ _do_wait_suspend                                                                                                    │
+│                                                                                                                     │
+│   1172 │   │   │   │   │   self._call_mpl_hook()                                                                    │
+│   1173 │   │   │   │                                                                                                │
+│   1174 │   │   │   │   self.process_internal_commands()                                                             │
+│ > 1175 │   │   │   │   time.sleep(0.01)                                                                             │
+│   1176 │   │                                                                                                        │
+│   1177 │   │   self.cancel_async_evaluation(get_current_thread_id(thread), str(id(frame)))                          │
+│   1178                                                                                                              │
+│                                                                                                                     │
+│ ┌──────────────────────────────────────────────────── locals ─────────────────────────────────────────────────────┐ │
+│ │              arg = (                                                                                            │ │
+│ │                    │   <class 'packaging.version.InvalidVersion'>,                                              │ │
+│ │                    │   InvalidVersion("Invalid version: ''"),                                                   │ │
+│ │                    │   <traceback object at 0x000001B940275C40>                                                 │ │
+│ │                    )                                                                                            │ │
+│ │            event = 'exception'                                                                                  │ │
+│ │            frame = <frame at 0x000001B9401F4DC0, file                                                           │ │
+│ │                    'F:\\code\\workpace\\study\\pyCharm\\python_study_project\\qianv_tool\\module\\devices\\con… │ │
+│ │                    line 76, code get_u2>                                                                        │ │
+│ │ from_this_thread = []                                                                                           │ │
+│ │             info = <_pydevd_bundle.pydevd_cython_win32_39_64.PyDBAdditionalThreadInfo object at                 │ │
+│ │                    0x000001B92D3EDD30>                                                                          │ │
+│ │             self = <__main__.PyDB object at 0x000001B92D2A7070>                                                 │ │
+│ │     suspend_type = 'trace'                                                                                      │ │
+│ │           thread = <_MainThread(MainThread, started 5376)>                                                      │ │
+│ └─────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ │
+└─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+KeyboardInterrupt                                                                                                      
+2024-01-06 12:41:29.451 | CRITICAL | Possible reason #1: If you are using BlueStacks or LD player or WSA, please enable
+ADB in the settings of your emulator                                                                                   
+2024-01-06 12:41:29.453 | CRITICAL | Possible reason #2: Emulator died, please restart emulator                        
+2024-01-06 12:41:29.455 | CRITICAL | Possible reason #3: Serial incorrect, no such device exists or emulator is not    
+running                                                                                                                
+2024-01-06 12:41:29.458 | CRITICAL | Retry device_screenshot() failed                                                  
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2024-01-06 12:41:38.743 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2024-01-06 12:41:41.679 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:2908)                               
+2024-01-06 12:42:00.465 | ERROR | InvalidVersion: Invalid version: ''                                                  
+2024-01-06 12:42:12.185 | INFO | Restart ATX                                                                           
+2024-01-06 12:42:31.257 | WARNING | 文字识别错误,错误信息：'NoneType' object is not iterable                           
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2024-01-06 12:49:11.405 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2024-01-06 12:49:13.951 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:4439)                               
+2024-01-06 12:49:20.325 | ERROR | InvalidVersion: Invalid version: ''                                                  
+2024-01-06 12:49:24.019 | INFO | Restart ATX                                                                           
+2024-01-06 12:49:29.947 | WARNING | 文字识别错误,错误信息：'NoneType' object is not iterable                           
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2024-01-06 13:12:34.335 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2024-01-06 13:12:34.344 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:6347)                               
+2024-01-06 13:12:34.503 | ERROR | InvalidVersion: Invalid version: ''                                                  
+2024-01-06 13:12:34.543 | INFO | Restart ATX                                                                           
+2024-01-06 13:12:40.300 | ERROR | InvalidVersion: Invalid version: ''                                                  
+2024-01-06 13:12:41.350 | INFO | Restart ATX                                                                           
+2024-01-06 13:12:47.031 | ERROR | InvalidVersion: Invalid version: ''                                                  
+2024-01-06 13:12:50.063 | INFO | Restart ATX                                                                           
+2024-01-06 13:12:55.927 | WARNING | 文字识别错误,错误信息：'NoneType' object is not iterable                           
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2024-01-06 13:13:17.908 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2024-01-06 13:13:20.189 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:6347)                               
+2024-01-06 13:13:20.516 | WARNING | 文字识别错误,错误信息：'NoneType' object is not iterable                           
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2024-01-06 13:13:51.042 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2024-01-06 13:13:52.837 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:6309)                               
+2024-01-06 13:13:54.415 | ERROR | InvalidVersion: Invalid version: ''                                                  
+2024-01-06 13:13:58.021 | INFO | Restart ATX                                                                           
+2024-01-06 13:14:03.954 | WARNING | 文字识别错误,错误信息：'NoneType' object is not iterable                           
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2024-01-06 23:12:53.291 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2024-01-06 23:12:53.300 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:13035)                              
+2024-01-06 23:12:53.882 | INFO | Click (1000,  478) @ TASK_ZLONG_LAST_RUN                                              
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2024-01-06 23:20:45.737 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2024-01-06 23:20:45.745 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:13067)                              
+2024-01-06 23:20:46.075 | INFO | Click position : 760 @ 360                                                            
+2024-01-06 23:20:47.241 | INFO | Click position : 758 @ 385                                                            
+2024-01-06 23:20:48.403 | INFO | Click position : 750 @ 409                                                            
+2024-01-06 23:20:49.575 | INFO | Click position : 738 @ 431                                                            
+2024-01-06 23:20:50.747 | INFO | Click position : 721 @ 450                                                            
+2024-01-06 23:20:51.908 | INFO | Click position : 700 @ 464                                                            
+2024-01-06 23:20:53.072 | INFO | Click position : 678 @ 475                                                            
+2024-01-06 23:20:54.245 | INFO | Click position : 653 @ 480                                                            
+2024-01-06 23:20:55.409 | INFO | Click position : 628 @ 480                                                            
+2024-01-06 23:20:56.568 | INFO | Click position : 603 @ 475                                                            
+2024-01-06 23:20:57.729 | INFO | Click position : 580 @ 464                                                            
+2024-01-06 23:20:58.887 | INFO | Click position : 560 @ 450                                                            
+2024-01-06 23:21:00.051 | INFO | Click position : 543 @ 431                                                            
+2024-01-06 23:21:01.213 | INFO | Click position : 531 @ 409                                                            
+2024-01-06 23:21:02.382 | INFO | Click position : 523 @ 385                                                            
+2024-01-06 23:21:03.546 | INFO | Click position : 520 @ 360                                                            
+2024-01-06 23:21:04.706 | INFO | Click position : 523 @ 336                                                            
+2024-01-06 23:21:05.876 | INFO | Click position : 531 @ 312                                                            
+2024-01-06 23:21:07.042 | INFO | Click position : 543 @ 290                                                            
+2024-01-06 23:21:08.208 | INFO | Click position : 560 @ 271                                                            
+2024-01-06 23:21:09.366 | INFO | Click position : 580 @ 257                                                            
+2024-01-06 23:21:10.526 | INFO | Click position : 603 @ 246                                                            
+2024-01-06 23:21:11.688 | INFO | Click position : 628 @ 241                                                            
+2024-01-06 23:21:12.849 | INFO | Click position : 653 @ 241                                                            
+2024-01-06 23:21:14.010 | INFO | Click position : 678 @ 246                                                            
+2024-01-06 23:21:15.178 | INFO | Click position : 700 @ 257                                                            
+2024-01-06 23:21:16.338 | INFO | Click position : 721 @ 271                                                            
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2024-01-06 23:32:11.742 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2024-01-06 23:32:11.755 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:13067)                              
+2024-01-06 23:32:12.058 | INFO | Click position : 640 @ 361                                                            
+2024-01-06 23:32:13.265 | INFO | Click position : 647 @ 427                                                            
+2024-01-06 23:32:14.430 | INFO | Click position : 668 @ 491                                                            
+2024-01-06 23:32:15.589 | INFO | Click position : 702 @ 549                                                            
+2024-01-06 23:32:16.762 | INFO | Click position : 746 @ 598                                                            
+2024-01-06 23:32:17.939 | INFO | Click position : 800 @ 638                                                            
+2024-01-06 23:32:19.104 | INFO | Click position : 862 @ 665                                                            
+2024-01-06 23:32:20.266 | INFO | Click position : 927 @ 679                                                            
+2024-01-06 23:32:21.429 | INFO | Click position : 994 @ 679                                                            
+2024-01-06 23:32:22.592 | INFO | Click position : 1059 @ 665                                                           
+2024-01-06 23:32:23.746 | INFO | Click position : 1120 @ 638                                                           
+2024-01-06 23:32:24.906 | INFO | Click position : 1175 @ 598                                                           
+2024-01-06 23:32:26.068 | INFO | Click position : 1219 @ 549                                                           
+2024-01-06 23:32:27.226 | INFO | Click position : 1253 @ 491                                                           
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2024-01-06 23:32:32.802 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2024-01-06 23:32:32.811 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:12476)                              
+2024-01-06 23:32:33.217 | INFO | Click position : 640 @ 361                                                            
+2024-01-06 23:32:34.382 | INFO | Click position : 647 @ 427                                                            
+2024-01-06 23:32:35.541 | INFO | Click position : 668 @ 491                                                            
+2024-01-06 23:32:36.702 | INFO | Click position : 702 @ 549                                                            
+2024-01-06 23:32:37.865 | INFO | Click position : 746 @ 598                                                            
+2024-01-06 23:32:39.021 | INFO | Click position : 800 @ 638                                                            
+2024-01-06 23:32:40.179 | INFO | Click position : 862 @ 665                                                            
+2024-01-06 23:32:41.333 | INFO | Click position : 927 @ 679                                                            
+2024-01-06 23:32:42.497 | INFO | Click position : 994 @ 679                                                            
+2024-01-06 23:32:43.654 | INFO | Click position : 1059 @ 665                                                           
+2024-01-06 23:32:44.812 | INFO | Click position : 1120 @ 638                                                           
+2024-01-06 23:32:45.975 | INFO | Click position : 1175 @ 598                                                           
+2024-01-06 23:32:47.132 | INFO | Click position : 1219 @ 549                                                           
+2024-01-06 23:32:48.288 | INFO | Click position : 1253 @ 491                                                           
+2024-01-06 23:32:49.455 | INFO | Click position : 1274 @ 427                                                           
+2024-01-06 23:32:50.615 | INFO | Click position : 1280 @ 360                                                           
+2024-01-06 23:32:51.775 | INFO | Click position : 1274 @ 294                                                           
+2024-01-06 23:32:52.933 | INFO | Click position : 1253 @ 230                                                           
+2024-01-06 23:32:54.101 | INFO | Click position : 1219 @ 172                                                           
+2024-01-06 23:32:55.271 | INFO | Click position : 1175 @ 123                                                           
+2024-01-06 23:32:56.426 | INFO | Click position : 1120 @ 83                                                            
+2024-01-06 23:32:57.581 | INFO | Click position : 1059 @ 56                                                            
+2024-01-06 23:32:58.738 | INFO | Click position : 994 @ 42                                                             
+2024-01-06 23:32:59.894 | INFO | Click position : 927 @ 42                                                             
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2024-01-06 23:34:32.223 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2024-01-06 23:34:32.233 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:12476)                              
+2024-01-06 23:34:32.499 | INFO | Click position : 640 @ 360                                                            
+2024-01-06 23:34:33.664 | INFO | Click position : 644 @ 393                                                            
+2024-01-06 23:34:34.823 | INFO | Click position : 654 @ 423                                                            
+2024-01-06 23:34:35.979 | INFO | Click position : 670 @ 451                                                            
+2024-01-06 23:34:37.138 | INFO | Click position : 692 @ 475                                                            
+2024-01-06 23:34:38.299 | INFO | Click position : 718 @ 494                                                            
+2024-01-06 23:34:39.451 | INFO | Click position : 747 @ 507                                                            
+2024-01-06 23:34:40.609 | INFO | Click position : 779 @ 514                                                            
+2024-01-06 23:34:41.770 | INFO | Click position : 811 @ 514                                                            
+2024-01-06 23:34:42.929 | INFO | Click position : 842 @ 507                                                            
+2024-01-06 23:34:44.095 | INFO | Click position : 872 @ 494                                                            
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2024-01-06 23:35:02.619 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2024-01-06 23:35:02.639 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:12476)                              
+2024-01-06 23:40:12.188 | INFO | Click position : 640 @ 360                                                            
+2024-01-06 23:40:13.364 | INFO | Click position : 644 @ 393                                                            
+2024-01-06 23:40:14.528 | INFO | Click position : 654 @ 423                                                            
+2024-01-06 23:40:15.694 | INFO | Click position : 670 @ 451                                                            
+2024-01-06 23:40:16.861 | INFO | Click position : 692 @ 475                                                            
+2024-01-06 23:40:18.028 | INFO | Click position : 718 @ 494                                                            
+2024-01-06 23:40:19.199 | INFO | Click position : 747 @ 507                                                            
+2024-01-06 23:40:20.361 | INFO | Click position : 779 @ 514                                                            
+2024-01-06 23:40:21.524 | INFO | Click position : 811 @ 514                                                            
+2024-01-06 23:40:22.688 | INFO | Click position : 842 @ 507                                                            
+2024-01-06 23:40:23.859 | INFO | Click position : 872 @ 494                                                            
+2024-01-06 23:40:25.029 | INFO | Click position : 898 @ 475                                                            
+2024-01-06 23:40:26.191 | INFO | Click position : 920 @ 451                                                            
+2024-01-06 23:40:27.365 | INFO | Click position : 936 @ 423                                                            
+2024-01-06 23:40:28.531 | INFO | Click position : 946 @ 393                                                            
+2024-01-06 23:40:29.698 | INFO | Click position : 949 @ 360                                                            
+2024-01-06 23:40:30.864 | INFO | Click position : 946 @ 328                                                            
+2024-01-06 23:40:32.034 | INFO | Click position : 936 @ 298                                                            
+2024-01-06 23:40:33.198 | INFO | Click position : 920 @ 270                                                            
+2024-01-06 23:40:34.365 | INFO | Click position : 898 @ 246                                                            
+2024-01-06 23:40:35.542 | INFO | Click position : 872 @ 227                                                            
+2024-01-06 23:40:36.708 | INFO | Click position : 842 @ 214                                                            
+2024-01-06 23:40:37.882 | INFO | Click position : 811 @ 207                                                            
+2024-01-06 23:40:39.059 | INFO | Click position : 779 @ 207                                                            
+2024-01-06 23:40:40.236 | INFO | Click position : 747 @ 214                                                            
+2024-01-06 23:40:41.409 | INFO | Click position : 718 @ 227                                                            
+2024-01-06 23:40:42.575 | INFO | Click position : 692 @ 246                                                            
+2024-01-06 23:40:43.741 | INFO | Click position : 670 @ 270                                                            
+2024-01-06 23:40:44.905 | INFO | Click position : 654 @ 298                                                            
+2024-01-06 23:40:46.068 | INFO | Click position : 644 @ 328                                                            
+2024-01-06 23:40:47.232 | INFO | Click position : 640.0 @ 360.0                                                        
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2024-01-06 23:43:24.209 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2024-01-06 23:43:24.219 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:12476)                              
+2024-01-06 23:43:24.539 | INFO | Click position : 640 @ 360                                                            
+2024-01-06 23:43:25.699 | INFO | Click position : 648 @ 408                                                            
+2024-01-06 23:43:26.857 | INFO | Click position : 670 @ 452                                                            
+2024-01-06 23:43:28.017 | INFO | Click position : 704 @ 486                                                            
+2024-01-06 23:43:29.176 | INFO | Click position : 748 @ 508                                                            
+2024-01-06 23:43:30.333 | INFO | Click position : 795 @ 515                                                            
+2024-01-06 23:43:31.494 | INFO | Click position : 843 @ 508                                                            
+2024-01-06 23:43:32.653 | INFO | Click position : 887 @ 486                                                            
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2024-01-06 23:43:42.509 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2024-01-06 23:43:42.529 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:12476)                              
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2024-01-06 23:45:46.817 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2024-01-06 23:45:46.836 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:12476)                              
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2024-01-06 23:46:26.161 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2024-01-06 23:46:26.183 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:12476)                              
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2024-01-06 23:50:37.114 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2024-01-06 23:50:37.148 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:12476)                              
+2024-01-06 23:50:48.213 | INFO | Click position : 640 @ 360                                                            
+2024-01-06 23:50:51.874 | INFO | Click position : 641 @ 361                                                            
+2024-01-06 23:50:53.044 | INFO | Click position : 641 @ 362                                                            
+2024-01-06 23:50:54.210 | INFO | Click position : 641 @ 363                                                            
+2024-01-06 23:50:55.387 | INFO | Click position : 642 @ 363                                                            
+2024-01-06 23:50:56.560 | INFO | Click position : 642 @ 364                                                            
+2024-01-06 23:50:57.732 | INFO | Click position : 643 @ 364                                                            
+2024-01-06 23:50:58.899 | INFO | Click position : 644 @ 364                                                            
+2024-01-06 23:51:04.701 | INFO | Click position : 645 @ 364                                                            
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2024-01-06 23:51:23.105 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2024-01-06 23:51:23.135 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:12476)                              
+2024-01-06 23:51:23.431 | INFO | Click position : 640 @ 360                                                            
+2024-01-06 23:51:35.278 | INFO | Click position : 641 @ 363                                                            
+2024-01-06 23:51:37.404 | INFO | Click position : 641 @ 365                                                            
+2024-01-06 23:51:39.156 | INFO | Click position : 643 @ 367                                                            
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2024-01-06 23:52:09.572 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2024-01-06 23:52:09.592 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:12476)                              
+2024-01-06 23:52:09.868 | INFO | Click position : 640 @ 360                                                            
+2024-01-06 23:52:13.432 | INFO | Click position : 641 @ 366                                                            
+2024-01-06 23:52:14.604 | INFO | Click position : 643 @ 371                                                            
+2024-01-06 23:52:15.770 | INFO | Click position : 645 @ 376                                                            
+2024-01-06 23:52:16.937 | INFO | Click position : 649 @ 380                                                            
+2024-01-06 23:52:18.104 | INFO | Click position : 653 @ 383                                                            
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2024-01-06 23:52:27.939 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2024-01-06 23:52:28.019 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:12476)                              
+2024-01-06 23:52:31.794 | INFO | Click position : 640 @ 360                                                            
+2024-01-06 23:52:34.384 | INFO | Click position : 643 @ 383                                                            
+2024-01-06 23:52:36.561 | INFO | Click position : 650 @ 404                                                            
+2024-01-06 23:52:46.845 | INFO | Click position : 661 @ 424                                                            
+2024-01-06 23:52:48.020 | INFO | Click position : 676 @ 441                                                            
+2024-01-06 23:52:49.184 | INFO | Click position : 694 @ 454                                                            
+2024-01-06 23:52:50.353 | INFO | Click position : 715 @ 463                                                            
+2024-01-06 23:52:51.521 | INFO | Click position : 737 @ 468                                                            
+2024-01-06 23:52:52.687 | INFO | Click position : 760 @ 468                                                            
+2024-01-06 23:52:53.854 | INFO | Click position : 782 @ 463                                                            
+2024-01-06 23:52:55.031 | INFO | Click position : 802 @ 454                                                            
+2024-01-06 23:52:56.200 | INFO | Click position : 821 @ 441                                                            
+2024-01-06 23:52:57.372 | INFO | Click position : 836 @ 424                                                            
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2024-01-06 23:53:14.394 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2024-01-06 23:53:14.419 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:12476)                              
+2024-01-06 23:53:14.729 | INFO | Click position : 640 @ 360                                                            
+2024-01-06 23:53:15.893 | INFO | Click position : 642 @ 375                                                            
+2024-01-06 23:53:17.058 | INFO | Click position : 647 @ 390                                                            
+2024-01-06 23:53:18.234 | INFO | Click position : 654 @ 403                                                            
+2024-01-06 23:53:19.403 | INFO | Click position : 664 @ 414                                                            
+2024-01-06 23:53:20.568 | INFO | Click position : 676 @ 423                                                            
+2024-01-06 23:53:21.744 | INFO | Click position : 690 @ 429                                                            
+2024-01-06 23:53:22.907 | INFO | Click position : 705 @ 432                                                            
+2024-01-06 23:53:24.070 | INFO | Click position : 720 @ 432                                                            
+2024-01-06 23:53:25.246 | INFO | Click position : 735 @ 429                                                            
+2024-01-06 23:53:26.414 | INFO | Click position : 748 @ 423                                                            
+2024-01-06 23:53:27.594 | INFO | Click position : 761 @ 414                                                            
+2024-01-06 23:53:28.760 | INFO | Click position : 771 @ 403                                                            
+2024-01-06 23:53:29.927 | INFO | Click position : 778 @ 390                                                            
+2024-01-06 23:53:31.094 | INFO | Click position : 783 @ 375                                                            
+2024-01-06 23:53:32.278 | INFO | Click position : 784 @ 360                                                            
+2024-01-06 23:53:33.445 | INFO | Click position : 783 @ 346                                                            
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2024-01-06 23:53:48.316 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2024-01-06 23:53:48.334 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:12476)                              
+2024-01-06 23:53:48.662 | INFO | Click position : 640 @ 360                                                            
+2024-01-06 23:53:49.827 | INFO | Click position : 642 @ 349                                                            
+2024-01-06 23:53:50.992 | INFO | Click position : 645 @ 339                                                            
+2024-01-06 23:53:52.161 | INFO | Click position : 651 @ 329                                                            
+2024-01-06 23:53:53.324 | INFO | Click position : 658 @ 320                                                            
+2024-01-06 23:53:54.495 | INFO | Click position : 667 @ 314                                                            
+2024-01-06 23:53:55.658 | INFO | Click position : 678 @ 309                                                            
+2024-01-06 23:53:56.831 | INFO | Click position : 689 @ 307                                                            
+2024-01-06 23:53:57.998 | INFO | Click position : 700 @ 307                                                            
+2024-01-06 23:53:59.162 | INFO | Click position : 711 @ 309                                                            
+2024-01-06 23:54:00.332 | INFO | Click position : 721 @ 314                                                            
+2024-01-06 23:54:01.504 | INFO | Click position : 731 @ 320                                                            
+2024-01-06 23:54:02.673 | INFO | Click position : 738 @ 329                                                            
+2024-01-06 23:54:03.837 | INFO | Click position : 744 @ 339                                                            
+2024-01-06 23:54:04.997 | INFO | Click position : 747 @ 349                                                            
+2024-01-06 23:54:06.168 | INFO | Click position : 748 @ 360                                                            
+2024-01-06 23:54:07.330 | INFO | Click position : 747 @ 372                                                            
+2024-01-06 23:54:08.498 | INFO | Click position : 744 @ 382                                                            
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2024-01-06 23:54:30.769 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2024-01-06 23:54:30.787 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:12476)                              
+2024-01-06 23:54:31.123 | INFO | Click position : 640 @ 360                                                            
+2024-01-06 23:54:32.294 | INFO | Click position : 641 @ 353                                                            
+2024-01-06 23:54:33.458 | INFO | Click position : 644 @ 346                                                            
+2024-01-06 23:54:34.623 | INFO | Click position : 647 @ 339                                                            
+2024-01-06 23:54:35.801 | INFO | Click position : 652 @ 334                                                            
+2024-01-06 23:54:36.967 | INFO | Click position : 658 @ 329                                                            
+2024-01-06 23:54:38.141 | INFO | Click position : 665 @ 326                                                            
+2024-01-06 23:54:39.315 | INFO | Click position : 673 @ 325                                                            
+2024-01-06 23:54:40.479 | INFO | Click position : 680 @ 325                                                            
+2024-01-06 23:54:41.651 | INFO | Click position : 688 @ 326                                                            
+2024-01-06 23:54:42.817 | INFO | Click position : 694 @ 329                                                            
+2024-01-06 23:54:43.978 | INFO | Click position : 701 @ 334                                                            
+2024-01-06 23:54:45.141 | INFO | Click position : 706 @ 339                                                            
+2024-01-06 23:54:46.304 | INFO | Click position : 709 @ 346                                                            
+2024-01-06 23:54:47.475 | INFO | Click position : 712 @ 353                                                            
+2024-01-06 23:54:48.638 | INFO | Click position : 712 @ 360                                                            
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2024-01-06 23:55:20.901 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2024-01-06 23:55:20.919 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:12476)                              
+2024-01-06 23:55:21.264 | INFO | Click position : 651 @ 371                                                            
+2024-01-06 23:55:22.429 | INFO | Click position : 657 @ 366                                                            
+2024-01-06 23:55:23.598 | INFO | Click position : 664 @ 363                                                            
+2024-01-06 23:55:24.757 | INFO | Click position : 671 @ 361                                                            
+2024-01-06 23:55:25.923 | INFO | Click position : 678 @ 361                                                            
+2024-01-06 23:55:27.095 | INFO | Click position : 686 @ 362                                                            
+2024-01-06 23:55:28.265 | INFO | Click position : 693 @ 364                                                            
+2024-01-06 23:55:29.431 | INFO | Click position : 699 @ 369                                                            
+2024-01-06 23:55:30.599 | INFO | Click position : 704 @ 374                                                            
+2024-01-06 23:55:31.767 | INFO | Click position : 709 @ 380                                                            
+2024-01-06 23:55:32.934 | INFO | Click position : 711 @ 387                                                            
+2024-01-06 23:55:34.095 | INFO | Click position : 712 @ 395                                                            
+2024-01-06 23:55:35.259 | INFO | Click position : 712 @ 402                                                            
+2024-01-06 23:55:36.425 | INFO | Click position : 710 @ 409                                                            
+2024-01-06 23:55:37.591 | INFO | Click position : 707 @ 416                                                            
+2024-01-06 23:55:38.759 | INFO | Click position : 702 @ 422                                                            
+2024-01-06 23:55:39.928 | INFO | Click position : 696 @ 427                                                            
+2024-01-06 23:55:41.092 | INFO | Click position : 689 @ 430                                                            
+2024-01-06 23:55:42.263 | INFO | Click position : 682 @ 432                                                            
+2024-01-06 23:55:43.427 | INFO | Click position : 675 @ 432                                                            
+2024-01-06 23:55:44.589 | INFO | Click position : 667 @ 431                                                            
+2024-01-06 23:55:45.757 | INFO | Click position : 660 @ 429                                                            
+2024-01-06 23:55:46.921 | INFO | Click position : 654 @ 424                                                            
+2024-01-06 23:55:48.089 | INFO | Click position : 649 @ 419                                                            
+2024-01-06 23:55:49.255 | INFO | Click position : 644 @ 413                                                            
+2024-01-06 23:55:50.425 | INFO | Click position : 642 @ 406                                                            
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                                         START                                                         
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2024-01-06 23:56:05.436 | INFO | cp system info: system(64bit) cpu(AMD64)                                              
+2024-01-06 23:56:05.455 | INFO | [u2.Device] Device(atx_agent_url=http://127.0.0.1:12476)                              
+2024-01-06 23:56:05.723 | INFO | Click position : 651 @ 371                                                            
+2024-01-06 23:56:06.887 | INFO | Click position : 654 @ 369                                                            
+2024-01-06 23:56:08.052 | INFO | Click position : 657 @ 366                                                            
+2024-01-06 23:56:09.227 | INFO | Click position : 660 @ 364                                                            
+2024-01-06 23:56:10.400 | INFO | Click position : 664 @ 363                                                            
+2024-01-06 23:56:11.568 | INFO | Click position : 667 @ 362                                                            
+2024-01-06 23:56:12.732 | INFO | Click position : 671 @ 361                                                            
+2024-01-06 23:56:13.908 | INFO | Click position : 675 @ 361                                                            
+2024-01-06 23:56:15.078 | INFO | Click position : 678 @ 361                                                            
+2024-01-06 23:56:16.242 | INFO | Click position : 682 @ 361                                                            
+2024-01-06 23:56:17.412 | INFO | Click position : 686 @ 362                                                            
+2024-01-06 23:56:18.578 | INFO | Click position : 689 @ 363                                                            
+2024-01-06 23:56:19.742 | INFO | Click position : 693 @ 364                                                            
+2024-01-06 23:56:20.913 | INFO | Click position : 696 @ 366                                                            
+2024-01-06 23:56:22.075 | INFO | Click position : 699 @ 369                                                            
+2024-01-06 23:56:23.239 | INFO | Click position : 702 @ 371                                                            
+2024-01-06 23:56:24.408 | INFO | Click position : 704 @ 374                                                            
+2024-01-06 23:56:25.573 | INFO | Click position : 707 @ 377                                                            
+2024-01-06 23:56:26.736 | INFO | Click position : 709 @ 380                                                            
+2024-01-06 23:56:27.902 | INFO | Click position : 710 @ 384                                                            
+2024-01-06 23:56:29.066 | INFO | Click position : 711 @ 387                                                            
+2024-01-06 23:56:30.239 | INFO | Click position : 712 @ 391                                                            
+2024-01-06 23:56:31.405 | INFO | Click position : 712 @ 395                                                            
+2024-01-06 23:56:32.572 | INFO | Click position : 712 @ 398                                                            
+2024-01-06 23:56:33.738 | INFO | Click position : 712 @ 402                                                            

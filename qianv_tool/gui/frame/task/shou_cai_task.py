@@ -9,7 +9,7 @@ import customtkinter as ctk
 
 class ShouCaiTask(ctk.CTkScrollableFrame):
 
-    def __init__(self, master,image):
+    def __init__(self, master,image,devices):
         super().__init__(master,corner_radius=0)
         self.grid_columnconfigure(0, weight=1)
 
