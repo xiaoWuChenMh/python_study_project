@@ -1,3 +1,4 @@
+# pip install PyMuPDF
 import fitz
 import os
 
